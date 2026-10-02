@@ -13,20 +13,20 @@ export SCHOOLAGENT_API_KEY="11"
 # BGE_MODEL: Used by student modules for exercises and prompts
 # BGE_MODEL_L: Used by teacher vector database (typically uses larger model)
 
-# Option 1: Use bge-small-zh-v1.5 for students (recommended, faster)
-export BGE_MODEL="/mnt/shared-storage-user/zhangbo1/models/bge-small-zh-v1.5"
+# Option 1: Use bge-small-en-v1.5 for students (recommended, faster)
+export BGE_MODEL="${BGE_MODEL:-BAAI/bge-small-en-v1.5}"
 
-# Option 2: Use bge-large-zh for teacher (more accurate)
-export BGE_MODEL_L="/mnt/shared-storage-user/zhangbo1/models/bge-large-zh"
+# Option 2: Use bge-large-en-v1.5 for teacher (more accurate)
+export BGE_MODEL_L="${BGE_MODEL_L:-BAAI/bge-large-en-v1.5}"
 
 # Alternative configurations:
 # Use same model for both:
-# export BGE_MODEL="/mnt/shared-storage-user/zhangbo1/models/bge-small-zh-v1.5"
-# export BGE_MODEL_L="/mnt/shared-storage-user/zhangbo1/models/bge-small-zh-v1.5"
+# export BGE_MODEL="/mnt/shared-storage-user/zhangbo1/models/bge-small-en-v1.5"
+# export BGE_MODEL_L="/mnt/shared-storage-user/zhangbo1/models/bge-small-en-v1.5"
 
 # Use Hugging Face model names (requires network download):
-# export BGE_MODEL="BAAI/bge-small-zh-v1.5"
-# export BGE_MODEL_L="BAAI/bge-large-zh"
+# export BGE_MODEL="BAAI/bge-small-en-v1.5"
+# export BGE_MODEL_L="BAAI/bge-large-en-v1.5"
 
 echo "✅ SCHOOLAGENT_API_KEY: ${SCHOOLAGENT_API_KEY:0:20}"
 echo "✅ BGE_MODEL (student): $BGE_MODEL"

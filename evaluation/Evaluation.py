@@ -9,38 +9,38 @@ import re
 
 class Evaluation:
     """
-    负责进行课堂教学综合评估的类。
-    封装了从数据加载到报告生成的所有工作流程。
+    Evaluate classroom teaching and generate a comprehensive assessment report.
+    Handles the workflow from loading data through generating a report.
     """
 
     def __init__(self):
         """
-        通过创建一个 ClassroomAnalyzer 实例来初始化 Evaluation 类。
+        Initialize the evaluator with a ClassroomAnalyzer instance.
         """
         self.analyzer = ClassroomAnalyzer()
 
     def _auto_select_latest(self):
         """
-        自动选择最新的日志目录（YYYYMMDD_HHMMSS），并返回 (datetime_str, event_id)。
-        优先选择子目录中最大的数字作为 event_id；若不存在则默认为 1。
+        Automatically select the latest log directory(YYYYMMDD_HHMMSS),And back (datetime_str, event_id).
+        Use the largest numeric subdirectory as the event ID, or 1 if none exists.
         """
         current_dir = os.path.dirname(__file__)
         project_root = os.path.dirname(current_dir)
         logs_root = os.path.join(project_root, "logs")
 
         if not os.path.isdir(logs_root):
-            raise RuntimeError(f"日志根目录不存在: {logs_root}")
+            raise RuntimeError(f"Log root directory does not exist: {logs_root}")
 
-        # 过滤出符合 YYYYMMDD_HHMMSS 格式的目录并排序
+        # Filter Matches YYYYMMDD_HHMMSS Format directories and sort them
         pattern = re.compile(r"^\d{8}_\d{6}$")
         candidates = [d for d in os.listdir(logs_root) if os.path.isdir(os.path.join(logs_root, d)) and pattern.match(d)]
         if not candidates:
-            raise RuntimeError(f"未在 {logs_root} 下找到符合 YYYYMMDD_HHMMSS 的日志目录")
+            raise RuntimeError(f"No log directory matching YYYYMMDD_HHMMSS was found under {logs_root}")
 
         candidates.sort()
         latest = candidates[-1]
 
-        # 选择事件ID：取该日志目录下的最大数字子目录；若没有，默认 1
+        # Select Events ID:Take the largest number subdirectories in the log directory; if not, default 1
         latest_path = os.path.join(logs_root, latest)
         event_subdirs = []
         for name in os.listdir(latest_path):
@@ -52,56 +52,56 @@ class Evaluation:
                     continue
         event_id = max(event_subdirs) if event_subdirs else 1
 
-        print(f"🕒 未指定日志名，已自动选择最新日志: {latest}")
-        print(f"🧭 事件ID: {event_id}")
+        print(f"🕒 No log name specified, latest log automatically selected: {latest}")
+        print(f"🧭 Event ID: {event_id}")
         return latest, event_id
 
     def markdown_to_pdf(self, md_path: str, pdf_path: str = None) -> str:
         """
-        使用 WeasyPrint 或其他备选方法将 Markdown 文件转换为 PDF。
+        Convert a Markdown file to PDF using WeasyPrint or an alternative.
 
         Args:
-            md_path (str): Markdown 文件路径。
-            pdf_path (str, optional): 期望的 PDF 输出路径。
-                                       如果为 None，则自动生成。
+            md_path (str): Path to the Markdown file.
+            pdf_path (str, optional): Desired path for the output PDF.
+                                       If None, the output path is generated automatically.
 
         Returns:
-            str: 生成的 PDF 或备选 HTML 文件的路径。
-                 如果所有转换都失败，则返回 None。
+            str: Path to the generated PDF or fallback HTML file.
+                 Return None if all conversion methods fail.
         """
-        # 如果未指定 PDF 路径，则自动生成
+        # If not specified PDF path, generate automatically
         if pdf_path is None:
             pdf_path = md_path.replace('.md', '.pdf')
 
-        # --- 转换方法（按优先级排序） ---
+        # --- Conversion method (ordered by priority)) ---
 
-        # 1. 优先：WeasyPrint
+        # 1. Priority:WeasyPrint
         result = self._convert_with_weasyprint(md_path, pdf_path)
         if result:
             return result
 
-        # 2. 备选：pdfkit
+        # 2. Alternative:pdfkit
         result = self._convert_with_pdfkit(md_path, pdf_path)
         if result:
             return result
 
-        # 3. 最终备选：HTML
+        # 3. Final Alternative:HTML
         html_path = self._generate_html_fallback(md_path)
         if html_path:
-            print(f"📄 已生成 HTML 文件作为备选方案: {html_path}")
-            print("💡 您可以在浏览器中打开此 HTML 文件，并将其保存为 PDF。")
+            print(f"📄 Generated fallback HTML file:  {html_path}")
+            print("💡 Open the HTML file in a browser and use Print to save it as a PDF.")
             return html_path
 
-        print("❌ 所有转换方法均失败。")
+        print("❌ All conversion methods failed.")
         return None
 
     def _convert_with_weasyprint(self, md_path: str, pdf_path: str) -> str:
-        """用于使用 WeasyPrint 进行转换的辅助函数。"""
+        """Convert Markdown to PDF with WeasyPrint."""
         try:
             import markdown2
             from weasyprint import HTML, CSS
 
-            print("🔄 正在尝试使用 WeasyPrint 进行转换...")
+            print("🔄 Trying to use WeasyPrint Convert...")
 
             with open(md_path, 'r', encoding='utf-8') as f:
                 md_content = f.read()
@@ -110,11 +110,11 @@ class Evaluation:
 
             html_doc = f"""
             <!DOCTYPE html>
-            <html lang="zh-CN">
+            <html lang="en">
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>课堂教学评估报告</title>
+                <title>Assessment of classroom teaching</title>
             </head>
             <body>
                 {html_content}
@@ -129,7 +129,7 @@ class Evaluation:
             }
 
             body {
-                font-family: "PingFang SC", "Microsoft YaHei", "SimHei", Arial, sans-serif;
+                font-family: Arial, Helvetica, sans-serif;
                 line-height: 1.8;
                 color: #333;
                 font-size: 14px;
@@ -227,24 +227,24 @@ class Evaluation:
                 stylesheets=[CSS(string=css_styles)]
             )
 
-            print(f"✅ PDF 转换成功 (WeasyPrint): {pdf_path}")
+            print(f"✅ PDF Conversion succeeded (WeasyPrint): {pdf_path}")
             return pdf_path
 
         except ImportError:
-            print("⚠️ WeasyPrint 未安装。")
-            print("💡 安装命令: pip install weasyprint")
+            print("⚠️ WeasyPrint Not installed.")
+            print("💡 Install Command: pip install weasyprint")
             return None
         except Exception as e:
-            print(f"⚠️ WeasyPrint 转换失败: {e}")
+            print(f"⚠️ WeasyPrint Conversion failed: {e}")
             return None
 
     def _convert_with_pdfkit(self, md_path: str, pdf_path: str) -> str:
-        """用于使用 pdfkit 进行转换的辅助函数。"""
+        """Convert Markdown to PDF with pdfkit."""
         try:
             import markdown2
             import pdfkit
 
-            print("🔄 正在尝试使用 pdfkit 进行转换...")
+            print("🔄 Trying to use pdfkit Convert...")
 
             with open(md_path, 'r', encoding='utf-8') as f:
                 md_content = f.read()
@@ -253,22 +253,22 @@ class Evaluation:
 
             pdfkit.from_string(html_content, pdf_path)
 
-            print(f"✅ PDF 转换成功 (pdfkit): {pdf_path}")
+            print(f"✅ PDF Conversion succeeded (pdfkit): {pdf_path}")
             return pdf_path
 
         except ImportError:
-            print("⚠️ pdfkit 未安装。")
+            print("⚠️ pdfkit Not installed.")
             return None
         except Exception as e:
-            print(f"⚠️ pdfkit 转换失败: {e}")
+            print(f"⚠️ pdfkit Conversion failed: {e}")
             return None
 
     def _generate_html_fallback(self, md_path: str) -> str:
-        """生成 HTML 文件作为最终备选方案。"""
+        """Generate an HTML file as a fallback."""
         try:
             import markdown2
 
-            print("🔄 正在生成 HTML 文件作为备选...")
+            print("🔄 Generating HTML File as Alternative...")
 
             with open(md_path, 'r', encoding='utf-8') as f:
                 md_content = f.read()
@@ -277,14 +277,14 @@ class Evaluation:
 
             html_doc = f"""
             <!DOCTYPE html>
-            <html lang="zh-CN">
+            <html lang="en">
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>课堂教学评估报告</title>
+                <title>Assessment of classroom teaching</title>
                 <style>
                     body {{
-                        font-family: "PingFang SC", "Microsoft YaHei", "SimHei", Arial, sans-serif;
+                        font-family: Arial, Helvetica, sans-serif;
                         line-height: 1.8;
                         max-width: 800px;
                         margin: 0 auto;
@@ -340,11 +340,11 @@ class Evaluation:
             <body>
                 {html_content}
                 <div style="margin-top: 50px; padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
-                    <p><strong>💡 提示:</strong> 要将此页面保存为 PDF，请使用浏览器的打印功能：</p>
+                    <p><strong>💡 Hint:</strong> To Save this page as PDF,Use the browser 's print function:</p>
                     <ul>
-                        <li>按 Cmd+P (Mac) 或 Ctrl+P (Windows)</li>
-                        <li>选择 "保存为 PDF"</li>
-                        <li>调整页面设置以获得最佳效果</li>
+                        <li>Press Cmd+P (Mac) or Ctrl+P (Windows)</li>
+                        <li>Selection "Save As PDF"</li>
+                        <li>Adjust page settings to get the best result</li>
                     </ul>
                 </div>
             </body>
@@ -358,74 +358,74 @@ class Evaluation:
             return html_path
 
         except Exception as e:
-            print(f"⚠️ HTML 生成失败: {e}")
+            print(f"⚠️ HTML Failed to generate: {e}")
             return None
 
     def run_evaluation(self, datetime_str: str = None, event_id: int = None):
         """
-        根据特定的日期时间字符串和整数 ID 运行综合评估。
+        Run a comprehensive assessment for the specified log timestamp and event ID.
 
         Args:
-            datetime_str (str): 日期时间字符串，例如 '20250804_164319'。
-            event_id (int): 课程 ID。
+            datetime_str (str): Log timestamp, for example '20250804_164319'.
+            event_id (int): Event ID.
         """
-        print("课堂教学评估系统 (自动综合分析模式)")
+        print("Assessment system for classroom teaching (Auto-integrated analysis mode)")
         print("=" * 70)
 
-        # 获取当前脚本所在目录（evaluation/）
+        # Fetch the directory where the current script is(evaluation/)
         current_dir = os.path.dirname(__file__)
-        # 获取项目根目录（即 evaluation 的父目录）
+        # Get the root directory of the project (i.e evaluation Parent directory)
         project_root = os.path.dirname(current_dir)
 
-        # 自动选择最新日志与事件ID
+        # Automatically select the latest logs and events ID
         if not datetime_str or event_id is None:
             datetime_str, event_id = self._auto_select_latest()
 
-        # 根据输入参数动态构建文件路径
+        # Build file path according to input parameter dynamics
         logs_dir = os.path.join(project_root, "logs", datetime_str, str(event_id))
         classroom_file = os.path.join(logs_dir, "output.txt")
         objectives_file = os.path.join(logs_dir, "target.txt")
         student_folder = os.path.join(project_root, "stu_exercises")
 
-        print(f"🔗 正在构建路径:")
-        print(f"  - 课堂日志: {classroom_file}")
-        print(f"  - 课程目标: {objectives_file}")
-        print(f"  - 学生练习文件夹: {student_folder}")
-        print(f"  - 学生文件模式: {{student.name}}_exercise_results_{datetime_str}_{event_id}.json")
+        print(f"🔗 Building Path:")
+        print(f"  - Classroom log: {classroom_file}")
+        print(f"  - Curriculum objectives: {objectives_file}")
+        print(f"  - Student results directory: {student_folder}")
+        print(f"  - Student result filename pattern: {{student.name}}_exercise_results_{datetime_str}_{event_id}.json")
 
         if not self.analyzer.load_data_from_folder(classroom_file, student_folder, objectives_file, datetime_str,
                                                    event_id):
-            print("数据加载失败，程序退出。")
+            print("Failed to load evaluation data. Exiting.")
             return
 
-        print(f"\n✅ 数据加载成功!")
-        print(f"- 课堂日志: 已加载")
-        print(f"- 学生数量: {len(self.analyzer.student_results)}")
+        print(f"\n✅ Data loaded successfully!")
+        print(f"- Classroom log: Loaded")
+        print(f"- Students included: {len(self.analyzer.student_results)}")
 
         print("\n" + "=" * 70)
-        print("开始综合分析...")
+        print("Starting the evaluation...")
         print("=" * 70)
 
         try:
-            # 首先，显示学生成绩
-            print("\n📊 学生成绩统计")
+            # First, show your student grades
+            print("\n📊 Student performance statistics")
             print("-" * 30)
             self.analyzer.print_student_accuracy()
 
-            # 对课堂日志进行综合分析
-            print("\n🔍 课堂日志综合分析")
+            # Comprehensive analysis of classroom logs
+            print("\n🔍 Classroom log analysis")
             print("-" * 30)
             classroom_analysis = self.analyzer.analyze_classroom_record_comprehensive()
 
             if "error" in classroom_analysis:
-                print(f"课堂分析失败: {classroom_analysis['error']}")
+                print(f"Classroom analysis failed: {classroom_analysis['error']}")
             else:
                 print("\n" + "=" * 70)
-                print("📋 课堂教学综合评估报告")
+                print("📋 Comprehensive classroom assessment")
                 print("=" * 70)
                 print(classroom_analysis['comprehensive_analysis'])
 
-                # 自动保存为 Markdown 文件
+                # Autosave As Markdown Documentation
                 output_dir = os.path.join(os.path.dirname(__file__), 'analysis_output')
                 os.makedirs(output_dir, exist_ok=True)
                 # timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -433,31 +433,31 @@ class Evaluation:
                 md_path = os.path.join(output_dir, f'analysis_report_{datetime_str}_{event_id}.md')
 
                 with open(md_path, 'w', encoding='utf-8') as f:
-                    f.write(f"# 课堂教学综合评估报告\n\n")
-                    f.write(f"## 生成时间: {classroom_analysis.get('timestamp', '')}\n\n")
+                    f.write(f"# Comprehensive classroom assessment\n\n")
+                    f.write(f"## Generated: {classroom_analysis.get('timestamp', '')}\n\n")
                     dims = classroom_analysis.get('dimensions', {})
                     for key, value in dims.items():
                         f.write(f"### {key}\n{value}\n\n")
-                    f.write(f"## 综合分析报告\n{classroom_analysis['comprehensive_analysis']}\n")
+                    f.write(f"## Comprehensive assessment\n{classroom_analysis['comprehensive_analysis']}\n")
 
-                print(f"\n📄 已保存为 Markdown: {md_path}")
+                print(f"\n📄 Saved Markdown report: {md_path}")
 
-                # 转换为 PDF
+                # Convert to PDF
                 result_path = self.markdown_to_pdf(md_path)
                 if result_path and result_path.endswith('.pdf'):
-                    print(f"📑 已自动导出为 PDF: {result_path}")
+                    print(f"📑 Exported PDF report: {result_path}")
                 elif result_path and result_path.endswith('.html'):
-                    print(f"📄 已生成 HTML 文件: {result_path}")
+                    print(f"📄 Generated HTML report: {result_path}")
 
         except Exception as e:
-            print(f"分析过程中发生错误: {e}")
+            print(f"Error during analysis: {e}")
 
         print("\n" + "=" * 70)
-        print("✅ 分析完成。")
+        print("✅ Analysis complete.")
         print("=" * 70)
 
 
 if __name__ == "__main__":
     evaluator = Evaluation()
-    # 未提供参数时自动选择最新日志目录和事件ID
+    # Select the latest log directory and event automatically when no arguments are provided.
     evaluator.run_evaluation()

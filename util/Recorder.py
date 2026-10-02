@@ -6,24 +6,24 @@ from typing import List, Dict
 from enum import Enum
 
 def default_serializer(obj):
-    """增强的序列化函数，处理更多类型"""
+    """Enhanced Sequencing Functions to Process More Types"""
     if isinstance(obj, (datetime.date, datetime.datetime)):
         return obj.isoformat()
     elif isinstance(obj, set):
         return list(obj)
     elif isinstance(obj, types.MappingProxyType):
-        return dict(obj)  # 将 mappingproxy 转换为普通字典
+        return dict(obj)  # Will mappingproxy Convert to a normal dictionary
     elif isinstance(obj, Enum):
-        return obj.value  # 将枚举转换为值
+        return obj.value  # Convert Element to Value
     elif hasattr(obj, '__dict__'):
         return obj.__dict__
     elif hasattr(obj, 'to_dict') and callable(obj.to_dict):
-        return obj.to_dict()  # 支持 to_dict() 方法
-    raise TypeError(f"无法序列化类型: {type(obj)}")
+        return obj.to_dict()  # Support to_dict() Methodology
+    raise TypeError(f"Unable to sequence type: {type(obj)}")
 
 def make_json_serializable(data):
     """
-    递归地将数据结构转换为 JSON 可序列化格式
+    Recursive conversion of data structure to JSON Sequencable Format
     """
     if isinstance(data, dict):
         return {key: make_json_serializable(value) for key, value in data.items()}
@@ -32,9 +32,9 @@ def make_json_serializable(data):
     elif isinstance(data, datetime.datetime):
         return data.isoformat()
     elif isinstance(data, Enum):
-        return data.value  # 处理枚举类型
+        return data.value  # Handle count type
     elif hasattr(data, 'to_dict') and callable(data.to_dict):
-        return make_json_serializable(data.to_dict())  # 递归处理自定义对象
+        return make_json_serializable(data.to_dict())  # Recursively handle custom objects
     else:
         return data
 
@@ -53,15 +53,15 @@ class Recorder:
         cleaned_entry = make_json_serializable(entry)
         self.logs.append(cleaned_entry)
 
-        # 异步写文件
+        # Step file
         async with aiofiles.open(self.log_file, "a", encoding='utf-8') as f:
-            # 使用增强的序列化函数
+            # Use enhanced serialization functions
             json_str = json.dumps(cleaned_entry, ensure_ascii=False, default=default_serializer)
             await f.write(json_str + "\n")
     
     def log_sync(self, current_time: datetime = None, event_type: str = "", details: dict = None):
         """
-        同步记录日志
+        Synchronize log
         """
         # time.sleep(0.01)
         entry = {}
@@ -78,7 +78,7 @@ class Recorder:
             f.write(json_str + "\n")
 
     def query_logs(self, event_type: str = None, start_time: str = None, end_time: str = None) -> List[Dict]:
-        """按条件查询日志"""
+        """Query Log by Condition"""
         results = []
         for entry in self.logs:
             if event_type and entry["event"] != event_type:
@@ -92,6 +92,6 @@ class Recorder:
 
     def set_file_path(self, file: str):
         self.log_file = file
-        # # 清空日志文件
+        # # Empty Log File
         # with open(self.log_file, "w", encoding='utf-8') as f:
-        #     pass  # 仅用于清空文件，不需要写入内容
+        #     pass  # Use only for emptying files without writing

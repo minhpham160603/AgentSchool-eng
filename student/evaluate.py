@@ -7,132 +7,132 @@ from student.prompt.run_ds_prompt import *
 
 async def evaluate(student, file, postfix):
     """
-    根据传入的问卷，对学生的表现进行评估。
+    Assess a student using an imported questionnaire.
     INPUT:
-        student: Student类
-        file: str, 问卷文件路径 
-        postfix: str, 用于区分不同评估的后缀
+        student: Student Category
+        file: str, Questionnaire File Path
+        postfix: str, Suffix used to distinguish between different assessments
     OUTPUT:
 
     """
     if not os.path.exists(file):
-        print(f"问卷文件 {file} 不存在。")
+        print(f"Questionnaire file not found: {file}")
         return
 
-    # 读取问卷内容
+    # Read Questionnaire
     with open(file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    print(f"\n--- 评估开始 ---")
+    print(f"\n--- Evaluation begins ---")
     t_start = time.time()
-    print(f"{student.name} 开始回答问卷。")
+    print(f"{student.name} is answering the questionnaire.")
 
     personality_description = demjson3.decode(await run_ds_prompt_analyze_personality(student))
-    print(f"性格描述：{personality_description}")
+    print(f"Personality description: {personality_description}")
 
     answers = []
-    for question in data["量表"]:
-        category = question.get("类别")
-        period = question.get("阶段", "")
-        rate = question.get("评分")
-        explanation = question.get("说明", "")
-        print(f"现在的类别是: {question['类别']}")
+    for question in data["scales"]:
+        category = question.get("category")
+        period = question.get("period", "")
+        rate = question.get("rating")
+        explanation = question.get("explanation", "")
+        print(f"Current category: {question['category']}")
         description = await run_ds_prompt_describe_rate(category, period, rate, explanation)
-        print(f"评分说明：{description}")
-        if "题目" in question:
-            for i in question["题目"]:
+        print(f"Scoring instructions: {description}")
+        if "questions" in question:
+            for i in question["questions"]:
                 try:
                     a = demjson3.decode(await run_ds_prompt_evaluate(student, i, description, category, personality_description))
                 except Exception as e:
-                    print(f"处理问题 '{i}' 时发生错误: {e}")
-                    a = {"答案": "", "思考过程": ""}
-                print(f"问题: {i}")
-                print(f"回答: {a}")
+                    print(f"Error while answering '{i}': {e}")
+                    a = {"answer": "", "reasoning": ""}
+                print(f"Question: {i}")
+                print(f"Answer: {a}")
                 answers.append({
-                    "问题" : i,
-                    "答案": a.get("答案", ""),
-                    "思考过程": a.get("思考过程", ""),
+                    "question" : i,
+                    "answer": a.get("answer", ""),
+                    "reasoning": a.get("reasoning", ""),
                 })
-        elif "子类别" in question:
-            for sub in question["子类别"]:
-                print(f"现在的子类别是: {sub}")
-                for i in question["子类别"][sub]:
+        elif "subcategories" in question:
+            for sub in question["subcategories"]:
+                print(f"Current subcategory: {sub}")
+                for i in question["subcategories"][sub]:
                     try:
                         a = demjson3.decode(await run_ds_prompt_evaluate(student, i, description, category, personality_description))
                     except Exception as e:
-                        print(f"处理问题 '{i}' 时发生错误: {e}")
-                        a = {"答案": "", "思考过程": ""}
-                    print(f"问题: {i}")
-                    print(f"回答: {a}")
+                        print(f"Error while answering '{i}': {e}")
+                        a = {"answer": "", "reasoning": ""}
+                    print(f"Question: {i}")
+                    print(f"Answer: {a}")
                     answers.append({
-                        "问题": i,
-                        "答案": a.get("答案", ""),
-                        "思考过程": a.get("思考过程", ""),
+                        "question": i,
+                        "answer": a.get("answer", ""),
+                        "reasoning": a.get("reasoning", ""),
                     })
 
         save_evaluation_results(student, answers, postfix)
-    # 统计耗时
+    # Statistics time-consuming
     t_cost = time.time() - t_start
-    print(f"[TIME] {student.name} 问卷耗时: {t_cost:.2f}s")
+    print(f"[TIME] {student.name} questionnaire duration: {t_cost:.2f}s")
 
 async def evaluate_bfi(student, file, postfix):
     """
-    针对大五人格量表（如大五人格量表.json）进行评估，并计算五大特质分数（不考虑反向题，直接相加）。
+    Assess the Big Five inventory and calculate the five trait scores. This implementation sums item scores directly and does not reverse-score items.
     """
-    # 五大特质题号（1-based）
+    # Item numbers grouped by Big Five trait (one-based).
     BFI_TRAITS = {
-        "外向性":      [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56],
-        "宜人性":      [2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57],
-        "尽责性":      [3, 8, 13, 18, 23, 28, 33, 38, 43, 48, 53, 58],
-        "负性情绪":    [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59],
-        "开放性":      [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
+        "Extraversion":      [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56],
+        "Agreeableness":      [2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57],
+        "Conscientiousness":      [3, 8, 13, 18, 23, 28, 33, 38, 43, 48, 53, 58],
+        "Negative Emotionality":    [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59],
+        "Openness to Experience":      [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
     }
 
     if not os.path.exists(file):
-        print(f"问卷文件 {file} 不存在。")
+        print(f"Questionnaire file not found: {file}")
         return
 
     with open(file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    print(f"\n--- 大五人格评估开始 ---")
-    print(f"{student.name} 开始回答大五人格量表。")
+    print(f"\n--- First five personality assessment begins ---")
+    print(f"{student.name} is answering the Big Five inventory.")
 
-    scale_info = data["量表"][0]
-    rate = scale_info.get("评分", "")
-    print(f"评分说明：{rate}")
+    scale_info = data["scales"][0]
+    rate = scale_info.get("rating", "")
+    print(f"Scoring instructions: {rate}")
 
     answers = []
     trait_scores = {trait: [] for trait in BFI_TRAITS}
 
     # personality_description = demjson3.decode(await run_ds_prompt_analyze_personality(student))
     personality_description = demjson3.decode(await run_ds_prompt_analyze_personality_MBTI(student))
-    print(f"性格描述：{personality_description}")
+    print(f"Personality description: {personality_description}")
 
-     # 内部函数，用于处理单个问题
+     # Internal function for single issues
     async def process_question(idx, q_text):
         try:
-            # 让学生作答，答案需为1-5分整数，LLM已处理反向题
-            a = demjson3.decode(await run_ds_prompt_evaluate_MBTI(student, q_text, rate, "大五人格", personality_description))
-            score = int(float(a.get("答案", 3)))  # 先转float再转int，兼容小数
+            # Let the student answer 1-5 Integer，LLM Dealed with the inverse
+            a = demjson3.decode(await run_ds_prompt_evaluate_MBTI(student, q_text, rate, "Five", personality_description))
+            score = int(float(a.get("answer", 3)))  # Turn first float Turn again int，Compatible decimals
             return {"idx": idx, "q_text": q_text, "score": score, "raw_answer": a, "status": "success"}
         except Exception as e:
-            print(f"处理问题 '{q_text}' 时发生错误: {e}")
+            print(f"Error while answering '{q_text}': {e}")
             score = 3
-            a = {"答案": str(score), "思考过程": ""}
+            a = {"answer": str(score), "reasoning": ""}
             return {"idx": idx, "q_text": q_text, "score": score, "raw_answer": a, "status": "error"}
-    
-    # 创建所有问题的处理任务
-    tasks = [process_question(idx, q_text) for idx, q_text in enumerate(scale_info["题目"], 1)]
-    
-    # 并行执行所有任务
+
+    # Create task for all issues
+    tasks = [process_question(idx, q_text) for idx, q_text in enumerate(scale_info["questions"], 1)]
+
+    # All tasks performed in parallel
     results = await asyncio.gather(*tasks)
 
-    # 处理并收集结果
+    # Process and collect results
     answers = []
     trait_scores = {trait: [] for trait in BFI_TRAITS}
-    
-    # 对结果进行排序，确保顺序与原始问题一致
+
+    # Sequencing results to ensure consistency with original issues
     results.sort(key=lambda r: r['idx'])
 
     for result in results:
@@ -141,58 +141,58 @@ async def evaluate_bfi(student, file, postfix):
         score = result['score']
         a = result['raw_answer']
 
-        print(f"问题{idx}: {q_text}")
-        print(f"回答: {a}")
-        
+        print(f"Question {idx}: {q_text}")
+        print(f"Answer: {a}")
+
         answers.append({
-            "序号": idx,
-            "问题": q_text,
-            "原始题干": scale_info["题目"][idx-1],
-            "答案": score,
-            "思考过程": a.get("思考过程", ""),
+            "index": idx,
+            "question": q_text,
+            "original_question": scale_info["questions"][idx-1],
+            "answer": score,
+            "reasoning": a.get("reasoning", ""),
         })
-        
-        # 统计分数
+
+        # Statistical Scores
         for trait, qlist in BFI_TRAITS.items():
             if idx in qlist:
                 trait_scores[trait].append(score)
 
 
-    """for idx, question in enumerate(scale_info["题目"], 1):
+    """for idx, question in enumerate(scale_info["questions"], 1):
         q_text = question
         try:
-            # 让学生作答，答案需为1-5分整数，LLM已处理反向题
-            a = demjson3.decode(await run_ds_prompt_evaluate_MBTI(student, q_text, rate, "大五人格", personality_description))
-            score = int(a.get("答案", 3))  # 默认3分
+            # Let the student answer 1-5 Integer，LLM Dealed with the inverse
+            a = demjson3.decode(await run_ds_prompt_evaluate_MBTI(student, q_text, rate, "Five", personality_description))
+            score = int(a.get("answer", 3))  # Default 3 min
         except Exception as e:
-            print(f"处理问题 '{q_text}' 时发生错误: {e}")
+            print(f"Addressing issues '{q_text}' Error occurred: {e}")
             score = 3
-            a = {"答案": str(score), "思考过程": ""}
-        print(f"问题{idx}: {q_text}")
-        print(f"回答: {a}")
+            a = {"answer": str(score), "reasoning": ""}
+        print(f"question {idx}: {q_text}")
+        print(f"Answer!: {a}")
         answers.append({
-            "序号": idx,
-            "问题": q_text,
-            "原始题干": question,
-            "答案": score,
-            "思考过程": a.get("思考过程", ""),
+            "index": idx,
+            "question": q_text,
+            "original_question": question,
+            "answer": score,
+            "reasoning": a.get("reasoning", ""),
         })
-        # 统计分数
+        # Statistical Scores
         for trait, qlist in BFI_TRAITS.items():
             if idx in qlist:
                 trait_scores[trait].append(score)"""
 
-    # 计算每个特质的总分和均分
+    # Calculates the sum and equals of each quality
     trait_summary = {
         trait: {
-            "总分": sum(scores),
-            "均分": round(sum(scores)/len(scores), 2) if scores else 0,
-            "明细": scores
+            "total_score": sum(scores),
+            "mean_score": round(sum(scores)/len(scores), 2) if scores else 0,
+            "details": scores
         }
         for trait, scores in trait_scores.items()
     }
 
-    # 保存结果
+    # Save Results
     memory_folder = f"student/evaluation/test_{student.name}"
     os.makedirs(memory_folder, exist_ok=True)
     memory_file = f"{memory_folder}/evaluate_results_{postfix}.json"
@@ -201,14 +201,14 @@ async def evaluate_bfi(student, file, postfix):
             "answers": answers,
             "trait_scores": trait_summary
         }, f, indent=2, ensure_ascii=False)
-    print(f"评估结果已保存到 {memory_file}")
-    print(f"\n--- 大五人格评估结束 ---")
+    print(f"Results saved to {memory_file}")
+    print("\n--- Big Five assessment complete ---")
 
 
 def save_evaluation_results(student, answers, postfix):
-    # 将答案保存到json文件
+    # Save answer to json Documentation
     # memory_folder = f"student/evaluation/test_{student.name}"
-    # os.makedirs(memory_folder, exist_ok=True)  # 确保目录存在
+    # os.makedirs(memory_folder, exist_ok=True)  # Ensure directory exists
     # memory_file = f"{memory_folder}/evaluate_results_{postfix}.json"
     memory_file = f"stu_questionnaire/{student.name}_evaluate_results_{postfix}.json"
     os.makedirs(os.path.dirname(memory_file), exist_ok=True)
@@ -216,7 +216,6 @@ def save_evaluation_results(student, answers, postfix):
     with open(memory_file, 'w', encoding='utf-8') as f:
         json.dump(answers, f, indent=2, ensure_ascii=False)
 
-    print(f"评估结果已保存到 {memory_file}")
+    print(f"Results saved to {memory_file}")
 
-    print(f"\n--- 评估结束 ---")
-
+    print(f"\n--- End of evaluation ---")

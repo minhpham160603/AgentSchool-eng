@@ -1,5 +1,5 @@
 """
-异步批量做题处理模块
+A step-by-step lot processing module
 """
 import json
 import asyncio
@@ -8,23 +8,23 @@ from student.exercise import exercise, save_exercise_results
 
 async def process_questions_in_batches(student, questions_file, batch_size=10):
     """
-    分批处理题目，提高性能和内存使用效率
-    
+    Batch processing of topics to improve performance and memory efficiency
+
     Args:
-        student: 学生对象
-        questions_file: 题目文件路径
-        batch_size: 每批处理的题目数量
-    
+        student: Student objects
+        questions_file: Subject File Path
+        batch_size: Number of topics processed per batch
+
     Returns:
-        dict: 所有答案结果
+        dict: All the answers
     """
-    print(f"开始分批处理题目，每批 {batch_size} 题")
-    
+    print(f"Starting batch processing with {batch_size} questions per batch.")
+
     all_answers = {}
     correct_count = 0
     total_count = 0
-    
-    # 读取所有题目
+
+    # Read All Subjects
     questions = []
     with open(questions_file, 'r', encoding='utf-8-sig') as f:
         for line_num, line in enumerate(f):
@@ -32,127 +32,127 @@ async def process_questions_in_batches(student, questions_file, batch_size=10):
                 question_dict = json.loads(line)
                 questions.append((line_num, question_dict))
             except json.JSONDecodeError as e:
-                print(f"跳过第 {line_num+1} 行，JSON解析错误: {e}")
-    
+                print(f"Skipping line {line_num + 1}: invalid JSON: {e}")
+
     total_questions = len(questions)
-    print(f"共读取到 {total_questions} 道题目")
-    
-    # 分批处理
+    print(f"Loaded {total_questions} questions.")
+
+    # Batch processing
     for batch_start in range(0, total_questions, batch_size):
         batch_end = min(batch_start + batch_size, total_questions)
         batch = questions[batch_start:batch_end]
-        
-        print(f"\n处理第 {batch_start+1}-{batch_end} 题 (共 {len(batch)} 题)")
+
+        print(f"\nProcessing questions {batch_start + 1}–{batch_end} ({len(batch)} in this batch).")
         batch_start_time = time.time()
-        
-        # 异步处理当前批次
+
+        # Step to Current Batch
         batch_results = await process_question_batch(student, batch)
-        
-        # 合并结果
+
+        # Merge Results
         for question_id, result in batch_results.items():
             all_answers[question_id] = result
             total_count += 1
             if result.get('correct', False):
                 correct_count += 1
-        
+
         batch_duration = time.time() - batch_start_time
         current_accuracy = (correct_count / total_count) * 100 if total_count > 0 else 0
-        
-        print(f"批次完成耗时: {batch_duration:.2f} 秒")
-        print(f"当前进度: {total_count}/{total_questions} ({total_count/total_questions*100:.1f}%)")
-        print(f"当前正确率: {correct_count}/{total_count} ({current_accuracy:.2f}%)")
-        
-        # 保存中间结果（防止程序意外中断）
-        if total_count % (batch_size * 2) == 0:  # 每2批保存一次
+
+        print(f"Time to complete batch: {batch_duration:.2f} sec")
+        print(f"Current progress: {total_count}/{total_questions} ({total_count/total_questions*100:.1f}%)")
+        print(f"Current accuracy: {correct_count}/{total_count} ({current_accuracy:.2f}%)")
+
+        # Save an intermediate result in case the process is interrupted.
+        if total_count % (batch_size * 2) == 0:  # Save every two batches.
             save_exercise_results(student, all_answers, f"progress_{total_count}")
-            print(f"已保存进度: {total_count} 题")
-    
+            print(f"Saved progress after {total_count} questions.")
+
     return all_answers
 
 async def process_question_batch(student, question_batch):
     """
-    异步处理一批题目
-    
+    Process a series of topics by step
+
     Args:
-        student: 学生对象
-        question_batch: 题目批次 [(question_id, question_dict), ...]
-    
+        student: Student objects
+        question_batch: Title Batch [(question_id, question_dict), ...]
+
     Returns:
-        dict: 批次答案结果
+        dict: Batch answers
     """
-    # 为了避免并发过高，限制并发数量
-    semaphore = asyncio.Semaphore(3)  # 最多同时处理3题
-    
+    # In order to avoid excessive simultaneous distribution, limit simultaneous distribution
+    semaphore = asyncio.Semaphore(3)  # At most at the same time 3 Topic
+
     async def process_single_question(question_id, question_dict):
         async with semaphore:
             return await process_one_question_async(student, question_id, question_dict)
-    
-    # 创建异步任务
+
+    # Create a different task
     tasks = [
         process_single_question(question_id, question_dict)
         for question_id, question_dict in question_batch
     ]
-    
-    # 等待所有任务完成
+
+    # Waiting for all tasks to be completed
     results = await asyncio.gather(*tasks, return_exceptions=True)
-    
-    # 整理结果
+
+    # Collapse Results
     batch_answers = {}
     for i, result in enumerate(results):
         question_id = question_batch[i][0]
         if isinstance(result, Exception):
-            print(f"题目 {question_id+1} 处理失败: {result}")
+            print(f"Question {question_id + 1} failed: {result}")
             batch_answers[question_id] = {
                 "answer": "",
-                "thought_process": "处理失败",
+                "thought_process": "Question processing failed.",
                 "correct": False,
                 "error": str(result)
             }
         else:
             batch_answers[question_id] = result
-    
+
     return batch_answers
 
 async def process_one_question_async(student, question_id, question_dict):
     """
-    异步处理单个题目
+    Step-by-step treatment of individual topics
     """
     try:
         from student.retrieve import further_retrieve
         from student.prompt.run_ds_prompt import run_ds_prompt_generate_answer, run_ds_prompt_regenerate_answer
         from student.supervision import supervise_exercise
         import demjson3
-        
+
         question = question_dict.get("content", "")
         correct_answer = question_dict.get("answer", "")
-        
-        # 检索相关记忆
+
+        # Retrieving relevant memory
         retrieved_mem = await further_retrieve(student, [question], n_count=10)
         mems = [i.embedding_key for i in retrieved_mem[question]]
         mems_str = "\n".join(mems)
-        
-        # 生成答案
+
+        # Generate Answers
         answer_response = await run_ds_prompt_generate_answer(student, question, mems_str)
         answer = demjson3.decode(answer_response)
-        
-        # 监督检查
+
+        # Oversight and inspection
         supervision = await supervise_exercise(student, "student/knowledge_points.json", answer)
         if supervision.get("exceeds_grade", False):
             regenerated_response = await run_ds_prompt_regenerate_answer(student, question, mems_str, supervision)
             answer = demjson3.decode(regenerated_response)
-        
-        # 判断正确性
+
+        # Correctness
         answer["correct"] = (str(answer.get('answer', '')).strip() == str(correct_answer).strip())
         answer["question_id"] = question_id
         answer["question"] = question
-        
+
         return answer
-        
+
     except Exception as e:
-        print(f"处理题目 {question_id+1} 时发生错误: {e}")
+        print(f"Error processing question {question_id + 1}: {e}")
         return {
             "answer": "",
-            "thought_process": f"处理错误: {str(e)}",
+            "thought_process": f"Process error: {str(e)}",
             "correct": False,
             "question_id": question_id,
             "error": str(e)
@@ -160,42 +160,42 @@ async def process_one_question_async(student, question_id, question_dict):
 
 async def enhanced_exercise_with_progress(student, questions_file, batch_size=5):
     """
-    增强版异步做题，包含进度显示和错误恢复
+    Enhancement of the stept to do a question, including progress display and error recovery
     """
-    print(f"=== {student.name} 开始做题（增强异步版本）===")
-    
+    print(f"=== {student.name} is starting the enhanced exercise workflow ===")
+
     start_time = time.time()
-    print(f"开始时间: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(start_time))}")
-    
+    print(f"Start Time: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(start_time))}")
+
     try:
-        # 分批处理所有题目
+        # Process all topics in batches
         all_answers = await process_questions_in_batches(student, questions_file, batch_size)
-        
+
         end_time = time.time()
         duration = end_time - start_time
-        
-        # 统计结果
+
+        # Statistical results
         total_questions = len(all_answers)
         correct_answers = sum(1 for answer in all_answers.values() if answer.get('correct', False))
         accuracy_rate = (correct_answers / total_questions) * 100 if total_questions > 0 else 0
-        
-        print(f"\n=== 做题完成 ===")
-        print(f"完成时间: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end_time))}")
-        print(f"总耗时: {duration:.2f} 秒 ({duration/60:.2f} 分钟)")
-        print(f"学生: {student.name}")
-        print(f"总题目数: {total_questions}")
-        print(f"答对题数: {correct_answers}")
-        print(f"正确率: {accuracy_rate:.2f}%")
-        print(f"平均每题耗时: {duration/total_questions:.2f} 秒")
-        
-        # 保存最终结果
+
+        print(f"\n=== It's done ===")
+        print(f"Completion time: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end_time))}")
+        print(f"Total time taken: {duration:.2f} sec ({duration/60:.2f} min)")
+        print(f"Students: {student.name}")
+        print(f"Total questions: {total_questions}")
+        print(f"Number of answers: {correct_answers}")
+        print(f"Correct Rate: {accuracy_rate:.2f}%")
+        print(f"Average time per question: {duration/total_questions:.2f} sec")
+
+        # Save final result
         final_filename = save_exercise_results(student, all_answers, 150)
-        print(f"最终结果已保存到: {final_filename}")
-        
+        print(f"Final result saved to: {final_filename}")
+
         return all_answers
-        
+
     except Exception as e:
-        print(f"做题过程中出现严重错误: {e}")
+        print(f"The exercise workflow failed: {e}")
         import traceback
         traceback.print_exc()
         return {}

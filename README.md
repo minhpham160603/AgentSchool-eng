@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="./README_ZH.md">🇨🇳 中文</a> •
+  <a href="./README_ZH.md">🇨🇳 Chinese</a> •
   <a href="./OBSERVER_GUIDE.md">Observer mode</a> •
   <a href="./TESTING_GUIDE.md">Testing guide</a>
 </p>
@@ -42,6 +42,12 @@
 ## 🎯 Overview
 
 **AgentSchool** is a multi-agent simulation for classroom settings. It models a **teacher** and multiple **students** in a virtual class: lecture-style interaction, evolving memory and cognitive state, exercises, questionnaires, and structured logs for offline analysis. It suits experiments and demos in learning technology, learning sciences, or multi-agent teaching strategies.
+
+The bundled classroom content and default embedding examples are in English. Existing Chinese-language logs, generated reports, and historical data remain unchanged; the `*_ZH.md` guides and source textbook PDF are also retained.
+
+The original question bank contains damaged text represented by `�` (U+FFFD). Unresolved damage remains in `student/data.jsonl`; translation cannot recover missing source text. Check affected questions against their source before using them for scoring.
+
+The long extracted textbook is an English draft and still needs editorial review. It also contains pre-existing transcription errors in some formulas. This translation preserves the source mathematical notation; review it against the source PDF before relying on it for assessment.
 
 ### Use cases
 
@@ -118,8 +124,8 @@ pip install -r student/requirements.txt
 ```bash
 export SCHOOLAGENT_API_KEY="YOUR_API_KEY"
 # Optional: local embedding directory or Hub model id
-# export BGE_MODEL="/path/to/bge-small-zh-v1.5"
-# export BGE_MODEL_L="/path/to/bge-large-zh"
+# export BGE_MODEL="BAAI/bge-small-en-v1.5"
+# export BGE_MODEL_L="BAAI/bge-large-en-v1.5"
 ```
 
 **Windows (PowerShell):**
@@ -144,7 +150,7 @@ To skip the full timetable:
 python eval_only.py
 ```
 
-By default this uses `student/问卷.json` and `student/data.jsonl`; change the constants in the script if needed.
+By default this uses `student/questionnaire.json` and `student/data.jsonl`; change the constants in the script if needed.
 
 ---
 

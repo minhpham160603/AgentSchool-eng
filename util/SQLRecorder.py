@@ -5,7 +5,7 @@ import asyncpg
 from typing import List, Dict, Optional, Any
 from enum import Enum
 
-# 序列化函数（原）
+# Sequenced Functions (original))
 def default_serializer(obj):
     if isinstance(obj, (datetime.date, datetime.datetime)):
         return obj.isoformat()
@@ -19,15 +19,15 @@ def default_serializer(obj):
         return obj.__dict__
     elif hasattr(obj, 'to_dict') and callable(obj.to_dict):
         return obj.to_dict()
-    raise TypeError(f"无法序列化类型: {type(obj)}")
+    raise TypeError(f"Unable to sequence type: {type(obj)}")
 
 def make_json_serializable(data):
-    """递归处理数据，使其可被 JSON 序列化"""
+    """Recursive processing of data to make it possible to JSON Sequenced"""
     if isinstance(data, dict):
         return {k: make_json_serializable(v) for k, v in data.items()}
     elif isinstance(data, (list, tuple)):
         return [make_json_serializable(item) for item in data]
-    # 修复了这里：原代码是 data.to_to_dict，应为 to_dict
+    # Fixed here: The original code is data.to_to_dict,For to_dict
     elif hasattr(data, 'to_dict') and callable(data.to_dict):
         return make_json_serializable(data.to_dict())
     else:
@@ -46,51 +46,51 @@ class Recorder:
         flush_interval: float = 5.0
     ):
         """
-        初始化日志记录器
-        :param dsn: 数据库连接字符串
-        :param session_id: 会话ID（初始化时必须传入）
-        :param course_id: 课程ID（初始化时必须传入）
-        :param frame_id: 当前帧ID（可选，默认0）
-        :param table_name: 数据表名
-        :param batch_size: 批量写入阈值
-        :param flush_interval: 自动刷新间隔（秒）
+        Initialization log recorder
+        :param dsn: Database Connection String
+        :param session_id: Session ID(It must be entered when initializing)
+        :param course_id: Courses ID(It must be entered when initializing)
+        :param frame_id: Current Frame ID(Optional, Default 0)
+        :param table_name: Data Table Name
+        :param batch_size: Batch writing threshold
+        :param flush_interval: Automatically refresh interval (seconds))
         """
         self.dsn = dsn
         self.table_name = table_name
         self.batch_size = batch_size
         self.flush_interval = flush_interval
 
-        # 上下文信息在初始化时传入
+        # Context information entered at initialization
         self._session_id = session_id
         self._course_id = course_id
         self._frame_id = frame_id
 
-        # 缓冲区和连接
+        # Buffer zone and connectivity
         self.buffer: List[tuple] = []
         self.pool: Optional[asyncpg.Pool] = None
         self.flush_task: Optional[asyncio.Task] = None
 
     async def init(self):
-        """初始化数据库连接池和后台刷新任务"""
+        """Initialize database connect pool and backstage refresh jobs"""
         self.pool = await asyncpg.create_pool(self.dsn, min_size=1, max_size=10)
         self.flush_task = asyncio.create_task(self._auto_flush_loop())
 
     async def close(self):
-        """关闭资源：取消定时任务、刷新剩余数据、关闭连接池"""
+        """Close resources: cancel time assignments, refresh remaining data, close connect pool"""
         if self.flush_task:
             self.flush_task.cancel()
             try:
                 await self.flush_task
             except asyncio.CancelledError:
                 pass
-        await self._flush_buffer()  # 确保最后的数据能写入
+        await self._flush_buffer()  # Ensure that final data are written
         if self.pool:
             await self.pool.close()
 
     # setter
     def set_session_id(self, session_id: str):
         self._session_id = session_id
-        return self  # 支持链式调用
+        return self  # Support chain call
 
     def set_course_id(self, course_id: str):
         self._course_id = course_id
@@ -102,7 +102,7 @@ class Recorder:
 
     async def student_log(self, details: Dict[str, Any], log_time: Optional[datetime.datetime] = None):
         """
-        记录学生状态日志
+        Record student status log
         """
         name = details.get("name")
         stress = details.get("stress")
@@ -111,7 +111,7 @@ class Recorder:
         learned = details.get("learned")
         reflection = details.get("reflection", {})
 
-        # 序列化 reflection 为 JSON 字符串
+        # Sequenced reflection Yes JSON String
         reflection_str = json.dumps(
             make_json_serializable(reflection),
             ensure_ascii=False,
@@ -143,9 +143,9 @@ class Recorder:
 
     async def action_log(self, details: Dict[str, Any], log_time: Optional[datetime.datetime] = None):
         """
-        记录动作日志（如 listen, raise_hand）
+        Record action logs listen, raise_hand)
         """
-        character = details.get("student")  # 注意：输入是 "student": "StudentA"
+        character = details.get("student")  # Note: The input is "student": "StudentA"
         action = details.get("action")
 
         record = (
@@ -173,7 +173,7 @@ class Recorder:
 
     async def broadcast_log(self, details: Dict[str, Any], log_time: Optional[datetime.datetime] = None):
         """
-        记录广播消息日志（如发言、系统通知）
+        Recording of broadcast news logs (e.g., statements, system announcements))
         """
         speaker = details.get("speaker")
         receiver = details.get("receiver")
@@ -181,7 +181,7 @@ class Recorder:
         active_event = details.get("active_event")
         content = details.get("content")
 
-        # 推断 character：优先 speaker
+        # Inference character:Priority speaker
         character = speaker
 
         record = (
@@ -207,7 +207,7 @@ class Recorder:
         if len(self.buffer) >= self.batch_size:
             await self._flush_buffer()
 
-    #  批量写入与定时刷新
+    #  Batch Write and Time Refresh
     async def _flush_buffer(self):
         if not self.buffer:
             return
@@ -228,7 +228,7 @@ class Recorder:
                 )
             self.buffer.clear()
         except Exception as e:
-            print(f"批量写入失败: {e}")
+            print(f"Batch writing failed: {e}")
 
     async def _auto_flush_loop(self):
         while True:

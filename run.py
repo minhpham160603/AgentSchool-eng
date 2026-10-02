@@ -17,7 +17,7 @@ from student.exercise import *
 from student.evaluate import *
 
 
-# 日志重定向类
+# Tee output to both the terminal and the log file.
 class Tee:
     def __init__(self, file):
         self.file = file
@@ -43,12 +43,12 @@ def initialize_students_from_config(config_dir, broadcast_system, recorder):
                 with open(file_path, "r", encoding="utf-8") as f:
                     config = json.load(f)
             except Exception as e:
-                print(f"无法加载文件 {filename}: {e}")
+                print(f"Could not load file {filename}: {e}")
                 continue
 
             folder_path = config.get("folder")
             if not folder_path:
-                print(f"警告：{filename} 缺少 folder 字段，跳过。")
+                print(f"Warning: {filename} is missing the 'folder' field; skipping.")
                 continue
 
             os.makedirs(folder_path, exist_ok=True)
@@ -65,7 +65,7 @@ def initialize_students_from_config(config_dir, broadcast_system, recorder):
 
             student_name = config.get("name")
             if not student_name:
-                print(f"警告：{filename} 缺少 name 字段，跳过实例化。")
+                print(f"Warning: {filename} is missing the 'name' field; skipping.")
                 continue
 
             student_instance = Student(
@@ -75,11 +75,11 @@ def initialize_students_from_config(config_dir, broadcast_system, recorder):
                 folder_mem_saved=folder_path
             )
             students[student_name] = student_instance
-            print(f"已处理学生：{student_name}，文件保存在：{folder_path}")
+            print(f"Initialized student {student_name}; state directory: {folder_path}")
     return students
 
 
-# 全局变量
+# Global Variables
 log_file = None
 action_recorder = None
 broadcast_recorder = None
@@ -107,43 +107,43 @@ def switch_log_file(event_id=None):
         student_recorder.set_file_path(f"{current_log_dir}/student_log.jsonl")
 
 
-# 学生反馈任务的异步包装函数
+# Run one student feedback task with error handling.
 async def student_feedback(student, feedback_type, feedback_func, file, postfix):
-    print(f"{student.name} 开始{feedback_type}。")
+    print(f"{student.name}: starting {feedback_type}.")
     try:
         await feedback_func(student, file, postfix)
-        print(f"{student.name} 完成{feedback_type}。")
+        print(f"{student.name}: completed {feedback_type}.")
     except Exception as e:
-        print(f"错误: {student.name} 的{feedback_type}失败: {str(e)}")
+        print(f"Error: {student.name}'s {feedback_type} failed: {e}")
 
 
-# ========== 观察者功能 ==========
+# ========== Observer function ==========
 
 async def observer_command_listener(pause_flag, command_file="observer_cmd.json"):
     """
-    监听观察者命令文件的变化
+    Listen for observer commands in the command file.
     
     Args:
-        pause_flag: 暂停标志字典
-        command_file: 命令文件路径
+        pause_flag: Mutable observer state.
+        command_file: Path to the observer command file.
     """
-    last_modified = 0  # 保留但不强依赖 mtime（兼容某些编辑器保存不更新时间戳的问题）
+    last_modified = 0  # Retained for compatibility; command detection uses last_command.
     
-    # 创建初始命令文件并提供说明
+    # Create initial command file and provide instructions
     command_template = {
         "command": "",
-        "info": "在此文件中输入命令",
+        "info": "Set the command field and save this file to send a command.",
         "available_commands": {
-            "pause": "暂停仿真",
-            "resume": "继续仿真",
-            "status": "查看当前状态",
-            "intervene": "打断并调整教学计划（需配合intervention字段）",
-            "rollback": "回溯到第k轮（需配合rollback字段）",
-            "exit": "退出仿真"
+            "pause": "Pause after the current round",
+            "resume": "Resume the simulation",
+            "status": "Print the current simulation state",
+            "intervene": "Request a teaching-plan adjustment (stub)",
+            "rollback": "Restore teacher state from a saved round",
+            "exit": "Stop the simulation"
         },
         "example": {
             "command": "pause",
-            "note": "保存此文件后命令会立即生效"
+            "note": "The command takes effect after you save this file."
         }
     }
     
@@ -153,30 +153,30 @@ async def observer_command_listener(pause_flag, command_file="observer_cmd.json"
     
     command_file_abs = os.path.abspath(command_file)
     print(f"\n{'='*70}")
-    print(f"📝 [观察者模式] 已启动")
+    print(f"📝 [Observer Mode] Started")
     print(f"{'='*70}")
-    print(f"命令文件: {command_file_abs}")
-    print(f"\n可用命令:")
-    print(f"  • pause     - 暂停仿真")
-    print(f"  • resume    - 继续仿真")
-    print(f"  • status    - 查看当前状态")
-    print(f"  • intervene - 打断并调整教学计划（预留接口）")
-    print(f"  • rollback  - 回溯到第k轮（需在JSON中提供rollback.turn与可选class）")
-    print(f"  • exit      - 退出仿真")
-    print(f"\n使用方法: 编辑 {command_file} 文件，修改 'command' 字段并保存")
+    print(f"Command File: {command_file_abs}")
+    print(f"\nAvailable commands:")
+    print(f"  • pause     - Pause after the current round")
+    print(f"  • resume    - Resume the simulation")
+    print(f"  • status    - Print the current simulation state")
+    print(f"  • intervene - Request a teaching-plan adjustment (stub)")
+    print(f"  • rollback  - Restore teacher state from a saved round")
+    print(f"  • exit      - Stop the simulation")
+    print(f"\nTo send a command, edit {command_file}, set the 'command' field, and save.")
     print(f"{'='*70}\n")
     
     while True:
         try:
             if os.path.exists(command_file):
-                # 不再依赖 mtime，直接读取并基于 last_command 去抖
+                # Read the file and deduplicate commands using last_command.
                 with open(command_file, 'r', encoding='utf-8') as f:
                     command_data = json.load(f)
                 command = command_data.get("command", "").strip().lower()
                 
                 if command and command != pause_flag.get("last_command"):
                     print(f"\n{'='*70}")
-                    print(f"📝 [观察者] 收到命令: {command}")
+                    print(f"📝 [Observer] Received command: {command}")
                     print(f"{'='*70}")
                     
                     pause_flag["command"] = command
@@ -184,81 +184,79 @@ async def observer_command_listener(pause_flag, command_file="observer_cmd.json"
                     
                     if command == "pause":
                         pause_flag["paused"] = True
-                        print(f"⏸️  仿真将在当前轮次结束后暂停...\n")
+                        print(f"⏸️  The simulation will pause after the current round...\n")
                     elif command == "resume":
                         pause_flag["paused"] = False
-                        print(f"▶️  仿真继续...\n")
+                        print(f"▶️  Resuming the simulation...\n")
                     elif command == "status":
                         pause_flag["show_status"] = True
-                    elif command == "intervene":
                         pause_flag["paused"] = True
                         pause_flag["intervention"] = command_data.get("intervention", {})
-                        print(f"🔧 [预留功能] 打断干预已接收，等待处理...\n")
-                    elif command == "rollback":
+                        print(f"🔧 [Stub] Intervention received and awaiting processing...\n")
                         pause_flag["paused"] = True
                         pause_flag["rollback"] = command_data.get("rollback", {})
-                        print(f"🔙 回溯指令已接收，等待处理...\n")
+                        print(f"🔙 Rollback command received and awaiting processing...\n")
                     elif command == "exit":
                         pause_flag["exit"] = True
-                        print(f"🛑 正在优雅退出仿真...\n")
+                        print(f"🛑 Shutting down the simulation cleanly...\n")
                         break
                     
-                    # 清空命令文件，防止重复触发
+                    # Empty command file to prevent repetition of triggers
                     with open(command_file, 'w', encoding='utf-8') as f:
                         json.dump({
                             "command": "",
-                            "info": "命令已处理",
+                            "info": "Command processed",
                             "last_executed": command,
                             "timestamp": datetime.now().isoformat(),
                             "available_commands": command_template["available_commands"]
                         }, f, indent=2, ensure_ascii=False)
             
-            await asyncio.sleep(0.5)  # 每0.5秒检查一次
+            await asyncio.sleep(0.5)  # Poll every 0.5 seconds.
             
         except json.JSONDecodeError:
-            # JSON格式错误，跳过
+            # Ignore malformed JSON while the file is being written.
             await asyncio.sleep(1)
         except Exception as e:
-            print(f"[错误] 文件监听异常: {e}")
+            print(f"[Error] Observer command listener failed: {e}")
             await asyncio.sleep(1)
 
 
 def show_simulation_status(teacher, students, time_manager, runtime_snapshot=None):
-    """显示当前仿真状态"""
+    """Print the current simulation state."""
     print(f"\n{'='*70}")
-    print(f"📊 当前仿真状态")
+    print(f"📊 Current Simulation Status")
     print(f"{'='*70}")
     
-    # 时间信息
+    # Time information
     current_time = time_manager.current_time
-    print(f"\n⏱️  时间信息:")
-    print(f"  • 当前时间: {current_time.strftime('%Y-%m-%d %H:%M:%S %A')}")
+    print(f"\n⏱️  Time Information:")
+    print(f"  • Current Time: {current_time.strftime('%Y-%m-%d %H:%M:%S %A')}")
     current_event = time_manager.get_current_active_event()
-    print(f"  • 当前事件: {current_event.type} (ID: {current_event.id})")
+    print(f"  • Current Event: {current_event.type} (ID: {current_event.id})")
     
-    # 教师信息
-    print(f"\n👨‍🏫 教师状态:")
-    print(f"  • 姓名: {teacher.name}")
-    print(f"  • 课程进度: 第 {teacher.class_number} 节课")
-    print(f"  • 教学阶段: {teacher.period}")
-    print(f"  • 当前轮次: {teacher.current_turn}/{teacher.class_turns}")
+    # Teacher information
+    print(f"\n👨‍🏫 Teacher status:")
+    print(f"  • Name: {teacher.name}")
+    print(f"  • Lesson: {teacher.class_number}")
+    print(f"  • Teaching phase: {teacher.period}")
+    print(f"  • Round: {teacher.current_turn}/{teacher.class_turns}")
     
-    # 显示当前教学内容（截断过长内容）
-    content = teacher.content if hasattr(teacher, 'content') else "无"
+    # Truncate long teaching content for display.
+    content = teacher.content if hasattr(teacher, 'content') else "No teaching content available."
     if len(content) > 100:
         content = content[:100] + "..."
-    print(f"  • 当前内容: {content}")
-    # 教师上一动作（若有）
+    print(f"  • Current content: {content}")
+    # Show the teacher's last action, if available.
     if runtime_snapshot and isinstance(runtime_snapshot, dict):
         teacher_snap = runtime_snapshot.get("teacher", {})
         last_action = teacher_snap.get("action")
         if last_action:
-            print(f"  • 上一动作: {last_action}")
+            print(f"  • Previous Actions: {last_action}")
     
-    # 学生信息
-    print(f"\n👥 学生状态:")
+    # Student information
+    print(f"\n👥 Student status:")
     for student_name, student in students.items():
-        # 优先使用 attention_level，其次回退到 attention
+        # Prefer attention_level, falling back to attention.
         attention = getattr(student.scratch, 'attention_level', None)
         if attention is None:
             attention = getattr(student.scratch, 'attention', 0.0)
@@ -271,24 +269,24 @@ def show_simulation_status(teacher, students, time_manager, runtime_snapshot=Non
             action = snap.get("action", action) or ""
         print(f"  • {student_name}:")
         try:
-            print(f"      - 注意力: {float(attention):.2f}")
+            print(f"      - Attention: {float(attention):.2f}")
         except Exception:
-            print(f"      - 注意力: {attention}")
-        print(f"      - 当前行为: {action}")
-        print(f"      - 记忆节点数: {len(student.mem.seq_thought) + len(student.mem.seq_knowledge)}")
+            print(f"      - Attention: {attention}")
+        print(f"      - Current action: {action}")
+        print(f"      - Memory nodes: {len(student.mem.seq_thought) + len(student.mem.seq_knowledge)}")
     
     print(f"\n{'='*70}\n")
 
 
 async def handle_observer_intervention(pause_flag, teacher, students, time_manager, runtime_snapshot=None):
     """
-    处理观察者干预（预留接口）
+    Process observer status, intervention, and rollback commands.
     
     Args:
-        pause_flag: 暂停标志字典
-        teacher: 教师实例
-        students: 学生字典
-        time_manager: 时间管理器
+        pause_flag: Mutable observer state.
+        teacher: Teacher instance.
+        students: Student dictionary
+        time_manager: Simulation time manager.
     """
     command = pause_flag.get("command")
     
@@ -296,20 +294,19 @@ async def handle_observer_intervention(pause_flag, teacher, students, time_manag
         show_simulation_status(teacher, students, time_manager, runtime_snapshot)
         pause_flag["show_status"] = False
         pause_flag["command"] = None
-        
     elif command == "intervene":
-        # 调用教师的观察者干预处理方法
+        # Call the teacher's observer intervention hook.
         intervention_data = pause_flag.get("intervention", {})
         
         print(f"\n{'='*70}")
-        print(f"🔧 [观察者干预] 正在处理...")
+        print(f"🔧 [Observer intervention] Processing...")
         print(f"{'='*70}")
-        print(f"干预内容: {json.dumps(intervention_data, indent=2, ensure_ascii=False)}")
+        print(f"Intervention payload: {json.dumps(intervention_data, indent=2, ensure_ascii=False)}")
         
-        # 调用教师的预留接口
+        # Call the teacher intervention hook.
         response = await teacher.handle_observer_intervention(intervention_data)
         
-        print(f"\n🤖 教师响应: {response}")
+        print(f"\n🤖 Teacher response: {response}")
         print(f"{'='*70}\n")
         
         pause_flag["intervention"] = None
@@ -320,16 +317,16 @@ async def handle_observer_intervention(pause_flag, teacher, students, time_manag
         turn = rollback_data.get("turn") or rollback_data.get("k")
         cls = rollback_data.get("class") or teacher.class_number
         print(f"\n{'='*70}")
-        print(f"🔙 [回溯] 正在尝试回溯到: 第{cls}节 第{turn}轮")
+        print(f"🔙 [Rollback] Restoring lesson {cls}, round {turn}")
         print(f"{'='*70}")
         try:
             if turn is None:
-                raise ValueError("缺少 rollback.turn")
+                raise ValueError("Missing rollback.turn")
             turn = int(turn)
             cls = int(cls)
             status_file = os.path.join(teacher.status_file_dirname, f"status_{cls}_{turn}.json")
             if not os.path.exists(status_file):
-                raise FileNotFoundError(f"状态文件不存在: {status_file}")
+                raise FileNotFoundError(f"Status file does not exist: {status_file}")
             ok = teacher.jump(status_file)
             if ok:
                 runtime_snapshot["teacher"] = {
@@ -337,24 +334,24 @@ async def handle_observer_intervention(pause_flag, teacher, students, time_manag
                     "turn": teacher.current_turn,
                     "content": getattr(teacher, "content", "")
                 }
-                print(f"✅ 已回溯到状态文件: {status_file}")
-                print(f"⚠️ 提示: 回溯仅恢复教师状态，学生状态未回滚")
-                # 回溯后自动重生成剩余计划（不改变已执行部分）
+                print(f"✅ Restored teacher state from checkpoint: {status_file}")
+                print(f"⚠️ Rollback restores teacher state only; student state is unchanged.")
+                # Autoregeneration of residual plan after retroactive (no change in implemented part))
                 try:
                     msg = teacher.regenerate_remaining_plan()
                     print(f"🧠 {msg}")
                 except Exception as e2:
-                    print(f"⚠️ 重生成剩余计划失败: {e2}")
+                    print(f"⚠️ Could not recreate the remaining teaching plan: {e2}")
         except Exception as e:
-            print(f"❌ 回溯失败: {e}")
+            print(f"❌ Rollback failed: {e}")
         finally:
             pause_flag["rollback"] = None
             pause_flag["command"] = None
-            # 回溯完成后自动继续运行（取消暂停）
+            # Continue automatically after retroactive completion (cancelled pause))
             if pause_flag.get("paused", False):
                 pause_flag["paused"] = False
                 print(f"\n{'='*70}")
-                print(f"▶️  回溯完成，自动继续仿真")
+                print(f"▶️  Rollback complete. Resuming the simulation.")
                 print(f"{'='*70}\n")
 
 
@@ -364,36 +361,36 @@ async def main():
     base_log_dir = f'logs/{timestamp}'
     sim_wall_start = time.time()
 
-    # 初始化系统组件
+    # Initialise System Component
     action_recorder = Recorder("")
     broadcast_recorder = Recorder("")
     student_recorder = Recorder("")
     broadcast_system = BroadcastSys(broadcast_recorder)
 
-    # 时间管理器
+    # Time Manager
     time_manager = TimeManager(
         daily_schedule_path="config/schedule.json",
         broadcast_system=broadcast_system,
         day_start_time="08:00"
     )
 
-    # 初始日志设置
+    # Initial Log Settings
     course_id = 1
     switch_log_file(course_id)
-    print(f"日志开始记录，初始目录：{base_log_dir}/{course_id}")
+    print(f"Logging started. Initial directory: {base_log_dir}/{course_id}")
 
-    # 初始化学生和教师
+    # Initialization students and teachers
     students = initialize_students_from_config("config/student", broadcast_system, student_recorder)
     teacher = await Teacher.initialize_teacher_async(broadcast_system, "config/teacher.json", list(students.values()))
 
-    # 订阅广播系统
+    # Subscription to broadcast systems
     broadcast_system.subscribe(teacher, "teacher")
     for student_name in students:
         student = students[student_name]
         broadcast_system.subscribe(student, "student")
         broadcast_system.subscribe(student, student_name)
 
-    # ========== 启动观察者功能 ==========
+    # ========== Activate observer function ==========
     pause_flag = {
         "paused": False,
         "command": None,
@@ -405,79 +402,79 @@ async def main():
     }
     runtime_snapshot = {"teacher": {}, "students": {}}
     
-    # 启动观察者命令监听任务（与主循环并发运行）
+    # Start an observer command listening mission (recycling with main))
     observer_task = asyncio.create_task(
         observer_command_listener(pause_flag, command_file="observer_cmd.json")
     )
 
-    # 主循环
-    print("===== 教学场景模拟开始 =====")
+    # Main cycle
+    print("===== Pedagogical scene simulation begins =====")
     finished_courses = 0
-    # 新增：修改了主循环逻辑
+    # Add: modified main cycle logic
     while finished_courses < time_manager.total_courses:
-        # ========== 检查观察者命令 ==========
-        # 检查退出标志
+        # ========== Check observer orders ==========
+        # Check exit signs
         if pause_flag.get("exit", False):
             print(f"\n{'='*70}")
-            print(f"🛑 [观察者] 收到退出指令，仿真终止")
+            print(f"🛑 [Observer] Exit command received. Stopping the simulation.")
             print(f"{'='*70}\n")
             observer_task.cancel()
             break
         
-        # 检查暂停标志
+        # Check the pause sign
         if pause_flag.get("paused", False):
             print(f"\n{'='*70}")
-            print(f"⏸️  [观察者] 仿真已暂停")
+            print(f"⏸️  [Observer] Simulation Paused")
             print(f"{'='*70}")
             
-            # 显示当前状态（使用快照填充可能缺失的信息）
+            # Show current status (fill information that may be missing with a snapshot))
             show_simulation_status(teacher, students, time_manager, runtime_snapshot)
             
-            print(f"💡 提示: 编辑 observer_cmd.json 文件，设置 'command': 'resume' 以继续")
-            print(f"         或设置 'command': 'status' 查看最新状态")
+            print(f"💡 Edit observer_cmd.json and set 'command': 'resume' to continue.")
+            print(f"   Or set 'command': 'status' to view the current state.")
             print(f"{'='*70}\n")
             
-            # 等待恢复命令
+            # Waiting for resumption order
             while pause_flag.get("paused", False) and not pause_flag.get("exit", False):
-                # 处理其他命令（如status、intervene、rollback）
+                # Treatment of other orders (e.g status,intervene,rollback)
                 if pause_flag.get("show_status", False) or pause_flag.get("command") in ["status", "intervene", "rollback"]:
                     await handle_observer_intervention(pause_flag, teacher, students, time_manager, runtime_snapshot)
                 
                 await asyncio.sleep(0.5)
             
-            # 检查是否在暂停期间收到退出命令
+            # Check for withdrawal orders received during suspension
             if pause_flag.get("exit", False):
                 continue
             
             print(f"\n{'='*70}")
-            print(f"▶️  [观察者] 仿真继续")
+            print(f"▶️  [Observer] Simulation resumed")
             print(f"{'='*70}\n")
         
-        # 处理非暂停状态下的status/rollback/干预命令
+        # Deal with non-suspension status/rollback/Intervention orders
         if pause_flag.get("show_status", False) or pause_flag.get("command") in ["status", "intervene", "rollback"]:
             await handle_observer_intervention(pause_flag, teacher, students, time_manager, runtime_snapshot)
         
         current_date = time_manager.current_time.date()
-        print(f"\n=== 日期: {current_date} {current_date.strftime('%A')} ===")
+        print(f"\n=== Date: {current_date} {current_date.strftime('%A')} ===")
 
         while True:
             current_time = time_manager.current_time
-            print(f"\n时间: {current_time.strftime('%H:%M:%S')}")
+            print(f"\n Time: {current_time.strftime('%H:%M:%S')}")
 
-            # 即时退出检查（内层循环）
+            # Instant exit check (intracycle))
             if pause_flag.get("exit", False):
                 break
 
             current_event = time_manager.get_current_active_event()
 
-            # 小组讨论处理
+            # Panel discussion
             if current_event.type == "class":
-                # 教师行为
+                # Teacher behaviour
                 teacher_action = teacher.move()
                 print(teacher_action)
                 await action_recorder.log(current_time, "teacher_action",
                                   {"teacher": teacher.name, "action": teacher_action})
-                # 更新教师快照
+                # Update teacher snapshots
                 runtime_snapshot["teacher"] = {
                     "action": teacher_action,
                     "turn": teacher.current_turn,
@@ -510,20 +507,20 @@ async def main():
                     teacher.broadcast_sys.publish_sync(leader_student.name, msg)
                     print(msg)
 
-                # 学生行为（异步并发）
+                # Student behaviour (sliding together))
                 for student in students.values():
                     student.update_students_list(list(students.values()))
 
                 tasks = [student.move() for student in students.values()]
                 student_actions = await asyncio.gather(*tasks)
 
-                # 记录学生行为
+                # Recording student behaviour
                 for student, action in zip(students.values(), student_actions):
                     if action:
                         print(action)
                         await action_recorder.log(current_time, "student_action",
                                                   {"student": student.name, "action": action})
-                    # 更新学生快照
+                    # Update student snapshots
                     runtime_snapshot["students"][student.name] = {
                         "action": action or "",
                         "attention": (
@@ -533,10 +530,10 @@ async def main():
                         )
                     }
 
-            # 课程结束处理
+            # Course completion
             if current_event.end == current_time:
                 overtime_minutes = teacher.delay_turns()
-                # 新增：其实不是新增，这里设置了最久只能拖堂9分钟，想修改在这里，但不要超过课间时长
+                # New: It's not really new. It's the longest set-up we've got 9 Minutes, trying to change here, but not longer than the class
                 if overtime_minutes >= 10:
                     overtime_minutes = 9
 
@@ -553,17 +550,17 @@ async def main():
                         target_file.write(teacher.target)
 
                     # print("=" * 60)
-                    # print("当前课程结束，进行学生反馈环节用于评教")
+                    # print("At the end of the current course, the student feedback is used for the evaluation")
                     # postfix = f"{timestamp}_{current_event.id}"
 
-                    # 异步执行所有学生的反馈任务
+                    # Step-by-step on all student feedback
                     # feedback_tasks = []
                     # for student in students.values():
-                    #     # 添加做题任务
+                    #     # Add Questions
                     #     exercise_task = asyncio.create_task(
                     #         student_feedback(
                     #             student,
-                    #             "做题",
+                    #             "It's a question",
                     #             exercise,
                     #             "student/data.jsonl",
                     #             postfix
@@ -571,44 +568,44 @@ async def main():
                     #     )
                     #     feedback_tasks.append(exercise_task)
                     #
-                    #     # 添加问卷任务
+                    #     # Add a questionnaire task
                     #     evaluate_task = asyncio.create_task(
                     #         student_feedback(
                     #             student,
-                    #             "问卷",
+                    #             "Questionnaire",
                     #             evaluate,
-                    #             "student/问卷.json",
+                    #             "student/questionnaire.json",
                     #             postfix
                     #         )
                     #     )
                     #     feedback_tasks.append(evaluate_task)
                     #
-                    # # 并发执行所有反馈任务
+                    # # And sent all the feedback missions
                     # await asyncio.gather(*feedback_tasks)
 
                     simulation_end = False
-                    # 新增：检查课程是否上完
+                    # Add: Check for completion of course
                     finished_courses += 1
 
-                    # 更新所有学生的课程编号
+                    # Update the curriculum number of all students
                     for student in students.values():
                         student.set_for_new_class()
                     
                     print(f"=" * 60)
-                    print(f"课程 {finished_courses} 结束 (编号: {finished_courses - 1})")
-                    print(f"学生状态已保存到: student/saving/{{StudentName}}/{current_time.strftime('%Y%m%d')}_{finished_courses - 1}/")
+                    print(f"Lesson {finished_courses} ended (index: {finished_courses - 1})")
+                    print(f"Student state saved to: student/saving/{{StudentName}}/{current_time.strftime('%Y%m%d')}_{finished_courses - 1}/")
                     print(f"=" * 60)
                     
 
                     if finished_courses >= time_manager.total_courses:
                         simulation_end = True
-                        break  # 跳出内层循环
+                        break  # Jump out of inner circle
 
                     course_id += 1
                     switch_log_file(course_id)
-                    print(f"日志已切换至新目录：{base_log_dir}/{course_id}")
+                    print(f"Log directory changed to: {base_log_dir}/{course_id}")
 
-                    # 检查今天是否还有后续课程
+                    # Check if there's any follow-up today
                     remaining_today_classes = [
                         e for e in time_manager.events
                         if e.type == "class" and not e.parent_event_id
@@ -616,19 +613,19 @@ async def main():
                             and e.start > current_time
                     ]
                     if not remaining_today_classes:
-                        print(f"[INFO] {current_date} 的课程已全部结束，进入下一天。")
-                        break  # 跳出内层循环
+                        print(f"[INFO] No more classes are scheduled for {current_date}.")
+                        break  # Jump out of inner circle
 
-            # === 在推进时间前处理软暂停：先完成当前轮次，再暂停 ===
+            # === Deal with soft pauses before advance time: finish the current rotation before suspending ===
             if pause_flag.get("paused", False):
                 print(f"\n{'='*70}")
-                print(f"⏸️  [观察者] 仿真已暂停（当前轮次已完成）")
+                print(f"⏸️  [Observer] Simulation paused after the current round.")
                 print(f"{'='*70}")
 
-                # 展示此刻的最新状态（包含本轮 teacher/student 行为结果）
+                # Shows the latest status of the moment (includes current round) teacher/student Outcome of behaviour)
                 show_simulation_status(teacher, students, time_manager, runtime_snapshot)
-                print(f"💡 提示: 编辑 observer_cmd.json 文件，设置 'command': 'resume' 以继续")
-                print(f"         或设置 'command': 'status' 查看最新状态")
+                print(f"💡 Edit observer_cmd.json and set 'command': 'resume' to continue.")
+                print(f"   Or set 'command': 'status' to view the current state.")
                 print(f"{'='*70}\n")
 
                 while pause_flag.get("paused", False) and not pause_flag.get("exit", False):
@@ -640,24 +637,24 @@ async def main():
                     break
 
                 print(f"\n{'='*70}")
-                print(f"▶️  [观察者] 仿真继续")
+                print(f"▶️  [Observer] Simulation resumed")
                 print(f"{'='*70}\n")
 
-            # 时间推进
+            # Time advance
             time_manager.current_time += timedelta(seconds=time_manager.round_time)
-            await asyncio.sleep(0.1)  # 异步等待
+            await asyncio.sleep(0.1)  # Waiting for a walk
 
-        # 新增：检查课程是否上完
+        # Add: Check for completion of course
         if simulation_end:
-            break   # 结束模拟
+            break   # End simulation
 
-        # 进入下一天
+        # Go to the next day
         time_manager.proceed_to_next_day()
 
-    # ========== 仿真结束清理 ==========
-    print("\n===== 模拟完成 =====")
+    # ========== Simulate Cleanup ==========
+    print("\n===== Simulation complete =====")
     
-    # 取消观察者任务
+    # Cancel Observer Task
     if not observer_task.cancelled():
         observer_task.cancel()
         try:
@@ -666,9 +663,9 @@ async def main():
             pass
     
     sim_wall_cost = time.time() - sim_wall_start
-    print(f"[TIME] 仿真总耗时: {sim_wall_cost:.2f}s")
+    print(f"[TIME] Simulation duration: {sim_wall_cost:.2f}s")
     print(f"\n{'='*70}")
-    print(f"✅ 仿真已正常结束")
+    print(f"✅ Simulation completed.")
     print(f"{'='*70}\n")
 
 

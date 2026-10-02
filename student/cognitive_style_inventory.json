@@ -1,0 +1,53 @@
+{
+  "scales": [
+    {
+      "category": "Cognitive style inventory",
+      "explanation": "Allinson and Hayes (1996), 38 items: intuitive versus analytical style.",
+      "rating": {
+        "forward_items": "Yes=2, Uncertain=1, No=0",
+        "reverse_items": "Yes=0, Uncertain=1, No=2",
+        "notation": "Items marked with * are reverse-scored."
+      },
+      "questions": [
+        "Based on my past experience, thinking rationally is the most practical and workable way to make decisions.",
+        "When solving a problem, I learn about all of its relevant details.",
+        "I work more efficiently when I clearly understand the procedures and requirements.",
+        "I find it difficult to work with people who act before understanding the task.",
+        "I carefully follow the requirements and rules while working.",
+        "I do not act hastily when I am unsure about something.",
+        "*When reading articles or browsing information, I usually skim to understand the main idea.",
+        "My understanding of a problem usually comes from thorough analysis rather than momentary intuition.",
+        "I try to organize my work into a clear sequence.",
+        "I like work with clear steps and a logical structure.",
+        "I rarely make decisions without thinking.",
+        "*I prefer activities without restrictive rules.",
+        "*If I have enough time, I consider different possibilities from various perspectives.",
+        "*I think avoiding hurt feelings is important for completing work smoothly.",
+        "I think the best approach is to break a problem into smaller parts and understand each part separately.",
+        "I think carefully analyzing details when making decisions wastes too much time.",
+        "I think carefully understanding possible risks before doing something is helpful.",
+        "I think tasks should be handled in an organized and systematic way whenever possible.",
+        "Before reaching a conclusion, I learn about every detail.",
+        "*I usually make decisions intuitively.",
+        "I think being careful is better than failing because of hasty action.",
+        "Before making a decision, I fully consider all factors that could affect the outcome.",
+        "*I prefer spending time with easygoing people who listen to others' ideas.",
+        "*I prefer an unpredictable life to an unchanging routine.",
+        "Most people around me consider me a logical thinker.",
+        "I need detailed explanations to fully understand things.",
+        "*Working with self-motivated people makes work most efficient.",
+        "I am satisfied with work that is explained in detail, clearly, and in an organized way.",
+        "When solving a problem, I focus on one part at a time.",
+        "*I am always looking for new experiences in life.",
+        "*I speak more often in meetings than I normally do.",
+        "*My intuition is the best basis for making decisions.",
+        "*I do not worry about minor details.",
+        "*Once I make a decision, I act immediately rather than waiting to analyze every detail.",
+        "*I am always ready to accept challenges and take risks.",
+        "*Rule-based, orderly planning does not necessarily help me at work.",
+        "*I am used to thinking abstractly.",
+        "*I find work that requires careful analysis exhausting."
+      ]
+    }
+  ]
+}

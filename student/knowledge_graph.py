@@ -1,36 +1,36 @@
-"""Knowledge Graph (轻量内存版)
+"""Knowledge Graph (Light Memory Version)
 =================================
-用于管理学生-概念-题目-掌握度。后续可替换成 Neo4j / SQLite / 图数据库。
+For managing students-Concept-questions-mastery Neo4j / SQLite / Figure database。
 
-核心功能:
-1. 概念/题目/学生注册
-2. 题目与概念(多权重)关联
-3. 记录作答 Attempt 并更新 mastery (掌握度 p∈(0,1))
-4. 指数遗忘衰减 + Logistic 增量更新 + streak 调整稳定度
-5. 简单推荐（找中等掌握度或低覆盖概念）
-6. JSON 持久化（可选调用）
+Core functions:
+1. Concept/questions/Student registration
+2. Titles and concepts(Polyweight)Association
+3. Record answers Attempt and update mastery (Ownership p∈(0,1))
+4. Index forgotten decline + Logistic Incremental Update + streak Adjust stability
+5. Simple recommendations (see medium mastery or low coverage concepts)）
+6. JSON Endurance (optional callable)）
 
-后续可扩展:
-- 引入 BKT / Elo / Performance Factor 模型
-- 针对 Exercise 设置动态难度
-- 添加资源(Lesson)覆盖关系
-- 多学生群体统计、概念合并/拆分版本控制
+Follow-up could be extended:
+- Introduction BKT / Elo / Performance Factor Model
+- Targeted Exercise Set dynamic difficulty
+- Add Resource(Lesson)Overwrite Relationships
+- Multi-student group statistics, conceptual consolidation/Split Version Control
 
-使用示例:
+Use Example:
 -----------
 from student.knowledge_graph import kg
 kg.add_student('S1')
-kg.add_concept('fractions-basic', name='分数基础')
-kg.add_concept('fraction-add', name='分数加法')
+kg.add_concept('fractions-basic', name='Score base')
+kg.add_concept('fraction-add', name='Plus')
 kg.link_prerequisite('fractions-basic', 'fraction-add', weight=0.8)
 kg.add_exercise('ex1', concepts={'fractions-basic':1.0}, difficulty=0.4)
 kg.record_attempt('S1', 'ex1', correct=True, time_spent=32)
 print(kg.get_mastery('S1', 'fractions-basic'))
 print(kg.recommend_concepts('S1'))
 
-注意:
-- 本文件为无依赖纯 Python 结构，适合快速集成与迭代。
-- 多线程下请在外层加锁；当前未做线程安全。
+Attention:
+- This document is pure without dependence Python Structure appropriate for rapid integration and iterative。
+- Under multiple threads, please place locks on the outer layer; no threads are currently secure。
 """
 from __future__ import annotations
 
@@ -49,7 +49,7 @@ import re
 
 
 # =============================
-# 数据类定义
+# Data class definitions
 # =============================
 @dataclass
 class Concept:
@@ -62,7 +62,7 @@ class Concept:
 @dataclass
 class Exercise:
     id: str
-    difficulty: float = 0.5  # 0~1 中心 0.5
+    difficulty: float = 0.5  # 0~1 Centre 0.5
     concepts: Dict[str, float] = field(default_factory=dict)  # concept_id -> weight
     metadata: Dict[str, Any] = field(default_factory=dict)
 
@@ -86,42 +86,42 @@ class MasteryRecord:
     student_id: str
     concept_id: str
     concept_name: str
-    misconceptions: List[str] = field(default_factory=list) # 迷思
-    p: float = 0.3                 # 初始掌握度 (可配置)
+    misconceptions: List[str] = field(default_factory=list) # Myths
+    p: float = 0.3                 # Initial mastery (Configureable)
     last_update: float = field(default_factory=lambda: time.time())
-    stability: float = 0.0         # 反映长期巩固程度
-    streak: int = 0                # 连续正确计数
-    decay_lambda: float = 0.04     # 遗忘率(天)
+    stability: float = 0.0         # Reflects long-term consolidation
+    streak: int = 0                # Count correctly and continuously
+    decay_lambda: float = 0.04     # Forgotten Rate(days)
 
     def decay(self, now: Optional[float] = None) -> None:
-        """指数衰减: p <- p * exp(-λ * Δt)"""
+        """Index decline: p <- p * exp(-λ * Δt)"""
         now = now or time.time()
         dt_days = (now - self.last_update) / 86400.0
         if dt_days <= 0:
             return
         self.p *= math.exp(-self.decay_lambda * dt_days / (1 + self.stability))
         self.p = max(0.01, min(0.99, self.p))
-        self.last_update = now  # 衰减后立即更新时间，避免重复多次衰减
+        self.last_update = now  # Update time immediately after decay to avoid multiple declines
 
 # =============================
-# 知识图谱主类
+# Knowledge Mapping Main Category
 # =============================
 class KnowledgeGraph:
     def __init__(self):
-        # 核心容器
+        # Core packaging
         self.students: Dict[str, Student] = {}
         self.concepts: Dict[str, Concept] = {}
         self.exercises: Dict[str, Exercise] = {}
         self.prerequisites: Dict[str, Dict[str, float]] = defaultdict(dict)
         self.attempts: List[Attempt] = []
         self.mastery: Dict[Tuple[str, str], MasteryRecord] = {}
-        # 资源
-        self._file_mgr = None  # 延迟获取，避免循环导入
-        # 配置
-        self.auto_save_enabled = True  # 每次更新后自动保存（覆盖式）
-        
+        # Resources
+        self._file_mgr = None  # Delay acquisition, avoiding circular import
+        # Configure
+        self.auto_save_enabled = True  # Autosave every update (overlay)）
 
-    # ---------- 基础注册 ----------
+
+    # ---------- Basic registration ----------
     def add_student(self, student_id: str, **profile):
         if student_id not in self.students:
             self.students[student_id] = Student(student_id, profile)
@@ -140,33 +140,33 @@ class KnowledgeGraph:
 
     def link_prerequisite(self, pre_id: str, post_id: str, weight: float = 1.0):
         if pre_id not in self.concepts or post_id not in self.concepts:
-            raise ValueError("概念未注册: {}/{}".format(pre_id, post_id))
+            raise ValueError("Concept not registered: {}/{}".format(pre_id, post_id))
         self.prerequisites[pre_id][post_id] = max(0.0, min(1.0, weight))
 
     def add_exercise(self, exercise_id: str, *, concepts: Dict[str, float], difficulty: float = 0.5, **metadata):
-        # 归一化权重
+        # Normalization of weights
         if not concepts:
-            raise ValueError("题目必须关联至少一个概念")
+            raise ValueError("The title must relate to at least one concept")
         total = sum(concepts.values())
         norm = {cid: w / total for cid, w in concepts.items()}
-        # 校验概念存在
+        # Validation concept exists
         for cid in norm.keys():
             if cid not in self.concepts:
-                raise ValueError(f"概念未注册: {cid}")
+                raise ValueError(f"Concept not registered: {cid}")
         self.exercises[exercise_id] = Exercise(exercise_id, difficulty, norm, metadata)
 
-    # ---------- Mastery 访问 ----------
-    # 添加迷思，名字
+    # ---------- Mastery Visits ----------
+    # Add myth, name
     def _get_or_create_mastery(self, student_id: str, concept_id: str,config_kg: dict, misconceptions: Optional[str] = None) -> MasteryRecord:
         key = (student_id, concept_id)
         rec = self.mastery.get(key)
         if rec is None:
-            # 从 config_kg 获取概念名称: config_kg[concept_id] = (name, parent_id)
+            # From config_kg Getting conceptual names: config_kg[concept_id] = (name, parent_id)
             concept_name = config_kg.get(concept_id, (concept_id, None))[0]
             rec = MasteryRecord(
-                student_id=student_id, 
-                concept_id=concept_id, 
-                concept_name=concept_name, 
+                student_id=student_id,
+                concept_id=concept_id,
+                concept_name=concept_name,
                 misconceptions=[misconceptions] if misconceptions else []
             )
             self.mastery[key] = rec
@@ -178,12 +178,12 @@ class KnowledgeGraph:
 
     def get_student_profile_mastery(self, student_id: str) -> Dict[str, float]:
         return {rec.concept_name: rec.p for (sid, cid), rec in self.mastery.items() if sid == student_id}
-    
+
     def get_student_profile_misconceptions(self, student_id: str) -> Dict[str, List[str]]:
         return {rec.concept_name: rec.misconceptions for (sid, cid), rec in self.mastery.items() if sid == student_id}
 
-    # ---------- Attempt & 更新 ----------
-    # TODO：如果后续要实现这部分，则再来实现。
+    # ---------- Attempt & Update ----------
+    # TODO：If we follow up this part, we'll do it again。
     def record_attempt(
         self,
         student_id: str,
@@ -197,9 +197,9 @@ class KnowledgeGraph:
     persist_stream: bool = False,
     ) -> Attempt:
         if student_id not in self.students:
-            raise ValueError(f"学生未注册: {student_id}")
+            raise ValueError(f"Students not registered: {student_id}")
         if exercise_id not in self.exercises:
-            raise ValueError(f"题目未注册: {exercise_id}")
+            raise ValueError(f"Title not registered: {exercise_id}")
         timestamp = timestamp or time.time()
         attempt_id = f"{student_id}-{exercise_id}-{int(timestamp*1000)}"
         attempt = Attempt(
@@ -215,7 +215,7 @@ class KnowledgeGraph:
         if update:
             self._update_mastery_for_attempt(attempt)
         if persist_stream:
-            # 直接写 JSONL 流 (只写精简字段 + mastery snapshot for involved concepts)
+            # Write directly JSONL Stream (Write Simple Fields Only + mastery snapshot for involved concepts)
             if self._file_mgr is None:
                 self._file_mgr = get_file_manager()
             mastery_snapshot = {
@@ -233,83 +233,83 @@ class KnowledgeGraph:
                 "concepts": list(self.exercises[exercise_id].concepts.keys()),
                 "mastery_after": mastery_snapshot,
             })
-        # 自动保存（避免生成海量快照：覆盖固定文件）
+        # Automatically save (avoid generating mass snapshots: overwrite fixed files)）
         if self.auto_save_enabled:
             self._auto_save_compact()
         return attempt
 
-    # 核心更新逻辑
+    # Core update logic
     def _update_mastery_for_attempt(self, attempt: Attempt):
         ex = self.exercises[attempt.exercise_id]
         for cid, weight in ex.concepts.items():
             rec = self._get_or_create_mastery(attempt.student_id, cid)
-            # 1. 衰减
+            # 1. Decay
             rec.decay(now=attempt.timestamp)
-            # 2. Logistic 增量
-            #   z = logit(p) + α*(outcome-0.5) + β*(0.5-difficulty) * weight 调整
+            # 2. Logistic Incremental
+            #   z = logit(p) + α*(outcome-0.5) + β*(0.5-difficulty) * weight Adjustment
             outcome = 1.0 if attempt.correct else 0.0
             z = math.log(rec.p / (1 - rec.p))
-            alpha = 1.0 * weight          # 概念权重放大作用
+            alpha = 1.0 * weight          # Concept weight magnification
             beta = 0.6 * weight
             z_new = z + alpha * (outcome - 0.5) + beta * (0.5 - ex.difficulty)
             p_new = 1 / (1 + math.exp(-z_new))
-            # 3. 连续正确 streak & 稳定度
+            # 3. Straight streak & Stability
             if attempt.correct:
                 rec.streak += 1
-                if rec.streak >= 3:  # 达到阈值 -> 提升稳定度并降低遗忘率
+                if rec.streak >= 3:  # Reaching the threshold -> Increased stability and reduced forget rate
                     rec.streak = 0
                     rec.stability += 1
-                    rec.decay_lambda *= 0.9  # 忘记更慢
+                    rec.decay_lambda *= 0.9  # It's slower to forget
             else:
                 rec.streak = 0
-                # 失败惩罚: 轻微下调稳定 & 提高遗忘率(上限)
+                # Punishment for failure: Slightly down steady & Increasing the rate of forgetting(Upper limit)
                 rec.stability = max(0.0, rec.stability - 0.2)
                 rec.decay_lambda = min(0.08, rec.decay_lambda * 1.05)
-            # 4. 边界
+            # 4. Border
             rec.p = max(0.01, min(0.99, p_new))
             rec.last_update = attempt.timestamp
 
-    # ---------- 推荐 ----------
+    # ---------- Recommendations ----------
     def recommend_concepts(self, student_id: str, top_k: int = 5, mode: str = "weak") -> List[Tuple[str, float]]:
-        """根据模式推荐概念
+        """Recommended concepts based on model
         mode:
-          weak: 最低掌握度 (p 升序)
-          reinforce: 中等区间(0.4~0.7) 优先 (最接近 0.55)
-          review: 较高但久未更新
+          weak: Minimum mastery (p Raise)
+          reinforce: Medium(0.4~0.7) Priority (Nearest 0.55)
+          review: Higher but unupdated
         """
         now = time.time()
         recs = []
         for cid in self.concepts:
             rec = self.mastery.get((student_id, cid))
             if not rec:
-                # 未练过 -> 高优先
+                # No practice -> High priority
                 recs.append((cid, 0.0, 0.0, 999999))  # (cid, p, score, age)
                 continue
             age_days = (now - rec.last_update) / 86400.0
             p = rec.p
             if mode == "weak":
-                score = p  # 直接按 p 升序
+                score = p  # Press directly p Raise
             elif mode == "reinforce":
                 if 0.35 <= p <= 0.75:
-                    score = abs(p - 0.55)  # 越接近0.55越好 -> 后面再反排序
+                    score = abs(p - 0.55)  # The closer 0.55 The better -> Back in reverse
                 else:
                     score = 999
             elif mode == "review":
-                score = -age_days + (1 - p) * 0.2  # 时间主导 + 少量p调节
+                score = -age_days + (1 - p) * 0.2  # Time dominance + Small p Reconciliation
             else:
                 score = p
             recs.append((cid, p, score, age_days))
         if mode == "weak":
-            recs.sort(key=lambda x: x[1])  # p 升序
+            recs.sort(key=lambda x: x[1])  # p Raise
         elif mode == "reinforce":
             recs = [r for r in recs if r[2] != 999]
             recs.sort(key=lambda x: x[2])
         elif mode == "review":
             recs.sort(key=lambda x: x[2], reverse=True)
-        # 返回 (concept_id, p)
+        # Back (concept_id, p)
         return [(cid, round(p, 4)) for cid, p, _, _ in recs[:top_k]]
 
-    # ---------- 分析 / 统计 ----------
+    # ---------- Analysis / Statistics ----------
     def student_summary(self, student_id: str) -> Dict[str, Any]:
         ms = {cid: rec for (sid, cid), rec in self.mastery.items() if sid == student_id}
         if not ms:
@@ -323,37 +323,37 @@ class KnowledgeGraph:
             "high_concepts": [cid for cid, r in ms.items() if r.p > 0.8],
         }
 
-    # ---------- 被动学习（感知阶段非答题强化） ----------
-    # 添加迷思
+    # ---------- Passive learning (sensitization stage is not enhanced)） ----------
+    # Add myths
     def passive_learn(self, student_id: str, concept_id: str, *, strength: float = 0.05, config_kg: dict, misconceptions: Optional[str] = None, timestamp: Optional[float] = None):
-        """学生被动接触某概念(听课/讨论)，给予小幅掌握度提升。
+        """The passive exposure of students to a concept(Listening/Discussion)，Give me a little mastery。
 
-        规则:
-        - 自动创建学生 & 概念 mastery 记录
-        - 先执行衰减，再执行提升: p <- p + (1-p)*strength
-        - stability 微增: +strength*0.5
-        - strength 建议 0.01~0.15 之间
-        - config_kg 格式为字典，{id: (name, parent_id)}
+        Rule:
+        - Automatically create students & Concept mastery Records
+        - First the decay, then the upgrade: p <- p + (1-p)*strength
+        - stability Micro increment: +strength*0.5
+        - strength Recommendations 0.01~0.15 Between
+        - config_kg Format as Dictionary，{id: (name, parent_id)}
         """
         if student_id not in self.students:
             self.add_student(student_id)
         if concept_id not in self.concepts:
             self.add_concept(concept_id, name=config_kg.get(concept_id, (concept_id, None))[0], parent_id=config_kg.get(concept_id, (None, None))[1])
-        # 如果祖先概念存在，则进行关联
+        # If the concept of ancestor exists, it is linked
         if self.concepts[concept_id].parent_id in self.concepts:
             parent_id = self.concepts[concept_id].parent_id
-            # 建立前置关系，默认权重 0.3
+            # Create a forward relationship, default weight 0.3
             if concept_id not in self.prerequisites[parent_id]:
                 self.link_prerequisite(parent_id, concept_id, weight=0.3)
         rec = self._get_or_create_mastery(student_id, concept_id, config_kg, misconceptions=misconceptions)
         ts = timestamp or time.time()
-        # 添加迷思
+        # Add myths
         if misconceptions and misconceptions not in rec.misconceptions:
             rec.misconceptions.append(misconceptions)
-        # 衰减到当前时间点
+        # Decline to current time point
         rec.decay(now=ts)
         strength = max(0.005, min(0.2, strength))
-         # 提升（向1靠近）
+         # Raise 1 Close）
         rec.p = rec.p + (1 - rec.p) * strength
         rec.p = max(0.01, min(0.99, rec.p))
         rec.stability += strength * 0.5
@@ -361,26 +361,26 @@ class KnowledgeGraph:
         if self.auto_save_enabled:
             self._auto_save_compact()
 
-    # 添加迷思
+    # Add myths
     def batch_passive_learn(self, student_id: str, concept_ids: List[str], *, base_strength: float = 0.04, config_kg: dict, misconceptions: Optional[str] = None,importance: Optional[int] = None):
-        """批量被动学习，importance 可放大总体强度。"""
+        """Mass Passive Learning，importance Can magnify overall strength。"""
         if not concept_ids:
             return
         factor = 1.0
         if importance is not None:
-            # importance 期望 1~10 之间，映射到 0.5~1.5 倍
+            # importance Expectations 1~10 In between, map to 0.5~1.5 Double
             factor = 0.5 + min(max(importance, 1), 10) / 10.0
         for cid in concept_ids:
             s = base_strength * factor
             self.passive_learn(student_id, cid, strength=s, config_kg=config_kg, misconceptions=misconceptions)
-        # batch 内 passive_learn 已各自触发 autosave；如需合并写入可改为禁用内部再统一写一次
+        # batch Internal passive_learn Triggered separately autosave；If you need to consolidate it, it can be changed to disable it internally
 
-    # ---------- 自动保存实现 ----------
+    # ---------- Automatically save realization ----------
     def _auto_save_compact(self):
-        """覆盖写单一 autosave 文件，避免快照爆炸。"""
+        """Overwrite Single autosave File, avoid flashes。"""
         if self._file_mgr is None:
             self._file_mgr = get_file_manager()
-        # 使用 __global__ & knowledge_graph 目录
+        # Use __global__ & knowledge_graph Contents
         target_dir = self._file_mgr.get_category_dir('__global__', 'knowledge_graph')
         path = target_dir / 'kg_autosave.json'
         data = self.to_dict()
@@ -396,7 +396,7 @@ class KnowledgeGraph:
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 
-    # ---------- 持久化 ----------
+    # ---------- Enduring ----------
     def to_dict(self) -> Dict[str, Any]:
         return {
             "students": {sid: s.profile for sid, s in self.students.items()},
@@ -436,44 +436,44 @@ class KnowledgeGraph:
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(self.to_dict(), f, ensure_ascii=False, indent=2)
-    
-    # ---- 集成统一文件管理器存储 ----
+
+    # ---- Integrated Unified File Manager Storage ----
     def snapshot(self, postfix: str = "") -> Path:
-        """通过项目 file_manager 保存快照"""
+        """Adoption of projects file_manager Save Snapshot"""
         if self._file_mgr is None:
             self._file_mgr = get_file_manager()
         return self._file_mgr.save_knowledge_graph_snapshot(self, postfix=postfix)
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'KnowledgeGraph':
-        """从字典数据反序列化知识图谱
-        
-        支持两种数据格式:
-        
-        1. 标准格式 (to_dict() 输出):
+        """Inverse sequenced knowledge mapping from dictionary data
+
+        Support two data formats:
+
+        1. Standard format (to_dict() Output):
            - students: {sid: profile_dict}
            - concepts: {cid: {"name": str, "parent_id": str}}
            - exercises: {eid: {"difficulty": float, "concepts": dict, "metadata": dict}}
            - prerequisites: {pre_id: {post_id: weight}}
            - mastery: {"sid::cid": {"p": float, "last_update": float, ...}}
-           - attempts: [{"id": str, "student_id": str, ...}] (可选)
-        
-        2. nodes.json 格式 (记忆系统):
+           - attempts: [{"id": str, "student_id": str, ...}] (Optional)
+
+        2. nodes.json Format (Memory system):
            - node_1: {"type": "knowledge", "knowledge_tag": [...], "content": "...", ...}
            - node_2: {"type": "chat", ...}
            ...
-           当检测到此格式时,会从 type="knowledge" 的节点中提取概念
+           When this format is detected,From type="knowledge" , the concept of extraction in the node
         """
         kg = cls()
-        
-        # 检测数据格式: 如果所有键都是 "node_X" 格式,则是 nodes.json
+
+        # Test Data Format: If all the keys are "node_X" Format,Yes nodes.json
         is_nodes_format = False
         if data:
-            sample_keys = list(data.keys())[:5]  # 检查前5个键
+            sample_keys = list(data.keys())[:5]  # Before checking 5 Key
             is_nodes_format = all(key.startswith("node_") for key in sample_keys)
-        
+
         if is_nodes_format:
-            # 从 nodes.json 格式恢复 - 提取所有 type="knowledge" 的节点并把 knowledge_tag 列表中的每一项作为概念
+            # From nodes.json Format Restore - Extract All type="knowledge" ♪ The nodes and put knowledge_tag Each one in the list as a concept
             for node_id, node_data in data.items():
                 if not isinstance(node_data, dict):
                     continue
@@ -484,10 +484,10 @@ class KnowledgeGraph:
 
                 knowledge_tags = node_data.get("knowledge_tag")
                 if not knowledge_tags:
-                    # 有些知识节点可能把标签放在 keywords 或者 content 中，暂不处理
+                    # Some knowledge nodes may be labeled keywords Or content Pending
                     continue
 
-                # knowledge_tag 可能是列表或单个字符串
+                # knowledge_tag Could be a list or a single string
                 tags = []
                 if isinstance(knowledge_tags, list):
                     tags = knowledge_tags
@@ -501,34 +501,34 @@ class KnowledgeGraph:
                     if not concept_name:
                         continue
 
-                    # 生成概念ID: 将空白替换为下划线, 其它非字母数字下划线连字符的字符替换为下划线
+                    # Generating concepts ID: Replace space with underlined, Replace the character of other non-alphatic hyphens with the underlined
                     candidate = re.sub(r"\s+", "_", concept_name)
                     candidate = re.sub(r"[^0-9A-Za-z_\-]", "_", candidate)
                     concept_id = candidate
 
-                    # 避免重复添加相同概念
+                    # To avoid repeating the same concept
                     if concept_id not in kg.concepts:
                         kg.concepts[concept_id] = Concept(
                             id=concept_id,
                             name=concept_name,
-                            parent_id=None  # nodes.json 中通常没有层级信息
+                            parent_id=None  # nodes.json There is usually no level information
                         )
-        
+
         else:
-            # 从标准格式恢复
-            # 1. 恢复学生
+            # Restore from Standard Format
+            # 1. Rehabilitation of students
             for sid, profile in data.get('students', {}).items():
                 kg.add_student(sid, **profile)
-            
-            # 2. 恢复概念（必须先恢复所有概念，再建立前置关系）
+
+            # 2. Restoration of concepts (all concepts must be restored before a pre-existing relationship is established)）
             for cid, cdata in data.get('concepts', {}).items():
                 kg.add_concept(
                     concept_id=cid,
-                    name=cdata.get('name', cid),  # 如果没有name，使用id作为name
-                    parent_id=cdata.get('parent_id')  # parent_id可以为None
+                    name=cdata.get('name', cid),  # If not name，Use id As name
+                    parent_id=cdata.get('parent_id')  # parent_id Yes None
                 )
-            
-            # 3. 恢复题目
+
+            # 3. Restore Title
             for eid, edata in data.get('exercises', {}).items():
                 kg.add_exercise(
                     exercise_id=eid,
@@ -536,9 +536,9 @@ class KnowledgeGraph:
                     difficulty=edata.get('difficulty', 0.5),
                     **edata.get('metadata', {})
                 )
-            
-            # 4. 恢复前置关系
-            # prerequisites 格式: {pre_id: {post_id: weight, ...}, ...}
+
+            # 4. Restore Forward Relationships
+            # prerequisites Format: {pre_id: {post_id: weight, ...}, ...}
             prereqs = data.get('prerequisites', {})
             if isinstance(prereqs, dict):
                 kg.prerequisites = defaultdict(dict)
@@ -546,25 +546,25 @@ class KnowledgeGraph:
                     if isinstance(posts, dict):
                         for post_id, weight in posts.items():
                             kg.prerequisites[pre_id][post_id] = weight
-            
-            # 5. 恢复掌握度记录
+
+            # 5. Restoration of mastery records
             for key, m in data.get('mastery', {}).items():
-                # 解析复合键 "sid::concept_name"
+                # Parsing Composite Key "sid::concept_name"
                 if '::' not in key:
-                    continue  # 跳过格式不正确的键
-                
+                    continue  # Skip an incorrect format key
+
                 parts = key.split('::', 1)
                 if len(parts) != 2:
                     continue
-                    
-                sid, concept_name = parts  # 注意: 键中存的是 concept_name, 不是 concept_id
-                
-                # 从数据中获取真正的 concept_id
+
+                sid, concept_name = parts  # Attention: Here's the key concept_name, Nope concept_id
+
+                # Get real from the data concept_id
                 concept_id = m.get('id')
                 if not concept_id:
-                    continue  # 如果没有 id 字段,跳过
-                
-                # 创建掌握度记录 (注意参数顺序: student_id, concept_id, concept_name)
+                    continue  # If not id Fields,Skip
+
+                # Create mastery record (Note parameter order: student_id, concept_id, concept_name)
                 rec = MasteryRecord(sid, concept_id, concept_name)
                 rec.misconceptions = m.get('misconceptions', [])
                 rec.p = m.get('p', 0.3)
@@ -572,11 +572,11 @@ class KnowledgeGraph:
                 rec.stability = m.get('stability', 0.0)
                 rec.streak = m.get('streak', 0)
                 rec.decay_lambda = m.get('decay_lambda', 0.04)
-                
-                # 注意: mastery 的键是 (student_id, concept_id), 不是 concept_name
+
+                # Attention: mastery The key is (student_id, concept_id), Nope concept_name
                 kg.mastery[(sid, concept_id)] = rec
-            
-            # 6. 恢复 attempts（可选，通常历史记录量大，可按需恢复）
+
+            # 6. Restore attempts（Optional, usually with large historical records, recoverable as needed）
             for a_data in data.get('attempts', []):
                 attempt = Attempt(
                     id=a_data.get('id', ''),
@@ -588,7 +588,7 @@ class KnowledgeGraph:
                     raw=a_data.get('raw', {})
                 )
                 kg.attempts.append(attempt)
-        
+
         return kg
 
     @classmethod
@@ -596,17 +596,17 @@ class KnowledgeGraph:
         with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         return cls.from_dict(data)
-    
-    # ---- 知识图谱的查找 ----
+
+    # ---- Search for knowledge maps ----
     def get_id_by_name(self, target_name: str, config_kg: dict) -> Optional[str]:
-        """即根据config_kp, 通过名称得到概念 ID（返回第一个匹配）"""
+        """Based on config_kp, Getting the concept by name ID（Returns the first match）"""
         for cid, (name, parent_id) in config_kg.items():
             if name == target_name:
                 return cid
         return None
-    
+
     def get_batch_id_by_names(self, target_names: List[str], config_kg: dict) -> List[str]:
-        """批量根据知识点名称得到概念 ID 列表"""
+        """Batch of concepts based on name of knowledge point ID List"""
         ids = []
         name_to_id = {name: cid for cid, (name, _) in config_kg.items()}
         for name in target_names:
@@ -614,18 +614,18 @@ class KnowledgeGraph:
                 ids.append(name_to_id[name])
         return ids
 
-# 单例实例 (方便直接导入使用)
+# Single instance (Enable direct import use)
 kg = KnowledgeGraph()
 
-# 如果你需要在现有答题流程里接入：
-# 1. 在处理每题后调用 kg.record_attempt(student_id, exercise_id, correct=..., time_spent=..., raw=answer_dict)
-# 2. 题目需提前通过 kg.add_exercise 注册（可在加载题库时一次性注册）
-# 3. 在保存统计时输出 kg.student_summary(student.name)
+# If you need access to an existing response process,：
+# 1. Call after processing each issue kg.record_attempt(student_id, exercise_id, correct=..., time_spent=..., raw=answer_dict)
+# 2. The title needs to be adopted in advance kg.add_exercise Registration (one-time registration at loading library)）
+# 3. Output while saving statistics kg.student_summary(student.name)
 
-if __name__ == '__main__':  # 简单自测
+if __name__ == '__main__':  # Simple self-measurement
     kg.add_student('S1')
-    kg.add_concept('c1', name='分数基础')
-    kg.add_concept('c2', name='分数加法')
+    kg.add_concept('c1', name='Score base')
+    kg.add_concept('c2', name='Plus')
     kg.link_prerequisite('c1', 'c2', 0.8)
     kg.add_exercise('e1', concepts={'c1': 1.0}, difficulty=0.5)
     kg.add_exercise('e2', concepts={'c1': 0.4, 'c2': 0.6}, difficulty=0.6)

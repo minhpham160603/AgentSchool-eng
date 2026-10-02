@@ -2,7 +2,7 @@ import json
 import os
 import sys
 import asyncio
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))#根目录
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))#Root Directory
 
 from run import main
 from teacher.vector_db import VectorDB
@@ -20,14 +20,14 @@ def train_experience(ep_level: str ,class_num: int, textbook_file: str):
     vector_db.save(path= ep_vector_db_file)
 
     if ep_level == "basic":
-        return 
+        return
 
     with open(os.path.join(root_dir, 'config', 'schedule.json'), 'r+', encoding='utf-8') as file:
         schedule = json.load(file)
         schedule['total_courses'] = class_num
         file.seek(0)
         file.write(json.dumps(schedule, indent=4, ensure_ascii=False))
-        file.truncate()  # 截断文件，确保移除多余内容
+        file.truncate()  # Interrupt the file to ensure that redundant content is removed
     with open(os.path.join(root_dir, 'config', 'teacher.json'), 'r+', encoding='utf-8') as file:
         teacher = json.load(file)
         teacher['experience_level'] = ep_level
@@ -40,7 +40,7 @@ def train_experience(ep_level: str ,class_num: int, textbook_file: str):
     asyncio.run(main())
 
 if __name__ == "__main__":
-    ep_level = "basic"  # 选择 "basic", "intermediate", 或 "advanced"
+    ep_level = "basic"  # Selection "basic", "intermediate", or "advanced"
     class_num = 1
     textbook_file = "use last"
     train_experience(ep_level, class_num, textbook_file)

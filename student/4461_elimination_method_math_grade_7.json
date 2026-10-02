@@ -1,0 +1,4417 @@
+{
+  "id": 4461,
+  "name": "elimination by addition and subtraction",
+  "subject": "math",
+  "stage": "middle school",
+  "grade": "Grade 7",
+  "keywords": [
+    {
+      "type": "Knowledge-point keywords",
+      "label": [
+        "elimination by substitution",
+        "systems of two linear equations",
+        "elimination",
+        "elimination by addition and subtraction",
+        "whole-expression reasoning",
+        "properties of equality",
+        "least common multiple",
+        "rearranging equations",
+        "substitution",
+        "transformation",
+        "checking the solution",
+        "solution steps",
+        "solution to a system of equations",
+        "unknown",
+        "coefficient",
+        "symbols",
+        "addition and subtraction",
+        "eliminate",
+        "solve a system of equations"
+      ]
+    },
+    {
+      "type": "Keywords reflecting cognitive processes in the source text",
+      "label": [
+        "elimination",
+        "transformation",
+        "addition and subtraction",
+        "whole-expression reasoning",
+        "substitution",
+        "coefficient",
+        "equality",
+        "unknown",
+        "system of equations",
+        "steps",
+        "rearrangement",
+        "least common multiple",
+        "checking",
+        "calculation",
+        "symbols",
+        "strategies",
+        "methods",
+        "approach",
+        "reasoning"
+      ]
+    },
+    {
+      "type": "Keywords reflecting values in the source text",
+      "label": [
+        "elimination",
+        "addition and subtraction",
+        "transformation",
+        "whole-expression reasoning",
+        "substitution",
+        "coefficient",
+        "equality",
+        "unknown",
+        "system of equations",
+        "solution",
+        "steps",
+        "rearrangement",
+        "least common multiple",
+        "reasoning",
+        "methods",
+        "practice",
+        "discussion",
+        "summary",
+        "learning"
+      ]
+    },
+    {
+      "type": "Curriculum-standard keywords for cognitive skills",
+      "label": [
+        "number sense",
+        "symbolic awareness",
+        "reasoning skills",
+        "calculation skills",
+        "modeling awareness",
+        "algebraic reasoning",
+        "intuitive reasoning",
+        "deductive reasoning",
+        "abstract thinking",
+        "logical thinking"
+      ]
+    },
+    {
+      "type": "Curriculum-standard keywords linked to values",
+      "label": [
+        "Socialist core values",
+        "prioritizing moral education",
+        "ideological and moral education",
+        "ethical standards",
+        "awareness of the rule of law",
+        "all-round development in virtue, intelligence, physical fitness, aesthetics, and labor",
+        "builders and successors of socialism",
+        "cultural confidence",
+        "awareness of the Chinese national community",
+        "social responsibility"
+      ]
+    }
+  ],
+  "transcript": [
+    {
+      "no": 1,
+      "role": "Teacher",
+      "content": "Speak up a little.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "role": "Students",
+      "content": "We are ready.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 3,
+      "role": "Teacher",
+      "content": "Class, begin.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 4,
+      "role": "Students",
+      "content": "Good morning, teacher.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 5,
+      "role": "Teacher",
+      "content": "Please sit down. Last lesson, we learned to solve systems of two linear equations by substitution. Who can explain the main idea behind solving a system that way?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 6,
+      "role": "Students",
+      "content": "Elimination.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 7,
+      "role": "Teacher",
+      "content": "Can you be more specific?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 8,
+      "role": "Students",
+      "content": "The basic idea is to eliminate one of the variables.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 9,
+      "role": "Teacher",
+      "content": "The elimination method. Who can add to that?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 10,
+      "role": "Students",
+      "content": "Transform the system.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 11,
+      "role": "Teacher",
+      "content": "Exactly. Eliminate a variable by transforming the system.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 12,
+      "role": "Students",
+      "content": "Rewrite a system of two linear equations as a linear equation in one variable, which is something we already know how to solve.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 13,
+      "role": "Teacher",
+      "content": "Is that right?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 14,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 15,
+      "role": "Teacher",
+      "content": "Right? A system of two linear equations…?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 16,
+      "role": "Students",
+      "content": "A system of two linear equations.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 17,
+      "role": "Teacher",
+      "content": "We transform a system of two linear equations into a linear equation in one variable. Good. Please sit down. Now, looking at a system like this one, what methods could you use to solve it?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 18,
+      "role": "Students",
+      "content": "Elimination.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 19,
+      "role": "Teacher",
+      "content": "Elimination—how exactly do we eliminate a variable?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 20,
+      "role": "Students",
+      "content": "Add or subtract the equations.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 21,
+      "role": "Teacher",
+      "content": "Good. Is there another method?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 22,
+      "role": "Students",
+      "content": "Add or subtract the equations.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 23,
+      "role": "Teacher",
+      "content": "Good, that is the elimination by addition and subtraction you just described. Well said. Please sit down. Liu Xiaolei?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 24,
+      "role": "Students",
+      "content": "We can also use elimination by substitution.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 25,
+      "role": "Teacher",
+      "content": "What does elimination by substitution mean? Can you explain it more specifically?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 26,
+      "role": "Students",
+      "content": "Write y as an expression involving x.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 27,
+      "role": "Teacher",
+      "content": "Write y in terms of x. Good, sit down. Does anyone want to add something?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 28,
+      "role": "Students",
+      "content": "We can also substitute an entire expression.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 29,
+      "role": "Teacher",
+      "content": "Substitute the whole expression.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural response",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 30,
+      "role": "Students",
+      "content": "Use 3x+5y=5 directly. Replace 3x in the other equation with the whole expression.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 31,
+      "role": "Teacher",
+      "content": "We can think of it this way: from the first equation, 3x=5-5y. Then substitute that into equation 2. What idea does that illustrate?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 32,
+      "role": "Students",
+      "content": "The idea of substituting an entire expression.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Political Theory and Thought Education",
+            "Ethics and rule of law education",
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 33,
+      "role": "Teacher",
+      "content": "Great, please sit down. You have already mentioned adding and subtracting equations. Today we will study that method. Let us look at your pre-class feedback. First, online: 13 students answered all three questions correctly, while 23 students got only one right. The accuracy on the third question was especially low. Here are some of the students who did well online; let us congratulate and encourage them. Before class, I posted a discussion question, and 41 students sent me their responses last night. I have selected a few examples. Xia Tianyuan gave a detailed, step-by-step summary. Liu Xiaolei also shared a thoughtful reflection, and another student did a very good job. Finally, let us look at your questions. I especially want to recognize this student: the summary is clear, and the question is very specific—how to make the coefficients equal or opposites. The student guessed that this would be a focus today. That is one of the key and challenging ideas in this lesson. Some of you also asked how to solve systems of equations correctly. Based on your questions, we have set today’s learning goals. Please read them again. Are you ready to begin?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": []
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 34,
+      "role": "Students",
+      "content": "Ready.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 35,
+      "role": "Teacher",
+      "content": "All right, let us try a quick check. Who would like to answer? Wang Luyang, go ahead.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 36,
+      "role": "Students",
+      "content": "Add the two equations, and the variable y will be eliminated.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 37,
+      "role": "Teacher",
+      "content": "Explain why we add them. Zhang Haibin, can you help?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 38,
+      "role": "Students",
+      "content": "The two equations both contain y. When we add them, the y-terms cancel, so the y variable is eliminated.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 39,
+      "role": "Teacher",
+      "content": "Good. We should say that the y-term is…?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 40,
+      "role": "Students",
+      "content": "Eliminated.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 41,
+      "role": "Teacher",
+      "content": "Very good. Please sit down. Now the second one.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 42,
+      "role": "Students",
+      "content": "Subtract one equation from the other to eliminate the variable x.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 43,
+      "role": "Teacher",
+      "content": "Why do we subtract?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 44,
+      "role": "Students",
+      "content": "Because the coefficients of x are 25 and 25. Subtracting the equations eliminates x, leaving an equation with only y.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 45,
+      "role": "Teacher",
+      "content": "Is that right?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 46,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 47,
+      "role": "Teacher",
+      "content": "Excellent. Here we subtract to eliminate x. Who would like to try the next problem? Lin Yang, give it a try. So many volunteers! Wang Rushan, take your time. Everyone else, work on the problems below; let us see which group finishes first. There are two problems, so work quickly and raise your hand as soon as you are done. Li Xiaolei and Li Jiaqi finished first. Where is student number 4? This group is in the lead, with three students finished. Once you are done, compare your work and check each other for mistakes. We are short on time, so I am sorry you did not finish, Lingyang. I noticed you erased something. Let us have someone explain this problem for Lingyang. Zhang Jiayin, please try it. Everyone else, listen and see whether you have anything to add.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 48,
+      "role": "Students",
+      "content": "First, look at the coefficients of the variables. They are equal, so use subtraction. Take equation 1 minus equation 2: 7x minus; this should be 7x-5x, and x-5x=2x. Then -4y-4y cancel. Next, calculate 4-4; 4-(-4)=8. Solving gives x=4. Substitute x=4 into one equation to find the other variable. Substitute into equation 1 to get x, substitute x=4, then equation 1 gives the answer; finally y=6. After this step, write the solution of the original system in braces. That completes it.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Analysis of explanatory responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 49,
+      "role": "Teacher",
+      "content": "Does anyone disagree? While you were listening, did you notice anything different? Let me ask about what was said: in equation 1 and equation 2, is it -4y-4y? Is it -4y-4y?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 50,
+      "role": "Students",
+      "content": "It is subtracting -4y.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Migration of innovative responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 51,
+      "role": "Teacher",
+      "content": "Right, subtract -4y from -4y. Another point: did you notice why Mingyang erased his work? When subtracting the right-hand sides, was it 4-4?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 52,
+      "role": "Students",
+      "content": "No, it was 4-(-4).",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 53,
+      "role": "Teacher",
+      "content": "Which sign should we pay attention to here? What is the result?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 54,
+      "role": "Students",
+      "content": "8.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 55,
+      "role": "Teacher",
+      "content": "Exactly. Let us give them a round of applause. The answer to this problem is x=4, y=6. Raise your hand if you got it right. If not, notice where the mistake happened. Who can comment on the second problem? Siyujie, please ask someone behind you. Quickly, please.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 56,
+      "role": "Students",
+      "content": "That solution is wrong. For -3y and -3y, subtracting -3y means 3y+3y=6y. For x, 2x+4x=11+7, which is 11+7=18=6x, so x=3. Substitute 3; substitute x=3 into one equation: x=3 times 2 is 6, and 6+3y=7. Subtract 7; y=-1/3. So the solution of this equation—the solution of the original system—is y=-1/3, x=3.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Analysis of explanatory responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 57,
+      "role": "Students",
+      "content": "First, the explanation of 3y and -3y was unclear. To eliminate y, we should use 3y plus -3y so the y terms cancel. Then the next steps follow. Also, y was calculated incorrectly: it should be positive 1/3, not negative -1/3.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 58,
+      "role": "Teacher",
+      "content": "It should be positive 1/3?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 59,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 60,
+      "role": "Teacher",
+      "content": "Good. Does anyone have anything else to add or correct?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 61,
+      "role": "Students",
+      "content": "The coefficients are opposites, so we add the equations.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 62,
+      "role": "Teacher",
+      "content": "That is what we just called… the coefficients are?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 63,
+      "role": "Students",
+      "content": "Opposites.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 64,
+      "role": "Teacher",
+      "content": "What operation do we choose?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 65,
+      "role": "Students",
+      "content": "Addition.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 66,
+      "role": "Teacher",
+      "content": "In Lingyang’s problem, the coefficients were equal. Which operation did we choose?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "More general questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 67,
+      "role": "Students",
+      "content": "Subtraction.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 68,
+      "role": "Teacher",
+      "content": "I noticed one small detail. When doing homework yesterday, some of you forgot to write the solution of the system as…?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 69,
+      "role": "Students",
+      "content": "The solution of the system.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 70,
+      "role": "Students",
+      "content": "And then write: therefore, the solution of the original system is x=3, y=-3.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 71,
+      "role": "Teacher",
+      "content": "There is no required order for writing x and y. We usually write x first and y second, but your order is also correct. Please sit down. We have just summarized these two problems. Did we need to rearrange the equations?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 72,
+      "role": "Students",
+      "content": "No.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 73,
+      "role": "Teacher",
+      "content": "We did not need to rearrange them. We just chose to…?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Migration innovative questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 74,
+      "role": "Students",
+      "content": "Add or subtract them.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 75,
+      "role": "Teacher",
+      "content": "We can add or subtract them directly. Let us call this Type 1. The common mistake is the one Lingyang just made. I expected it, because many of you made the same mistake in the online feedback. Let us look at the problem with the low accuracy. Which operation should we use? Who can explain?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "More general questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 76,
+      "role": "Students",
+      "content": "It should be D. The first calculation was wrong: adding the two equations gives 2x=8.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 77,
+      "role": "Teacher",
+      "content": "What does the second equation give?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 78,
+      "role": "Students",
+      "content": "10.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 79,
+      "role": "Teacher",
+      "content": "10, right?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 80,
+      "role": "Students",
+      "content": "Right.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 81,
+      "role": "Teacher",
+      "content": "What did the student mistakenly assume here? Pay close attention. To avoid this kind of error, write one step at a time before continuing. Which group can summarize what we learned about adding and subtracting equations? Discuss it together.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 82,
+      "role": "Students",
+      "content": "First, we eliminate a variable by adding or subtracting the equations. Second, this works directly when the coefficients of the same variable are equal or opposites. Third, the method relies on the properties of equality.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Analysis of explanatory responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 83,
+      "role": "Teacher",
+      "content": "Good. Please sit down. Who would like to share?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 84,
+      "role": "Students",
+      "content": "For the second point, it is the coefficients of the same variable that must be equal or opposite.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 85,
+      "role": "Teacher",
+      "content": "Good. Anyone else want to add something?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 86,
+      "role": "Students",
+      "content": "The coefficients of the same variable should be equal or opposites.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 87,
+      "role": "Teacher",
+      "content": "Right—the same variable. The first two points are correct, aren’t they?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 88,
+      "role": "Students",
+      "content": "The properties of equality.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 89,
+      "role": "Teacher",
+      "content": "Exactly, that is what was just said: the properties of equality. Please sit down. These are the 3 key ideas for elimination by addition and subtraction. Now we will work in groups on the questions from yesterday’s task sheet. As before, raise your hand when your group finishes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 90,
+      "role": "Teacher",
+      "content": "This group has finished first. If any other groups still have questions, let us pause here; time is up. Please have Wang Weiyang’s group present their work. Organize yourselves and come up.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 91,
+      "role": "Students",
+      "content": "Our group had questions about problems 7 and 5, and part 2, question 2. For this problem, multiply equation 1 by 1 and equation 2 by 2 so the coefficients of x match. Then subtract equation 2 from equation 1: the 4x terms cancel, leaving -13y=-65, so y=5. Substitute y=5 into equation 2: 4x+15=23, so x=8/2=2. Therefore, the solution is x=2, y=5.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 92,
+      "role": "Teacher",
+      "content": "Everyone, check this answer. Did you get the same result?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "More general questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 93,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 94,
+      "role": "Teacher",
+      "content": "Good, you agree. While I was listening to your discussion, I noticed how this problem differs from Type 1.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 95,
+      "role": "Students",
+      "content": "We had to transform the equations.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Migration of innovative responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 96,
+      "role": "Teacher",
+      "content": "We cannot add or subtract them directly, right?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 97,
+      "role": "Students",
+      "content": "Right.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 98,
+      "role": "Teacher",
+      "content": "Anan, can you add something? What should we do when we cannot add or subtract directly?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 99,
+      "role": "Students",
+      "content": "We need to find the least common multiple of the coefficients of a variable, such as x, so the coefficients match.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 100,
+      "role": "Teacher",
+      "content": "Find the least common multiple for x. Could we use y instead?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "More general questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 101,
+      "role": "Students",
+      "content": "Yes, we could use y, but using x makes the calculation easier.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses",
+            "Migration of innovative responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 102,
+      "role": "Teacher",
+      "content": "Eliminating x is simpler here, though y would also work. Good, please sit down. Now let us look at problem 2. Who can work it on the board and explain it? I have already written it there. Who would like to try? Everyone else, think along and listen for any mistakes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": []
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 103,
+      "role": "Students",
+      "content": "Look at 3x and 5x. Their least common multiple is 15, so label the equations 1 and 2. Multiply equation 1 by 5 and equation 2 by 3 to get 15x in both. Multiplying equation 1 by 5 gives 15x+20y=90. Multiplying equation 2 by 3 gives 15x-18y=90, which gives 99. Since the coefficients match, subtract to eliminate x. Then subtract 80 from 99…",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Analysis of explanatory responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 104,
+      "role": "Teacher",
+      "content": "Should we label the equations first?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 105,
+      "role": "Students",
+      "content": "Yes. Then subtract equation 3 from equation 4: 15x-15x cancels, and -18y-20y=-38y=19. Solving gives y=-2. Substitute y=-2 into equation 2: 5x-6 times 2. Six times -2 is -12; because there is a minus sign, subtracting a negative gives +12, so 5x=33 and x=21/5.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Analysis of explanatory responses",
+            "Comparative summary responses",
+            "Migration of innovative responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 106,
+      "role": "Teacher",
+      "content": "What is the final step?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 107,
+      "role": "Students",
+      "content": "Therefore, the solution of the original system is x=21/5, y=-2. Does anyone have a question?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": []
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 108,
+      "role": "Students",
+      "content": "Shouldn’t it be -1/2? If it is -2, this part would become negative.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 109,
+      "role": "Teacher",
+      "content": "Both sides should be divided by -38, so the result should be -1/2, not what was written. Do you see the error? This value should be -1/2.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 110,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 111,
+      "role": "Teacher",
+      "content": "The value of y was written as -2, which caused an error in the later calculations. Be careful at every step. How can you check that your answer is correct? Some of you asked me that.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 112,
+      "role": "Students",
+      "content": "Check by substitution.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 113,
+      "role": "Teacher",
+      "content": "Exactly, substitute the answer back into the original equations. Please sit down. Let us applaud both students. We noticed that Keding’s calculation here took more work than the example Anan’s group presented. Can we make it shorter and easier? Anan, tell us your idea.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": []
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 114,
+      "role": "Students",
+      "content": "We could use the least common multiple of 4y and -6y.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 115,
+      "role": "Teacher",
+      "content": "What is the least common multiple of those two coefficients?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 116,
+      "role": "Students",
+      "content": "12.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 117,
+      "role": "Teacher",
+      "content": "And this one?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 118,
+      "role": "Students",
+      "content": "15.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 119,
+      "role": "Teacher",
+      "content": "Good, that is a little more work, but it is a valid method.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 120,
+      "role": "Students",
+      "content": "Is the least common multiple positive or negative?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 121,
+      "role": "Teacher",
+      "content": "We use the least common multiple of the absolute values of the coefficients. That means the absolute values, right? Good, please sit down. Let us review the four steps from this problem. Who can summarize them? Discuss briefly with a partner. Which group would like to share? I will choose one.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 122,
+      "role": "Students",
+      "content": "First, multiply equation 1 by 5…",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 123,
+      "role": "Teacher",
+      "content": "We can call that step transforming the equations. What comes next?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 124,
+      "role": "Students",
+      "content": "Substitute the result from step 4.3.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 125,
+      "role": "Teacher",
+      "content": "What are we doing when we substitute 4.3?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 126,
+      "role": "Students",
+      "content": "Eliminating a variable.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 127,
+      "role": "Teacher",
+      "content": "Which elimination method?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": []
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 128,
+      "role": "Students",
+      "content": "Elimination by addition and subtraction.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 129,
+      "role": "Teacher",
+      "content": "What comes next?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 130,
+      "role": "Students",
+      "content": "Substitute the value back in.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 131,
+      "role": "Teacher",
+      "content": "That is substitution. After substituting, what do we do?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 132,
+      "role": "Students",
+      "content": "Solve for the other variable.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 133,
+      "role": "Teacher",
+      "content": "Right, find the value of the other variable, x. Wait—after adding or subtracting, we first solve for y, don’t we?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 134,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 135,
+      "role": "Teacher",
+      "content": "Let us switch those two steps. After adding or subtracting, solve for one variable. Then substitute its value into equation 1 or equation 2 to find the other variable. What is the final step?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 136,
+      "role": "Students",
+      "content": "Write the solution.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 137,
+      "role": "Teacher",
+      "content": "Exactly, write the solution as an ordered pair or system. How many steps are there in total?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 138,
+      "role": "Students",
+      "content": "Five steps.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 139,
+      "role": "Teacher",
+      "content": "Very good. These are the general steps for solving a system of two linear equations. We will call the two problems we just solved Type II: first transform the equations, then add or subtract them. What strategy can help us choose how to transform them?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 140,
+      "role": "Students",
+      "content": "Choose the variable whose coefficients have the smaller least common multiple.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 141,
+      "role": "Teacher",
+      "content": "Right. Choose the variable whose coefficients have the smaller least common multiple of their absolute values. You noticed that yourself. Compare the two variables and choose the one with the smaller least common multiple. How many steps did we summarize?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Analytically interpretive questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 142,
+      "role": "Students",
+      "content": "Five.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 143,
+      "role": "Teacher",
+      "content": "Step one?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 144,
+      "role": "Students",
+      "content": "Transform the equations.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 145,
+      "role": "Teacher",
+      "content": "Step two?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 146,
+      "role": "Students",
+      "content": "Add or subtract.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 147,
+      "role": "Teacher",
+      "content": "Good. Step three?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 148,
+      "role": "Students",
+      "content": "Eliminate a variable.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 149,
+      "role": "Teacher",
+      "content": "After adding or subtracting, solve for y or x, then substitute back. What is the final step?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 150,
+      "role": "Students",
+      "content": "Write the solution.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 151,
+      "role": "Teacher",
+      "content": "Remember to write the solution clearly using braces. I saw another group working on problem 10, which many of you discussed earlier. Could that group come up and explain it? If you did not finish, think about the approach. Let us look at this solution; it is a little challenging.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 152,
+      "role": "Students",
+      "content": "First transform the two equations. Multiply equation 1 by 4 and subtract equation 3; then we can eliminate y and solve for x=13.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Analysis of explanatory responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 153,
+      "role": "Teacher",
+      "content": "Wait a moment—you are going a little fast. Did everyone follow that?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 154,
+      "role": "Students",
+      "content": "No.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 155,
+      "role": "Teacher",
+      "content": "What was the purpose of multiplying equation 1 by 4?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 156,
+      "role": "Students",
+      "content": "To eliminate a variable.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 157,
+      "role": "Teacher",
+      "content": "Multiplying by 4… we noticed this problem has a denominator, right?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 158,
+      "role": "Students",
+      "content": "Right.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 159,
+      "role": "Teacher",
+      "content": "Your group also worked on this. Can you explain your approach? What did you do first?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 160,
+      "role": "Students",
+      "content": "First clear the denominators. Their least common multiple is 30. After clearing the denominators, multiply the equations by the needed factors and find the least common multiple. Then solve for x, substitute back to find y, and write the solution.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Analysis of explanatory responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 161,
+      "role": "Teacher",
+      "content": "So you first simplified the system by clearing the denominators, right?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 162,
+      "role": "Students",
+      "content": "Right.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 163,
+      "role": "Teacher",
+      "content": "I saw another group use that approach too. Does anyone have a different method or idea to try?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Migration innovative questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 164,
+      "role": "Students",
+      "content": "In the second equation, x/10-y/10 and -x/10+y/10 are opposites, so these terms cancel directly.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 165,
+      "role": "Teacher",
+      "content": "They cancel directly?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 166,
+      "role": "Students",
+      "content": "Add x/10-y/10 to -x/10+y/10.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 167,
+      "role": "Teacher",
+      "content": "So we choose to do what to the two equations?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "More general questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 168,
+      "role": "Students",
+      "content": "Add them.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 169,
+      "role": "Teacher",
+      "content": "After adding, those two terms cancel, right? What idea did you use?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 170,
+      "role": "Students",
+      "content": "Treating an expression as a whole.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 171,
+      "role": "Teacher",
+      "content": "That hint shows we can add the equations using the idea of treating an expression as a whole. What comes next?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 172,
+      "role": "Students",
+      "content": "Then x/6+y/6=3. The other equation gives x/6+y/6, because the previous equations were added to 3 and -1.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 173,
+      "role": "Teacher",
+      "content": "After adding those equations, do we need to eliminate the remaining terms?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 174,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 175,
+      "role": "Teacher",
+      "content": "What else could we do?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 176,
+      "role": "Students",
+      "content": "Use 20/6…",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 177,
+      "role": "Teacher",
+      "content": "Look again at the first two expressions. What do you notice?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 178,
+      "role": "Students",
+      "content": "They are equal.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 179,
+      "role": "Teacher",
+      "content": "If they are equal, what can we do? Subtracting them can eliminate this part too.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 180,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 181,
+      "role": "Teacher",
+      "content": "Let us compare the new system. Is it simpler?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 182,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 183,
+      "role": "Teacher",
+      "content": "The original system was also correct. But using the idea of treating an expression as a whole to add or subtract can make the work simpler.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 184,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 185,
+      "role": "Teacher",
+      "content": "Here we used addition and subtraction on whole expressions. Last lesson, when we studied substitution, what did we do with a whole expression? We substituted it. Good. Keep practicing this strategy. Now discuss the first three problems in your groups, write your work on the board, and let us see which group finishes first. Are you done discussing the first three problems?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "More general questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 186,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 187,
+      "role": "Teacher",
+      "content": "Good. You have discussed all three. The board is blocking the view, so let us treat these as practice to finish after class. What answer did you get for the first problem?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 188,
+      "role": "Students",
+      "content": "B.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 189,
+      "role": "Teacher",
+      "content": "Option B. Does this problem look familiar?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 190,
+      "role": "Students",
+      "content": "Yes.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 191,
+      "role": "Teacher",
+      "content": "What should we pay attention to?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 192,
+      "role": "Students",
+      "content": "The signs.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 193,
+      "role": "Teacher",
+      "content": "Especially the sign on the right-hand side. What about the second problem?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 194,
+      "role": "Students",
+      "content": "A.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 195,
+      "role": "Teacher",
+      "content": "How did you get A? Did you need to write x and y separately?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 196,
+      "role": "Students",
+      "content": "No.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 197,
+      "role": "Teacher",
+      "content": "You worked it out quickly. What did you do directly?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 198,
+      "role": "Students",
+      "content": "Approximately 7.8.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 199,
+      "role": "Teacher",
+      "content": "That is, you…?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 200,
+      "role": "Students",
+      "content": "Subtract equation 1 from equation 2.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 201,
+      "role": "Teacher",
+      "content": "What idea did that use?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Analytically interpretive questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Political Theory and Thought Education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 202,
+      "role": "Students",
+      "content": "Treating an expression as a whole.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Comparative summary responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 203,
+      "role": "Teacher",
+      "content": "Excellent. For the third problem, after transforming it, what was the first step?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 204,
+      "role": "Students",
+      "content": "Multiply equation 2 by 2.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 205,
+      "role": "Teacher",
+      "content": "That is what we studied today. Now think back: what did you learn? Feel free to share. Anyone who has not had a chance to answer should stand up and join in.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 206,
+      "role": "Students",
+      "content": "I can now solve systems of two linear equations confidently using addition and subtraction.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 207,
+      "role": "Teacher",
+      "content": "Excellent. Well done; please sit down.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 208,
+      "role": "Students",
+      "content": "Be careful with the signs on both sides.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 209,
+      "role": "Teacher",
+      "content": "Yes, pay close attention to the signs. Good.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 210,
+      "role": "Students",
+      "content": "The steps for solving a system by elimination.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Social development and responsibility"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 211,
+      "role": "Teacher",
+      "content": "How many steps?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Challenge"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 212,
+      "role": "Students",
+      "content": "5.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 213,
+      "role": "Students",
+      "content": "I have learned elimination by addition and subtraction and how to use it confidently.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 214,
+      "role": "Teacher",
+      "content": "Great, please sit down. What other strategy did we use today? Wang Luoyang? Everyone, say it together.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 215,
+      "role": "Students",
+      "content": "Treating an expression as a whole.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Political Theory and Thought Education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 216,
+      "role": "Teacher",
+      "content": "What else?",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Extension structural questions",
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 217,
+      "role": "Students",
+      "content": "Eliminating a variable.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 218,
+      "role": "Teacher",
+      "content": "Anything else? We used both the whole-expression idea and elimination.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": []
+        }
+      ]
+    },
+    {
+      "no": 219,
+      "role": "Students",
+      "content": "Substitution.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Extension structural response"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education",
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 220,
+      "role": "Teacher",
+      "content": "The substitution idea can also be described as transformation. To wrap up, I wrote a pagoda-style poem to summarize today’s key ideas. That is your homework. Class dismissed.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy questions",
+            "Extension structural questions"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Cultural heritage and innovation"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 221,
+      "role": "Students",
+      "content": "Everyone stand. Goodbye, teacher.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Intellectual literacy responses",
+            "Yes"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    },
+    {
+      "no": 222,
+      "role": "Teacher",
+      "content": "All right, put your desks and chairs back in place.",
+      "annotation": [
+        {
+          "type": "Mind recognition",
+          "label": [
+            "Guidance"
+          ]
+        },
+        {
+          "type": "Value orientation",
+          "label": [
+            "Ethics and rule of law education"
+          ]
+        }
+      ]
+    }
+  ]
+}

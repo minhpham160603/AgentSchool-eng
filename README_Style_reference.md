@@ -5,14 +5,14 @@
 <h1 align="center">Epitome</h1>
 
 <p align="center">
-  <strong>开创AI与社会科学融合的实验平台</strong>
+  <strong>Start AI Pilot platform for social science integration</strong>
 </p>
 
 <p align="center">
   <a href="./README.md">🌍 English</a> •
-  <a href="./README_ZH.md">🇨🇳 中文</a> •
+  <a href="./README_ZH.md">🇨🇳 Chinese</a> •
   <a href="https://arxiv.org/abs/2507.01061">📄 arXiv</a> •
-  <a href="https://www.epitome-ai.com/">🌐 官网</a>
+  <a href="https://www.epitome-ai.com/">🌐 Network of officials</a>
 </p>
 
 <p align="center">
@@ -25,110 +25,110 @@
 
 ---
 
-## 📖 目录
+## 📖 Contents
 
-- [项目简介](#-项目简介)
-- [核心特性](#-核心特性)
-- [技术架构](#-技术架构)
-- [环境要求](#-环境要求)
-- [快速开始](#-快速开始)
-- [项目结构](#-项目结构)
-- [配置指南](#-配置指南)
-- [其他](#-其他)
-- [开源许可](#-开源许可)
-- [联系我们](#-联系我们)
-- [引用](#-引用)
-
----
-
-## 🎯 项目简介
-
-**Epitome** 是全球首个专注于人工智能与社会科学深度融合的实验开放平台。平台通过七大核心模块，从**实验干预-实验环境-实验参与者**全流程智能化帮助研究者轻松设计并运行复杂的人机交互实验场景，实现对人工智能社会影响的系统性研究和综合解决方案的探索，推进人工智能更加和谐地融入人类社会。
-
-### 🎓 适用场景
-
-- 社会科学实验研究
-- 人机交互行为分析
-- AI社会影响评估
-- 群体动力学模拟
-- 跨学科实验设计
+- [Project Profile](#-Project Profile)
+- [Core characteristics](#-Core characteristics)
+- [Technical architecture](#-Technical architecture)
+- [Environmental requirements](#-Environmental requirements)
+- [Fast start](#-Fast start)
+- [Project structure](#-Project structure)
+- [Configure Guide](#-Configure Guide)
+- [Other](#-Other)
+- [Open Source Licence](#-Open Source Licence)
+- [Contact us](#-Contact us)
+- [References](#-References)
 
 ---
 
-## ✨ 核心特性
+## 🎯 Project Profile
 
-### 🎭 创新性交互场景
+**Epitome** It's the first experimental open platform around the world to focus on the deep integration of artificial intelligence with social science**Experimental intervention-Experimental environment-Pilot participants**Full-process intelligence helps researchers to easily design and run complex human-engineer interactive experiment scenarios, achieve systematic research and the exploration of integrated solutions to the social impact of artificial intelligence, and advance the more harmonious integration of artificial intelligence into human society。
 
-#### 角色扮演机器人
-- 🤖 模拟法官、历史人物等多样化社会角色
-- 🌐 实现跨时空、跨身份的对话实验
-- 📊 为抽象社会问题研究提供标准化且可重复的交互元素
+### 🎓 Apply scene
 
-#### 人智混合聊天室
-- 👥 支持"人-人-机-机"多元互动模式
-- 🔄 模拟复杂的社会网络和群体互动情境
-- 🔬 为群体行为和社会动力学研究开创新可能
-
-#### 社会模拟仿真
-- 💼 通过智能体Agent模拟人类经济交易、社交冲突等行为
-- ⏱️ 提供大规模、长时间跨度的社会情境仿真
-- 💰 实现低成本的政策效果预测和社会规范演化研究
-
-
-### 🔄 全流程闭环支持
-
-- **🎯 实验管理**：从设计到执行的完整生命周期管理
-- **📦 素材管理**：多模态实验材料的集中式管理
-- **📋 问卷管理**：灵活的问卷设计与数据收集
-- **⚙️ 工作流管理**：模块化组件的可视化编排
-- **📈 数据分析**：实时数据采集与导出功能
-
-
-### 🔓 开放性研究设计
-
-#### 多样化素材支持
-- 📝 文本、图片、视频
-- 📄 PDF、PPT等多种格式
-- 🤖 多模态大模型支撑实验材料准备
-
-#### 开放架构设计
-- 🔧 工作流自定义设计
-- 🧩 Agent系统灵活配置
-- 🎨 适配多学科复杂实验范式
-
-
-### 🎮 可控性实验推进
-
-- **🔍 实验规模可拓展**：突破传统线下实验的场地和人员限制
-- **⚡ 精确流程控制**：预设交互流程，平衡控制与现实模拟
-- **♻️ 可重复性强化**：标准化实验过程，提高可重复性和可验证性
-- **📊 数据实时采集**：全程记录实验数据，支持多维度分析
+- Experimental studies in social sciences
+- Human interaction behaviour analysis
+- AI Social impact assessment
+- Group dynamics simulation
+- Interdisciplinary experimental design
 
 ---
 
-## 🏗️ 技术架构
+## ✨ Core characteristics
 
-### 核心技术栈
+### 🎭 Innovative interactive scenes
 
-| 类别 | 技术选型 | 版本 |
+#### A role-playing robot
+- 🤖 Model judges, historical figures, diverse social roles
+- 🌐 Experiment to achieve dialogue across time and space and between identities
+- 📊 Providing standardized and repeatable interactive elements for abstract social studies
+
+#### Mixed chat room
+- 👥 Support"People-People-Machine-Machine"Multiple interactive modes
+- 🔄 Simulation of complex social networks and community interactions
+- 🔬 Potential for innovation in the study of group behaviour and social dynamics
+
+#### Social Simulation
+- 💼 Through smart bodies Agent Simulation of human economic transactions, social conflicts, etc
+- ⏱️ Provides a large-scale, long-term simulation of social conditions
+- 💰 Study to achieve low-cost policy impact prediction and social normative evolution
+
+
+### 🔄 Full process closed loop support
+
+- **🎯 Experimental management**：Full life cycle management from design to implementation
+- **📦 Material management**：Centralized management of multimodular experimental material
+- **📋 Questionnaire management**：Flexible questionnaire design and data collection
+- **⚙️ Workflow management**：Visualization of modular components
+- **📈 Data analysis**：Real-time data acquisition and export function
+
+
+### 🔓 Open research design
+
+#### Diversity Support
+- 📝 Text, Picture, Video
+- 📄 PDF、PPT Waiting for multiple formats
+- 🤖 Multimodular Large Model Support Experimental Material Preparation
+
+#### Open architecture design
+- 🔧 Workflow Custom Design
+- 🧩 Agent System flexibility
+- 🎨 Compatible multidisciplinary and complex experimental paradigm
+
+
+### 🎮 Controlled experimental propulsion
+
+- **🔍 The scale of the experiment can be expanded**：Grounds and personnel restrictions to break down traditional underground experiments
+- **⚡ Accurate process control**：Preset interactive processes, balancing controls with reality simulations
+- **♻️ Repeatability enhancement**：Standardized experimental processes to improve replicability and verifiability
+- **📊 Real-time data collection**：Record experimental data throughout the process to support multi-dimensional analysis
+
+---
+
+## 🏗️ Technical architecture
+
+### Core technology warehouse
+
+| category | Technical Selection | Version |
 |------|---------|------|
-| **核心框架** | Spring Boot | 2.7.3 |
-| **持久层** | MyBatis-Plus | - |
-| **数据库** | MySQL | 8.x |
-| **缓存** | Redis (Jedis) | - |
-| **安全框架** | Apache Shiro | - |
-| **会话共享** | Shiro-Redis | - |
-| **API文档** | Knife4j (Swagger) | - |
-| **Excel处理** | EasyExcel, EasyPoi | - |
-| **文件存储** | MinIO | - |
-| **实时通信** | WebSocket | - |
-| **工具库** | Hutool, FastJSON, Druid | - |
+| **Core framework** | Spring Boot | 2.7.3 |
+| **Persistence Layer** | MyBatis-Plus | - |
+| **Database** | MySQL | 8.x |
+| **Cache** | Redis (Jedis) | - |
+| **Security framework** | Apache Shiro | - |
+| **Session Sharing** | Shiro-Redis | - |
+| **API Document** | Knife4j (Swagger) | - |
+| **Excel processing** | EasyExcel, EasyPoi | - |
+| **File Storage** | MinIO | - |
+| **Real-time communications** | WebSocket | - |
+| **Library** | Hutool, FastJSON, Druid | - |
 
 ---
 
-## 📋 环境要求
+## 📋 Environmental requirements
 
-### 必需环境
+### Necessary environment
 
 - ☕ **JDK**: 1.8+
 - 📦 **Maven**: 3.x
@@ -137,35 +137,35 @@
 
 ---
 
-## 🚀 快速开始
+## 🚀 Fast start
 
-### 步骤 1: 克隆与构建项目
+### Steps 1: Cloning and construction projects
 
 ```bash
-# 克隆仓库
+# Cloning warehouse
 git clone https://github.com/your-org/epitome.git
 
-# 进入项目目录
+# Enter Project Directory
 cd epitome
 
-# 安装依赖并打包（含本地 lib 依赖）
+# Install dependency and pack (including local) lib Dependency）
 mvn clean install -DskipTests
 ```
 
-### 步骤 2: 修改配置文件
+### Steps 2: Modify Profile
 
-主配置`src/main/resources/application.yml`：
+Main Configuration`src/main/resources/application.yml`：
 
-激活的 Profile 在 `application.yml` 中通过 `spring.profiles.active` 指定（如 `testLocal`）
+Active Profile Yes `application.yml` Adopted `spring.profiles.active` Assign (e. g `testLocal`）
 ```yaml
 spring:
   profiles:
-    active: testLocal  # 选择激活的环境配置
+    active: testLocal  # Select Active Environment Configuration
 ```
 
-在对应 Profile 的环境配置文件（如 `application-testLocal.yml`）中配置：
+Counterpart Profile Environment profile (e.g.) `application-testLocal.yml`）Medium Configuration：
   - **MySQL**：`spring.datasource.url / username / password`
-  - **Redis**：`spring.redis.host / port` 等 
+  - **Redis**：`spring.redis.host / port` Wait
 
 ```yaml
 spring:
@@ -180,71 +180,71 @@ spring:
     password: {your_redis_password}
 ```
 
-> 💡 **提示**: 将 `{your_mysql_ip}` 等占位符替换为实际值
+> 💡 **Hint**: Will `{your_mysql_ip}` Replace placeholder with actual value
 
-### 步骤 3: 运行项目
+### Steps 3: Run Item
 
-使用 Maven 运行
+Use Maven Run
 
 ```bash
-# 使用 Maven 运行（会使用当前激活的 profile）
+# Use Maven Run (use current active) profile）
 mvn spring-boot:run
 
-# 或先打包再运行
+# Or pack and run
 mvn clean package -DskipTests
 java -jar target/ailab-1.0.0.jar
 ```
 
-默认端口见各 profile 配置（如本地常用 8085）。
+Default ports profile Configure (as used locally) 8085）。
 
-### 步骤 4: 验证启动
+### Steps 4: Verify startup
 
-访问 Knife4j 文档验证服务是否正常启动（以实际 context-path 为准）：
+Visits Knife4j Document Validation Service Started Normally (Performance) context-path Reference）：
 
-- 📚 **API文档示例**: `http://localhost:8085/doc.html`
+- 📚 **API Document Example**: `http://localhost:8085/doc.html`
 
 ---
 
-## 📁 项目结构
+## 📁 Project structure
 
 ```
 src/
 └── main/
     ├── java/com/nbtech/ailab/
-    │   ├── AiLabApplication.java           # 🚀 启动类
-    │   ├── biz/                             # 💼 业务层
-    │   │   ├── controller/                  # 🎮 控制器
-    │   │   ├── dao/                         # 🗄️ 数据访问层
-    │   │   ├── dto/                         # 📦 数据传输对象
-    │   │   ├── entity/                      # 📋 实体类
-    │   │   └── service/                     # ⚙️ 服务层
-    │   ├── common/                          # 🔧 公共模块
-    │   ├── config/                          # ⚙️ 配置类
-    │   ├── facade/                          # 🎭 门面/聚合服务
-    │   ├── security/                        # 🔒 安全配置
-    │   ├── util/                            # 🛠️ 工具类
-    │   ├── vo/                              # 👁️ 视图对象
+    │   ├── AiLabApplication.java           # 🚀 Start Class
+    │   ├── biz/                             # 💼 Operational level
+    │   │   ├── controller/                  # 🎮 controller
+    │   │   ├── dao/                         # 🗄️ Data Access Layer
+    │   │   ├── dto/                         # 📦 Data Transfer Object
+    │   │   ├── entity/                      # 📋 Entity category
+    │   │   └── service/                     # ⚙️ Service level
+    │   ├── common/                          # 🔧 Public Modules
+    │   ├── config/                          # ⚙️ Configure Classes
+    │   ├── facade/                          # 🎭 The front/Syndication services
+    │   ├── security/                        # 🔒 Security Configuration
+    │   ├── util/                            # 🛠️ Tool class
+    │   ├── vo/                              # 👁️ View Objects
     │   └── websocket/                       # 🔌 WebSocket
-    └── resources/                           # SQL 脚本与变更记录
-        └── mapper/                          # MyBatis映射文件
+    └── resources/                           # SQL Script and Change Record
+        └── mapper/                          # MyBatis Map File
 ```
 
-## ⚙️ 配置指南
+## ⚙️ Configure Guide
 
-- **多环境**：通过 `spring.profiles.active` 切换（如 `testLocal`、`testDev`、`formalDev`）。  
-- **文件上传**：在 `application.yml` 中配置了 `spring.servlet.multipart`（如 500MB 限制）。  
-- **数据库**：使用 MyBatis-Plus，逻辑删除字段为 `is_deleted`。  
+- **Multi-environment**：Pass `spring.profiles.active` Switch (e. g.) `testLocal`、`testDev`、`formalDev`）。
+- **Uploading files**：Yes `application.yml` It's configured `spring.servlet.multipart`（Like 500MB Limits）。
+- **Database**：Use MyBatis-Plus，Logically delete fields as `is_deleted`。
 ---
 
-## 🐳 其他
-- 本地依赖：`lib/common-0.0.1-release.jar`，需存在且已安装或通过 `system` 作用域引入。  
-- 部署：项目内提供 `Dockerfile`，可按需构建镜像部署。
+## 🐳 Other
+- Local Dependencies：`lib/common-0.0.1-release.jar`，Existence and installed or adopted `system` Scope in。
+- Deployment: provided within the project `Dockerfile`，Mirror deployment as required。
 
 ---
 
-## 📄 开源许可
+## 📄 Open Source Licence
 
-本项目采用 [MIT](https://opensource.org/licenses/MIT) 许可证。
+Use of this project [MIT](https://opensource.org/licenses/MIT) Licence。
 
 ```
 MIT License
@@ -258,46 +258,46 @@ in the Software without restriction...
 
 ---
 
-## 📞 联系我们
+## 📞 Contact us
 
-如果您对本平台感兴趣，或有社会实验需求，欢迎通过以下方式与我们联系：
+If you're interested in this platform or have a need for social experiments, you're welcome to contact us through：
 
-### 📧 联系邮箱
+### 📧 Contact Mailbox
 **epitome_AI4SS@163.com**
 
-### 💬 社交媒体
+### 💬 Social media
 
 <table>
   <tr>
     <td align="center">
-      <strong>微信公众号</strong><br>
+      <strong>We believe in the public domain</strong><br>
       <img src="./static/WeChatOfficialAccount.jpg" width="150"><br>
       <sub>Epitome-AI</sub>
     </td>
     <td align="center">
       <strong>Bilibili</strong><br>
       <img src="./static/Bilibili.jpg" width="150"><br>
-      <sub>关注我们的视频动态</sub>
+      <sub>Watch our video dynamics</sub>
     </td>
     <td align="center">
-      <strong>小红书</strong><br>
+      <strong>Little Red</strong><br>
       <img src="./static/RedNotes.jpg" width="150"><br>
-      <sub>查看最新分享</sub>
+      <sub>View Recent Sharing</sub>
     </td>
   </tr>
 </table>
 
-### 🌐 在线资源
+### 🌐 Online resources
 
-- 🏠 **官方网站**: [https://www.epitome-ai.com/](https://www.epitome-ai.com/)
-- 📄 **研究论文**: [arXiv:2507.01061](https://arxiv.org/abs/2507.01061)
+- 🏠 **Official website**: [https://www.epitome-ai.com/](https://www.epitome-ai.com/)
+- 📄 **Research papers**: [arXiv:2507.01061](https://arxiv.org/abs/2507.01061)
 - 💻 **GitHub**: [https://github.com/your-org/epitome](https://github.com/epitome-AISS/epitome)
 
 ---
 
-## 📖 引用
+## 📖 References
 
-如果您在研究中使用了 Epitome 平台，请引用我们的论文：
+If you use it in your research, Epitome Platform, please quote our paper：
 
 ```bibtex
 @misc{qu2025epitomepioneeringexperimentalplatform,

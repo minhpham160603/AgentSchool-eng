@@ -14,26 +14,26 @@ def move(student, file, i, info):
     """
     INPUT:
         student
-        file: 存入的文件
-        i: 轮次
-        info: 字符串，当前信息
+        file: File deposited
+        i: Round
+        info: String, current information
     """
-    print(f"--- 现在是 {student.scratch.current_time} ---")
+    print(f"--- Now {student.scratch.current_time} ---")
     node = perceive(student, info)
     retrieved = retrieve(student, node)
     if retrieved and retrieved[node.content]:
-        print(f"检索到相关记忆: {retrieved[node.content]}")
+        print(f"Retrieve Relevant Memory: {retrieved[node.content]}")
     else:
-        print("没有检索到相关记忆。")
-    
+        print("No relevant memories retrieved.")
+
     reflect(student, retrieved)
 
-    student.scratch.current_time = student.scratch.current_time + timedelta(seconds=30) # 假设每次感知后时间增加30秒
+    student.scratch.current_time = student.scratch.current_time + timedelta(seconds=30) # Assumptions of time after each perception 30 sec
 
-    
-    student.scratch.save(f"test/{student.name}_scratch_{i}.json")  # 保存当前scratch状态到文件
+
+    student.scratch.save(f"test/{student.name}_scratch_{i}.json")  # Save Current scratch Status to File
 
     memory_file = f"test/{student.name}_memory_{i}"
     if not os.path.exists(memory_file):
-        os.makedirs(memory_file, exist_ok=True) #确保 memory_file 作为目录存在
+        os.makedirs(memory_file, exist_ok=True) #Ensure memory_file Exists as Directory
     student.mem.save(memory_file)

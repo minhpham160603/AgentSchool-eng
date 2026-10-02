@@ -11,7 +11,7 @@ from student.cognitive_module.student import *
 from student.prompt.run_ds_prompt import *
 from student.retrieve import *
 from util.BroadcastMessage import *
-from util.BroadcastSys import *            
+from util.BroadcastSys import *
 
 
 def _strip_think(text: str) -> str:
@@ -32,114 +32,112 @@ def _parse_int_0_10(text: str, default: int = 1) -> int:
 
 def safe_json_decode(json_str, fallback=None):
     """
-    安全的JSON解析函数，使用demjson3提供更好的容错性
+    Clear JSON Parsing functions, using demjson3 Providing better tolerance for errors
     """
     if not json_str or json_str.strip() == "":
-        print(f"WARNING: 尝试解析空字符串")
+        print(f"WARNING: Try to parse empty strings")
         return fallback
-    
-    # 清理字符串，移除markdown代码块标记和多余的空白
+
+    # Clear String, Remove markdown Block tags and redundant blanks
     cleaned_str = json_str.strip()
-    
-    # 移除markdown代码块标记
+
+    # Remove markdown Block Tags
     if cleaned_str.startswith('```json'):
-        cleaned_str = cleaned_str[7:]  # 移除 ```json
+        cleaned_str = cleaned_str[7:]  # Remove ```json
     elif cleaned_str.startswith('```'):
-        cleaned_str = cleaned_str[3:]   # 移除 ```
-        
+        cleaned_str = cleaned_str[3:]   # Remove ```
+
     if cleaned_str.endswith('```'):
-        cleaned_str = cleaned_str[:-3]  # 移除结尾的 ```
-        
+        cleaned_str = cleaned_str[:-3]  # Remove the end ```
+
     cleaned_str = cleaned_str.strip()
-    
-    # 替换中文标点符号为英文标点符号
-    cleaned_str = cleaned_str.replace('"', '"').replace('"', '"')  # 中文双引号
-    cleaned_str = cleaned_str.replace(''', "'").replace(''', "'")  # 中文单引号
-    cleaned_str = cleaned_str.replace('，', ',')  # 中文逗号
-    cleaned_str = cleaned_str.replace('：', ':')  # 中文冒号
-    
-    # 如果清理后是空字符串，返回fallback
+
+    # Replace the Chinese Punctuation with the English Punctuation
+    cleaned_str = cleaned_str.replace('"', '"').replace('"', '"')  # Chinese Double Quote
+    cleaned_str = cleaned_str.replace(''', "'").replace(''', "'")  # Chinese single quotation marks
+    cleaned_str = cleaned_str.replace('，', ',')  # Chinese commas
+    cleaned_str = cleaned_str.replace('：', ':')  # Chinese colon
+
+    # If empty string after cleanup, return fallback
     if not cleaned_str:
-        print(f"WARNING: 清理后得到空字符串")
+        print(f"WARNING: Empty string after cleanup")
         return fallback
-    
+
     try:
-        # 首先尝试使用标准json
+        # First try using standards json
         return json.loads(cleaned_str)
     except json.JSONDecodeError:
         try:
-            # 如果标准json失败，使用demjson3
-            print(f"WARNING: 标准JSON解析失败，尝试使用demjson3")
+            # If the standard json Failed, use demjson3
+            print(f"WARNING: Standard JSON Parsing failed, trying to use demjson3")
             return demjson3.decode(cleaned_str)
         except Exception as e:
-            print(f"ERROR: demjson3解析也失败: {e}")
-            print(f"原始字符串: '{json_str}'")
-            print(f"清理后字符串: '{cleaned_str}'")
+            print(f"ERROR: demjson3 Parsing failed: {e}")
+            print(f"Original String: '{json_str}'")
+            print(f"Cleanup String: '{cleaned_str}'")
             return fallback
 
 
 async def perceive(student, information, sender=None, receiver=None, current_time = None, info_type = None):
     """
-    感知环境，接收信息。
-    根据学生的压力和注意力吸收部分信息，并让学生对信息进行思考。
-    并最后处理成ConceptNode类，放入记忆。
-    我们此处先假设它每次接受只会接受到一个人发出的一个信息
-    （但实际情况是可能有多个人发的消息，因为小组讨论）
+    Process incoming information according to the student's attention and stress,
+    then store the resulting concept node in memory. A call normally handles one
+    sender, though a group discussion may involve several participants.
     INPUT:
-        Student: 学生类
-        information: string, 信息内容
-        sender: string, 发送者的名字
-        receiver: string, 接收者的名字（默认为None）
-        current_time: datetime, 当前时间
-        info_type: string, 事件类型（可选，默认为None）
+        student: student object
+        information: str, content to process
+        sender: str, sender's name
+        receiver: str, recipient's name (optional)
+        current_time: datetime, current time
+        info_type: str, optional event type
     OUTPUT:
-        node: ConceptNode类的实例
-        absorbed: string, 学生吸收的信息内容
-        learned: string, 学生学到的知识内容
+        node: the resulting concept node
+        absorbed: str, information retained by the student
+        learned: str, knowledge learned by the student
     """
-        # 如果是knowledge，info如
+        # If knowledge，info Like
         # {"message_type": "class",
         #  "active_event": "lecture",
         #  "speaker": self.name,
         #  "content": self.sections[self.current_section_turn]}
-        # 如果是event，info如
-        # 问答：
+        # If event，info Like
+        # Questions and answers：
         #   "message_type": "class",
         #    "active_event": "ask_question",
         #    "speaker": self.name,
         #    "content": self.q_a[0]
-        # 小组讨论：
-        #（开始）
+        # Panel discussion：
+        #（Start）
         #    "message_type": "class",
         #    "active_event": "group_discussion_start",
         #    "speaker": self.name,
-        #    "content": f"请进行小组讨论，讨论内容为：{point}"
-        #（结束）
+        #    "content": f"Please have a panel discussion：{point}"
+        #（End）
         #    "message_type": "class",
         #    "active_event": "group_discussion_end",
         #    "speaker": self.name,
-        #    "content": "小组讨论结束。"
+        #    "content": "Conclusion of the panel discussion。"
 
     if information is None or information == "":
         return None, None, None
 
-    # 先判断当前消息是什么类型的消息：event/chat/knowledge
+    # Let's see what kind of information we have：event/chat/knowledge
     # info_type = run_ds_prompt_judge_type(information)
-    print(f"{student.name}在感知信息：{information}（事件类型为{info_type}）")
-    # print(f"信息类型: {info_type}")
-    # 我们现在不要LLM判断事件类型，而是通过传入的消息来判断
-    # print(f"信息内容: {information}")
+    print(f"{student.name}In Perception Information：{information}（Event type is{info_type}）")
+    # print(f"Information Type: {info_type}")
+    # Not now LLM The type of event is judged by the information that comes in
+    # print(f"Information content: {information}")
     node = None
     absorbed_info = None
     learned = None
-    # 1. 如果是event类型，则需要判断event的类型，并且总结此event的主题作为关键词
-    # 因为教师端那边对event的定义好像不是很明确，因为他有可能直接发过来一个问题。
-    # 所以我需要用它给的参数来判断事件类型
+    # 1. If event Type, which requires judgement event and summarise this event Themes as keywords
+    # Because the teacher is right there event The definition doesn't seem very clear, because he could send a question directly。
+    # So I need to judge the type of event with the parameters it gives me
     if info_type == "event":
         event_summary = await run_ds_prompt_summarize_event(information)
         json_event = safe_json_decode(_strip_think(event_summary), {})
         if not json_event:
-            print(f"ERROR: 无法解析事件总结，跳过处理")
+            print(f"ERROR: Unable to parse event summary, skip processing")
             return None, None, None
         content = json_event.get("content", "")
         event_type = json_event.get("event_type", "unknown")
@@ -151,9 +149,9 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
         importance = _parse_int_0_10(importance_text)
         student.scratch.accumulate_importance(importance)
         embedding_pair = (content, await get_local_embedding(content))
-        node = student.mem.add_event(student.scratch.current_time, content, keywords, importance, 
+        node = student.mem.add_event(student.scratch.current_time, content, keywords, importance,
                               embedding_pair, event_type, theme)
-        # --- 知识图谱：被动学习 ---
+        # --- Knowledge mapping: passive learning ---
         """if theme:
             kg.batch_passive_learn(
                 student.name,
@@ -164,24 +162,24 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
             )"""
     elif info_type == "chat":
         # TODO:
-        # 2. 如果是chat类型，则直接使用信息内容作为关键词
-        # 并且要存储
+        # 2. If chat type, directly use information content as keyword
+        # And to store it
         # student.scratch.chat_buffer.append(0, (current_time, sender, information))
         absorb_rate = student.scratch.attention_level * (1 - student.scratch.stress)
         absorbed_info = await run_ds_prompt_absorb_info(student, information, absorb_rate)
         content = absorbed_info
         s = sender if sender else "unknown"
         p = "chat with"
-        # 宾语要根据当前事件类型来决定，
+        # Ping will be determined according to the current type of event，
         o = student.name
         current_time = current_time if current_time else student.scratch.current_time
         importance_text = await run_ds_prompt_importance_chat(student, absorbed_info)
         importance = _parse_int_0_10(importance_text)
         student.scratch.accumulate_importance(importance)
-        keywords = [s, p, o]  # 关键词是发送者、动词和学生名字
+        keywords = [s, p, o]  # Keywords are senders, verbs and student names
         embedding_pair = (absorbed_info, await get_local_embedding(absorbed_info))
         node = student.mem.add_chat(current_time, content, keywords, importance, embedding_pair, s = s, p = p, o = o)
-        # --- 知识图谱：把聊天参与者与关键词视为轻度概念标签（可选过滤长度）---
+        # --- Knowledge mapping: treat chat participants and keywords as light conceptual labels (optional filter length)）---
         # candidate_concepts = [k for k in keywords if len(k) <= 20]
         # if candidate_concepts:
             # kg.batch_passive_learn(student.name, candidate_concepts, base_strength=0.01, importance=importance)
@@ -189,20 +187,20 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
         student.scratch.chat_with.append(s)
     # elif info_type == "knowledge":
     elif info_type == "lecture":
-        # 3. 如果是knowledge类型，则让学生在自己吸收的信息中，和当前的信息结合，
-        # 总结出其当前学到的知识点，存入知识记忆中
-        # 根据学生的压力和注意力吸收部分信息
+        # 3. If knowledge Type, in which the student combines the information that he/she absorbs with the current information，
+        # Summarize their current learning points and put them in their memory
+        # Take some information based on student pressure and attention
         attention_level = student.scratch.attention_level
         stress_level = student.scratch.stress
         if attention_level > 0.7 and stress_level < 0.3:
-            absorption_desc = "你听得非常认真，几乎抓住了老师讲的所有关键细节。"
+            absorption_desc = "You listened carefully and retained nearly all of the teacher's key details."
         elif attention_level < 0.3 or stress_level > 0.7:
-            absorption_desc = "你有些分心和紧张，可能错过了很多细节，只抓到了一些零散的概念和关键词。"
+            absorption_desc = "You were somewhat distracted or nervous, so you missed many details and retained only a few concepts and keywords."
         else:
-            absorption_desc = "你基本跟上了老师的节奏，但可能对一些复杂的点理解得不深。"
+            absorption_desc = "You mostly kept up with the teacher, but may not have understood the more complex ideas."
 
-        # 检索相关记忆的认知。融入当前学习中。
-        # 注意：further_retrieve需要的是字符串列表，所以要将information包装成列表
+        # Retrieve the knowledge of memory。
+        # Attention：further_retrieve You need a string list, so you want to information Pack in List
         retrieved_mem = await further_retrieve(
             student, [information], n_count=3
         )
@@ -214,29 +212,29 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
 
         json_understanding = safe_json_decode(_strip_think(knowledge_understanding_str), {})
         if not json_understanding:
-            print(f"ERROR: 无法解析学生理解，跳过处理")
+            print("ERROR: Could not parse the student's understanding; skipping this item.")
             return
 
-        content = json_understanding.get("understanding_content", "") # 这是学生认为自己学到的东西
+        content = json_understanding.get("understanding_content", "") # This is what students think they learned
         learned = content
-        # misconceptions = json_understanding.get("misconceptions", []) # 【新】学生理解错的地方
-        # lingering_questions = json_understanding.get("lingering_questions", []) # 【新】学生还存在的疑问
+        # misconceptions = json_understanding.get("misconceptions", []) # 【Where the students are wrong
+        # lingering_questions = json_understanding.get("lingering_questions", []) # 【New students still have questions
         knowledge_tag = json_understanding.get("knowledge_tag", [])
         importance = json_understanding.get("importance", 1)
 
-        # 产生错误理解/迷思
+        # Generates a false understanding/Myths
         misconceptions = await run_ds_prompt_generate_misconceptions(
-            student, learned 
+            student, learned
         )
 
 
-        # 存储核心知识（学生的理解版本）
+        # Storage of core knowledge (students' understanding version)）
         if content:
             student.scratch.accumulate_importance(importance)
             keywords = knowledge_tag
             embedding_pair = (content, await get_local_embedding(content))
             node = student.mem.add_knowledge(student.scratch.current_time, content, keywords, importance, embedding_pair, knowledge_tag, misconceptions=misconceptions)
-            # --- 知识图谱：讲授知识直接增强对应标签 ---
+            # --- Knowledge mapping: teaching knowledge directly enhances matching labels ---
             if knowledge_tag:
                 kp_ids = kg.get_batch_id_by_names(knowledge_tag, student.knowledge_points_of_the_grade)
                 kg.batch_passive_learn(
@@ -247,17 +245,17 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
                     misconceptions=misconceptions,
                     importance=importance
                 )
-            print(f"{student.name}的理解: {content}")
-        
-        # 将错误认知和疑问也作为一种特殊的记忆存储起来
+            print(f"{student.name}Understanding: {content}")
+
+        # To store false perceptions and questions as a special memory
         # if misconceptions:
-            # print(f"{student.name}的错误认知: {misconceptions}")
-            # student.mem.add_thought(..., f"我对'{knowledge_tag}'的理解可能错了，我认为是'{misconceptions}'", ...)
+            # print(f"{student.name} Misperception: {misconceptions}")
+            # student.mem.add_thought(..., f"I was right'{knowledge_tag}'I think it's wrong'{misconceptions}'", ...)
         # if lingering_questions:
-            # print(f"{student.name}的疑问: {lingering_questions}")
+            # print(f"{student.name} Question: {lingering_questions}")
         """absorb_rate = student.scratch.attention_level * (1 - student.scratch.stress)
         absorbed_info = await run_ds_prompt_absorb_info(student, information, absorb_rate)
-        # 存储这个记忆
+        # Store this memory
         importance_text = await run_ds_prompt_importance_thought(student, absorbed_info)
         importance = _parse_int_0_10(importance_text)
         student.scratch.accumulate_importance(importance)
@@ -265,17 +263,17 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
         embedding_pair = (absorbed_info, await get_local_embedding(absorbed_info))
         student.mem.add_thought(student.scratch.current_time, absorbed_info, keywords, importance,
                                 embedding_pair)
-        # 输出此学生吸收的信息
-        print(f"{student.name}吸收的信息: {absorbed_info}")
+        # Output information absorbed by this student
+        print(f"{student.name} Absorbed information: {absorbed_info}")
 
-        # 模拟学习这个知识
-        # 我此处认为他一次只会总结出一个知识点（不知道大模型是否会总结出多个知识点）
+        # Simulation of the knowledge
+        # I think he's only going to draw up one knowledge point at a time）
         knowledge_summary_str = await run_ds_prompt_summarize_knowledge(student, absorbed_info, information)
-        # print(f"DEBUG: Raw output from run_ds_prompt_summarize_knowledge: '{knowledge_summary_str}'") # 打印原始输出
-        
+        # print(f"DEBUG: Raw output from run_ds_prompt_summarize_knowledge: '{knowledge_summary_str}'") # Print original output
+
         json_knowledge = safe_json_decode(knowledge_summary_str, {})
         if not json_knowledge:
-            print(f"ERROR: 无法解析知识总结，跳过处理")
+            print(f"ERROR: Could not parse summary of knowledge, skip processing")
             return None, None, None
 
         content = json_knowledge.get("content", "")
@@ -291,26 +289,26 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
         keywords = knowledge_tag
         embedding_pair = (content, await get_local_embedding(content))
         node = student.mem.add_knowledge(student.scratch.current_time, content, keywords, importance, embedding_pair, knowledge_tag)
-        # 输出此学生学到的知识
-        print(f"{student.name}学到的知识: {content}")"""
+        # Export the knowledge the student has learned
+        print(f"{student.name} Knowledge gained: {content}")"""
     elif info_type == "ask_question":
-        # 4. 如果是ask_question类型，则需要将问题存入学生的scratch中
-        # 这个首先属于event，同时也属于chat
+        # 4. If ask_question Type of problem that needs to be placed on the student scratch Medium
+        # This belongs first event，It's also a part of it chat
         event_summary = await run_ds_prompt_summarize_event(information)
         json_event = safe_json_decode(_strip_think(event_summary), {})
         if not json_event:
-            print(f"ERROR: 无法解析问题事件总结，跳过处理")
+            print(f"ERROR: Unable to parse summary of events, skip processing")
             return None, None, None
-            
+
         event_content = json_event.get("content", "")
-        # print(f"事件内容: {event_content}")
+        # print(f"Event content: {event_content}")
         # event_type = json_event["event_type"]
         event_theme = json_event.get("keywords", [])
         if isinstance(event_theme, str):
             event_theme = [event_theme]
-        event_content = f"{sender}询问{student.name}关于{event_theme}的问题"
-        print(f"事件内容: {event_content}")
-        
+        event_content = f"{sender}Ask{student.name}About{event_theme}Issues"
+        print(f"Event content: {event_content}")
+
         importance_text = await run_ds_prompt_importance_event(student, event_content)
         importance = _parse_int_0_10(importance_text)
         student.scratch.accumulate_importance(importance)
@@ -318,10 +316,10 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
         s = sender if sender else "unknown"
         p = "asks"
         o = student.name
-        keywords = ["ask_question"] + event_theme + [s, p, o]  # 关键词是事件类型、主题、发送者、动词和学生名字
-        node = student.mem.add_event(student.scratch.current_time, event_content, keywords, importance, 
+        keywords = ["ask_question"] + event_theme + [s, p, o]  # Keywords are type of event, theme, sender, verb and student name
+        node = student.mem.add_event(student.scratch.current_time, event_content, keywords, importance,
                               embedding_pair, info_type, event_theme, s=s, p=p, o=o)
-        # --- 知识图谱：问题主题概念轻度强化 ---
+        # --- Knowledge mapping: minor reinforcement of subject-matter concepts ---
         """if event_theme:
             kg.batch_passive_learn(
                 student.name,
@@ -330,23 +328,23 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
                 config_kg=student.knowledge_points_of_the_grade,
                 importance=importance
             )"""
-        
-        # 然后存入chat
+
+        # And then you put it in chat
         absorb_rate = student.scratch.attention_level * (1 - student.scratch.stress)
         absorbed_info = await run_ds_prompt_absorb_info(student, information, absorb_rate)
         # chat_content = absorbed_info
         chat_content = information
-        print(f"询问的内容：{chat_content}")
+        print(f"Contents of the query：{chat_content}")
         current_time = current_time if current_time else student.scratch.current_time
         importance_text = await run_ds_prompt_importance_chat(student, absorbed_info)
         importance = _parse_int_0_10(importance_text)
         student.scratch.accumulate_importance(importance)
-        # 提取这段内容涉及的知识点
+        # To extract the knowledge point of the subject
         knowledge_tags = await run_ds_prompt_extract_knowledge_tag(absorbed_info, student.knowledge_points_of_the_grade)
-        # 确保knowledge_tags是列表
+        # Ensure knowledge_tags is the list
         if not isinstance(knowledge_tags, list):
             knowledge_tags = []
-        keywords = knowledge_tags + [s, p, o]  # 关键词是知识点、发送者、动词和学生名字
+        keywords = knowledge_tags + [s, p, o]  # Key words are knowledge points, senders, verbs and student names
         embedding_pair = (absorbed_info, await get_local_embedding(absorbed_info))
         node = student.mem.add_chat(current_time, chat_content, keywords, importance, embedding_pair, s = s, p = p, o = o, knowledge_tag=knowledge_tags)
         if knowledge_tags:
@@ -358,51 +356,51 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
                 config_kg=student.knowledge_points_of_the_grade,
                 importance=importance
             )
-        # 将当前的chat信息存入学生的scratch中
+        # Current chat It's for students scratch Medium
         student.scratch.chat_buffer.append(node)
-        student.scratch.chat_with.append(s)  # 添加发送者到聊天列表
+        student.scratch.chat_with.append(s)  # Add Sender to Chat List
     elif info_type == "group_discussion_start" or info_type == "group_discussion" and receiver == student.name:
-        # 小组讨论，并且只有对象为自己时才接收
-        # 当前默按顺序发言
+        # Panel discussions, accepted only when the subject is for himself
+        # For the time being, I will speak in the same order
 
-        # 如果是开始，更新小组
+        # If so, update team
         if info_type == "group_discussion_start":
             student.update_group(student.scratch.group)
 
-        # 如果当前学生的信息列表中存在"group_discussion_end""类型的信息，直接忽略此次信息
+        # Ignore a discussion message if a group-discussion-end event is already queued.
         if any(student.infos[i].get("active_event") == "group_discussion_end" for i in range(len(student.infos))):
-            print(f"{student.name}忽略小组讨论信息，因为已经有小组讨论结束信息。")
+            print(f"{student.name}Ignore information on panel discussions as there is already an end-of-group discussion。")
             return None, None, None
 
-        # 要把当前发言的内容都加入scratch的缓冲区中
+        # To add the contents of the current statement scratch In the buffer zone
         s = sender if sender else "unknown"
         p = "talks with"
         # o = f"students in group {student.scratch.group}"
         o = receiver if receiver else "unknown"
-        
+
         keys = await run_ds_prompt_chat_keywords(information)
-        # 将字符串拆分为关键词列表
+        # Split string into keyword list
         if isinstance(keys, str):
             keys_list = [key.strip() for key in keys.split(',') if key.strip()]
         else:
             keys_list = keys if isinstance(keys, list) else [keys]
-        keywords = ["group_discussion", s, p, o] + keys_list # 关键词是事件类型、发送者、动词、涉及的学生和总结的关键词
+        keywords = ["group_discussion", s, p, o] + keys_list # Keywords are type of event, sender, verbs, students involved and keywords for summation
         embedding_pair = (information, await get_local_embedding(information))
         importance_text = await run_ds_prompt_importance_chat(student, information)
         importance = _parse_int_0_10(importance_text)
         student.scratch.accumulate_importance(importance)
         node = student.mem.add_chat(student.scratch.current_time, information, keywords, importance, embedding_pair, s = s, p = p, o = o)
-        # --- 知识图谱：讨论关键词轻度强化 ---
+        # --- Knowledge mapping: light reinforcement of discussion keywords ---
         # discussion_concepts = [k for k in keys_list if isinstance(k, str)]
         # if discussion_concepts:
             # kg.batch_passive_learn(student.name, discussion_concepts, base_strength=0.015, importance=importance)
         student.scratch.chat_buffer.append(node)
-        student.scratch.chat_with.append(s)  # 添加发送者到聊天列表
+        student.scratch.chat_with.append(s)  # Add Sender to Chat List
 
-        # 输出小组讨论的内容
-        print(f"当前小组讨论历史：{format_chat_buffer(student.scratch.chat_buffer)}")
+        # Output of the panel discussion
+        print(f"History of the current panel discussion：{format_chat_buffer(student.scratch.chat_buffer)}")
     elif info_type == "group_discussion_end":
-        # 小组讨论结束
+        # Conclusion of the panel discussion
         if student.scratch.isLeader:
             chats = format_chat_buffer(student.scratch.chat_buffer)
             results = await prompt_summarize_group_discussion(student, chats)
@@ -411,53 +409,53 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
                 current_time=student.scratch.current_time,
                 message_type = MessageType.CLASS,
                 active_event = "group_discussion",
-                speaker = group,  
+                speaker = group,
                 content = results
             )
             student.broadcast_sys.publish_sync("teacher", msg)
-            print(f"小组讨论结果: {chats}")
-            print(f"{student.name}小组讨论结束，组长总结: {results}")
-            student.scratch.isLeader = False  # 结束后不再是组长
+            print(f"Outcome of the panel discussion: {chats}")
+            print(f"{student.name}End of panel discussion, Chair' s summary: {results}")
+            student.scratch.isLeader = False  # I'm not the leader anymore
 
-        student.scratch.chat_buffer.clear()  # 清空小组讨论的聊天缓冲区
-        student.scratch.chat_with.clear()  # 清空小组讨论的聊天列表
-        
-        
+        student.scratch.chat_buffer.clear()  # Empty chat buffers for panel discussions
+        student.scratch.chat_with.clear()  # Chat list to empty panel discussion
+
+
         """elif info_type == "feedback":
-            # 老师提问的反馈
-            # 1. 生成thought
+            # Feedback from teachers
+            # 1. Generate thought
             absorb_rate = student.scratch.attention_level * (1 - student.scratch.stress)
             absorbed_info = run_ds_prompt_absorb_info(student, information, absorb_rate)
-            # 存储这个记忆
+            # Store this memory
             importance = int(run_ds_prompt_importance_thought(student, absorbed_info))
             student.scratch.accumulate_importance(importance)
             keywords = run_ds_prompt_thought_keywords(absorbed_info)
             embedding_pair = (absorbed_info, get_local_embedding(absorbed_info))
             student.mem.add_thought(student.scratch.current_time, absorbed_info, keywords, importance,
                                     embedding_pair)"""
-        # 2. 改变学生的scratch状态
+        # 2. Changed students scratch Status
     elif info_type == "group_discussion_content":
-        # 如果sender和当前学生相同，则跳过处理此信息
+        # If sender As with current student, skip processing this information
         if sender == student.name:
             return None, None, None
 
-        # 如果当前学生的信息列表中存在相同的信息，则跳过
+        # Skip if the same information exists in the current student information list
         if any(student.scratch.chat_buffer[i].content == information for i in range(len(student.scratch.chat_buffer))):
             return None, None, None
 
-        # 此消息用于同步更新小组讨论的信息
+        # This message is used to synchronize and update information on panel discussions
         s = sender if sender else "unknown"
         p = "talks with"
         # o = f"students in group {student.scratch.group}"
         o = receiver if receiver else "unknown"
-        
+
         keys = await run_ds_prompt_chat_keywords(information)
-        # 将字符串拆分为关键词列表
+        # Split string into keyword list
         if isinstance(keys, str):
             keys_list = [key.strip() for key in keys.split(',') if key.strip()]
         else:
             keys_list = keys if isinstance(keys, list) else [keys]
-        keywords = ["group_discussion", s, p, o] + keys_list # 关键词是事件类型、发送者、动词、涉及的学生和总结的关键词
+        keywords = ["group_discussion", s, p, o] + keys_list # Keywords are type of event, sender, verbs, students involved and keywords for summation
         embedding_pair = (information, await get_local_embedding(information))
         importance_text = await run_ds_prompt_importance_chat(student, information)
         importance = _parse_int_0_10(importance_text)
@@ -467,23 +465,21 @@ async def perceive(student, information, sender=None, receiver=None, current_tim
         # if sync_concepts:
             # kg.batch_passive_learn(student.name, sync_concepts, base_strength=0.01, importance=importance)
         student.scratch.chat_buffer.append(node)
-        student.scratch.chat_with.append(s)  # 添加发送者到聊天列表
+        student.scratch.chat_with.append(s)  # Add Sender to Chat List
     elif info_type == "taught":
         feedback = await run_ds_prompt_feedback_teaching(student, information)
         msg = BroadcastMessage(
                 current_time=student.scratch.current_time,
                 message_type = MessageType.CLASS,
                 active_event = "feedback",
-                speaker = student.name,  
+                speaker = student.name,
                 content = feedback
             )
         student.broadcast_sys.publish_sync("teacher", msg)
-        print(f"{student.name}对教学的反馈: {feedback}")
+        print(f"{student.name}Feedback on teaching: {feedback}")
     elif info_type == "new_day":
-        # 新的一天，更新学生的时间状态
+        # New day, update student time
         student.scratch.current_time = current_time if current_time else student.scratch.current_time
 
     return node, absorbed_info, learned
-
-
 

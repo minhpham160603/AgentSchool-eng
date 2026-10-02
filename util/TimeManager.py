@@ -22,48 +22,48 @@ class TimeManager:
         self.broadcast_system = broadcast_system
         self.day_start_time = day_start_time
         self.path = daily_schedule_path
-        self.round_time = 60  # 默认值
-        self.total_courses = None  # 总共要模拟多少节课
-        self._load_schedule()  # 初始化时加载日程
+        self.round_time = 60  # Default value
+        self.total_courses = None  # How many sessions do you have to simulate?
+        self._load_schedule()  # Load schedule on initialization
 
     def _load_schedule(self):
-        """从 JSON 加载日程，并根据其中的 start_date 设置当前时间"""
+        """From JSON Loading the calendar and according to which start_date Set Current Time"""
         self.events.clear()
         try:
             with open(self.path, "r") as f:
                 schedule_data = json.load(f)
 
-            # 获取轮询时间，如果未设置则使用默认值
+            # Get the round time, use the default if not set
             self.round_time = schedule_data.get("round_time", self.round_time)
 
-            # 新增：读取要模拟的课程总数
+            # New: Total number of courses to be simulated
             self.total_courses = schedule_data.get("total_courses", None)
 
-            # 获取 JSON 中指定的 start_date
+            # Access JSON specified in start_date
             if "start_date" not in schedule_data:
-                raise ValueError("JSON 文件中必须包含 'start_date' 字段")
+                raise ValueError("JSON File must contain 'start_date' Fields")
 
             start_date_str = schedule_data["start_date"]
             start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
 
-            # 设置 current_time（默认时间为当天 day_start_time）
+            # Settings current_time(Default time is the day day_start_time)
             day_start_time_obj = datetime.strptime(self.day_start_time, "%H:%M").time()
             self.current_time = datetime.combine(start_date, day_start_time_obj)
 
-            # 获取星期几
+            # Get the week
             weekday = self.current_time.strftime("%A")
-            print(f"[DEBUG] 使用日期：{start_date}，星期：{weekday}")
+            print(f"[DEBUG] Date used:{start_date},Week:{weekday}")
 
             daily_events = schedule_data.get(weekday, [])
 
-            print(f"[DEBUG] 加载 {weekday} 的日程: {len(daily_events)} 个事件")
+            print(f"[DEBUG] Load {weekday} Schedule: {len(daily_events)} Event")
 
             for event_data in daily_events:
-                # 解析时间字符串为时间对象
+                # Parse Time String as Time Object
                 start_time_obj = datetime.strptime(event_data["start"], "%H:%M").time()
                 end_time_obj = datetime.strptime(event_data["end"], "%H:%M").time()
 
-                # 创建完整的时间日期对象
+                # Create Full Time Date Object
                 event_start = datetime.combine(start_date, start_time_obj)
                 event_end = datetime.combine(start_date, end_time_obj)
 
@@ -75,50 +75,50 @@ class TimeManager:
                 )
 
                 print(
-                    f"[DEBUG] 创建事件: {new_event.name} ({event_start.strftime('%H:%M')} - {event_end.strftime('%H:%M')})")
+                    f"[DEBUG] Create Event: {new_event.name} ({event_start.strftime('%H:%M')} - {event_end.strftime('%H:%M')})")
                 self.events.append(new_event)
 
             self.events.sort(key=lambda x: x.start)
 
-            # 打印所有事件用于调试
-            print("[DEBUG] 当日事件列表:")
+            # Print all events for debugging
+            print("[DEBUG] List of events of the day:")
             for event in self.events:
-                print(f"  - {event.name}: {event.start.strftime('%H:%M')} 到 {event.end.strftime('%H:%M')}")
+                print(f"  - {event.name}: {event.start.strftime('%H:%M')} Present {event.end.strftime('%H:%M')}")
 
         except Exception as e:
-            print(f"[ERROR] 加载日程表失败: {str(e)}")
-            # 确保即使出错也有一个合理的时间设置
+            print(f"[ERROR] Failed to load schedule: {str(e)}")
+            # Make sure there's a reasonable time frame even if there's an error
             self.current_time = datetime.combine(datetime.now().date(),
                                                  datetime.strptime(self.day_start_time, "%H:%M").time())
 
     def get_current_active_event(self) -> Event:
-        """获取当前活动的事件"""
-        # 使用半开区间 [start, end) 判断事件是否在进行中
+        """Get the current active event"""
+        # Use semi-open space [start, end) To determine whether the event is in progress
         for event in self.events:
             if event.start <= self.current_time <= event.end:
-                # 如果有父事件ID，说明是子事件（如拖堂）
+                # If there's a parent incident, ID,It's a child event)
                 if event.parent_event_id:
                     return event
 
-        # 检查主事件
+        # Check main event
         for event in self.events:
             if event.start <= self.current_time <= event.end:
                 return event
 
-        # 没有事件时返回空闲状态
+        # Return to idle status when no incidents
         return FREE_TIME_EVENT
 
     def publish_event(self):
-        """检测并广播事件变更，若变更返回 True"""
+        """Monitor and broadcast event changes, if returned True"""
         current_event = self.get_current_active_event()
         changed = False
 
-        # 只有当事件发生变化时才广播
+        # Only when events change
         if current_event != self.last_active_event:
             if self.last_active_event is not None:
-                print(f"[EVENT] 活动事件变更: {self.last_active_event.name} -> {current_event.name}")
+                print(f"[EVENT] Changes in activity events: {self.last_active_event.name} -> {current_event.name}")
             else:
-                print(f"[EVENT] 初始活动事件: {current_event.name}")
+                print(f"[EVENT] Initial Activity: {current_event.name}")
 
             msg = BroadcastMessage(
                 current_time=self.current_time,
@@ -126,37 +126,37 @@ class TimeManager:
                 active_event=current_event.name,
                 event_id=current_event.id,
                 speaker="time_manager",
-                content=f"当前活动已变更为: {current_event.name}",
+                content=f"Current activity changed to: {current_event.name}",
             )
 
-            # 使用同步广播确保事件立即处理
+            # Use synchronous broadcasts to ensure that incidents are handled immediately
             self.broadcast_system.publish_sync("all", msg)
             # await self.broadcast_system.publish("all", msg)
 
-            # 更新最后记录的事件
+            # Update Last Recorded Events
             self.last_active_event = current_event
             changed = True
 
         return changed
 
     def add_event(self, new_event: Event):
-        """动态添加事件"""
+        """Dynamic Add Event"""
         try:
-            # 检查冲突
+            # Check conflicts
             for existing_event in self.events:
                 if new_event.is_conflict(existing_event):
                     if existing_event.parent_event_id:
-                        continue  # 允许覆盖子事件
+                        continue  # Allow to overwrite child events
                     else:
-                        raise ValueError(f"事件冲突: {new_event.name} 与 {existing_event.name}")
+                        raise ValueError(f"Conflict of events: {new_event.name} and {existing_event.name}")
 
-            # 添加新事件
+            # Add New Event
             self.events.append(new_event)
             self.events.sort(key=lambda x: x.start)
             print(
-                f"[EVENT] 添加新事件: {new_event.name} ({new_event.start.strftime('%H:%M')}-{new_event.end.strftime('%H:%M')})")
+                f"[EVENT] Add New Event: {new_event.name} ({new_event.start.strftime('%H:%M')}-{new_event.end.strftime('%H:%M')})")
 
-            # 立即检查事件变更
+            # Check event change immediately
             self.publish_event()
 
         except ValueError as e:
@@ -165,23 +165,23 @@ class TimeManager:
     def handle_class_end(
             self,
             current_event: Event,
-            overtime_minutes: int  # 已经算好的拖堂时间
+            overtime_minutes: int  # It's already time for a stall
     ) -> ClassEndAction:
         """
-        根据 overtime_minutes 决定是否拖堂
+        Based on overtime_minutes I don't know if I'm gonna drag you in
         """
-        # 只处理课程结束
+        # Only the end of the course
         if current_event.type != "class":
-            return ClassEndAction.OVERTIME  # 不做处理
+            return ClassEndAction.OVERTIME  # No processing
 
-        # 主课程结束需要拖堂
+        # The main course needs to end
         if overtime_minutes > 0 and current_event.parent_event_id is None:
             overtime_end = current_event.end + timedelta(minutes=overtime_minutes)
-            print(f"[OVERTIME] 检测到拖堂！将延长 {overtime_minutes} 分钟，至 {overtime_end.strftime('%H:%M')}")
+            print(f"[OVERTIME] We've detected the trailer! {overtime_minutes} min, to {overtime_end.strftime('%H:%M')}")
 
             overtime_event = Event(
                 event_type="class",
-                event_name=f"{current_event.name}[拖堂]",
+                event_name=f"{current_event.name}[Towhouse]",
                 start_time=current_event.end,
                 end_time=overtime_end,
                 parent_event_id=current_event.id
@@ -189,29 +189,29 @@ class TimeManager:
             self.add_event(overtime_event)
             return ClassEndAction.OVERTIME
 
-        # 拖堂结束或课程正常结束不需要拖堂，返回课程结束
+        # You don't have to drag the door to the end or the normal end of the course
         else:
             return ClassEndAction.CLASS_OVER
 
     def proceed_to_next_day(self):
-        """进入下一天"""
-        print("\n===== 进入下一天 =====")
+        """Go to the next day"""
+        print("\n===== Go to the next day =====")
 
-        # 计算下一天的日期
+        # Calculate the date of the next day
         next_day = self.current_time.date() + timedelta(days=1)
 
-        # 更新 current_time 为下一天的 day_start_time
+        # Update current_time For the next day day_start_time
         hour, minute = map(int, self.day_start_time.split(":"))
         self.current_time = datetime.combine(next_day, dt_time(hour, minute))
 
-        # 重置最后活跃事件
+        # Reset Last Active Event
         self.last_active_event = None
 
-        # 广播新的一天开始（包含精确时间）
+        # Start of a new day of broadcasting (includes precise time))
         msg = BroadcastMessage(
             message_type=MessageType.NEW_DAY,
             active_event="new_day",
             speaker="time_manager",
-            content=f"新的一天开始了: {self.current_time.strftime('%Y-%m-%d %H:%M')}",
+            content=f"A new day begins: {self.current_time.strftime('%Y-%m-%d %H:%M')}",
         )
         self.broadcast_system.publish_sync("all", msg)

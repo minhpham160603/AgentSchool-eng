@@ -41,4 +41,4 @@ def call_deepseek(messages, temperature=0.7, model="deepseek-chat", response_for
     if response.status_code == 200:
         return response.json()['choices'][0]['message']['content']
     else:
-        raise Exception(f"API 请求失败：{response.status_code}\n{response.text}")
+        raise Exception(f"API Request Failed：{response.status_code}\n{response.text}")

@@ -1,6 +1,6 @@
 """
-文件管理工具类
-用于统一管理SchoolAgent项目的文件保存和组织
+File Management Tool Category
+For integrated management SchoolAgent Documentation and organization of the project
 """
 import os
 import json
@@ -10,41 +10,41 @@ from typing import Dict, Any, Optional, List
 
 class SchoolAgentFileManager:
     """
-    SchoolAgent项目的文件管理器
-    提供统一的文件保存、组织和索引功能
+    SchoolAgent File Manager for the project
+    Provide uniform document preservation, organization and indexing functions
     """
     
     def __init__(self, base_dir: str = "results"):
         """
-        初始化文件管理器
+        Initialise File Manager
         
         Args:
-            base_dir: 基础保存目录
+            base_dir: Basic Save Directory
         """
         self.base_dir = Path(base_dir)
         self.base_dir.mkdir(exist_ok=True)
         
-        # 定义文件夹结构
+        # Define Folder Structure
         self.folder_structure = {
-            "exercises": "练习题结果",
-            "memory_analysis": "记忆分析报告", 
-            "evaluations": "评估结果",
-            "progress": "进度记录",
-            "logs": "运行日志",
-            "backups": "备份文件",
-            "visualizations": "可视化数据"
+            "exercises": "Practice results",
+            "memory_analysis": "Memory analysis reports",
+            "evaluations": "Findings",
+            "progress": "Progress record",
+            "logs": "Run Log",
+            "backups": "Backup Files",
+            "visualizations": "Visualized data"
         }
     
     def get_student_dir(self, student_name: str, date: Optional[datetime] = None) -> Path:
         """
-        获取学生的目录路径
+        Retrieving student directory path
         
         Args:
-            student_name: 学生名称
-            date: 日期，默认为今天
+            student_name: Student name
+            date: Date, default for today
             
         Returns:
-            学生目录路径
+            Student Directory Path
         """
         if date is None:
             date = datetime.now()
@@ -57,15 +57,15 @@ class SchoolAgentFileManager:
     
     def get_category_dir(self, student_name: str, category: str, date: Optional[datetime] = None) -> Path:
         """
-        获取特定类别的目录路径
+        Path to acquiring a specific category of directory
         
         Args:
-            student_name: 学生名称
-            category: 文件类别
-            date: 日期，默认为今天
+            student_name: Student name
+            category: File category
+            date: Date, default for today
             
         Returns:
-            类别目录路径
+            Category Directory Path
         """
         student_dir = self.get_student_dir(student_name, date)
         category_dir = student_dir / category
@@ -76,20 +76,20 @@ class SchoolAgentFileManager:
     def generate_unique_filename(self, student_name: str, file_type: str, 
                                 postfix: str = "", extension: str = ".json") -> str:
         """
-        生成唯一的文件名（避免覆盖）
+        Generate a unique filename (avoid overwrite))
         
         Args:
-            student_name: 学生名称
-            file_type: 文件类型
-            postfix: 后缀标识
-            extension: 文件扩展名
+            student_name: Student name
+            file_type: File type
+            postfix: Postfix Identification
+            extension: File Extension
             
         Returns:
-            唯一的文件名
+            Only filename
         """
         timestamp = datetime.now().strftime("%H%M%S")
         
-        # 构建文件名
+        # Build filename
         name_parts = [student_name, file_type]
         if postfix:
             name_parts.append(postfix)
@@ -101,24 +101,24 @@ class SchoolAgentFileManager:
     def save_exercise_results(self, student_name: str, data: Dict[Any, Any], 
                             postfix: str = "") -> Path:
         """
-        保存练习题结果
+        Save the result of the exercise
         
         Args:
-            student_name: 学生名称
-            data: 要保存的数据
-            postfix: 文件后缀标识
+            student_name: Student name
+            data: Data to save
+            postfix: File suffix identifier
             
         Returns:
-            保存的文件路径
+            File Path to Save
         """
-        # 获取保存目录
+        # Get Save Directory
         save_dir = self.get_category_dir(student_name, "exercises")
         
-        # 生成文件名
+        # Generate File Name
         filename = self.generate_unique_filename(student_name, "exercise_results", postfix)
         filepath = save_dir / filename
         
-        # 添加元数据
+        # Add metadata
         enhanced_data = {
             "metadata": {
                 "file_info": {
@@ -137,14 +137,14 @@ class SchoolAgentFileManager:
             "data": data
         }
         
-        # 保存文件
+        # Save File
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(enhanced_data, f, ensure_ascii=False, indent=4)
         
-        # 更新索引
+        # Update Index
         self._update_file_index(student_name, "exercises", filename, enhanced_data["metadata"])
         
-        # 创建备份（如果需要）
+        # Create Backup (if needed))
         if self._should_create_backup(filepath):
             self._create_backup(filepath, student_name)
         
@@ -153,21 +153,21 @@ class SchoolAgentFileManager:
     def save_memory_analysis(self, student_name: str, data: Dict[Any, Any], 
                            postfix: str = "") -> Path:
         """
-        保存记忆分析结果
+        Save memory analysis results
         
         Args:
-            student_name: 学生名称
-            data: 要保存的数据
-            postfix: 文件后缀标识
+            student_name: Student name
+            data: Data to save
+            postfix: File suffix identifier
             
         Returns:
-            保存的文件路径
+            File Path to Save
         """
         save_dir = self.get_category_dir(student_name, "memory_analysis")
         filename = self.generate_unique_filename(student_name, "memory_analysis", postfix)
         filepath = save_dir / filename
         
-        # 添加元数据
+        # Add metadata
         enhanced_data = {
             "metadata": {
                 "analysis_info": {
@@ -190,15 +190,15 @@ class SchoolAgentFileManager:
     def save_progress_checkpoint(self, student_name: str, data: Dict[Any, Any], 
                                checkpoint_id: str) -> Path:
         """
-        保存进度检查点
+        Save Progress Checkpoint
         
         Args:
-            student_name: 学生名称
-            data: 要保存的数据
-            checkpoint_id: 检查点标识
+            student_name: Student name
+            data: Data to save
+            checkpoint_id: Checkpoint Identification
             
         Returns:
-            保存的文件路径
+            File Path to Save
         """
         save_dir = self.get_category_dir(student_name, "progress")
         filename = self.generate_unique_filename(student_name, "progress", checkpoint_id)
@@ -222,22 +222,22 @@ class SchoolAgentFileManager:
     def get_latest_file(self, student_name: str, category: str, 
                        date: Optional[datetime] = None) -> Optional[Path]:
         """
-        获取最新的文件
+        Get an updated file
         
         Args:
-            student_name: 学生名称
-            category: 文件类别
-            date: 日期，默认为今天
+            student_name: Student name
+            category: File category
+            date: Date, default for today
             
         Returns:
-            最新文件的路径，如果没有文件则返回None
+            Path to the latest file, return if no file is available None
         """
         category_dir = self.get_category_dir(student_name, category, date)
         
         if not category_dir.exists():
             return None
         
-        # 获取所有文件并按修改时间排序
+        # Get all files and sort them by change time
         files = [f for f in category_dir.iterdir() if f.is_file() and f.suffix == '.json']
         if not files:
             return None
@@ -247,14 +247,14 @@ class SchoolAgentFileManager:
     
     def list_student_sessions(self, student_name: str, days: int = 7) -> List[Dict[str, Any]]:
         """
-        列出学生最近的会话记录
+        Lists recent sessions of students
         
         Args:
-            student_name: 学生名称
-            days: 查询最近几天的记录
+            student_name: Student name
+            days: Check the records of the last few days
             
         Returns:
-            会话记录列表
+            Session Record List
         """
         sessions = []
         student_base_dir = self.base_dir / student_name
@@ -262,7 +262,7 @@ class SchoolAgentFileManager:
         if not student_base_dir.exists():
             return sessions
         
-        # 遍历最近几天的目录
+        # The directories of the last few days
         for i in range(days):
             date = datetime.now() - timedelta(days=i)
             date_str = date.strftime("%Y-%m-%d")
@@ -279,14 +279,14 @@ class SchoolAgentFileManager:
     
     def create_daily_summary(self, student_name: str, date: Optional[datetime] = None) -> Path:
         """
-        创建日常总结报告
+        Create daily summary report
         
         Args:
-            student_name: 学生名称
-            date: 日期，默认为今天
+            student_name: Student name
+            date: Date, default for today
             
         Returns:
-            总结报告文件路径
+            Path to summary report document
         """
         if date is None:
             date = datetime.now()
@@ -294,7 +294,7 @@ class SchoolAgentFileManager:
         student_dir = self.get_student_dir(student_name, date)
         summary_file = student_dir / f"daily_summary_{date.strftime('%Y%m%d')}.json"
         
-        # 收集当天的所有活动
+        # Collect all activities of the day
         daily_activities = {
             "date": date.strftime("%Y-%m-%d"),
             "student_name": student_name,
@@ -308,7 +308,7 @@ class SchoolAgentFileManager:
             "performance_highlights": []
         }
         
-        # 统计各类文件
+        # Statistical documents
         for category in self.folder_structure.keys():
             category_dir = student_dir / category
             if category_dir.exists():
@@ -334,18 +334,18 @@ class SchoolAgentFileManager:
     def _update_file_index(self, student_name: str, category: str, 
                           filename: str, metadata: Dict[str, Any]) -> None:
         """
-        更新文件索引
+        Update File Index
         
         Args:
-            student_name: 学生名称
-            category: 文件类别
-            filename: 文件名
-            metadata: 元数据
+            student_name: Student name
+            category: File category
+            filename: Filename
+            metadata: Metadata
         """
         student_dir = self.get_student_dir(student_name)
         index_file = student_dir / "index.json"
         
-        # 读取或创建索引
+        # Read or create an index
         if index_file.exists():
             with open(index_file, 'r', encoding='utf-8') as f:
                 index = json.load(f)
@@ -356,7 +356,7 @@ class SchoolAgentFileManager:
                 "sessions": []
             }
         
-        # 添加新记录
+        # Add New Record
         session_record = {
             "timestamp": datetime.now().isoformat(),
             "category": category,
@@ -366,53 +366,53 @@ class SchoolAgentFileManager:
         
         index["sessions"].append(session_record)
         
-        # 保持最近50条记录
+        # Keep Recent 50 Notes
         if len(index["sessions"]) > 50:
             index["sessions"] = index["sessions"][-50:]
         
-        # 保存索引
+        # Save Index
         with open(index_file, 'w', encoding='utf-8') as f:
             json.dump(index, f, ensure_ascii=False, indent=2)
     
     def _should_create_backup(self, filepath: Path) -> bool:
         """
-        判断是否需要创建备份
+        Judge whether to create backup
         
         Args:
-            filepath: 文件路径
+            filepath: File Path
             
         Returns:
-            是否需要备份
+            Do you need backup?
         """
-        # 大于1MB的文件创建备份
+        # Greater than 1MB File Create Backup
         file_size_mb = filepath.stat().st_size / (1024 * 1024)
         return file_size_mb > 1.0
     
     def _create_backup(self, filepath: Path, student_name: str) -> None:
         """
-        创建文件备份
+        Create File Backup
         
         Args:
-            filepath: 源文件路径
-            student_name: 学生名称
+            filepath: Source path
+            student_name: Student name
         """
         backup_dir = self.get_category_dir(student_name, "backups")
         backup_filename = f"backup_{filepath.stem}_{datetime.now().strftime('%H%M%S')}{filepath.suffix}"
         backup_path = backup_dir / backup_filename
         
-        # 复制文件
+        # Copy File
         import shutil
         shutil.copy2(filepath, backup_path)
         
-        print(f"📦 已创建备份: {backup_path}")
+        print(f"📦 Created Backup: {backup_path}")
     
     def cleanup_old_files(self, student_name: str, days_to_keep: int = 30) -> None:
         """
-        清理旧文件
+        Clear old files
         
         Args:
-            student_name: 学生名称
-            days_to_keep: 保留天数
+            student_name: Student name
+            days_to_keep: Number of days retained
         """
         from datetime import timedelta
         
@@ -422,27 +422,27 @@ class SchoolAgentFileManager:
         if not student_base_dir.exists():
             return
         
-        # 遍历日期目录
+        # Through Date Directory
         for date_dir in student_base_dir.iterdir():
             if date_dir.is_dir() and date_dir.name != "backups":
                 try:
                     dir_date = datetime.strptime(date_dir.name, "%Y-%m-%d")
                     if dir_date < cutoff_date:
-                        # 移动到备份目录而不是删除
+                        # Move to Backup Directory instead of Delete
                         backup_dir = self.get_category_dir(student_name, "backups")
                         archive_name = f"archived_{date_dir.name}_{datetime.now().strftime('%H%M%S')}"
                         import shutil
                         shutil.move(str(date_dir), str(backup_dir / archive_name))
-                        print(f"🗄️ 已归档旧目录: {date_dir.name}")
+                        print(f"🗄️ Archived old directories: {date_dir.name}")
                 except ValueError:
-                    # 不是日期格式的目录，跳过
+                    # Not a directory in date format, skip
                     continue
 
 
-# 全局文件管理器实例
+# Examples of global file manager
 file_manager = SchoolAgentFileManager()
 
 
 def get_file_manager() -> SchoolAgentFileManager:
-    """获取全局文件管理器实例"""
+    """Fetch global file manager instance"""
     return file_manager

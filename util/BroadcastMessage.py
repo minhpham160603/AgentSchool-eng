@@ -5,7 +5,7 @@ from enum import Enum
 
 
 class MessageType(Enum):
-    """消息类型枚举"""
+    """Can not open message"""
     EVENT_CHANGE = "event_change"
     COMMAND = "command"
     CLASS = "class"
@@ -14,7 +14,7 @@ class MessageType(Enum):
 
 @dataclass
 class BroadcastMessage:
-    """广播消息类"""
+    """Radio Message Class"""
     current_time: Optional[datetime] = None
     message_type: MessageType = None
     active_event: str = ""
@@ -24,5 +24,5 @@ class BroadcastMessage:
 
 
     def to_dict(self) -> Dict:
-        """转换为日志兼容的字典格式"""
+        """Convert to log compatible dictionary format"""
         return asdict(self)

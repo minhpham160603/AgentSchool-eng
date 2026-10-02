@@ -12,128 +12,128 @@ from util.model import call_LLM
 
 
 class ClassroomAnalyzer:
-    """课堂记录和学生成绩分析器"""
+    """Classroom records and student achievement analyser"""
     
     def __init__(self):
         self.classroom_data = None
         self.student_results = {}
         self.analysis_results = {}
-        self.course_objectives = None  # 新增：存储课程目标
+        self.course_objectives = None  # Store course objectives
     
     def load_course_objectives(self, objectives_file: str):
-        """加载课程目标文件"""
+        """Load a course objectives document."""
         try:
             with open(objectives_file, 'r', encoding='utf-8') as f:
                 self.course_objectives = f.read()
-            print(f"课程目标加载成功: {objectives_file}")
+            print(f"Loaded course objectives: {objectives_file}")
             return True
         except Exception as e:
-            print(f"课程目标加载失败: {e}")
+            print(f"Failed to load course objectives: {e}")
             return False
 
     def load_data_from_folder(self, classroom_file: str, student_folder: str, objectives_file: str = None,
                               datetime_str: str = None, integer_id: int = None):
         """
-        从文件夹加载课堂记录、学生成绩数据和课程目标。
-        根据 datetime_str 和 integer_id 动态构建学生成绩文件路径。
+        Load classroom records, student achievement data and course goals from folders.
+        Use datetime_str and integer_id to find the matching student result files.
         """
-        # 加载课堂记录
+        # Load class records
         try:
             with open(classroom_file, 'r', encoding='utf-8') as f:
                 self.classroom_data = f.read()
-            print(f"课堂记录加载成功: {classroom_file}")
+            print(f"Loaded classroom records: {classroom_file}")
         except Exception as e:
-            print(f"课堂记录加载失败: {e}")
+            print(f"Failed to load classroom records: {e}")
             return False
 
-        # 加载课程目标（可选）
+        # Load course objectives when provided.
         if objectives_file:
             if not self.load_course_objectives(objectives_file):
                 return False
 
-        # 加载学生成绩文件
+        # Load student record
         if datetime_str and integer_id is not None:
             # student_folder = os.path.join(student_base_folder, datetime_str, str(integer_id))
-            print(f"尝试从文件夹加载学生成绩: {student_folder}")
+            print(f"Looking for student scores in: {student_folder}")
 
-            # 调整文件查找模式以匹配新格式
+            # Adjust the file search mode to match the new format
             pattern = os.path.join(student_folder, f"*_exercise_results_{datetime_str}_{integer_id}.json")
             student_files = glob.glob(pattern)
 
             if not student_files:
-                print(f"❌ 未找到匹配的学生成绩文件：{pattern}")
+                print(f"❌ No matching student score files found:{pattern}")
                 return False
 
-            # 假设你有一个方法来加载这些文件
+            # Suppose you have a way to load these files
             self._load_student_files(student_files)
 
         return True
 
     def load_student_data_from_folder(self, student_folder: str):
-        """仅从文件夹加载学生成绩数据"""
+        """Load student results from a folder."""
         student_files = self._get_student_files(student_folder)
         
         if not student_files:
-            print(f"在文件夹 {student_folder} 中未找到学生成绩文件")
+            print(f"No student records found in {student_folder}")
             return False
         
-        print(f"找到 {len(student_files)} 个学生成绩文件")
+        print(f"Found {len(student_files)} student result files")
         for file in student_files:
             print(f"  - {os.path.basename(file)}")
         
         return self._load_student_files(student_files)
 
     def _get_student_files(self, folder_path):
-        """从文件夹中获取所有学生成绩文件"""
+        """Find student result files in the given folder."""
         if not os.path.exists(folder_path):
-            print(f"文件夹不存在: {folder_path}")
+            print(f"Student results directory not found: {folder_path}")
             return []
 
-        # 查找所有 JSON 文件，并过滤出符合新命名模式的文件
+        # Find All JSON File and filter out files that match the new naming pattern
         pattern = os.path.join(folder_path, "*_exercise_results_*.json")
         files = glob.glob(pattern)
 
-        # 按文件名排序
+        # Sort By File Name
         files.sort()
         return files
 
     def _load_student_files(self, student_files: List[str]):
-        """加载学生成绩文件"""
+        """Load student record"""
         for file_path in student_files:
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     student_data = json.load(f)
 
-                # 从文件名提取学生名，这里假设学生名是第一个部分
+                # The name of the student is taken from the file name, which is assumed to be the first part
                 file_name = os.path.basename(file_path)
                 student_name = file_name.split('_')[0]
-                # 仅加载题目明细，令题号成为顶层键，符合统计逻辑
+                # Only load the subject details, the command number becomes the top key, which is consistent with statistical logic
                 self.student_results[student_name] = student_data.get("detailed_answers", {})
-                print(f"学生成绩加载成功: {student_name}")
+                print(f"Student achievement has been successfully loaded: {student_name}")
 
             except Exception as e:
-                print(f"学生成绩加载失败 {file_path}: {e}")
+                print(f"Failed to load student grades {file_path}: {e}")
 
         return len(self.student_results) > 0
 
     
     def _truncate_classroom_data(self, max_chars: int = 30000) -> str:
-        """截断课堂记录以适应模型限制"""
+        """Truncate classroom records to fit model input limits."""
         if not self.classroom_data:
             return ""
         
         if len(self.classroom_data) <= max_chars:
             return self.classroom_data
         
-        # 截断并添加说明
+        # Truncate the text and append a notice.
         truncated = self.classroom_data[:max_chars]
-        truncated += f"\n\n[注：原文档过长，已截断至{max_chars}字符进行分析]"
+        truncated += f"\n\n[Note: The original document is too long and has been cut to {max_chars} characters for analysis]"
         return truncated
     
     def calculate_student_accuracy(self) -> Dict:
-        """计算每个学生的正确率"""
+        """Calculate the correct rate per student"""
         if not self.student_results:
-            return {"error": "学生成绩数据未加载"}
+            return {"error": "Student achievement data not loaded"}
         
         results = {
             "individual_accuracy": {},
@@ -141,13 +141,13 @@ class ClassroomAnalyzer:
             "total_students": len(self.student_results)
         }
         
-        # 收集所有题目编号
+        # Collect all question numbers.
         all_questions = set()
         for student_data in self.student_results.values():
             if isinstance(student_data, dict):
                 all_questions.update(student_data.keys())
         
-        # 过滤出数字题目编号
+        # Keep numeric question identifiers.
         numeric_questions = []
         for q in all_questions:
             try:
@@ -158,12 +158,12 @@ class ClassroomAnalyzer:
         numeric_questions.sort()
         
         if not numeric_questions:
-            return {"error": "未找到有效的题目数据"}
+            return {"error": "No valid question data found"}
         
         total_correct = 0
         total_attempts = 0
         
-        # 计算每个学生的正确率
+        # Calculate the correct rate per student
         for student_name, student_data in self.student_results.items():
             if not isinstance(student_data, dict):
                 continue
@@ -196,52 +196,52 @@ class ClassroomAnalyzer:
             total_correct += correct
             total_attempts += answered
         
-        # 计算总体正确率
+        # Calculate overall correct rate
         results["overall_accuracy"] = round((total_correct / total_attempts) * 100, 1) if total_attempts > 0 else 0
         
         return results
 
     def print_student_accuracy(self):
-        """打印学生正确率统计"""
+        """Print student correctness statistics"""
         results = self.calculate_student_accuracy()
         if "error" in results:
-            print(f"统计失败: {results['error']}")
+            print(f"Statistics Failed: {results['error']}")
             return results
         
-        print(f"\n📊 学生成绩统计")
-        print(f"- 参与学生数量: {results['total_students']} 人")
-        print(f"- 班级平均正确率: {results['overall_accuracy']}%")
+        print(f"\n📊 Statistics on student performance")
+        print(f"- Students included: {results['total_students']}")
+        print(f"- Average class accuracy: {results['overall_accuracy']}%")
         
-        print(f"\n👥 各学生正确率:")
+        print(f"\n👥 Accuracy per student:")
         for student_name, data in results["individual_accuracy"].items():
             print(f"- {student_name}: {data['correct']}/{data['total']} ({data['accuracy']}%)")
         
         return results
 
     def analyze_teaching_content(self) -> Dict:
-        """分析教学内容"""
+        """Analysis of teaching content"""
         if not self.classroom_data:
-            return {"error": "课堂记录未加载"}
+            return {"error": "Classroom records not loaded"}
         
         truncated_data = self._truncate_classroom_data()
         
         content_prompt = """
-请对以下课堂记录进行教学内容分析，重点关注：
+Analyze the following classroom records in English. Focus on:
 
-### 教学内容分析
-- 主要教学主题和知识点
-- 教学方法和策略  
-- 课堂活动类型
+### Teaching content
+- Main topics and concepts taught
+- Teaching methods and strategies
+- Types of classroom activities
 
-请提供详细的分析结果。
+Provide a detailed, evidence-based analysis. Write the entire response in English.
         """
         
         try:
             # response = self.client.chat.completions.create(
             #     model="deepseek-chat",
             #     messages=[
-            #         {"role": "system", "content": "你是一位资深的教育专家，擅长分析教学内容和教学方法。"},
-            #         {"role": "user", "content": f"{content_prompt}\n\n课堂记录：\n{truncated_data}"}
+            #         {"role": "system", "content": "You're a senior education specialist. You're good at analysing teaching content and methods."},
+            #         {"role": "user", "content": f"{content_prompt}\n\n Classroom records:\n{truncated_data}"}
             #     ],
             #     temperature=0.1,
             #     max_tokens=800
@@ -253,8 +253,8 @@ class ClassroomAnalyzer:
             #     "timestamp": datetime.now().isoformat()
             # }
             messages=[
-                {"role": "system", "content": "你是一位资深的教育专家，擅长分析教学内容和教学方法。"},
-                {"role": "user", "content": f"{content_prompt}\n\n课堂记录：\n{truncated_data}"}
+                {"role": "system", "content": "You are an experienced education specialist. Analyze teaching content and methods, and respond entirely in English."},
+                {"role": "user", "content": f"{content_prompt}\n\n Classroom records:\n{truncated_data}"}
             ]
             response = asyncio.run(call_LLM("evaluation", messages))
             return {
@@ -264,32 +264,32 @@ class ClassroomAnalyzer:
             }
             
         except Exception as e:
-            return {"error": f"教学内容分析失败: {str(e)}"}
+            return {"error": f"Teaching content analysis failed: {str(e)}"}
 
     def analyze_student_engagement(self) -> Dict:
-        """分析学生参与度"""
+        """Analysis of student participation"""
         if not self.classroom_data:
-            return {"error": "课堂记录未加载"}
+            return {"error": "Classroom records not loaded"}
         
         truncated_data = self._truncate_classroom_data()
         
         engagement_prompt = """
-请对以下课堂记录进行学生参与度分析，重点关注：
+Analyze student participation in the following classroom records. Focus on:
 
-### 学生参与度分析
-- 学生互动频率和质量
-- 学生提问和回答情况
-- 学生注意力和专注度表现
+### Student participation
+- Frequency and quality of student interaction
+- Student questions and answers
+- Student attention and engagement
 
-请提供详细的分析结果。
+Provide a detailed, evidence-based analysis. Write the entire response in English.
         """
         
         try:
             # response = self.client.chat.completions.create(
             #     model="deepseek-chat",
             #     messages=[
-            #         {"role": "system", "content": "你是一位资深的教育专家，擅长观察和分析学生课堂参与情况。"},
-            #         {"role": "user", "content": f"{engagement_prompt}\n\n课堂记录：\n{truncated_data}"}
+            #         {"role": "system", "content": "You're a senior education specialist who's good at observing and analysing student classroom participation."},
+            #         {"role": "user", "content": f"{engagement_prompt}\n\n Classroom records:\n{truncated_data}"}
             #     ],
             #     temperature=0.1,
             #     max_tokens=800
@@ -301,8 +301,8 @@ class ClassroomAnalyzer:
             #     "timestamp": datetime.now().isoformat()
             # }
             messages=[
-                {"role": "system", "content": "你是一位资深的教育专家，擅长观察和分析学生课堂参与情况。"},
-                {"role": "user", "content": f"{engagement_prompt}\n\n课堂记录：\n{truncated_data}"}
+                {"role": "system", "content": "You are an experienced education specialist. Analyze student participation in class, and respond entirely in English."},
+                {"role": "user", "content": f"{engagement_prompt}\n\n Classroom records:\n{truncated_data}"}
             ]
             response = asyncio.run(call_LLM("evaluation", messages))
 
@@ -313,32 +313,32 @@ class ClassroomAnalyzer:
             }
 
         except Exception as e:
-            return {"error": f"学生参与度分析失败: {str(e)}"}
+            return {"error": f"Student participation analysis failed: {str(e)}"}
 
     def analyze_teaching_effectiveness(self) -> Dict:
-        """分析教学效果"""
+        """Analysis of teaching results"""
         if not self.classroom_data:
-            return {"error": "课堂记录未加载"}
+            return {"error": "Classroom records not loaded"}
         
         truncated_data = self._truncate_classroom_data()
         
         effectiveness_prompt = """
-请对以下课堂记录进行教学效果评估，重点关注：
+Analyze the teaching effectiveness shown in the following classroom records. Focus on:
 
-### 教学效果评估
-- 知识传递的清晰度
-- 学生理解程度
-- 教学目标达成情况
+### Teaching effectiveness
+- Clarity of explanations and knowledge presentation
+- Evidence of student understanding
+- Progress toward the lesson objectives
 
-请提供详细的分析结果。
+Provide a detailed, evidence-based analysis. Write the entire response in English.
         """
         
         try:
             # response = self.client.chat.completions.create(
             #     model="deepseek-chat",
             #     messages=[
-            #         {"role": "system", "content": "你是一位资深的教育评估专家，擅长评估教学效果和学习成果。"},
-            #         {"role": "user", "content": f"{effectiveness_prompt}\n\n课堂记录：\n{truncated_data}"}
+            #         {"role": "system", "content": "You're a senior education assessor. You're good at evaluating performance and learning outcomes."},
+            #         {"role": "user", "content": f"{effectiveness_prompt}\n\n Classroom records:\n{truncated_data}"}
             #     ],
             #     temperature=0.1,
             #     max_tokens=800
@@ -350,8 +350,8 @@ class ClassroomAnalyzer:
             #     "timestamp": datetime.now().isoformat()
             # }
             messages=[
-                {"role": "system", "content": "你是一位资深的教育评估专家，擅长评估教学效果和学习成果。"},
-                {"role": "user", "content": f"{effectiveness_prompt}\n\n课堂记录：\n{truncated_data}"}
+                {"role": "system", "content": "You are an experienced education assessor. Evaluate student performance and learning outcomes, and respond entirely in English."},
+                {"role": "user", "content": f"{effectiveness_prompt}\n\n Classroom records:\n{truncated_data}"}
             ]
             response = asyncio.run(call_LLM("evaluation", messages))
 
@@ -362,32 +362,32 @@ class ClassroomAnalyzer:
             }
 
         except Exception as e:
-            return {"error": f"教学效果分析失败: {str(e)}"}
+            return {"error": f"Teaching effects analysis failed: {str(e)}"}
 
     def analyze_classroom_atmosphere(self) -> Dict:
-        """分析课堂氛围"""
+        """Analysis of classroom atmosphere"""
         if not self.classroom_data:
-            return {"error": "课堂记录未加载"}
+            return {"error": "Classroom records not loaded"}
         
         truncated_data = self._truncate_classroom_data()
         
         atmosphere_prompt = """
-请对以下课堂记录进行课堂氛围分析，重点关注：
+Analyze the classroom climate shown in the following classroom records. Focus on:
 
-### 课堂氛围分析
-- 师生互动质量
-- 课堂纪律情况
-- 学习氛围营造
+### Classroom climate
+- Quality of teacher-student interaction
+- Classroom routines and behavior
+- Signs of a supportive, engaged learning environment
 
-请提供详细的分析结果。
+Provide a detailed, evidence-based analysis. Write the entire response in English.
         """
         
         try:
             # response = self.client.chat.completions.create(
             #     model="deepseek-chat",
             #     messages=[
-            #         {"role": "system", "content": "你是一位资深的课堂观察专家，擅长分析课堂氛围和师生互动。"},
-            #         {"role": "user", "content": f"{atmosphere_prompt}\n\n课堂记录：\n{truncated_data}"}
+            #         {"role": "system", "content": "You're an expert in classroom observation."},
+            #         {"role": "user", "content": f"{atmosphere_prompt}\n\n Classroom records:\n{truncated_data}"}
             #     ],
             #     temperature=0.1,
             #     max_tokens=800
@@ -399,8 +399,8 @@ class ClassroomAnalyzer:
             #     "timestamp": datetime.now().isoformat()
             # }
             messages=[
-                {"role": "system", "content": "你是一位资深的课堂观察专家，擅长分析课堂氛围和师生互动。"},
-                {"role": "user", "content": f"{atmosphere_prompt}\n\n课堂记录：\n{truncated_data}"}
+                {"role": "system", "content": "You are an experienced classroom observer. Analyze the classroom climate and respond entirely in English."},
+                {"role": "user", "content": f"{atmosphere_prompt}\n\n Classroom records:\n{truncated_data}"}
             ]
             response = asyncio.run(call_LLM("evaluation", messages))
 
@@ -411,32 +411,32 @@ class ClassroomAnalyzer:
             }
             
         except Exception as e:
-            return {"error": f"课堂氛围分析失败: {str(e)}"}
+            return {"error": f"Classroom atmosphere analysis failed: {str(e)}"}
 
     def generate_improvement_suggestions(self) -> Dict:
-        """生成改进建议"""
+        """Generate recommendations for improvement"""
         if not self.classroom_data:
-            return {"error": "课堂记录未加载"}
+            return {"error": "Classroom records not loaded"}
         
         truncated_data = self._truncate_classroom_data()
         
         suggestions_prompt = """
-请基于以下课堂记录提供改进建议，重点关注：
+Based on the following classroom records, recommend practical improvements. Focus on:
 
-### 改进建议
-- 教学方法优化建议
-- 学生参与度提升策略
-- 课堂管理改进方案
+### Recommendations
+- Ways to strengthen teaching methods
+- Strategies to increase student participation
+- Classroom management improvements
 
-请提供具体可行的改进建议。
+Make each recommendation concrete and relevant to the evidence. Write the entire response in English.
         """
         
         try:
             # response = self.client.chat.completions.create(
             #     model="deepseek-chat",
             #     messages=[
-            #         {"role": "system", "content": "你是一位资深的教育顾问，擅长为教师提供实用的教学改进建议。"},
-            #         {"role": "user", "content": f"{suggestions_prompt}\n\n课堂记录：\n{truncated_data}"}
+            #         {"role": "system", "content": "You're a senior educational adviser who's good at providing teachers with practical suggestions for improvement."},
+            #         {"role": "user", "content": f"{suggestions_prompt}\n\n Classroom records:\n{truncated_data}"}
             #     ],
             #     temperature=0.1,
             #     max_tokens=800
@@ -448,8 +448,8 @@ class ClassroomAnalyzer:
             #     "timestamp": datetime.now().isoformat()
             # }
             messages=[
-                {"role": "system", "content": "你是一位资深的教育顾问，擅长为教师提供实用的教学改进建议。"},
-                {"role": "user", "content": f"{suggestions_prompt}\n\n课堂记录：\n{truncated_data}"}
+                {"role": "system", "content": "You are an experienced educational adviser. Give teachers practical suggestions for improvement, and respond entirely in English."},
+                {"role": "user", "content": f"{suggestions_prompt}\n\n Classroom records:\n{truncated_data}"}
             ]
             response = asyncio.run(call_LLM("evaluation", messages))
 
@@ -460,53 +460,53 @@ class ClassroomAnalyzer:
             }
 
         except Exception as e:
-            return {"error": f"改进建议生成失败: {str(e)}"}
+            return {"error": f"Improvement proposal generation failed: {str(e)}"}
 
     def analyze_classroom_record_comprehensive(self) -> Dict:
-        """综合分析课堂记录 - 调用所有维度并生成综合报告"""
+        """Comprehensive analysis of classroom records - Call all dimensions and generate synthesis reports"""
         if not self.classroom_data:
-            return {"error": "课堂记录未加载"}
+            return {"error": "Classroom records not loaded"}
         
-        print("正在进行各维度分析...")
+        print("The dimensions are being analysed...")
         
-        # 调用各个维度的分析函数
+        # Analytic function calling each dimension
         dimensions_results = {}
         
-        # 1. 教学内容分析
-        print("- 教学内容分析...")
+        # 1. Analysis of teaching content
+        print("- Analysis of teaching content...")
         content_result = self.analyze_teaching_content()
         if "error" not in content_result:
             dimensions_results["teaching_content"] = content_result["analysis"]
         
-        # 2. 学生参与度分析
-        print("- 学生参与度分析...")
+        # 2. Student participation analysis
+        print("- Student participation analysis...")
         engagement_result = self.analyze_student_engagement()
         if "error" not in engagement_result:
             dimensions_results["student_engagement"] = engagement_result["analysis"]
         
-        # 3. 教学效果评估
-        print("- 教学效果评估...")
+        # 3. Assessment of the effectiveness of teaching
+        print("- Assessment of the effectiveness of teaching...")
         effectiveness_result = self.analyze_teaching_effectiveness()
         if "error" not in effectiveness_result:
             dimensions_results["teaching_effectiveness"] = effectiveness_result["analysis"]
         
-        # 4. 课堂氛围分析
-        print("- 课堂氛围分析...")
+        # 4. Classroom atmosphere analysis
+        print("- Classroom atmosphere analysis...")
         atmosphere_result = self.analyze_classroom_atmosphere()
         if "error" not in atmosphere_result:
             dimensions_results["classroom_atmosphere"] = atmosphere_result["analysis"]
         
-        # 5. 改进建议
-        print("- 改进建议生成...")
+        # 5. Suggested improvements
+        print("- Generating improvement recommendations...")
         suggestions_result = self.generate_improvement_suggestions()
         if "error" not in suggestions_result:
             dimensions_results["improvement_suggestions"] = suggestions_result["analysis"]
         
-        # 生成综合报告
-        print("- 生成综合报告...")
+        # Generate synthesis reports
+        print("- Generating the comprehensive report...")
         comprehensive_analysis = self._generate_comprehensive_report(dimensions_results)
         
-        # 保存结果
+        # Save Results
         result = {
             "comprehensive_analysis": comprehensive_analysis,
             "dimensions": dimensions_results,
@@ -517,95 +517,95 @@ class ClassroomAnalyzer:
         return result
 
     def _generate_comprehensive_report(self, dimensions_results: Dict) -> str:
-        """基于各维度分析结果生成综合报告"""
+        """Production of synthesis reports based on the results of the analysis of dimensions"""
         if not dimensions_results:
-            return "无法生成综合报告：缺少维度分析结果"
+            return "Could not generate synthesis report: lack of dimension analysis"
         
-        # 获取详细的学生成绩数据
+        # Access to detailed student achievement data
         accuracy_results = self.calculate_student_accuracy()
         
         if 'error' in accuracy_results:
-            # 如果获取成绩数据失败，仍然生成报告但不包含成绩信息
-            overall_accuracy = "无法获取"
-            total_students = "未知"
-            student_performance_summary = "学生成绩数据获取失败"
+            # If data on accomplishments fail to be obtained, the report is still generated without performance information
+            overall_accuracy = "Unable to access"
+            total_students = "Unknown"
+            student_performance_summary = "Failed to obtain student achievement data"
         else:
             overall_accuracy = accuracy_results['overall_accuracy']
             total_students = accuracy_results['total_students']
             
-            # 生成学生成绩摘要
+            # Generate student performance summaries
             individual_scores = []
             for student_name, data in accuracy_results['individual_accuracy'].items():
                 individual_scores.append(f"{student_name}: {data['accuracy']}%")
             
             student_performance_summary = f"""
-班级整体表现：
-- 平均正确率：{overall_accuracy}%
-- 参与学生：{total_students}人
-- 个人成绩：{', '.join(individual_scores)}
+Overall class performance:
+- Class average accuracy:{overall_accuracy}%
+- Participating students: {total_students}
+- Individual accuracy:{', '.join(individual_scores)}
             """
         
-        # 处理课程目标信息
+        # Processing course target information
         if self.course_objectives:
             course_objectives_section = f"""
-## 课程目标：
+## Course objectives
 {self.course_objectives}
             """
-            objectives_analysis_instruction = f"请特别分析本节课对于既定课程目标的完成情况，结合{overall_accuracy}%的班级平均正确率来评估目标达成度。"
+            objectives_analysis_instruction = f"Assess progress toward the course objectives, taking the class average accuracy of {overall_accuracy}% into account."
         else:
-            course_objectives_section = "\n## 课程目标：\n未提供课程目标文件"
-            objectives_analysis_instruction = "由于未提供具体课程目标，请根据课堂内容推测可能的教学目标并分析完成情况。"
+            course_objectives_section = "\n## Course objectives\n Course target documents not available"
+            objectives_analysis_instruction = "No course objectives were provided. Infer likely objectives from the classroom content and assess progress toward them."
         
-        # 构建综合分析提示
+        # Build a comprehensive analytical hint
         dimensions_summary = ""
         for dimension, analysis in dimensions_results.items():
             dimension_name = {
-                "teaching_content": "教学内容分析",
-                "student_engagement": "学生参与度分析", 
-                "teaching_effectiveness": "教学效果评估",
-                "classroom_atmosphere": "课堂氛围分析",
-                "improvement_suggestions": "改进建议"
+                "teaching_content": "Analysis of teaching content",
+                "student_engagement": "Student participation analysis",
+                "teaching_effectiveness": "Assessment of the effectiveness of teaching",
+                "classroom_atmosphere": "Classroom atmosphere analysis",
+                "improvement_suggestions": "Suggested improvements"
             }.get(dimension, dimension)
             
             dimensions_summary += f"\n### {dimension_name}\n{analysis}\n"
         
         comprehensive_prompt = f"""
-请基于以下各维度的分析结果、学生成绩数据和课程目标，生成一份综合的课堂教学评估报告：
+Write a comprehensive classroom assessment in English, drawing on the analyses below, student performance data, and curriculum objectives.
 
-## 各维度分析结果：
+## Dimension analysis
 {dimensions_summary}
 
-## 学生成绩表现：
+## Student performance
 {student_performance_summary}
 
 {course_objectives_section}
 
-请综合以上信息提供：
-1. 整体教学质量和学生成绩评估（重点结合{overall_accuracy}%的班级平均正确率）
-2. 学生课堂参与度和师生互动情况分析
-3. 课程目标完成度评估（{objectives_analysis_instruction}）
-4. 主要优点和亮点
-5. 需要改进的方面
-6. 综合建议和总结
+Address all of the following:
+1. Overall teaching quality and student performance, including the class average accuracy of {overall_accuracy}%.
+2. Student participation and teacher-student interaction.
+3. Progress toward the curriculum objectives ({objectives_analysis_instruction}).
+4. Key strengths and effective practices.
+5. Areas for improvement.
+6. Practical recommendations and a concise conclusion.
 
-请以专业、客观的角度给出综合评价，确保将学生的学习成果与课堂教学过程以及预设的课程目标相结合进行深入分析。
+Use a professional, objective tone. Support conclusions with evidence from the classroom record and connect student learning outcomes to the teaching process and stated curriculum objectives. Write the entire report in English.
         """
         
         try:
             # response = self.client.chat.completions.create(
             #     model="deepseek-chat",
             #     messages=[
-            #         {"role": "system", "content": "你是一位资深的教育评估专家，擅长综合分析课堂教学质量、学生学习成果和课程目标达成情况，并提供专业评估报告。"},
+            #         {"role": "system", "content": "You are a senior education assessment specialist who is good at conducting a comprehensive analysis of the quality of teaching in the classroom, student learning outcomes and the achievement of curriculum goals, and providing professional evaluation reports."},
             #         {"role": "user", "content": comprehensive_prompt}
             #     ],
             #     temperature=0.1,
-            #     max_tokens=1500  # 增加token数量以容纳更详细的分析
+            #     max_tokens=1500  # Increase token Number to accommodate more detailed analysis
             # )
             #
             # return response.choices[0].message.content
             messages=[
                 {"role": "system",
-                 "content": "你是一位资深的教育评估专家，擅长综合分析课堂教学质量、学生学习成果和课程目标达成情况，并提供专业评估报告。"},
+                 "content": "You are an experienced education assessment specialist. Assess classroom teaching quality, student learning outcomes, and progress toward curriculum objectives, and write professional reports in English."},
                 {"role": "user", "content": comprehensive_prompt}
             ]
             response = asyncio.run(call_LLM("evaluation", messages))
@@ -613,4 +613,4 @@ class ClassroomAnalyzer:
             return response
 
         except Exception as e:
-            return f"综合报告生成失败: {str(e)}"
+            return f"Failed to generate synthesis report: {str(e)}"

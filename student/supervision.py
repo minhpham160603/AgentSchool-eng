@@ -7,41 +7,41 @@ from student.prompt.run_ds_supervisor import *
 
 async def supervise_exercise(student, knowledge_points_file, answer):
     """
-    监督学生的练习过程，检查答案是否符合学生当前掌握的知识点。
+    Check whether the student's answer uses knowledge appropriate for their grade.
     INPUT:
-        student: Student类
-        knowledge_points_file: str, 知识点文件路径
-        answer: dict, 学生的答案
+        student: student object
+        knowledge_points_file: str, path to the knowledge-point data
+        answer: dict, the student's answer
     OUTPUT:
-        supervision: dict, 监督结果，包含是否越级、使用的年级知识点和理由
+        supervision: dict, monitoring results, including knowledge points and grade-level checks
         {
-        "exceeds_grade": true 或 false,
-        "used_which_grade_knowledge": "X年级上/下",
+        "exceeds_grade": true or false,
+        "used_which_grade_knowledge": "grade-level description",
         }
     """
-    # 读取知识点文件
+    # Read knowledge point files
     with open(knowledge_points_file, 'r', encoding='utf-8') as f:
         knowledge_points = json.load(f)
 
-    # 检查学生的作答是否符合知识点要求
-    print(f"\n--- 监督开始 ---")
+    # Check the student's response against the knowledge-point data.
+    print("\n--- Exercise supervision started ---")
     supervision = await run_ds_supervise_exercise(knowledge_points, answer)
     supervision["exceeds_grade"] = compare_grade_terms(student.scratch.grade, supervision["grade"])
-    print(f"监督结果: {supervision}")
-    print(f"--- 监督结束 ---\n")
+    print(f"Supervision results: {supervision}")
+    print("--- Exercise supervision finished ---\n")
     return supervision
-    
+
 
 async def supervise_knowledge_used(knowledge_points, student_answer, question):
     """
-    根据学生的回答，及其使用的知识点，来判断这个知识点是否是此问题所应该使用的。
+    Decide whether the student used each supplied knowledge point appropriately for the question.
     INPUT:
-        knowledge_points: list, 学生在此题所使用的知识点名称列表
-        student_answer: str，学生的回答内容
-        question: str，题目内容
+        knowledge_points: list, knowledge points identified in the student's work
+        student_answer: str, the student's answer
+        question: str, the exercise prompt
 
     OUTPUT:
-        dict, 键为传入的各个知识点，值为enum[used, missed]。used代表在题目中使用了正确的知识点，missed说明此知识点不应在此题目中使用。
+        dict, mapping each knowledge point to "used" or "missed". "used" means it was applied appropriately; "missed" means it was not appropriately used for this question.
         {
         "knowledge_point_1": "used",
         "knowledge_point_2": "missed",
@@ -49,5 +49,5 @@ async def supervise_knowledge_used(knowledge_points, student_answer, question):
         }
     """
     supervision = await run_ds_check_knowledge_used(knowledge_points, student_answer, question)
-    print(f"学生使用的知识点的分析: {supervision}")
+    print(f"Knowledge-point usage analysis: {supervision}")
     return supervision

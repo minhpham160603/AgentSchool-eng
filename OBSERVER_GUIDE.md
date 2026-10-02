@@ -1,6 +1,8 @@
 # Observer mode guide
 
-[中文](./OBSERVER_GUIDE_ZH.md)
+[Chinese](./OBSERVER_GUIDE_ZH.md)
+
+Observer messages and new classroom examples use English. Historical Chinese logs and reports remain unchanged; the `*_ZH.md` guides and source textbook PDF are retained.
 
 ## Overview
 
@@ -18,23 +20,23 @@ You should see something like:
 
 ```
 ======================================================================
-📝 [观察者模式] 已启动
+📝 [Observer Mode] Started
 ======================================================================
-命令文件: /path/to/AgentSchool/observer_cmd.json
+Command File: /path/to/AgentSchool/observer_cmd.json
 
-可用命令:
-  • pause     - 暂停仿真
-  • resume    - 继续仿真
-  • status    - 查看当前状态
-  • intervene - 打断并调整教学计划（预留接口）
-  • rollback  - 回溯到第k轮（需在JSON中提供rollback.turn与可选class）
-  • exit      - 退出仿真
+Available Commands:
+  • pause     - Pause after the current round
+  • resume    - Resume the simulation
+  • status    - Print the current simulation state
+  • intervene - Request a teaching-plan adjustment (stub)
+  • rollback  - Restore teacher state from a saved round
+  • exit      - Stop the simulation
 
-使用方法: 编辑 observer_cmd.json 文件，修改 'command' 字段并保存
+To send a command, edit observer_cmd.json, set the 'command' field, and save.
 ======================================================================
 ```
 
-*(Banner text may be partially localized; command names match `run.py`.)*
+*(The banner lists the commands implemented by `run.py`.)*
 
 ### 2. Send a command
 
@@ -96,29 +98,29 @@ Open `observer_cmd.json` in another terminal or editor, edit the JSON, and **sav
 
 ```
 ======================================================================
-📊 当前仿真状态
+📊 Current Simulation Status
 ======================================================================
 
-⏱️  时间信息:
-  • 当前时间: 2025-09-01 08:15:30 Monday
-  • 当前事件: class (ID: 1)
+⏱️  Time Information:
+  • Time: 2025-09-01 08:15:30 Monday
+  • Event: class (ID: 1)
 
-👨‍🏫 教师状态:
-  • 姓名: 王老师
-  • 课程进度: 第 1 节课
-  • 教学阶段: subsection_lecture
-  • 当前轮次: 15/40
-  • 当前内容: 同学们，我们来看数轴上的-6和6这两个点...
+👨‍🏫 Status of teachers:
+  • Name: Teacher Wang
+  • Lesson: 1
+  • Teaching phase: subsection_lecture
+  • Round: 15/40
+  • Current content: Let's look at the two points -6 and 6 on the number line...
 
-👥 学生状态:
+👥 Student status:
   • StudentA:
-      - 注意力: 0.85
-      - 当前行为: listening
-      - 记忆节点数: 42
+      - Attention: 0.85
+      - Current behaviour: listening
+      - Memory Nodes: 42
   • StudentB:
-      - 注意力: 0.72
-      - 当前行为: listening
-      - 记忆节点数: 38
+      - Attention: 0.72
+      - Current behaviour: listening
+      - Memory Nodes: 38
 ```
 
 ---

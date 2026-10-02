@@ -1,20 +1,20 @@
 from datetime import datetime, timedelta
 
 class Event:
-    _id_counter = -1  # 用于记录当前的 ID 计数器
+    _id_counter = -1  # For recording current ID Counter
 
     def __init__(self, event_type: str, event_name: str, start_time: datetime, end_time: datetime, parent_event_id: str = None):
         """
-        初始化事件对象
+        Initialize Event Object
         ARGS:
-            event_type: 事件类型
-            event_name: 事件名称
-            start_time: 事件开始时间（datetime对象）
-            end_time: 事件结束时间（datetime对象）
-            parent_event_id: 父事件ID
-        type与name的区别，例：group_discussion和math_class的type都为class
+            event_type: Event type
+            event_name: Event Name
+            start_time: Event Start Time(datetime Object)
+            end_time: End of Event(datetime Object)
+            parent_event_id: Parent Events ID
+        type and name The difference, for example:group_discussion and math_class Yes type For class
         """
-        Event._id_counter += 1  # id自增
+        Event._id_counter += 1  # id Automatic
 
         self.id = Event._id_counter
         self.type = event_type
@@ -24,14 +24,14 @@ class Event:
         self.parent_event_id = parent_event_id
 
     def is_conflict(self, other_event) -> bool:
-        """检查与另一个事件的时间冲突"""
+        """Check the time conflict with another event"""
         if self.parent_event_id ==  other_event.id:
             return False
         return (self.start < other_event.end) and (other_event.start < self.end)
 
 FREE_TIME_EVENT = Event(
     event_type="free_time",
-    event_name="空闲时间",
+    event_name="Free time",
     start_time=None,
     end_time=None
 )

@@ -1,2427 +1,2411 @@
-# 目录
+# Contents
 
-第一章 有 理 数 1
-1.1 有理数的引入 2
-1. 正数和负数 2
-2. 有理数 3
-阅读材料 华罗庚的故事 6
-1.2 数轴 8
-1. 数轴 8
-2. 在数轴上比较数的大小 10
-1.3 相反数 13
-1.4 绝对值 16
-1.5 有理数的大小比较 20
-1.6 有理数的加法 23
-1. 有理数的加法法则 23
-2. 有理数加法的运算律 27
-1.7 有理数的减法 30
-1.8 有理数的加减混合运算 34
-1. 加减法统一成加法 34
-2. 加法运算律在加减混合运算中的应用 35
-阅读材料 《 九章算术》 和 “ 正负术” 37
-1.9 有理数的乘法 39
-1. 有理数的乘法法则 39
-2. 有理数乘法的运算律 42
-1.10 有理数的除法 50
-1.11 有理数的乘方 54
-阅读材料 264 有多大 57
-1.12 有理数的混合运算 59
-1.13 近似数 64
-1.14 用计算器进行计算 67
-阅读材料 从结绳计数到计算器 71
-数学活动 无限循环小数能化为分数吗 73
-小结 74
-复习题 76
+# Chapter 1: Rational Numbers
+1.1 Introduction to Rational Numbers
+1. Positive and Negative Numbers
+2. Rational Numbers
+Reading: The Story of Hua Luogeng 6
+1.2 The Number Line
+1. The Number Line
+2. Comparing Numbers on a Number Line
+1.3 Opposite Numbers
+1.4 Absolute Value
+1.5 Comparing Rational Numbers
+1.6 Addition of Rational Numbers
+1. The Addition Rule for Rational Numbers
+2. Laws of Rational Addition
+1.7 Subtraction of Rational Numbers 30
+1.8 Mixed Addition and Subtraction of Rational Numbers
+1. Rewriting Addition and Subtraction as Addition 34
+2. Applying the Laws of Addition to Mixed Operations 35
+Reading: The Nine Chapters on the Mathematical Art and the Positive and Negative Procedure 37
+1.9 Multiplication of Rational Numbers 39
+1. The Multiplication Rule for Rational Numbers 39
+2. Laws of Rational Multiplication 42
+1.10 Division of Rational Numbers 50
+1.11 Powers of Rational Numbers 54
+Reading: How Large Is 2^64? 57
+1.12 Mixed Operations on Rational Numbers 59
+1.13 Approximate Values 64
+1.14 Calculations with a Calculator 67
+Reading: From Counting with Knots to Calculators 71
+Mathematical activity 73
+Summary 74
+Review 76
 
-# 第 1 章　有理数  
+# Chapter 1: Rational Numbers
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/9c2a64d6dfc8a82b78af6aad44641a2a621d7cd2de1fade7ce021a017f45c5fb.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/9c2a64d6dfc8a82b78af6aad44641a2a621d7cd2de1fade7ce021a017f45c5fb.jpg)
 
-某天, 沈阳的最低温度是 - $1 2 ^ { \circ } \mathrm { C }$ , 表示零下 $1 2 ^ { \circ } \mathrm { C }$ , 可以读作“负12摄氏度”. 这里, 出现了负数.  
+One winter day, the minimum temperature in Shenyang was -$1 2 ^ { \circ } \mathrm { C }$; recorded as $1 2 ^ { \circ } \mathrm { C }$, read as “minus 12 degrees Celsius.” This is an example of a negative number.
 
-我们将会看到, 除了表示温度以外, 还有许多量需要用负数来表示. 引进了负数, 数的家庭将变得更加绚丽多彩, 更加便于应用.  
+Negative numbers are used in many situations besides temperature. Their introduction made it possible to describe a wider range of quantities.
 
-本章将通过引入负数, 把数的范围扩充到有理数, 研究有理数及其大小比较和运算.  
+In this chapter, we introduce negative numbers and extend the number system to rational numbers. We study how to compare and calculate with rational numbers.
 
-# 1.1 有理数的引入  
+# 1.1 Introduction to Rational Numbers
 
-# 1. 正数和负数  
+# 1. Positive and Negative Numbers
 
-某天, 沈阳的最低温度是 $- 1 2 ^ { \circ } \mathrm { C }$ , 表示零下 $1 2 ^ { \circ } \mathrm { C }$ ; 最高温度是 $3 ^ { \circ } \mathrm { C }$ , 表示零上 $3 ^ { \circ } \mathrm { C }$ . 零上 $3 ^ { \circ } \mathrm { C }$ 和零下 $1 2 ^ { \circ } \mathrm { C }$ 是具有相反意义的量, 我们可以用正数和负数来表示.  
+One day in Shenyang, the lowest temperature was $- 1 2 ^ { \circ } \mathrm { C }$, meaning $1 2 ^ { \circ } \mathrm { C }$ below zero. The highest temperature was $3 ^ { \circ } \mathrm { C }$, meaning $3 ^ { \circ } \mathrm { C }$ above zero. A temperature of $3 ^ { \circ } \mathrm { C }$ above zero and one of $1 2 ^ { \circ } \mathrm { C }$ below zero have opposite meanings, so we can represent them with positive and negative numbers.
 
-日常生活中, 还有许多具有相反意义的量, 都可以用正数和负数来表示.我们看几个例子:  
+In everyday life, many quantities occur in opposite pairs. We can represent them using positive and negative numbers. Consider these examples:
 
-(1) 汽车向东行驶 $3 . 5 \mathrm { k m }$ 和向西行驶 $2 . 5 \mathrm { k m }$ .  
+(1) A car travels $3 . 5 \mathrm { k m }$ east and $2 . 5 \mathrm { k m }$ west.
 
-如果规定向东为正, 那么向西为负. 向东行驶$3 . 5 \mathrm { k m }$ 记作 $3 . 5 \mathrm { k m }$ , 向西行驶 $2 . 5 \mathrm { k m }$ 记作 - $2 . 5 \mathrm { k m }$ .  
+If east is defined as the positive direction, then west is negative. A journey of $3 . 5 \mathrm { k m }$ east is recorded as $3 . 5 \mathrm { k m }$, and a journey of $2 . 5 \mathrm { k m }$ west as -$2 . 5 \mathrm { k m }$.
 
-(2) 收入 500 元和支出 237 元.  
+(2) An income of 500 yuan and an expense of 237 yuan.
 
-先规定某一种意义为正, 那么与它相 反 的 意 义 为负. 负的量用负数表示.  
+First choose one meaning as positive; its opposite is negative. A negative quantity is represented by a negative number.
 
-如果规定收入为正, 那么支出为负. 收入 500 元记作 500 元, 支出 237 元记作 - 237 元.  
+If income is positive, expenses are negative. An income of 500 yuan is recorded as 500 yuan, and an expense of 237 yuan as -237 yuan.
 
-(3) 水位升高 $1 . 2 \mathrm { m }$ 和下降 $0 . 7 \mathrm { m }$ .  
+(3) The water level rises $1 . 2 \mathrm { m }$ or falls $0 . 7 \mathrm { m }$.
 
-如果规定升高为正, 那么下降为负. 升高 $1 . 2 \mathrm { m }$ 记作 $1 . 2 \mathrm { m }$ , 下降 $0 . 7 \mathrm { m }$ 记作 $- 0 . 7 \mathrm { m }$ .  
+If a rise is defined as positive, a fall is negative. A rise of $1 . 2 \mathrm { m }$ is recorded as $1 . 2 \mathrm { m }$, and a fall of $0 . 7 \mathrm { m }$ as $- 0 . 7 \mathrm { m }$.
 
-概括 在以上出现的数中, 像 - 12、 - 2.5、 - 237、 - 0.7 这样的数是负数(negative number), 像 3、 3.5、 500、 1.2 这样的数是正数(positivenumber). 正数前面有时也可放上一个“ $^ +$ ” ( 读作“ 正” ) 号, 如 7 可以写成$^ { + 7 }$ .  
+Thus, -12, -2.5, -237, and -0.7 are negative numbers, while 3, 3.5, 500, and 1.2 are positive numbers. A plus sign, read as “positive,” may be written before a positive number, $^ +$; for example, 7 may be written as $^ { + 7 }$.
 
-# 注意  
+# Note
 
-0 既不是正数, 也不是负数.  
+Zero is neither positive nor negative.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 数的产生与发展  
+# The Origins and Development of Numbers
 
-我们学过各种各样的数, 那么, 数是怎样产生并发展起来的呢?  
+We have studied several kinds of numbers. How did these number systems develop?
 
-我们知道, 为了表示物体的个数或者顺序, 产生了整数1, 2, 3, … ;为了表示 “没有”, 引入了数 0; 有时分配、 测量的结果不是整数, 需要用分数( 小数) 表示; 为了表示具有相反意义的量, 我们又引进了负数……总之, 生产和生活的需要促进了数的产生、 发展.  
+We first used the counting numbers 1, 2, 3, … to count objects and show their order. Zero was later introduced to represent none. Fractions and decimals were needed to express quantities that are not whole numbers. Negative numbers were introduced to represent opposites. The needs of daily life and production have driven the development of number systems.
 
-1. 举出几对具有相反意义的量, 并用正数和负数来表示.  
+1. Give examples of quantities with opposite meanings, and represent them with positive and negative numbers.
 
-2. 在中国地形图上, 一般在主要山峰和盆地处都标有表明它们海拔高度的数, 如珠穆朗玛峰的海拔高度为 $8 8 4 8 . 8 6 \mathrm { ~ m ~ }$ , 吐鲁番盆地的海拔高度为$- ~ 1 5 4 . 3 1 \mathrm { m }$ . 请说出 8 848. 86 和 - 154. 31 表示的实际意义 . 海平面的海拔高度用什么数表示?  
+2. On the Chinese topographic map, It's usually marked at major peaks and basins, indicating their altitude, Like the height of Mount Everest $8 8 4 8 . 8 6 \mathrm { ~ m ~ }$ , At the height of the Turpan Basin,$- ~ 1 5 4 . 3 1 \mathrm { m }$ . Say it 8 848. 86 and - 154. 31 Meaning of expression . What's the altitude of sea level??
 
-3. 下列各数中, 哪些是正数? 哪些是负数?$+ ~ 6 , ~ - ~ 2 1 , ~ 5 4 , ~ 0 , ~ \frac { 2 2 } { 7 } , ~ - 3 . 1 4 , ~ 0 . 0 0 1 , ~ - ~ 9 9 9 .$  
+3. of the following, Which are positive numbers?? Which are the negative numbers??$+ ~ 6 , ~ - ~ 2 1 , ~ 5 4 , ~ 0 , ~ \frac { 2 2 } { 7 } , ~ - 3 . 1 4 , ~ 0 . 0 0 1 , ~ - ~ 9 9 9 .$
 
-4. “一个数, 如果不是正数, 就必定是负数. ” 这句话对不对? 为什么?  
+4. Is the statement “If a number is not positive, it must be negative” correct? Explain your answer.
 
-# 2. 有理数  
+# 2. Rational numbers
 
-到目前为止, 我们所学过的数可以分为以下几类:正整数, 如 1, 2, 3, …  
-零, 即 0;  
-负整数, 如 - 1, - 2, - 3,  
+The numbers learned so far can be classified as follows:
 
-# 第 1 章 有理数  
+- Positive integers: 1, 2, 3, …
+- Zero: 0
+- Negative integers: -1, -2, -3, …
+- Positive fractions and mixed numbers, for example ${ \frac { 1 } { 3 } } , \ { \frac { 2 2 } { 7 } }$ and $4 { \frac { 1 } { 2 } } )$.
+- Negative fractions, for example $- { \frac { 1 } { 2 } } , ~ \ l _ { - } 2 { \frac { 2 } { 7 } } , ~ \ l _ { - } 0 . 3 \Big ( \boxplus - { \frac { 3 } { 1 0 } } \Big ) ~ , ~ \cdots .$
 
-正分数, 如 ${ \frac { 1 } { 3 } } , \ { \frac { 2 2 } { 7 } }$ 4.5 即 $4 { \frac { 1 } { 2 } } )$ 负分数, 如 $- { \frac { 1 } { 2 } } , ~ \ l _ { - } 2 { \frac { 2 } { 7 } } , ~ \ l _ { - } 0 . 3 \Big ( \boxplus - { \frac { 3 } { 1 0 } } \Big ) ~ , ~ \cdots .$  
+Positive and negative integers, together with zero, are called integers. Positive and negative fractions are called fractions. Integers and fractions together are called rational numbers.
 
-正整数、 0 和负整数统称为整数( integer), 正分数和负分数统称为分数(fraction) .  
+# Reading
 
-整数和分数统称为有理数(rational number) .  
+The word “rational” is related to “ratio.” A rational number can be written as the quotient of two integers. After studying division of rational numbers in Section 1.10, we will see why this description captures their defining property.
 
-# 读一读  
+We can classify the numbers we've learned as follows:
 
-“有理数” 的英文名 rational number 中的单词 rational 应看成 ratio(比、比率)的形容词形式. 因此, rational number 应该理解为 “比率数”, 即可以表示为两个整数之商(比率)的数. 在学习了有理数的除法(1.10 节)之后我们可以看到, 这样的解释准确地描述了有理数的本质.  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/e909304520ec94250d7034706ebf684a8e39955edd23d6b9c2d19631e4a8616b.jpg)
 
-我们可以把已经学过的数作出如下分类:  
+A collection of numbers is called a number set. Examples include the set of rational numbers, the set of integers, the set of negative numbers, and the set of nonnegative integers (the natural numbers, including zero).
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/e909304520ec94250d7034706ebf684a8e39955edd23d6b9c2d19631e4a8616b.jpg)  
+# Mathematics, Grade 7
 
-把一些数放在一起, 就组成一个数的集合, 简称数集(set of numbers) . 所有有理数组成的数集叫做有理数集. 类似地, 所有整数组成的数集叫做整数集,所有负数组成的数集叫做负数集, 所有正整数和 0 组成的数集叫做非负整数集(即自然数集), 如此等等.  
+Example　 Enter the following numbers into the circle indicating where they are:22 3- 18, 3.141 6, 0, 2 023, - 0.142 857, $9 5 \%$ .7 5
 
-# 数学 七年级上册  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b410db2431c29ba5910f6741ed4befcc9f196f697307aad706bf62e42f5d5323.jpg)
 
-例　 把下列各数填入表示它们所在的数集的圈里:22 3- 18, 3.141 6, 0, 2 023, - 0.142 857, $9 5 \%$ .7 5  
+1. Give two examples of quantities that can be represented by positive and negative numbers. Are all numbers either positive or negative?
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b410db2431c29ba5910f6741ed4befcc9f196f697307aad706bf62e42f5d5323.jpg)  
+2. Is there a rational number that is neither positive nor negative? If so, name it.
 
-1. 请说出两个正整数、 两个负整数、 两个正分数、 两个负分数. 它们都是有理数吗?  
+# Reading materials
 
-2. 有理数集中有没有这样的数, 它既不是正数, 也不是负数? 若有, 请说出这样的数.  
+# The story of Hua Luogeng
 
-# 阅读材料  
+The size of the universe, Small particles, Rocket speed, Chemical coincidence, Change of the Earth, The mystery of life, It's daytime, No math anywhere.
 
-# 华罗庚的故事  
+Hua Luogeng
 
-宇宙之大, 粒子之微, 火箭之速, 化工之巧, 地球之变, 生物之谜, 日用之繁, 无处不用数学.  
+We're famous mathematicians(1910—1985)Say it: “Smart is learning, Genius is accumulated. ” That's the true picture of his life.
 
-华罗庚  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/33817f676bc4ce791678de6a92deb554113d3b613d03c9db2ce96f8bf8e43f8b.jpg)
 
-我国著名数学家华罗庚(1910—1985)说: “聪明在于学习, 天才在于积累. ” 这句话正是他一生的真实写照.  
+Hua Luogeng, 1910 Year 11 Month 12 Born in Jintan County, Jiangsu Province,
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/33817f676bc4ce791678de6a92deb554113d3b613d03c9db2ce96f8bf8e43f8b.jpg)  
+1924 Graduated from the county' s Public Primary School. After, He went to the Chinese vocational school in Shanghai, In less than a year and a half, After two years of study,. 15 When I was old, Hua Luogeng dropped out of school because of his family problems. Back home, He helped his father to work in a grocery store, to keep a check, One side of math.
 
-华罗庚, 1910 年 11 月 12 日出生于江苏省金坛县,  
+20 At age, One of his papers, "The Five Equations of the Sioux Arrogates" was published in Shanghai's Science magazine, It shows this 20 The math talent of young people. But in the same year,, Hua Luogeng has severe typhoid and arthritis. In the fight against disease, He's stubborn, You're tough, I finally beat the sick, But his left leg was crippled. But in the meantime,, He's still trying to study mathematics, A lot of important scientific work has been done. Hua Luogeng is completely self-studyed, It took six years or so, I finished my junior high to college. It's the spirit that makes Hua Luogeng look like this, He finally became a world-renowned mathematician.
 
-1924 年毕业于该县公立初级中学. 此后, 他又到上海中华职业学校读书, 用不到一年半的时间, 就读完了两年的课程. 15 岁的时候, 华罗庚迫于家境困难而辍学. 返回家乡后, 他一面帮助父亲在小杂货店里干活、 记账, 一面钻研数学.  
+# Mathematics, Grade 7
 
-20 岁时, 他的一篇论文《苏家驹之代数的五次方程式解法不能成立之理由》发表在上海《科学》杂志上, 显示出了这位 20 岁青年的数学才华. 然而就在同一年, 华罗庚患了严重的伤寒病和关节炎. 在与疾病的斗争中, 他意志顽强, 坚韧不拔, 终于战胜了病魔, 但他的左腿瘸了. 然而在此期间, 他仍然努力钻研数学, 接连取得了许多重大的科研成果. 华罗庚完全依靠自学, 只用了六年左右的时间, 就完成了从初中到大学的课程. 华罗庚正是凭着这种刻苦钻研的精神, 终于成为举世公认的大数学家.  
+# Exercises 1. 1
 
-# 数学 七年级上册  
+# Group A
 
-# 习题1. 1  
+1. Select the eligible number to be filled in the corresponding pool:
 
-# A 组  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/4382f5db997b0c9f36008846839f4e2d8ef6ef58370edfeaf2c1ad9ff1e2b8a7.jpg)
+Positive set
 
-1. 在下列各数中选出符合条件的数填入相应的集合内:  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/8dae7fc71999de6b29463c141164e50f6affb210ef6a7d3387d62c64abec57bd.jpg)
+Negative Integer Set
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/4382f5db997b0c9f36008846839f4e2d8ef6ef58370edfeaf2c1ad9ff1e2b8a7.jpg)  
-正数集  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/c97ea72e99336b0a7eec35c4c49b89fd910c31c321354fca1b4f4bd7efc22137.jpg)
+Integer Set
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/8dae7fc71999de6b29463c141164e50f6affb210ef6a7d3387d62c64abec57bd.jpg)  
-负整数集  
+2. of the following, Which are the integers?? Which are the points?? Which are positive numbers?? Which are the negative numbers??
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/c97ea72e99336b0a7eec35c4c49b89fd910c31c321354fca1b4f4bd7efc22137.jpg)  
-整数集  
+3. The following two circles are for positive and integer sets, Therefore the overlaps between these two circles mean the sum of what?? Please write 9 Each number is filled in these two circles, Make every circle of them 6 Number.
 
-2. 下列各数中, 哪些是整数? 哪些是分数? 哪些是正数? 哪些是负数?  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/e4177bf47d48c3afbd7058f1c0871af35ee266371be51fb58e265f9eef6ed891.jpg)
+(I don't think so 3 Topic)
 
-3. 下面两个圈分别表示正数集和整数集, 那么这两个圈的重叠部分表示什么数的集合? 请写出9 个数填入这两个圈中, 使其中每个圈中各有6 个数.  
+4. The parenthesis below indicates a collection of numbers, Put the no 1、 2 Fill in the corresponding brackets for each of the two questions:
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/e4177bf47d48c3afbd7058f1c0871af35ee266371be51fb58e265f9eef6ed891.jpg)  
-(第 3 题)  
+Integer set: {
+Negative Integer Set: { $\begin{array} { r l r } & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \downarrow } \end{array}$
+Integer Set: {
+Set of rational numbers: {
+set of positive numbers: {
+set of rational numbers: {
+Natural series: {
 
-4. 下面的大括号表示一些数的集合, 把第1、 2 两题中的各数填入相应的大括号内:  
+# Rational Numbers
 
-正整数集: {  
-负整数集: { $\begin{array} { r l r } & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \vdots } \\ & { } & { \cdots \mid \downarrow } \end{array}$   
-整数集: {  
-有理数集: {  
-正有理数集: {  
-负有理数集: {  
-自然数集: {  
+# Group B
 
-# 第 1 章 有理数  
-
-# B 组  
-
-5. 分别观察下面各题中依次排列的一些数, 猜测它们的排列各有什么规律? 请按你猜测的规律, 接着写出后面的3 个数. 你能分别说出各题排列的数中第 10 个数、 第 100 个数、第 200 个数、 第 201 个数是什么吗?  
+5. See the numbers in order for each of the following topics separately, Guess what they're all about? Please follow your guess, And write the rest 3 Number. You can tell the number of questions in the list 10 Number, 100 Number, number 200 Number, 201 What are the numbers??
 
 $$
 \begin{array} { r l } & { \mathrm { ( ) } ~ 1 , ~ - 1 , ~ 1 , ~ - 1 , ~ 1 , ~ - 1 , ~ 1 , ~ - 1 , } \\ & { \mathrm { 2 ) } ~ 1 , ~ - 2 , ~ 3 , ~ - 4 , ~ 5 , ~ - 6 , ~ 7 , ~ - 8 , ~ \displaystyle et { } { ' } \longrightarrow , ~ \longrightarrow , ~ \longrightarrow , ~ \cdots ; } \\ & { \mathrm { 3 ) } ~ - 1 , ~ \displaystyle \frac { 1 } { 2 } , ~ - \frac { 1 } { 3 } , ~ \frac { 1 } { 4 } , ~ - \frac { 1 } { 5 } , ~ \frac { 1 } { 6 } , ~ - \frac { 1 } { 7 } , ~ \longrightarrow , ~ \longrightarrow , ~ \longrightarrow , ~ \cdots . } \end{array}
-$$  
+$$
 
-# 1.2　数　轴  
+# 1.2　Number Line
 
-# 1. 数轴  
+# 1. Number Line
 
-能不能用直线上的 点 表 示 有 理数? 从气温计上能否得 到 一 点 启 发呢?  
+Can points on a straight line represent rational numbers? Can a thermometer give us an idea?
 
-我们在小学学习数学时, 发现能用直线上依次排列的点来表示自然数, 它帮助我们认识了自然数的大小关系.  
+In elementary school, we learned that natural numbers can be represented by points arranged in order on a line. This helps us understand their order.
 
-如图1.2.1, 通过气温计上的刻度, 我们可以方便地读出气温的度数, 并且可以区分出是零上还是零下.  
+As Figure 1.2.1 shows, a thermometer lets us read temperatures and tell whether they are above or below zero.
 
-与气温计相仿, 我们可以用直线上的点表示有理数. 具体做法如下:  
+As with a thermometer, we can represent rational numbers by points on a line. Here is how:
 
-画一条直线(通常画成水平位置), 在这条直线上任取一点作为原点(origin), 用这点表示数 0 . 规定直线上从原点向右的方向为正方向, 画上箭头, 则相反方向为负方向. 再选取适当的长度作为单位长度, 从原点向右, 每隔一个单位长度取一点, 依次标上 1, 2,3, … ; 从原点向左, 每隔一个单位长度取一点, 依次标上 - 1,- 2, - 3, … . 如图1.2.2 所示.  
+Draw a line, usually horizontally, and choose a point on it as the origin representing 0. Choose the direction to the right as positive and mark it with an arrow; the opposite direction is negative. Choose a unit length. Mark points one unit apart to the right as 1, 2, 3, … and points one unit apart to the left as -1, -2, -3, …, as shown in Figure 1.2.2.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/da49740dba7b5cf7a1ca8147708392805a7b84d7b78d5e1f564968aa699eecfb.jpg)  
-图1.2.1  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/da49740dba7b5cf7a1ca8147708392805a7b84d7b78d5e1f564968aa699eecfb.jpg)
+Figure 1.2.1
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/49c1a1d59a72550aa96c87d2dbf696d1f51eeda5dd86940c3f6b0754d41dae4f.jpg)  
-图1.2.2  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/49c1a1d59a72550aa96c87d2dbf696d1f51eeda5dd86940c3f6b0754d41dae4f.jpg)
+Figure 1.2.2
 
-# 概括  
+# Summary
 
-像这样规定了原点、 正方向和单位长度的直线叫做数轴(numberaxis) .  
+A line with a specified origin, positive direction, and unit length is called a number line.
 
-在数轴上, 除了原点用数 0 表示外, 要表示任何一个不为 0 的有理数, 可以先根据这个数的正负号确定它在数轴上原点的哪一边(正数在原点的右边, 负数在原点的左边), 再在相应的方向上确定它与原点相距几个单位长度, 然后画上相应的点. 例如, 在数轴上表示 - 4.5, 即在原点的左边 4.5 个单位长度处画上相应的点.  
+On the number line, Except for the origin 0 Extra, To indicate that any of them is not 0 Rational numbers, You can first determine which side of the number line it's at(The positive number is on the right of the origin, Negative number on the left of origin), Then determine in the corresponding direction how long it is in units away from the origin, Then draw the corresponding dots. For example:, On the number line - 4.5, On the left of the original 4.5 Draw the corresponding points in each unit length.
 
-例1　 画出数轴, 并在数轴上画出表示下列各数的点:  
+Example 1　 Draw number line, And draw the following points on the number line:
 
 $$
 4 , \quad - 2 , \quad - 4 . 5 , \quad 1 \frac { 1 } { 3 } , 0 .
-$$  
+$$
 
-解 如图 1.2.3 所示.  
+Figure 1.2.3 Figure.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/7ba48d63fdff6fd867c976ccd92f0f7a91b67c5b13f790c70e94fc413bd87c87.jpg)  
-图1.2.3  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/7ba48d63fdff6fd867c976ccd92f0f7a91b67c5b13f790c70e94fc413bd87c87.jpg)
+Figure 1.2.3
 
-1. 下列各图表示的数轴是否正确? 为什么?  
+1. Are the number lines shown below correct? Explain your reasoning.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/71f1b05cd2b91f9fdeb9a0e248112e0b054f245c1d01a2b13830dafd376898c6.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/71f1b05cd2b91f9fdeb9a0e248112e0b054f245c1d01a2b13830dafd376898c6.jpg)
 
-2. 在数轴上表示下列各数的点分别位于原点的哪边? 与原点距离多少个单位长度?  
+2. For each point shown on the number line, state its coordinate and its distance from the origin.
 
-3. 如图, 指出数轴上的点 $A , B , C , D$ 所表示的数.  
+3. Read the numbers represented by points $A , B , C , D$ in the figure.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/da239fe7acb9a46b37a2296241e563da007bd24973d808a75e604bcb02d7379d.jpg)  
-(第 3 题)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/da239fe7acb9a46b37a2296241e563da007bd24973d808a75e604bcb02d7379d.jpg)
+(I don't think so 3 Topic)
 
-4. 先画出数轴, 再在数轴上画出表示下列各数的点, 最后按数轴上从左到右的顺序, 将这些数重新排列:  
+4. Draw number line first, Draws the following points on the array:, Last in the order of left to right on the number line, Reorder these numbers:
 
 $$
 - 1 . 8 , 0 , - 3 . 5 , \frac { 1 0 } { 3 } , 6 \frac { 1 } { 2 } .
-$$  
+$$
 
-# 2. 在数轴上比较数的大小  
+## 2. Comparing Numbers on a Number Line
 
-在小学里, 我们已经学会比较两个正数的大小, 那么, 引进负数后, 怎样比较两个有理数的大小呢? 例如, 1 与 - 2 哪个大? - 1 与 0 哪个大? - 3与 - 4 哪个大?  
+In elementary school, we learned to compare positive numbers. After introducing negative numbers, how can we compare rational numbers? For example, which is greater: 1 or -2, -1 or 0, and -3 or -4?
 
-# 探索  
+## Explore
 
-(1) 任意写出两个正数, 在数轴上画出  
+(1) Choose any two positive numbers and mark them on the number line.
 
-表示它们的点, 较大的数与较小的数的对应点的位置有什么关系?  
+How are the points for the larger and smaller numbers positioned relative to each other?
 
-(2) $1 ^ { \circ } \mathrm { C }$ 与 $\mathrm { ~ - ~ } 2 ^ { \circ } \mathrm { C }$ 哪个温度高? $\mathrm { ~ - ~ } 1 ^ { \circ } \mathrm { C }$ 与 $0 ^ { \circ } \mathrm { C }$ 哪个温度高? $\mathbf { \nabla } - 3 \mathbf { \overset { \circ } { C } }$ 与 $\mathrm { ~ - ~ } 4 ^ { \circ } \mathrm { C }$ 哪个温度高? 这些关系在气温计上表现为怎样的情形?  
+(2) $1 ^ { \circ } \mathrm { C }$ and $\mathrm { ~ - ~ } 2 ^ { \circ } \mathrm { C }$ Which temperature?? $\mathrm { ~ - ~ } 1 ^ { \circ } \mathrm { C }$ and $0 ^ { \circ } \mathrm { C }$ Which temperature?? $\mathbf { \nabla } - 3 \mathbf { \overset { \circ } { C } }$ and $\mathrm { ~ - ~ } 4 ^ { \circ } \mathrm { C }$ Which temperature?? What are these relationships like in temperature measurements??
 
-把气温计横过来放, 就像一条数轴 . 从 这 个 操 作中, 能得到怎样的启发?  
+Imagine turning the thermometer sideways so that it looks like a number line. What can you infer?
 
-# 概括  
+# Summary
 
-在数轴上表示的两个数, 右边的数总比左边的数大.由此容易得到如下数的大小比较法则:正数都大于0, 负数都小于0, 正数都大于负数.  
+Of two numbers represented on a number line, the one farther to the right is greater. Therefore, every positive number is greater than 0, every negative number is less than 0, and every positive number is greater than every negative number.
 
-# 数学 七年级上册  
- 
-例2　 将下列各数按从小到大的顺序排列, 并用 “<” 号连接起来:  
+# Mathematics, Grade 7
+
+Example 2. Arrange the following numbers in increasing order and connect them with “<”:
 
 $$
 { \mathrm { ~ 3 ~ , ~ } } \ 0 , \ 1 \frac { 5 } { 6 } , \ \mathrm { ~ - ~ } 4 .
-$$  
+$$
 
-解　 容易知道 $1 \frac { 5 } { 6 } < 3$ , 再由数的大小比较法则, 得  
+Solution　 It's easy to know $1 \frac { 5 } { 6 } < 3$ , By the size of the number, Okay
 
 $$
 - 4 < 0 < 1 \frac { 5 } { 6 } < 3 .
-$$  
+$$
 
-在数轴上画出表示这些数的点,再比较大小, 结果怎样?  
+Mark these numbers on a number line and compare their positions. What do you notice?
 
-例 3 比较下列各数的大小:  
+Example 3. Compare the following numbers:
 
-解　 将这些数分别在数轴上表示出来, 如图1.2.4 所示.  
+Solution　 Show them on the number line, As shown in the figure 1.2.4 Figure.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/79336a3d3e2d6f4042567526fa03ea24fc0dff2907897297daa72d6301d19f48.jpg)  
-图1.2.4  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/79336a3d3e2d6f4042567526fa03ea24fc0dff2907897297daa72d6301d19f48.jpg)
+Figure 1.2.4
 
-可以看出  
+We can see that
 
 $$
 - 5 < - 3 < - 1 . 3 < 0 . 3 .
-$$  
+$$
 
-1. 判断下列有理数的大小比较是否正确, 并说明理由:  
+1. Determines whether the following rational-number comparisons are correct, and reasons therefor:
 
-(1) $2 . 9 > - 3 . 1$ ; (2) $0 ~ < - ~ 1 4$ ;   
-(3) $^ - ~ 1 0 ~ > ~ - ~ 9$ (4) $- 5 . 4 \ < - 4 . 5$ .  
+(1) $2 . 9 > - 3 . 1$ ; (2) $0 ~ < - ~ 1 4$ ;
+(3) $^ - ~ 1 0 ~ > ~ - ~ 9$ (4) $- 5 . 4 \ < - 4 . 5$ .
 
-2. 用 “<” 号或 “>” 号填空:  
+2. Use “<” No. or “>” Number Filling:
 
-(1) 3.6 2.5; (2) - 3 0;   
-(3) - 16 - 1.6; (4) + 1 - 10;   
-(5) - 2.1 $+ 2 . 1$ ; (6) - 9 - 7 .  
+(1) 3.6 2.5; (2) - 3 0;
+(3) - 16 - 1.6; (4) + 1 - 10;
+(5) - 2.1 $+ 2 . 1$ ; (6) - 9 - 7 .
 
-# 习题1. 2  
+# Exercises 1. 2
 
-# A 组  
+# Group A
 
-1. 如图, 指出数轴上的点 $A , B , C , D$ 所表示的数.  
+1. As shown in the figure, Point points on the number line $A , B , C , D$ Number indicated.
 
 $$
 \frac { D } { \mathrm { ~ \frac ~ { ~ i ~ } { ~ - ~ / ~ } ~ { ~ - ~ 6 ~ } ~ - ~ 5 ~ ~ - 4 ~ } \mathrm { ~ - ~ 3 ~ - 2 ~ } \mathrm { ~ - ~ 1 ~ } \mathrm { ~ \frac ~ { ~ i ~ } { ~ i ~ } ~ } \mathrm { ~ \frac ~ { ~ 1 ~ } ~ { ~ 2 ~ } ~ } \mathrm { ~ \frac ~ { ~ C ~ } ~ { ~ \downarrow ~ } ~ } \mathrm { ~ \frac ~ { ~ i ~ } ~ { ~ + ~ } ~ } \mathrm { ~ \frac ~ { ~ i ~ } ~ { ~ - ~ } ~ } \mathrm { ~ \frac ~ { ~ i ~ } ~ { ~ i ~ } ~ } \mathrm { ~ \frac ~ { ~ i ~ } ~ { ~ i ~ } ~ } \mathrm { ~ \frac ~ { ~ i ~ } ~ { ~ - ~ } ~ } }
-$$  
+$$
 
-(第 1 题)  
+(I don't think so 1 Topic)
 
-2. 画出数轴, 并在数轴上画出表示下列各组数的点:  
+2. Draw number line, And draw points on the arrays indicating the following groups:
 
-$( 1 ) \ - 2 . 1 , \quad - \ 3 , \quad 0 . 5 , \quad 4 \frac { 1 } { 2 } ;$ (2) - 50, 250, 0, - 400.  
+$( 1 ) \ - 2 . 1 , \quad - \ 3 , \quad 0 . 5 , \quad 4 \frac { 1 } { 2 } ;$ (2) - 50, 250, 0, - 400.
 
-3. 如图, 一个点从数轴上的原点开始, 先向右移动3 个单位长度, 再向左移动 5 个单位长度, 可以看出, 终点表示的数是 - 2.  
+3. As shown in the figure, One point starts at the origin of the number line, Move right first 3 Unit length, Move left again 5 Unit length, We can see that, The end point is - 2.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/49ca23778fead8164ea084ac76ddd521f0bb1ec0a19663fa25e661da7549f0b6.jpg)  
-(第 3 题)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/49ca23778fead8164ea084ac76ddd521f0bb1ec0a19663fa25e661da7549f0b6.jpg)
+(I don't think so 3 Topic)
 
-已知 $A , B$ 是数轴上的点, 请参照题图, 完成下列填空:  
+Known $A , B$ It's on the axle, Please refer to the diagram, Complete the following emptys:
 
-(1) 如果点 $A$ 表示数 - 3, 将点 $A$ 向右移动7 个单位长度, 那么终点表示的数是 ;  
-(2) 如果点 $A$ 表示数 3, 将点 $A$ 向左移动 7 个单位长度, 再向右移动 5 个单位长度, 那么终点表示的数是 ;  
-(3) 如果将点 $B$ 向右移动3 个单位长度, 再向左移动5 个单位长度, 终点表示的数是0,那么点 $B$ 表示的数是  
+(1) If the dots $A$ Organisation - 3, Point $A$ Move Right 7 Unit length, Therefore the end point is ;
+(2) If the dots $A$ Organisation 3, Point $A$ Move Left 7 Unit length, Move right again 5 Unit length, Therefore the end point is ;
+(3) If the point $B$ Move Right 3 Unit length, Move left again 5 Unit length, The end point is 0,That's it $B$ The number is
 
-4. 在数轴上分别画出表示下列每对数的点, 并比较它们的大小:  
+4. Draws the following logarithms on each number line, And compare their size:
 
-(1) - 8, - 6; (2) - 5, 0.1; $\begin{array} { c c } { { \displaystyle - \frac { 1 } { 4 } , } } & { { 0 ; } } \\ { { } } & { { } } \\ { { \displaystyle + \frac { 1 } { 5 } , } } & { { 0 . } } \end{array}$ (4) - 4.2, - 5.1; (5) ${ \frac { 2 } { 3 } } , { \frac { 3 } { 2 } } ;$ (6)  
+(1) - 8, - 6; (2) - 5, 0.1; $\begin{array} { c c } { { \displaystyle - \frac { 1 } { 4 } , } } & { { 0 ; } } \\ { { } } & { { } } \\ { { \displaystyle + \frac { 1 } { 5 } , } } & { { 0 . } } \end{array}$ (4) - 4.2, - 5.1; (5) ${ \frac { 2 } { 3 } } , { \frac { 3 } { 2 } } ;$ (6)
 
-5. 把下列各组数分别在数轴上表示出来, 并按从小到大的顺序排列, 用 “ <” 号连接起来:  
+5. Show the following groups on each number line, And in order from childhood to age, Use “ <” Connect the numbers:
 
-(1) 1, - 2, 3, - 4; $\qquad - { \frac { 1 } { 3 } } , ~ 0 , ~ - 3 , ~ 0 . 2 .$  
+(1) 1, - 2, 3, - 4; $\qquad - { \frac { 1 } { 3 } } , ~ 0 , ~ - 3 , ~ 0 . 2 .$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-6. 下表是某年1 月份我国几个城市的平均气温, 请将各城市的平均气温按从高到低的顺序排列.  
+6. The following table shows the year 1 Average temperatures in several cities in the country during the month, Please rank the average temperature of cities in order of height to low.
 
-<html><body><table><tr><td>北京</td><td>上海</td><td>沈阳</td><td>广州</td><td>济南</td></tr><tr><td>- 5.6℃</td><td>2.3℃</td><td>- 16.8°℃</td><td>16.6℃</td><td>-3.2°C</td></tr></table></body></html>  
+<html><body><table><tr><td>Beijing</td><td>Shanghai</td><td>Shen Yang</td><td>Guangzhou</td><td>Chinan</td></tr><tr><td>- 5.6℃</td><td>2.3℃</td><td>- 16.8°℃</td><td>16.6℃</td><td>-3.2°C</td></tr></table></body></html>
 
-# B 组  
+# Group B
 
-7. 写出满足下列要求的数:  
+7. Write the number that meets the following requirements:
 
-(1) 在数轴上与原点的距离等于4.2 个单位长度的点所表示的数;  
-(2) 在数轴上与表示 - 3 的点的距离等于4 个单位长度的点所表示的数.  
+(1) The point is 4.2 units from the origin on the number line.
+(2) The point representing -3 is 4 units from the origin.
 
-8. 下列各数是否存在? 如果存在, 把它们找出来:(1) 最小的正整数;(2) 最小的负整数;(3) 最大的负整数;(4) 最小的整数.  
+8. Do the following numbers exist? If so, find them: (1) the smallest positive integer; (2) the smallest negative integer; (3) the greatest negative integer; (4) the smallest integer.
 
-# 1.3 相反数  
+# 1.3 Opposite Numbers
 
-# 做一做  
+# Try It
 
-在数轴上画出表示以下两对数的点:- 6 和 6, 1.5 和 - 1.5.  
+Mark the points representing -6, 6, 1.5, and -1.5 on a number line.
 
-这两对点有什么共同之处?  
+What do these pairs have in common?
 
-如图1.3.1, 在数轴上, - 6 和6 所对应的点位于原点的两旁, 且与原点的距离相等, 也就是说, 它们相对于原点的位置只有方向不同. 1.5 和 - 1.5 所对应的点也是这样的.  
+As shown in Figure 1.3.1, the points for -6 and 6 are on opposite sides of the origin and equally far from it. The points for 1.5 and -1.5 have the same relationship.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/0cb6afde1c7ad43f7b148720649df7b78deaaecc5cd135780d51ae0bce88470f.jpg)  
-图1.3.1  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/0cb6afde1c7ad43f7b148720649df7b78deaaecc5cd135780d51ae0bce88470f.jpg)
+Figure 1.3.1
 
-容易看出, 每对数中的两个数, 都只有正负号不同.  
+Each pair has the same absolute value and opposite signs.
 
-#  
+#
 
-概括 像6 和 - 6、 1.5 和 - 1.5 那样, 只有正负号不同的两个数称互为相反数(opposite number), 也就是说, 其中一个数是另一个数的相反数. 这里, 6 和 - 6 互为相反数, 即 6 是 - 6 的相反数, - 6 是 6 的相反数.  
+Summary: Two numbers such as 6 and -6 or 1.5 and -1.5, which differ only in sign, are called opposites. Each is the opposite of the other. Thus 6 and -6 are opposites: 6 is the opposite of -6, and -6 is the opposite of 6.
 
-在数轴上, 表示互为相反数的两个点分别位于原点的两旁, 且与原点的距离相等.  
+On a number line, opposite numberss are represented by points on opposite sides of the origin and equally far from it.
 
-我们规定: 0 的相反数是0.  
+By definition, the opposite of 0 is 0.
 
-例1　 分别写出下列各数的相反数:  
+Example 1. Write the opposite of each number:
 
 $$
 + 5 , \quad - 7 , \quad - 3 { \frac { 1 } { 2 } } ,
-$$  
+$$
 
-解 $+ ~ 5$ 的相反数是 - 5, - 7 的相反数是 7, $- 3 { \frac { 1 } { 2 } }$ 的相反数是 $3 { \frac { 1 } { 2 } }$ 11.2 的相反数是 - 11.2.  
+Solution. The opposites of $+ ~ 5$, -7, and $- 3 { \frac { 1 } { 2 } }$ are -5, 7, and $3 { \frac { 1 } { 2 } }$, respectively. The source lists these numbers as $- ~ 4 , ~ + ~ 5 . 5$.
 
-我们通常在一个数的前面添上 “ -” 号, 表示这个数的相反数. 例如, $- ~ 4 , ~ + ~ 5 . 5$ 的相反数分别为:  
+A minus sign placed before a number denotes its opposite. For example, the opposites of -4 and +5.5 are:
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/fb80be946655f0c3adf537b554bfdca2afcd19183ab585c2d02b5c80ec36d228.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/fb80be946655f0c3adf537b554bfdca2afcd19183ab585c2d02b5c80ec36d228.jpg)
 
 $$
 - \ ( - \ 4 ) = 4 , \quad - \ ( \ + \ 5 . 5 ) = - \ 5 . 5 .
-$$  
+$$
 
-在一个数的前面添上 “ $^ +$ ” 号, 仍表示这个数本身. 例如:  
+A plus sign placed before a number still denotes the number itself, $^ +$. For example:
 
 $$
 + \ ( - \ 4 ) = - \ 4 , + \ ( + \ 1 2 ) = 1 2 .
-$$  
+$$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-例 2 化简:  
+Example 2. Simplify:
 
-(1) $\mathrm { ~ - ~ } ( + 1 0 )$ ; (2) + (- 0.15);(3) $+ \ ( + \ 3 )$ ; (4) - (- 20) .解　 ( $\mathrm { ~ l ~ } ) \mathrm { ~ - ~ } ( \mathrm { ~ + ~ } 1 0 ) \mathrm { ~ -- ~ } 1 0 .$ . (2) $+ \ ( - \ 0 . 1 5 ) = - \ 0 . 1 5 .$ (3) $+ \left( + \ 3 \right) = + \ 3 = \ 3 .$ (4) $- \ ( - \ 2 0 ) = 2 0 .$  
+(1) $\mathrm { ~ - ~ } ( + 1 0 )$ ; (2) + (- 0.15);(3) $+ \ ( + \ 3 )$ ; (4) - (- 20) .Solution　 ( $\mathrm { ~ l ~ } ) \mathrm { ~ - ~ } ( \mathrm { ~ + ~ } 1 0 ) \mathrm { ~ -- ~ } 1 0 .$ . (2) $+ \ ( - \ 0 . 1 5 ) = - \ 0 . 1 5 .$ (3) $+ \left( + \ 3 \right) = + \ 3 = \ 3 .$ (4) $- \ ( - \ 2 0 ) = 2 0 .$
 
-1. 填空:  
+1. Fill in the blanks: (1) The opposite of 2.5 is __; (2) __ is the opposite of -100; (3) $- \frac { 1 } { 5 }$ is the opposite of __; (4) __ has opposite -1.1; (5) 8.2 and __ are opposites.
 
-(1) 2.5 的相反数是(2) 是 - 100 的相反数;  
+2. Simplicity:
 
-(3) $- \frac { 1 } { 5 }$ 是 的相反数;  
+(1) - (+ 0.78); (2) $\begin{array} { l } { { \displaystyle + \left( + 9 \frac { 1 } { 5 } \right) ; } } \\ { { \displaystyle + \left( - 1 0 . 1 \right) . } } \end{array}$ (3) - (- 3.14); (4)
 
-(4) 的相反数是 - 1.1;  
+3. Are the following statements correct? Explain. (1) Two numbers with different signs are opposites. (2) The opposite of a number is the same as its reciprocal. (3) The opposite of a number is always equal to the number itself.
 
-(5) 8.2 和 互为相反数.  
+# Exercises 1. 3
 
-2. 化简:  
+# Group A
 
-(1) - (+ 0.78); (2) $\begin{array} { l } { { \displaystyle + \left( + 9 \frac { 1 } { 5 } \right) ; } } \\ { { \displaystyle + \left( - 1 0 . 1 \right) . } } \end{array}$ (3) - (- 3.14); (4)  
+1. Write the opposite of each of the following::
 
-3. 下列说法是否正确? 为什么?  
+# Rational Numbers
 
-(1) 正负号相反的两个数称互为相反数;  
-(2) 相反数和我们以前学过的倒数是一样的;  
-(3) 一个数的相反数的相反数等于这个数本身.  
-
-# 习题1. 3  
-
-# A 组  
-
-1. 分别写出下列各数的相反数:  
-
-# 第 1 章 有理数  
-
-2. 画出数轴, 并在数轴上表示下列各数及它们的相反数:  
+2. Draw number line, The following numbers and their opposite numberss are shown on the number line:
 
 $$
 4 { \frac { 1 } { 4 } } , \quad - 2 , 0 , \quad - 3 . 7 5 .
-$$  
+$$
 
-3. 化简:  
+3. Simplicity:
 
-(1) - (- 16); (2) $- \ ( + \ 2 5 ) ;$ ; $( 3 ) \ + \ ( \ - \ 1 2 )$ ; (4) $\displaystyle + \ ( + 2 . 1 )$ ; (5) $- \ ( + \ 3 3 ) ;$ ; (6) $\mathbf { \mathrm { ~ - ~ } } \left( - \frac { 1 } { 1 0 } \right) .$  
+(1) - (- 16); (2) $- \ ( + \ 2 5 ) ;$ ; $( 3 ) \ + \ ( \ - \ 1 2 )$ ; (4) $\displaystyle + \ ( + 2 . 1 )$ ; (5) $- \ ( + \ 3 3 ) ;$ ; (6) $\mathbf { \mathrm { ~ - ~ } } \left( - \frac { 1 } { 1 0 } \right) .$
 
-# B 组  
+# Group B
 
-4. 试回答下列问题:  
+4. Answer the following questions:
 
-(1) 什么数的相反数大于它本身?(2) 什么数的相反数等于它本身?(3) 什么数的相反数小于它本身?  
+(1) What is the opposite of 0? (2) Which number is equal to its own opposite? (3) What is the opposite of a number that is its own opposite?
 
-5. 在数轴上表示正数 $\mathbf { \Omega } _ { a }$ 及其相反数的两个点之间的距离是多少?  
+5. On a number line, what is the distance between the points representing a positive number a and its opposite -a?
 
-# 1.4 绝对值  
+# 1.4 Absolute Value
 
-在一些量的计算中, 有时并不注重其方向. 例如, 计算汽车行驶所耗的汽油量时, 需要关注的是汽车行驶的路程, 而无须关注其行驶的方向.  
+For some quantities, direction is irrelevant. For example, when calculating how much gasoline a car consumes, we care about the distance traveled, not the direction.
 
-在讨论数轴上的点与原点的距离时, 只需要观察它与原点之间相隔多少个单位长度, 而与它位于原点哪一边无关.  
+Likewise, to find the distance from a point on a number line to the origin, we count the unit lengths between them, regardless of which side of the origin the point lies on.
 
-我们把在数轴上表示数 $\mathbf { \Omega } _ { a }$ 的点与原点的距离叫做数 $\mathbf { \Delta } _ { a }$ 的绝对值( absolutevalue), 记作 $\mid a \mid$ .  
+The distance from the point representing $\mathbf { \Omega } _ { a }$ on the number line to the origin is called the absolute value of $\mathbf { \Omega } _ { a }$; this quantity is $\mathbf { \Delta } _ { a }$, written $\mid a \mid$.
 
-例如, 在数轴上表示 $+ 5$ 的点与原点的距离是5 个单位长度, 所以 $+ 5$ 的绝对值是5, 记作 $\mid + 5 \mid = 5$ ; 在数轴上表示 - 6 的点与原点的距离是 6 个单位长度, 所以 - 6 的绝对值是6, 记作 $\mid - 6 \mid = 6$ .  
+For example, the point for $+ 5$ is 5 units from the origin, so the absolute value of $+ 5$ is 5, written $\mid + 5 \mid = 5$. The point for -6 is 6 units from the origin, so the absolute value of -6 is 6, written $\mid - 6 \mid = 6$.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 试一试  
+# Try it
 
-化简:  
+Simplicity:
 
-(1) | + 2 | = + 8.2 | =  
+(1) | + 2 | = + 8.2 | =
 
-(2) | 0 | = ; (3) | - 3 | = - 0.2 | = | - 8.2 | =  
+(2) | 0 | = ; (3) | - 3 | = - 0.2 | = | - 8.2 | =
 
-# 概括  
+# Summary
 
-由绝对值的意义, 我们可以知道:  
+From the meaning of absolute value, we know: (1) the absolute value of a positive number is the number itself; (2) the absolute value of 0 is 0; (3) the absolute value of a negative number is its opposite.
 
-1. 一个正数的绝对值是它本身;2. 0 的绝对值是 0;3. 一个负数的绝对值是它的相反数.  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/f2c068698ef74fb3547d670436c36959a62dd1c31ecee4ed3d3c1d815f254e2f.jpg)
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/f2c068698ef74fb3547d670436c36959a62dd1c31ecee4ed3d3c1d815f254e2f.jpg)  
+# Try it
 
-# 试一试  
+Express these conclusions using mathematical notation.
 
-你能将上面的结论用数学式子表示吗?  
+(1) When? $\mid a \ > \ 0$ Time, $\mid \boldsymbol { a } \mid =$ (2) When? $ { a } = 0$ Time, $\mid \boldsymbol { a } \mid =$ (3) When? $\textit { a } < 0$ Time, $\mid \boldsymbol { a } \mid =$
 
-(1) 当 $\mid a \ > \ 0$ 时, $\mid \boldsymbol { a } \mid =$ (2) 当 $ { a } = 0$ 时, $\mid \boldsymbol { a } \mid =$ (3) 当 $\textit { a } < 0$ 时, $\mid \boldsymbol { a } \mid =$  
-
-由此可以看出, 任何一个有理数的绝对值总是正数或 0( 通常也称非负数). 即对任意的有理数 $\mathbf { \Omega } _ { a }$ , 总有  
+Therefore the absolute value of every rational number is positive or 0 (that is, nonnegative). For every rational number $\mathbf { \Omega } _ { a }$, we have:
 
 $$
 \mathrm { ~ \vert ~ } a \mathrm { ~ \vert ~ } \geqslant 0 .
-$$  
+$$
 
-例1　 求下列各数的绝对值:  
+Example 1. Find the absolute values of the following numbers:
 
 $$
 - { \frac { 1 5 } { 2 } } , \quad + { \frac { 1 } { 1 0 } } , \quad - 4 . 7 5 ,
-$$  
+$$
 
-解 ${ \bigg | } - { \frac { 1 5 } { 2 } } { \bigg | } = { \frac { 1 5 } { 2 } } , { \bigg | } + { \frac { 1 } { 1 0 } } { \bigg | } = { \frac { 1 } { 1 0 } } ,$ $| \mathit { \Pi } - 4 . 7 5 \ : | \mathit { \Pi } = 4 . 7 5 , | \mathit { \Pi } 1 0 . 5 \ : | \mathit { \Pi } = 1 0 . 5 .$  
+The absolute-value calculations are ${ \bigg | } - { \frac { 1 5 } { 2 } } { \bigg | } = { \frac { 1 5 } { 2 } } , { \bigg | } + { \frac { 1 } { 1 0 } } { \bigg | } = { \frac { 1 } { 1 0 } } ,$ and $| \mathit { \Pi } - 4 . 7 5 \ : | \mathit { \Pi } = 4 . 7 5 , | \mathit { \Pi } 1 0 . 5 \ : | \mathit { \Pi } = 1 0 . 5 .$.
 
-例 2 化简:  
+Solution. |-15/2| = 15/2, |+1/10| = 1/10, and |-4.75| = 4.75.
 
-(1)  
+Example 2. Simplify:
+
+(1)
 
 $$
 \begin{array} { l } { { | { \begin{array} { l } { { - ( + \frac { 1 } { 2 } ) } } \end{array} } | , } } \\   |  \begin{array} { l }  { - | { \begin{array} { l } { { - 1 } } \end{array} } } |  - | { \begin{array} { l } { { - 1 } } \end{array} } | { - | { \begin{array} { l } { { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { - | { \begin{array} { l } { { - 1 } } \end{array} } } | { { - 1 } | { \begin{array} { l } { { - 1 } } \end{array} } } | { { - 1 } | { \begin{array} { l } { { - 1 } } \end{array} } } } } \end{array} } } } } \end{array} \end{array}
-$$  
+$$
 
-(2)  
+(2)
 
 $$
 { \begin{array} { l } { \displaystyle ( 1 ) \mid - \left( + { \frac { 1 } { 2 } } \right) \mid = \left| - { \frac { 1 } { 2 } } \right| = { \frac { 1 } { 2 } } . } \\ { \displaystyle - { \left| - 1 { \frac { 1 } { 3 } } \right| } = - 1 { \frac { 1 } { 3 } } . } \end{array} }
-$$  
+$$
 
-1. 求下列各数的绝对值:  
+1. The absolute value of the numbers below:
 
-2. 填空:  
+2. Fill:
 
-(1) - 3 的正负号是 , 绝对值是  
+(1) - 3 The positive and negative , Absolutely
 
-(2) 10.5 的正负号是 , 绝对值是  
+(2) 10.5 The positive and negative , Absolutely
 
-(3) 绝对值是7 的正数是  
+(3) Absolutely 7 The positive number is
 
-(4) 绝对值是5.1 的负数是  
+(4) Absolutely 5.1 The negative number is
 
-3. 回答下列问题:  
+3. Answer the following questions:
 
-(1) 绝对值是12 的数有几个? 是什么?(2) 绝对值是0 的数有几个? 是什么?(3) 有没有绝对值是 - 3 的数? 为什么?  
+(1) Absolutely 12 How many are there?? What is it??(2) Absolutely 0 How many are there?? What is it??(3) Is it absolutely worth it? - 3 Number? Why??
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 习题1. 4  
+# Exercises 1. 4
 
-# A 组  
+# Group A
 
-1. 在数轴上表示下列各数, 并分别写出它们的绝对值:  
+1. The following numbers are shown on the number line, And write their absolute values separately:
 
-2. 化简:  
+2. Simplicity:
 
-(1) $\mathrm { ~ - ~ } \Big | \ - \frac { 2 } { 3 } \Big | \ ;$ (2) +| - 14 | ; (3) $\vert { \bf \tau - \tau } \left( + 3 \frac 1 2 \right) \vert { \bf \tau } ;$ (4) $\mid ~ - ~ ( - ~ 6 . 5 ) ~ \mid$ .  
+(1) $\mathrm { ~ - ~ } \Big | \ - \frac { 2 } { 3 } \Big | \ ;$ (2) +| - 14 | ; (3) $\vert { \bf \tau - \tau } \left( + 3 \frac 1 2 \right) \vert { \bf \tau } ;$ (4) $\mid ~ - ~ ( - ~ 6 . 5 ) ~ \mid$ .
 
-3. 计算:  
+3. Calculate:
 
-(1) $\mid + \mid 6 \mid + \mid - 5 \mid$ ; (2) | - 3.3 | - | - 2.1 | ; (3) $\mid - 4 . 5 \mid \times \mid + 0 . 2 \mid$ ; (4) $\vert \frac { 3 } { 2 } \vert \ \div \ \vert - \frac { 2 } { 3 } \vert \ .$  
+(1) $\mid + \mid 6 \mid + \mid - 5 \mid$ ; (2) | - 3.3 | - | - 2.1 | ; (3) $\mid - 4 . 5 \mid \times \mid + 0 . 2 \mid$ ; (4) $\vert \frac { 3 } { 2 } \vert \ \div \ \vert - \frac { 2 } { 3 } \vert \ .$
 
-# B 组  
+# Group B
 
-4. 下列说法是否正确? 为什么?  
+4. Is the following statement correct?? Why??
 
-(1) 有理数的绝对值一定是正数;  
-(2) 如果两个数的绝对值相等, 那么这两个数相等;  
-(3) 如果一个数是正数, 那么这个数的绝对值是它本身;  
-(4) 如果一个数的绝对值是它本身, 那么这个数是正数.  
+(1) The absolute value of rational numbers must be positive;
+(2) If the absolute value of both numbers is equal, Then these two numbers are equal;
+(3) If one number is positive, Therefore the absolute value of this number is itself;
+(4) If the absolute value of a number is itself, Therefore this number is positive.
 
-5. 某地加强高铁沿线环境整治, 进行巡回检查维护. 境内高铁线路呈东西走向, 全长近$2 0 0 \mathrm { k m }$ . 某天, 巡护车辆从护路联防站出发, 按向东为正方向行驶, 当天的行驶记录如下(单位: $\mathrm { k m }$ ): $+ 7 5$ , $^ { - 9 0 }$ , $^ { - 3 8 }$ , $+ 2 0$ , $- 7 0$ , $+ 1 2 0$ , $+ 1 0 0$ , $- 1 1 7$ . 如果车辆行驶每千米的耗油量为 $0 . 0 8 \mathrm { L }$ , 问: 当天巡护车辆耗油多少升?  
+5. Improved environmental management along the high iron line, somewhere, Conduct tour inspection maintenance. The high-wire line inside the country is heading east-west, All the way up$2 0 0 \mathrm { k m }$ . One day, Patrol vehicles are moving out of the perimeter, Heading east in the right direction, Here are the travel records for the day(Units: $\mathrm { k m }$ ): $+ 7 5$ , $^ { - 9 0 }$ , $^ { - 3 8 }$ , $+ 2 0$ , $- 7 0$ , $+ 1 2 0$ , $+ 1 0 0$ , $- 1 1 7$ . If the vehicle runs at a rate of fuel per 1,000 meters, $0 . 0 8 \mathrm { L }$ , Question: How many litres of fuel did the patrol car cost that day??
 
-# 1.5 有理数的大小比较  
+# 1.5 Comparing Rational Numbers
 
-由1.2 节我们知道: 在数轴上表示的两个有理数, 右边的数总比左边的数大; 正数都大于0, 负数都小于0, 正数都大于负数.  
+From Section 1.2, we know that of two rational numbers on a number line, the one to the right is greater; positive numbers are greater than 0, negative numbers are less than 0, and positive numbers are greater than negative numbers.
 
-那么, 怎样直接比较两个负数的大小呢?  
+How can we directly compare two negative numbers?
 
-例如, - 3 与 - 5 哪个大? - 1.3 与 - 3 哪个大?  
+For example, which is greater: -3 or -5? -1.3 or -3?
 
-# 探索  
+## Explore
 
-在1.2 节的例 3 中, 我们在图 1.2.4 所示的数轴上, 画出了表示- 1.3、 - 3 和 - 5 的点. 通过观察, 得到  
+In Example 3 of Section 1.2, the points for -1.3, -3, and -5 are shown on the number line in Figure 1.2.4. Observe their positions.
 
 $$
 - 5 < - 3 , - 3 < - 1 . 3 .
-$$  
+$$
 
-从中你能概括出直接比较两个负数大小的法则吗? 说说你的道理.  
+Can you state a rule for directly comparing two negative numbers? Explain your reasoning.
 
-# 概括  
+# Summary
 
-在数轴上, 表示两个负数的两个点中,  
+On a number line, the point representing the negative number farther from the origin lies farther to the left. Therefore, of two negative numbers, the one with the greater absolute value is smaller.
 
-与原点距离较远的那个点在左边, 也就是绝对值大的点在左边. 所以, 两个负数, 绝对值大的反而小.  
+Can you use the rule for comparing temperatures below $0 ^ { \circ } \mathrm { C }$ to explain this rule?
 
-你能利用 “ 比较 $0 ^ { \circ } \mathrm { C }$ 以下两个温度高低的方法” 来解释这个法则吗?  
+For example:, Comparison $- { \frac { 3 } { 4 } }$ $- { \frac { 3 } { 2 } }$ Size, We can do it in two steps:
 
-例如, 比较 $- { \frac { 3 } { 4 } }$ $- { \frac { 3 } { 2 } }$ 的大小, 我们可以分两步进行:  
-
-(1) 分别求出它们的绝对值, 并比较其大小:  
+(1) Take out their absolute values, And compare its size:
 
 $$
 \begin{array} { c } { { \displaystyle \left| { \begin{array} { l } { { \displaystyle - { \frac { 3 } { 4 } } } } \end{array} } \right| { \mathrm {  ~ = ~ } } { \frac { 3 } { 4 } } , \quad \displaystyle \left| { \begin{array} { l } { { \displaystyle - { \frac { 3 } { 2 } } } } \end{array} } \right| { \mathrm {  ~ = ~ } } { \frac { 3 } { 2 } } , } } \\ { { { \displaystyle { \frac { 3 } { 2 } } } { \mathrm {  ~ > ~ } } { \frac { 3 } { 4 } } ; } } \end{array}
-$$  
+$$
 
-(2) 根据 “两个负数, 绝对值大的反而小”, 得出结论:  
+(2) According to "Two Negatives", It's absolutely worth less”, Conclusions:
 
 $$
 - { \frac { 3 } { 4 } } > - { \frac { 3 } { 2 } } .
-$$  
+$$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-例　 比较下列各对数的大小:  
+Example. Compare the following pairs of numbers:
 
-(1) - 1 与 - 0.01;  
-(2) -| - 2 | 与 0;  
-(3) $- \left( - { \frac { 1 } { 9 } } \right)$ ) 与 - - 1(4) $- { \frac { 3 } { 4 } }$ 与 $- { \frac { 2 } { 3 } } .$  
+(1) - 1 and - 0.01;
+(2) -| - 2 | and 0;
+(3) $- \left( - { \frac { 1 } { 9 } } \right)$ ) and - - 1(4) $- { \frac { 3 } { 4 } }$ and $- { \frac { 2 } { 3 } } .$
 
-解　 (1) 这是两个负数比较大小, 因为  
+Solution. (1) Both numbers are negative. Since
 
 $$
 \mid - 1 \mid = 1 , \quad \mid - 0 . 0 1 \mid = 0 . 0 1 ,
-$$  
+$$
 
-且  
+and
 
 $$
 1 > 0 . 0 1
-$$  
+$$
 
-所以  
+Therefore
 
 $$
 - \mathrm { ~ 1 ~ } < - 0 . 0 1 .
-$$  
+$$
 
-(2) 化简  
+(2) Simplicity
 
 $$
 - 1 - 2 1 = - 2 .
-$$  
+$$
 
-因为负数都小于0, 所以  
+Because the negatives are less than 0, Therefore
 
 $$
 - 1 - 2 1 < 0 .
-$$  
+$$
 
-(3) 分别化简两数, 得  
+(3) Make it simple, Okay
 
 $$
 - \ \left( - { \frac { 1 } { 9 } } \right) = { \frac { 1 } { 9 } } , \quad - \ \left| - { \frac { 1 } { 1 0 } } \right| \ = - \ { \frac { 1 } { 1 0 } } .
-$$  
+$$
 
-因为正数都大于负数, 所以  
+Because the positives are bigger than the negatives, Therefore
 
 $$
 - \left( - \frac { 1 } { 9 } \right) > - \left| - \frac { 1 } { 1 0 } \right| .
-$$  
+$$
 
-(4) 这是两个负分数比较大小, 因为  
+(4) It's two negatives in size, Because
 
 $$
 \vert - { \frac { 3 } { 4 } } \vert = { \frac { 3 } { 4 } } = { \frac { 9 } { 1 2 } } , \quad \left. - { \frac { 2 } { 3 } } \right. = { \frac { 2 } { 3 } } = { \frac { 8 } { 1 2 } } ,
-$$  
+$$
 
-从而  
+And
 
 $$
 \left| - { \frac { 3 } { 4 } } \right| > \left| - { \frac { 2 } { 3 } } \right| ,
-$$  
+$$
 
-所以  
+Therefore
 
 $$
 - { \frac { 3 } { 4 } } < - { \frac { 2 } { 3 } } .
-$$  
+$$
 
-# 第 1 章 有理数  
+# Rational Numbers
 
-1. 用 “<” 号或 “>” 号填空:  
+1. Use “<” No. or “>” Number Filling:
 
-(1) 因为 $\left| - { \frac { 5 } { 3 } } \right| \_ { \textstyle { \frac { 1 } { 5 } } } \right| - { \frac { 3 } { 5 } } \left|$ , 所以 - 5 $\displaystyle - \frac { 5 } { 3 } - \frac { 3 } { 5 } ;$ (2) 因为 | - 10 | | - 100 | , 所以 - 10 - 100.  
+(1) Because $\left| - { \frac { 5 } { 3 } } \right| \_ { \textstyle { \frac { 1 } { 5 } } } \right| - { \frac { 3 } { 5 } } \left|$ , Therefore - 5 $\displaystyle - \frac { 5 } { 3 } - \frac { 3 } { 5 } ;$ (2) Because | - 10 | | - 100 | , Therefore - 10 - 100.
 
-2. 判断下列大小比较是否正确:  
+2. Determine whether each comparison is correct:
 
-(1) $| - 0 . 2 3 \mid < \mid - 0 . 3 2 \mid ;$ ; (2) $\mid - 3 \mid < \mid + 3 \mid$ (3) $\left| + { \frac { 1 } { 7 } } \right| > \left| - { \frac { 1 } { 6 } } \right| ;$ $\left| - { \frac { 1 } { 2 } } \right| < \left| - { \frac { 1 } { 3 } } \right| .$  
+(1) $| - 0 . 2 3 \mid < \mid - 0 . 3 2 \mid ;$ ; (2) $\mid - 3 \mid < \mid + 3 \mid$ (3) $\left| + { \frac { 1 } { 7 } } \right| > \left| - { \frac { 1 } { 6 } } \right| ;$ $\left| - { \frac { 1 } { 2 } } \right| < \left| - { \frac { 1 } { 3 } } \right| .$
 
-3. 比较下列各对数的大小:  
+3. Compare the size of the logarithms below:
 
-(1) $- { \frac { 3 } { 4 } }  - { \frac { 4 } { 5 } } ;$ (2) $- \frac { 5 } { 8 }$ 与 - 0.618.  
+(1) $- { \frac { 3 } { 4 } }  - { \frac { 4 } { 5 } } ;$ (2) $- \frac { 5 } { 8 }$ and - 0.618.
 
-4. 回答下列问题:  
+4. Answer the following questions:
 
-(1) 大于 - 4 的负整数有哪几个?(2) 小于4 的正整数有哪几个?(3) 大于 - 4 且小于4 的整数有哪几个?  
+(1) Which negative integers are greater than -4? (2) Which positive integers are less than 4? (3) Which integers are greater than -4 and less than 4?
 
-# 习题1. 5  
+# Exercises 1. 5
 
-# A 组  
+# Group A
 
-1. 比较下列各对数的大小:  
+1. Compare the following pairs of numbers:
 
-(1) - 9.1 与 - 9.099; (2) - 8 与 | - 8 | ;  
-(3) $- { \frac { 5 } { 6 } }$ $\displaystyle { - \frac { 7 } { 8 } ; }$ (4) -| - 3.2 | 与 $\mathrm { ~ - ~ } ( + 3 . 2 )$ .  
+(1) - 9.1 and - 9.099; (2) - 8 and | - 8 | ;
+(3) $- { \frac { 5 } { 6 } }$ $\displaystyle { - \frac { 7 } { 8 } ; }$ (4) -| - 3.2 | and $\mathrm { ~ - ~ } ( + 3 . 2 )$ .
 
-2. 将下列各数按从小到大的顺序排列, 并用 “<” 号连接起来:  
+2. Arrange the following numbers in increasing order and connect them with “<”:
 
 $$
 0 , \quad - 3 . 1 4 , \quad - \frac { 2 2 } { 7 } , \quad 2 . 7 , \quad - 4 , \quad 0 . 1 4 .
-$$  
+$$
 
-3. 下列说法是否正确? 为什么?  
+3. Is the following statement correct? Explain. Moving a point representing a number to the left on a number line always decreases its value.
 
-在数轴上, 将表示一个数的点向左移动, 终点所表示的数总比原来的数小  
+On the number line, Moves a number point to the left, The end points are always smaller than the original
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# B 组  
+# Group B
 
-4. 写出绝对值小于5 的所有整数, 并在数轴上表示出来.  
+4. Write absolute value less than 5 All Integers, And show it on the number line.
 
-5. 回答下列问题:  
+5. Answer the following questions:
 
-(1) 有没有最小的正数? 有没有最大的负数? 为什么?(2) 有没有绝对值最小的有理数? 若有, 请把它写出来.  
+(1) Do you have the smallest positive number?? Is there a maximum negative number?? Why??(2) Is there a rational number of absolute values?? If there is, Please write it.
 
-# 1.6 有理数的加法  
+# 1.6 Addition of Rational Numbers
 
-# 1. 有理数的加法法则  
+# 1. Addition of Rational Numbers
 
-问题　 小明在一条东西向的跑道上, 先走了 $2 0 \mathrm { m }$ , 又走了 $3 0 \mathrm { m }$ , 能否确定他现在位于原来位置的哪个方向, 与原来位置相距多少米?  
+question　 Ming's on the runway to one thing, I'm going $2 0 \mathrm { m }$ , Again $3 0 \mathrm { m }$ , Can you determine which direction he's in?, How many meters from the starting position??
 
-我们知道, 求两次运动的总结果, 可以用加法来解答. 可是上述问题不能得到确定的答案, 因为小明最后所在的位置与行走方向有关.  
+We know, Seek the total results of the two campaigns, It can be answered with extras. But there's no definitive answer to that question, Because Ming's last location is related to the direction of the journey.
 
-# 探索  
+## Explore
 
-我们必须把这一问题说得明确些. 不妨规定向东为正, 向西为负.  
+We have to be clear about this. You might as well make it east, Negative west.
 
-(1) 若两次都是向东走, 很明显, 一共向东走了 $5 0 \mathrm { m }$ . 写成算式是  
+(1) If we both go east,, Obviously, It's heading east $5 0 \mathrm { m }$ . It's written in the form of
 
 $$
 ( + 2 0 ) \ + \ ( + 3 0 ) = + \ 5 0 ,
-$$  
+$$
 
-即小明位于原来位置的东边 $5 0 \mathrm { m }$ 处 .  
+Ming is on the east side of the starting position $5 0 \mathrm { m }$ Location .
 
-这一运算过程在数轴上可表示为图1.6.1.  
+This operation can be shown on the number line as a chart 1.6.1.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/56dde140686d87a5bea515cd9ed098514c0a5da36c796550ff854cf2f1402e40.jpg)  
-图1.6.1  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/56dde140686d87a5bea515cd9ed098514c0a5da36c796550ff854cf2f1402e40.jpg)
+Figure 1.6.1
 
-(2) 若两次都是向西走, 则小明现在位于原来位置的西边 $5 0 \mathrm { m }$ 处. 写成算式是  
+(2) If you go west twice,, Ming is now located west of the starting position $5 0 \mathrm { m }$ Location. It's written in the form of
 
 $$
 ( - 2 0 ) \ + \ ( - 3 0 ) = - \ 5 0 .
-$$  
+$$
 
-(3) 若第一次向东走 $2 0 \mathrm { m }$ , 第二次向西走 $3 0 \mathrm { m }$ , 在数轴上(图 1.6.2), 我们可以看到, 小明位于原来位置的西边 $1 0 \mathrm { m }$ 处 .  
+(3) If you go east for the first time, $2 0 \mathrm { m }$ , Second time west $3 0 \mathrm { m }$ , On the number line(Figure 1.6.2), We can see it, Ming is on the west side of the starting position $1 0 \mathrm { m }$ Location .
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/cb1d3cc7b4b98d7d64636a4e85896dac821a33ded70460d23ef289f01dbd1b49.jpg)  
-图1.6.2  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/cb1d3cc7b4b98d7d64636a4e85896dac821a33ded70460d23ef289f01dbd1b49.jpg)
+Figure 1.6.2
 
-写成算式是  
+It's written in the form of
 
 $$
 ( + 2 0 ) \ + \ ( - 3 0 ) = - \ 1 0 .
-$$  
+$$
 
-(4) 若第一次向西走 $2 0 \mathrm { ~ m ~ }$ , 第二次向东走$3 0 \mathrm { m }$ , 则 小 明 位 于 原 来 位 置 的 ( ) 边) $\mathrm { ~ m ~ }$ 处. 写成算式是  
+(4) If you go west for the first time, $2 0 \mathrm { ~ m ~ }$ , Second time heading east$3 0 \mathrm { m }$ , And Xiaoming was set in the former place ( ) Side) $\mathrm { ~ m ~ }$ Location. It's written in the form of
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/7a2c0ed7566409e86f5eb34a610c4186bcb77275e1ca0119489043ac7d761eab.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/7a2c0ed7566409e86f5eb34a610c4186bcb77275e1ca0119489043ac7d761eab.jpg)
 
 $$
 ( - \ 2 0 ) \ + \ ( \ + \ 3 0 ) = (
-$$  
+$$
 
-后两种情形中两个加数的正负号不同(通常可称为异号), 让我们再试几次(下列算式中, 各个加数的正负号和绝对值仍分别表示运动的方向和路程):  
+Two plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus minus plus plus plus plus plus plus plus plus plus plus plus minus plus plus plus plus minus plus plus plus plus plus plus plus plus plus minus plus plus plus minus plus plus plus plus plus plus plus plus plus plus plus plus plus minus plus minus plus plus plus plus plus plus minus and minus in the latter two cases are different(It's usually called an alien), Let's try again(In the following calculation, All plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus plus and minus and minus and minus, respectively indicate the movement direction and the road of the movement):
 
 $$
 \begin{array} { l c r } { { \mathrm {  ~ \sigma ~ } ( + 4 ) ~ + ~ ( - ~ 3 ) = ( } } & { { ~ } } & { { ~ ) , } } \\ { { \mathrm {  ~ \sigma ~ } ( + ~ 3 ) ~ + ~ ( - ~ 1 0 ) = ( } } & { { ~ } } & { { ~ ) , } } \\ { { \mathrm {  ~ \sigma ~ } ( - 5 ) ~ + ~ ( + ~ 7 ) = ( } } & { { ~ } } & { { ~ ) , } } \\ { { \mathrm {  ~ \sigma ~ } ( - 6 ) ~ + ~ 2 = ( } } & { { ~ } } & { { ~ ) . } } \end{array}
-$$  
+$$
 
-还有两种特殊情形:  
+There are two special circumstances:
 
-第一次向西走了 $3 0 \mathrm { m }$ , 第二次向东走了 $3 0 \mathrm { m }$ . 写成算式是  
+First time heading west $3 0 \mathrm { m }$ , Second time heading east $3 0 \mathrm { m }$ . It's written in the form of
 
 $$
 { \bf \Phi } \left( - { \bf \Phi } 3 0 \right) + { \bf \Phi } \left( + { \bf \Phi } 3 0 \right) = \left( \begin{array} { c c c c c } { { } } & { { } } & { { } } & { { } } & { { } } \end{array} \right) ;
-$$  
+$$
 
-第一次向西走了 $3 0 \mathrm { m }$ , 第二次没走. 写成算式是  
+First time heading west $3 0 \mathrm { m }$ , The second time I didn't leave. It's written in the form of
 
 $$
-\mathrm { ~  ~ \left. ( - \frac { ~ } { ~ } 3 0 ) ~ + ~ \right.} 0 = ( \mathrm { ~  ~ \rho ~ } \mathrm { ~  ~ \rho ~ } ) . 
-$$  
+\mathrm { ~  ~ \left. ( - \frac { ~ } { ~ } 3 0 ) ~ + ~ \right.} 0 = ( \mathrm { ~  ~ \rho ~ } \mathrm { ~  ~ \rho ~ } ) .
+$$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-从上述情形所写出的算式中, 你能总结出一些规律吗?  
+From the above, Can you sum up some patterns??
 
-# 概括  
+# Summary
 
-综合以上情形, 有如下有理数的加法法则:  
+Combined above, There's a rational addition to the law:
 
-1. 同号两数相加, 取与加数相同的正负号, 并把绝对值相加;  
+1. The same number plus the same number, Take the same plus and minus sign as the plus, And add absolute value;
 
-2. 绝对值不相等的异号两数相加, 取绝对值较大的加数的正负号, 并用较大的绝对值减去较小的绝对值;  
+2. It's not equal, Take the plus plus plus plus plus plus plus plus plus plus plus plus plus plus, And with a larger absolute, minus a smaller absolute;
 
-3. 互为相反数的两个数相加得0;  
-4. 一个数与0 相加, 仍得这个数.  
+3. Two numbers to the contrary 0;
+4. One number and 0 Add, That's still the number.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/d6c9f948cf9dcaab572724698dad4188b11b6fd7e00097ee86579d35ea691e12.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/d6c9f948cf9dcaab572724698dad4188b11b6fd7e00097ee86579d35ea691e12.jpg)
 
-# 注意  
+# Note
 
-一个有理数由正负号和绝对值两部分组成, 进行加法运算时,应注意先确定和的正负号, 再确定绝对值.  
+A rational number consists of both positive and negative and absolute values, When adding,Be careful with the positive and negative numbers, Set absolute value.
 
-例 1　 计算:  
+Example 1　 Calculate:
 
-(1) $( + 2 ) \ + \ ( - 1 1 ) ;$ (2) $( - \ 1 2 ) \ + \ ( \ + \ 1 2 ) ;$ (3) $\left( - { \frac { 1 } { 2 } } \right) + \left( - { \frac { 2 } { 3 } } \right) ;$ (4) $( - 3 . 4 ) \ + 4 . 3 .$ .  
+(1) $( + 2 ) \ + \ ( - 1 1 ) ;$ (2) $( - \ 1 2 ) \ + \ ( \ + \ 1 2 ) ;$ (3) $\left( - { \frac { 1 } { 2 } } \right) + \left( - { \frac { 2 } { 3 } } \right) ;$ (4) $( - 3 . 4 ) \ + 4 . 3 .$ .
 
-解　 (1) $( + ~ 2 ) ~ + ~ ( - ~ 1 1 ) = - ~ ( 1 1 ~ - ~ 2 ) = - ~ 9 .$  
+Solution　 (1) $( + ~ 2 ) ~ + ~ ( - ~ 1 1 ) = - ~ ( 1 1 ~ - ~ 2 ) = - ~ 9 .$
 
 $$
 ( - \ 1 2 ) \ + \ ( + \ 1 2 ) = 0 .
-$$  
+$$
 
 $$
 \left( - { \frac { 1 } { 2 } } \right) + \left( - { \frac { 2 } { 3 } } \right) = - \left( { \frac { 1 } { 2 } } + { \frac { 2 } { 3 } } \right) = - 1 { \frac { 1 } { 6 } } .
-$$  
+$$
 
 $$
 ( - 3 . 4 ) \ + 4 . 3 = + \ ( 4 . 3 \ - 3 . 4 ) = 0 . 9 .
-$$  
+$$
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/15acc4d177e78e5a4fda8aecfe2c82a68f33b6bc6696538a7da030fa01667d23.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/15acc4d177e78e5a4fda8aecfe2c82a68f33b6bc6696538a7da030fa01667d23.jpg)
 
-有理数的加法法则, 还可以帮助我们进一步理解相反数的意义, 它告诉我们: 两个数互为相反数的特征是这两个数的和为0  
+Addition of Rational Numbers, It'll help us understand the opposite, It tells us: The opposite of the two numbers is the sum of the two numbers 0
 
-这是什么意思呢? 一方面, 由法则 3, 如果两个数 $a , b$ 互为相反数, 那么$a + b = 0$ ; 另一方面, 如果 $a + b = 0$ , 那么 $a , b$ 互为相反数. 这是因为, 如果$a , b$ "不互为相反数" 那么无论它们是同号! 异号#这时绝对值不相等\$还是只有一个数为!" 由法则"! #! \$ 知" 它们的和都不可能为!  
+This characterizes opposites: if $a , b$ are opposites, then $a + b = 0$; conversely, if $a + b = 0$, then $a , b$ are opposites; thus the pair $a , b$ is an opposite pair.
 
-!"填表%#"计算%  
+!"Fill out the form%#"Calculate%
 
-<html><body><table><tr><td rowspan="2">加数</td><td rowspan="2">加数</td><td colspan="2">和的组成</td><td rowspan="2">和</td></tr><tr><td>正负号</td><td>绝对值</td></tr><tr><td>- 12</td><td>3</td><td></td><td>12-3</td><td>-9</td></tr><tr><td>18</td><td>8</td><td></td><td></td><td></td></tr><tr><td>-9</td><td>16</td><td></td><td></td><td></td></tr><tr><td>-9</td><td>-5</td><td></td><td></td><td></td></tr></table></body></html>  
+<html><body><table><tr><td rowspan="2">Add</td><td rowspan="2">Add</td><td colspan="2">and its composition</td><td rowspan="2">and</td></tr><tr><td>Positive and negative</td><td>Absolute value [u]</td></tr><tr><td>- 12</td><td>3</td><td></td><td>12-3</td><td>-9</td></tr><tr><td>18</td><td>8</td><td></td><td></td><td></td></tr><tr><td>-9</td><td>16</td><td></td><td></td><td></td></tr><tr><td>-9</td><td>-5</td><td></td><td></td><td></td></tr></table></body></html>
 
-#"\$ $1 0 + ( - 4 )$ & ##\$ $( + ~ 9 ) ~ + ~ 7 ;$ & #&\$ $( - \ 1 5 ) \ + \ ( - \ 3 2 ) ;$ #\$\$ $\left( - \ 9 \right) \ + \ 0$ & #\*\$ $1 0 0 \mathrm { ~ + ~ } ( \mathrm { ~ - ~ } 1 0 0 )$ & #)\$ $\ : \left( \ - - \ 0 . 5 \right) \ + 4 . 4 \ :$ & #+\$ $\left( - \ 1 . 5 \right) \ + \ \left( \ 1 . 2 5 \right) ;$ (\$ $\left( - { \frac { 1 } { 2 } } \right) + \left( - { \frac { 1 } { 6 } } \right) .$  
+#"\$ $1 0 + ( - 4 )$ & ##\$ $( + ~ 9 ) ~ + ~ 7 ;$ & #&\$ $( - \ 1 5 ) \ + \ ( - \ 3 2 ) ;$ #\$\$ $\left( - \ 9 \right) \ + \ 0$ & #\*\$ $1 0 0 \mathrm { ~ + ~ } ( \mathrm { ~ - ~ } 1 0 0 )$ & #)\$ $\ : \left( \ - - \ 0 . 5 \right) \ + 4 . 4 \ :$ & #+\$ $\left( - \ 1 . 5 \right) \ + \ \left( \ 1 . 2 5 \right) ;$ (\$ $\left( - { \frac { 1 } { 2 } } \right) + \left( - { \frac { 1 } { 6 } } \right) .$
 
-\$"填空%  
+\$"Fill%
 
 $$
 \begin{array} { l } { { ( ~ ) ~ + ~ ( - ~ 3 ) = - ~ 8 ; } } \\ { { ( ~ ) ~ + ~ ( - ~ 3 ) = 8 ; } } \\ { { ( ~ - ~ 3 ) ~ + ~ ( ~ ) = - ~ 1 ; } } \\ { { ( ~ - ~ 3 ) ~ + ~ ( ~ ) ~ = 0 . } } \end{array}
-$$  
+$$
 
-%"回答下列问题%  
+%"Answer the following questions%
 
-#"\$ 两个正数相加" 和是否一定大于每个加数'##\$ 两个有理数相加" 和是否一定大于每个加数'  
+#"\$ Do the sums of two positive numbers or two rational numbers have to be greater than each addend?
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 2. 有理数加法的运算律  
+## 2. Laws of Rational Addition
 
-在小学里我们知道, 数的加法满足交换律, 例如  
+In elementary school, we knew, Plus the number to meet the exchange, For example:
 
 $$
 5 + 3 . 5 = 3 . 5 + 5 ;
-$$  
+$$
 
-还满足结合律, 例如  
+It's also a combination, For example:
 
 $$
 \left( 5 + 3 . 5 \right) + 2 . 5 = 5 + \left( 3 . 5 + 2 . 5 \right) .
-$$  
+$$
 
-引进了负数以后, 这些运算律是否还成立呢? 也就是说, 上面两个等式中,将5、 3.5 和2.5 换成任意的有理数, 是否仍然成立呢?  
+When negative numbers were introduced, Do these algorithms still exist?? Which means, in two equations above,Will 5、 3.5 and 2.5 In exchange for an arbitrary rational number, Is it still there??
 
-# 探索  
+## Explore
 
-(1) 任意选择两个有理数(至少有一个是负数), 分别填入下列□和 $\bigcirc$ 内, 并比较两个运算结果:  
+(1) Select two rational numbers at random(At least one is negative), Fill in the following each:□and $\bigcirc$ Internal, And compare the two results:
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/651d85cac88cc0c8dc5541bc32f85252aadba0b7d99fcd498acb1710bffca88e.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/651d85cac88cc0c8dc5541bc32f85252aadba0b7d99fcd498acb1710bffca88e.jpg)
 
-(2) 任意选择三个有理数(至少有一个是负数), 分别填入下列□、 $\bigcirc$ 和 $\diamondsuit$ 内, 并比较两个运算结果:  
+(2) Select three rational numbers at random(At least one is negative), Fill in the following each:□、 $\bigcirc$ and $\diamondsuit$ Internal, And compare the two results:
 
 $$
 ( \square + \square ) + \square + \square + ( \square + \square ) .
-$$  
+$$
 
-你能发现什么?  
+What can you find??
 
-# 概括  
+# Summary
 
-有理数的加法仍满足交换律和结合律.  
-加法交换律: 两个数相加, 交换加数的位置, 和不变.  
+A rational addition still meets the rules of exchange and union.
+The Law of Exchange: Together, Exchange plus position, and no change.
 
 $$
  \begin{array} { r } { { \dot { \left| { \begin{array} { l } { a } \end{array} } \right| } } + b = b + a . { \dot { \left| { \begin{array} { l } { a } \end{array} } \right| } } } \\ { { \dot { \left| { \begin{array} { l } { a } \end{array} } \right| } = { \ddot { \left| { \begin{array} { l } { a } \end{array} } \right| } } = { \ddot { \left| { \begin{array} { l } { a } \end{array} } \right| } } } \end{array} }
-$$  
+$$
 
-加法结合律: 三个数相加, 先把前两个数相加, 或者先把后两个数相加,和不变.  
+The law of addition: Three numbers plus one, Add the first two numbers first, Or add the last two numbers,and no change.
 
 $$
-{ \Bigl [ } \left( a + b \right) + c = a + \left( b + c \right) . \Bigr ] \ 
-$$  
+{ \Bigl [ } \left( a + b \right) + c = a + \left( b + c \right) . \Bigr ] \
+$$
 
-这样, 多个有理数相加, 可以任意交换加数的位置, 也可以先把其中的几个数相加, 使计算简化.  
+Here, Multiple rational numbers added, You can exchange places for extras, You can add a few of them, Simplifying the calculation.
 
-例 2 计算:  
+Example 2 Calculate:
 
-(1) $( + 2 6 ) + ( - 1 8 ) + 5 + ( - 1 6 ) ;$ (2) $\left( - 1 . 7 5 \right) + 1 . 5 + \left( + 7 . 3 \right) + \left( - 2 . 2 5 \right) + \left( - 8 . 5 \right) .$  
+(1) $( + 2 6 ) + ( - 1 8 ) + 5 + ( - 1 6 ) ;$ (2) $\left( - 1 . 7 5 \right) + 1 . 5 + \left( + 7 . 3 \right) + \left( - 2 . 2 5 \right) + \left( - 8 . 5 \right) .$
 
 $$
 \begin{array} { l } { { \mathbf { \Phi } = \left( 2 6 + 5 \right) \mathbf { \Phi } + \left[ \mathbf { \Phi } \left( - \mathbf { \Phi } 1 8 \right) \mathbf { \Phi } + \left( - \mathbf { \Phi } 1 6 \right) \right] } } \\ { { \mathbf { \Phi } = 3 1 \mathbf { \Phi } + \left( - \mathbf { \Phi } 3 4 \right) \mathbf { \Phi } } } \\ { { \mathbf { \Phi } = - \mathbf { \Phi } ( 3 4 \mathbf { \Phi } - 3 1 ) \mathbf { \Phi } } } \\ { { \mathbf { \Phi } = - \mathbf { \Phi } 3 . } } \end{array}
-$$  
+$$
 
 $$
 { \begin{array} { r l } & { \quad ( - 1 . 7 5 ) + 1 . 5 + ( + 7 . 3 ) + ( - 2 . 2 5 ) + ( - 8 . 5 ) } \\ & { = \left[ ( - 1 . 7 5 ) + ( - 2 . 2 5 ) \right] + \left[ 1 . 5 + ( - 8 . 5 ) \right] + 7 . 3 } \\ & { = ( - 4 ) + ( - 7 ) + 7 . 3 } \\ & { = ( - 4 ) + \left[ ( - 7 ) + 7 . 3 \right] } \\ & { = ( - 4 ) + 0 . 3 } \\ & { = - 3 . 7 . } \end{array} }
-$$  
+$$
 
-例 3　 10 筐苹果, 以每筐 $3 0 \mathrm { k g }$ 为基准, 超过的千克数记作正数, 不足的千克数记作负数, 记录如下:  
+Example 3　 10 Apple, With every basket $3 0 \mathrm { k g }$ As Baseline, The excess of kg is recorded as positive, Shorter kg recorded as negative, Here's the record:
 
-2, - 4, 2.5, 3, - 0.5, 1.5, 3, - 1, 0, - 2.5.  
+2, - 4, 2.5, 3, - 0.5, 1.5, 3, - 1, 0, - 2.5.
 
-问: 这10 筐苹果总共重多少?  
+Question: Here 10 How much does the apple weigh??
 
 $$
 2 + ( - 4 ) + 2 . 5 + 3 + ( - 0 . 5 ) + 1 . 5 + 3 +
-$$  
+$$
 
 $$
 { \begin{array} { r l } & { = \left( 2 + 3 + 3 \right) + \left( - 4 \right) + \left[ 2 . 5 + \left( - 2 . 5 \right) \right] + } \\ & { \qquad \left[ \left( - 0 . 5 \right) + \left( - 1 \right) + 1 . 5 \right] } \\ & { = 8 + \left( - 4 \right) = 4 . } \\ & { \qquad 3 0 \times 1 0 + 4 = 3 0 4 ( { \mathrm { k g } } ) . } \end{array} }
-$$  
+$$
 
-答: 这10 筐苹果总共重 $3 0 4 \mathrm { k g }$ .  
+Answer: Here 10 It's heavy $3 0 4 \mathrm { k g }$ .
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/258cee28d2aa239f0d8777ea61db5fc7df2c4b1c2b6b1c759d92a6ea2f909b01.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/258cee28d2aa239f0d8777ea61db5fc7df2c4b1c2b6b1c759d92a6ea2f909b01.jpg)
 
-回顾例 2、 例 3的解答, 思考: 将怎样的加数结合在一起, 可使运算简便?  
+Review cases 2、 Example 3 _is recorded as, reflection: What's the addition?, It'll make it easy?
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-1. 计算:  
+1. Calculate:
 
-(1) $\left( - ~ 7 \right) ~ + ~ \left( + ~ 1 0 \right) ~ + ~ \left( - ~ 1 1 \right) ~ + ~ \left( - ~ 2 \right) ;$ (2) $2 + ( - 3 ) + ( + 4 ) + ( - 5 ) + 6 ;$ (3) $( - 9 . 6 ) \ + 1 . 5 \ + \ ( - 0 . 4 ) \ + \ ( - 0 . 3 ) \ + 8 . 5 .$  
+(1) $\left( - ~ 7 \right) ~ + ~ \left( + ~ 1 0 \right) ~ + ~ \left( - ~ 1 1 \right) ~ + ~ \left( - ~ 2 \right) ;$ (2) $2 + ( - 3 ) + ( + 4 ) + ( - 5 ) + 6 ;$ (3) $( - 9 . 6 ) \ + 1 . 5 \ + \ ( - 0 . 4 ) \ + \ ( - 0 . 3 ) \ + 8 . 5 .$
 
-2. 某天早晨的气温是 $\mathrm { ~ - ~ } 3 ^ { \circ } \mathrm { C }$ , 到中午升高了 $5 ^ { \circ } \mathrm { C }$ , 到晚上又降低了 $3 ^ { \circ } \mathrm { C }$ , 到午夜又降低了 $4 ^ { \circ } \mathrm { C }$ . 求午夜时的气温. (提示: 降低了 $3 ^ { \circ } \mathrm { C }$ 就是升高了 $\mathrm { ~ - ~ } 3 ^ { \circ } \mathrm { C }$ )  
+2. One morning the temperature was $\mathrm { ~ - ~ } 3 ^ { \circ } \mathrm { C }$ , It's up by noon $5 ^ { \circ } \mathrm { C }$ , At night, it fell $3 ^ { \circ } \mathrm { C }$ , It's down by midnight $4 ^ { \circ } \mathrm { C }$ . I'm asking for a midnight temperature. (Hint: It's down $3 ^ { \circ } \mathrm { C }$ It just went up $\mathrm { ~ - ~ } 3 ^ { \circ } \mathrm { C }$ )
 
-# 习题1. 6  
+# Exercises 1. 6
 
-# A 组  
+# Group A
 
-1. 计算:  
+1. Calculate:
 
-(1) $\begin{array} { l } { { \left( - \ 1 2 \right) \ + \ \left( \ + \ 3 \right) ; } } \\ { { \left( - \ 1 6 \right) \ + \ \left( - \ 8 \right) ; } } \\ { { \left( - \ 1 0 2 \right) \ + \ \left( \ + \ 1 0 2 \right) ; } } \\ { { \left( - \ 3 5 \right) \ + \ 0 ; } } \end{array}$ (2) ${ \begin{array} { r l } & { ) \ ( + \ 1 5 ) \ + \ ( - \ 4 ) \ ; } \\ & { ) \ ( + \ 2 3 ) \ + \ ( + \ 2 4 ) \ ; } \\ & { ) \ ( - \ 3 2 ) \ + \ ( - \ 1 1 ) \ ; } \\ & { ) \ 7 8 \ + \ ( - \ 8 5 ) \ . } \end{array} }$   
-(3) (4)   
-(5) (6)   
-(7) (8)  
+(1) $\begin{array} { l } { { \left( - \ 1 2 \right) \ + \ \left( \ + \ 3 \right) ; } } \\ { { \left( - \ 1 6 \right) \ + \ \left( - \ 8 \right) ; } } \\ { { \left( - \ 1 0 2 \right) \ + \ \left( \ + \ 1 0 2 \right) ; } } \\ { { \left( - \ 3 5 \right) \ + \ 0 ; } } \end{array}$ (2) ${ \begin{array} { r l } & { ) \ ( + \ 1 5 ) \ + \ ( - \ 4 ) \ ; } \\ & { ) \ ( + \ 2 3 ) \ + \ ( + \ 2 4 ) \ ; } \\ & { ) \ ( - \ 3 2 ) \ + \ ( - \ 1 1 ) \ ; } \\ & { ) \ 7 8 \ + \ ( - \ 8 5 ) \ . } \end{array} }$
+(3) (4)
+(5) (6)
+(7) (8)
 
-2. 计算:  
+2. Calculate:
 
-(1) $\left( - 0 . 9 \right) + \left( + 1 . 5 \right) ;$ (2) $\begin{array} { l } { { ( + 6 . 5 ) \ + 3 . 7 ; } } \\ { { } } \\ { { ( - 4 . 1 ) \ + \ ( - 1 . 9 ) ; } } \end{array}$ (3) $1 . 5 + ( - 8 . 5 ) _ { \ ; }$ ; (4) (5) $\left( - { \frac { 1 } { 3 } } \right) + \left( - { \frac { 1 } { 6 } } \right) ;$ (6) $( - 4 . 2 ) \ + 4 . 2 5 .$  
+(1) $\left( - 0 . 9 \right) + \left( + 1 . 5 \right) ;$ (2) $\begin{array} { l } { { ( + 6 . 5 ) \ + 3 . 7 ; } } \\ { { } } \\ { { ( - 4 . 1 ) \ + \ ( - 1 . 9 ) ; } } \end{array}$ (3) $1 . 5 + ( - 8 . 5 ) _ { \ ; }$ ; (4) (5) $\left( - { \frac { 1 } { 3 } } \right) + \left( - { \frac { 1 } { 6 } } \right) ;$ (6) $( - 4 . 2 ) \ + 4 . 2 5 .$
 
-3. 计算:  
+3. Calculate:
 
 $$
 \begin{array} { l } { { ( + 1 4 ) + ( - 4 ) + ( - 2 ) + ( + 2 6 ) + ( - 3 ) ; } } \\ { { \displaystyle ( - 8 3 ) + ( + 2 6 ) + ( - 4 1 ) + ( + 1 5 ) ; } } \\ { { \displaystyle ( - 1 . 8 ) + ( + 0 . 7 ) + ( - 0 . 9 ) + 1 . 3 + ( - 0 . 2 ) ; } } \\ { { \displaystyle \frac { 1 } { 4 } + \left( - 3 \frac 1 3 \right) + \left( + 4 \frac { 3 } { 4 } \right) + \left( - 6 \frac 2 3 \right) . } } \end{array}
-$$  
+$$
 
-# 第 1 章 有理数  
+# Rational Numbers
 
-# B 组  
+# Group B
 
-4. 列式并计算:  
+4. Columns and Count:
 
-(1) $+ ~ 1 . 2$ 与 - 3.1 的绝对值的和;  
-(2) $4 { \frac { 2 } { 3 } }$ $- \frac { 1 } { 3 }$ 的和的相反数.  
+(1) $+ ~ 1 . 2$ and - 3.1 absolute value and;
+(2) $4 { \frac { 2 } { 3 } }$ $- \frac { 1 } { 3 }$ And the opposite.
 
-5. 应用有理数的加法解下列各题:  
+5. Use rational additions to solve the following questions:
 
-(1) 仓库内原存有某种原料 $3 5 0 0 \mathrm { k g }$ , 一周内存入和领出情况如下(存入为正, 单位: $\mathbf { k g }$ ):  
+(1) There's some kind of raw material in the warehouse $3 5 0 0 \mathrm { k g }$ , The status of deposit and receipt within a week is as follows:(_is recorded as, Units: $\mathbf { k g }$ ):
 
 $$
 1 5 0 0 , \quad - 3 0 0 , \quad - 6 5 0 , \quad 6 0 0 , \quad - 1 8 0 0 , \quad - 2 5 0 , \quad - 2 0 0 .
-$$  
+$$
 
-问: 第7 天末仓库内还存有这种原料多少千克?  
+Question: I don't think so 7 How many kilograms of this material are left in the warehouse at the end of the day??
 
-(2) 某公路养护小组乘车沿一条南北向公路巡视维护. 某天早晨从 $A$ 地出发, 晚上最后到达 $B$ 地. 约定向北为正, 当天的行驶记录如下(单位: $\mathrm { k m }$ ):  
+(2) A road maintenance team patrol and maintenance along a north-south road. One morning $A$ Let's go, Last night $B$ Land. The deal is to go north, Here are the travel records for the day(Units: $\mathrm { k m }$ ):
 
 $$
 + 1 8 , - 9 , + 7 , - 1 4 , - 6 , + 1 3 , - 6 , - 8 .
-$$  
+$$
 
-问: $B$ 地在 $A$ 地的哪个方向? 它们相距多少千米? 如果汽车行驶每千米路程耗油 $\mathbf { \Omega } _ { a \operatorname { L } }$ , 那么该天共耗油多少升?  
+Question: $B$ On the ground $A$ Which direction?? How far are they?? If the car runs every kilometer, $\mathbf { \Omega } _ { a \operatorname { L } }$ , Therefore how many litres of oil will it take that day??
 
-# 1.7 有理数的减法  
+# 1.7 Subtraction of Rational Numbers
 
-问题　 珠穆朗玛峰和吐鲁番盆地的海拔高度分别是 $8 8 4 8 . 8 6 \mathrm { m }$ 和 $\mathrm { ~ - ~ } 1 5 4 . 3 1 \mathrm { m }$ ,你知道珠穆朗玛峰比吐鲁番盆地高多少吗?  
+question　 The heights of Mount Everest and the Turpan Basin are as follows: $8 8 4 8 . 8 6 \mathrm { m }$ and $\mathrm { ~ - ~ } 1 5 4 . 3 1 \mathrm { m }$ ,Do you know how much higher Mount Everest is than the Trump Basin??
 
-这一问题通常可列出算式  
+It's a question that can usually be calculated
 
-那么, 怎样进行有理数的减法呢? 我们不妨先看一个简单的计算问题.计算:  
+Well, How do you make reasonable deductions?? Let's start with a simple calculation problem.Calculate:
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-根据减法的意义, 这就是要求一个数 “ ? ”, 使  
+Depending on the meaning of the reduction,, That's what you're asking for “ ? ”, Jean
 
 $$
 ( \ ? ) + ( - 3 ) = - 8 .
-$$  
+$$
 
-根据有理数的加法运算, 有  
+Based on a rational addition, Yeah
 
 $$
 ( - 5 ) \ + \ ( - 3 ) = - \ 8 ,
-$$  
+$$
 
-这样做减法太繁了, 能不能总结出一个法则直接进行计算?  
+It's too much to reduce, Can you sum up a rule and calculate it directly??
 
-所以  
+Therefore
 
 $$
 ( - 8 ) - ( - 3 ) = - 5 . \textcircled { 1 }
-$$  
+$$
 
-# 试一试  
+# Try it
 
-填空: $( - 8 ) + ( ) = - 5$ .  
+Fill: $( - 8 ) + ( ) = - 5$ .
 
-容易得到  
+Easy to get
 
 $$
 ( - 8 ) + ( + 3 ) = - 5 . \textcircled { 2 }
-$$  
+$$
 
-比较 $\textcircled{1} \textcircled{2}$ 两式, 我们发现: - 8“减去 - 3” 与“加上 $+ \ 3 ^ { \prime \prime }$ 的结果是相同的,即  
+Comparison $\textcircled{1} \textcircled{2}$ Double, We found: - 8“Less - 3” Add $+ \ 3 ^ { \prime \prime }$ The results are the same,That's
 
 $$
 ( - 8 ) - ( - 3 ) = ( - 8 ) + ( + 3 ) .
-$$  
+$$
 
-一般地, 对于任意的有理数 $a , b$ , 由减法的意义, $a - b$ 就是要求一个数“ ?” , 使  
+Summary, Any reasonable amount $a , b$ , Meaning of reduction, $a - b$ Just asking for a number“ ?” , Jean
 
 $$
 ( { \begin{array} { c } { { \ ? } } \end{array} } { \begin{array} { r } { \end{array} } } ) \ + \ b = a .
-$$  
+$$
 
-因为  
+Because
 
 $$
  [ a + ( - b ) ] + b
-$$  
+$$
 
-所以  
+Therefore
 
 $$
 a - b = a + ( - b ) .
-$$  
+$$
 
-# 第 1 章 有理数  
+# Rational Numbers
 
-这就得到有理数的减法法则:减去一个数, 等于加上这个数的相反数.  
+That's a reasonable rule of reduction:Less one number, It's the opposite of adding this number.
 
-你能利用本节开头的问题, 来解释这个法则吗?  
+You can use the question at the beginning of this section, To explain the law??
 
-例　 计算:  
+Example　 Calculate:
 
-(1) (- 32) - (+ 5);   
-(2) 7.3 - (- 6.8);   
-(3) (- 2) - (- 25);   
-(4) 12 - 21.  
+(1) (- 32) - (+ 5);
+(2) 7.3 - (- 6.8);
+(3) (- 2) - (- 25);
+(4) 12 - 21.
 
-减号变加号解　 (1) $( - 3 2 ) - ( + 5 ) = ( - 3 2 ) + ( - 5 ) = - 3 7 .$ 减数变相反数  
+Weighted to add　 (1) $( - 3 2 ) - ( + 5 ) = ( - 3 2 ) + ( - 5 ) = - 3 7 .$ reverse of minus
 
-# 减号变加号  
+# minus plus
 
-(2) $7 . 3 - \stackrel { \textstyle \overbrace { \big ( - \big 6 . 8 \big ) = 7 . 3 + 6 . 8 = 1 4 . 1 } } { \big | } .$ 减数变相反数  
+(2) $7 . 3 - \stackrel { \textstyle \overbrace { \big ( - \big 6 . 8 \big ) = 7 . 3 + 6 . 8 = 1 4 . 1 } } { \big | } .$ reverse of minus
 
-(3) $( - 2 ) \ - \ ( - 2 5 ) = ( - 2 ) \ + \ 2 5 = 2 3 .$ (4) $1 2 - 2 1 = 1 2 + { \bigl ( } - 2 1 { \bigr ) } = - \ 9 .$  
+(3) $( - 2 ) \ - \ ( - 2 5 ) = ( - 2 ) \ + \ 2 5 = 2 3 .$ (4) $1 2 - 2 1 = 1 2 + { \bigl ( } - 2 1 { \bigr ) } = - \ 9 .$
 
-1. 在下列括号内填上适当的数:  
+1. Fill in the appropriate number in brackets below:
 
-(1) $~ ( - ~ 2 ) ~ - ~ ( - ~ 3 ) = ( - ~ 2 ) ~ + ~ ( ~ ) ~ ;$ (2) $\mathrm { ~ 0 ~ - ~ ( - ~ 4 ) = 0 ~ + ~ ( ~ \qquad ~ ) ~ } ;$ (3) $\mathrm { ~ ( - ~ 6 ) ~ - ~ 3 = ( - ~ 6 ) ~ + ~ ( ~ \qquad ~ ) ~ } ;$ (4) $\mathrm { ~ 1 ~ - ~ ( ~ + ~ 3 9 ~ ) ~ = ~ 1 ~ + ~ ( ~ \qquad ~ ) ~ } .$ .  
+(1) $~ ( - ~ 2 ) ~ - ~ ( - ~ 3 ) = ( - ~ 2 ) ~ + ~ ( ~ ) ~ ;$ (2) $\mathrm { ~ 0 ~ - ~ ( - ~ 4 ) = 0 ~ + ~ ( ~ \qquad ~ ) ~ } ;$ (3) $\mathrm { ~ ( - ~ 6 ) ~ - ~ 3 = ( - ~ 6 ) ~ + ~ ( ~ \qquad ~ ) ~ } ;$ (4) $\mathrm { ~ 1 ~ - ~ ( ~ + ~ 3 9 ~ ) ~ = ~ 1 ~ + ~ ( ~ \qquad ~ ) ~ } .$ .
 
-2. 计算:  
+2. Calculate:
 
-(1) $\begin{array} { l } { { ( + ~ 3 ) ~ - ~ ( - ~ 2 ) ; } } \\ { {  \begin{array} { r l } { { 0 ~ - ~ ( - ~ 3 ) ; } } & { { } } \end{array} } } \end{array}$ (2) $( - \ 1 ) \ - \ ( + \ 2 ) \ ;$ ： (3) (4) 1 - 5; (5) $( - 2 3 . 6 ) ~ - ~ ( - ~ 1 2 . 4 ) ;$ (6) ${ \frac { 2 } { 3 } } - \left( - { \frac { 1 } { 2 } } \right) .$  
+(1) $\begin{array} { l } { { ( + ~ 3 ) ~ - ~ ( - ~ 2 ) ; } } \\ { {  \begin{array} { r l } { { 0 ~ - ~ ( - ~ 3 ) ; } } & { { } } \end{array} } } \end{array}$ (2) $( - \ 1 ) \ - \ ( + \ 2 ) \ ;$ ： (3) (4) 1 - 5; (5) $( - 2 3 . 6 ) ~ - ~ ( - ~ 1 2 . 4 ) ;$ (6) ${ \frac { 2 } { 3 } } - \left( - { \frac { 1 } { 2 } } \right) .$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-3. 填空:  
+3. Fill:
 
-(1) 温度 $3 ^ { \circ } \mathrm { C }$ 比 $\mathrm { ~ - ~ } 8 ^ { \circ } \mathrm { C }$ 高 °C;  
-(2) 温度 $\mathbf { \nabla } - 9 \mathbf { \overset { \circ } { C } }$ 比 $\mathrm { ~ - ~ } 1 ^ { \circ } \mathrm { C }$ 低 $^ { \circ } \mathrm { C }$ ;  
-(3) 海拔 - $2 0 \mathrm { m }$ 比 $\mathrm { ~ - ~ } 3 0 \mathrm { m }$ 高 m;  
-(4) 从海拔 $2 2 \mathrm { m }$ 到 $\mathrm { ~ - ~ } 1 0 \mathrm { m }$ , 下降了 m.  
+(1) Temperature $3 ^ { \circ } \mathrm { C }$ That's right $\mathrm { ~ - ~ } 8 ^ { \circ } \mathrm { C }$ High °C;
+(2) Temperature $\mathbf { \nabla } - 9 \mathbf { \overset { \circ } { C } }$ That's right $\mathrm { ~ - ~ } 1 ^ { \circ } \mathrm { C }$ Low $^ { \circ } \mathrm { C }$ ;
+(3) Altitude - $2 0 \mathrm { m }$ That's right $\mathrm { ~ - ~ } 3 0 \mathrm { m }$ High m;
+(4) From above sea level $2 2 \mathrm { m }$ Present $\mathrm { ~ - ~ } 1 0 \mathrm { m }$ , It's falling m.
 
-# 习题1. 7  
+# Exercises 1. 7
 
-# A 组  
+# Group A
 
-1. 计算:  
+1. Calculate:
 
-$\begin{array} { l } { { ( 1 ) \ ( - \ 1 4 ) \ - \ ( + \ 1 5 ) ; } } \\ { { ( 3 ) \ ( + \ 1 2 ) \ - \ ( - \ 9 ) ; } } \\ { { ( 5 ) \ 0 \ - \ ( + \ 5 2 ) ; } } \end{array}$ (2) (- 14) - (- 16); (4) $1 2 \mathrm { ~ - ~ } ( \mathrm { ~ + ~ } 1 7 )$ ; (6) 108 - (- 11) .  
+$\begin{array} { l } { { ( 1 ) \ ( - \ 1 4 ) \ - \ ( + \ 1 5 ) ; } } \\ { { ( 3 ) \ ( + \ 1 2 ) \ - \ ( - \ 9 ) ; } } \\ { { ( 5 ) \ 0 \ - \ ( + \ 5 2 ) ; } } \end{array}$ (2) (- 14) - (- 16); (4) $1 2 \mathrm { ~ - ~ } ( \mathrm { ~ + ~ } 1 7 )$ ; (6) 108 - (- 11) .
 
-2. 计算:  
+2. Calculate:
 
-(1) $4 . 8 \ : - \ : ( + 2 . 3 ) ;$ ： (2) $\begin{array} { l } { { ( - 1 . 2 4 ) \mathrm { ~ - ~ } ( + 4 . 7 6 ) \mathrm { { ; } } } } \\ { { { } } } \\ { { 2 \mathrm { ~ - ~ } \left( \mathrm { { - ~ } } 3 \displaystyle \frac { 1 } { 2 } \right) \mathrm { { . } } } } \end{array}$ (3) (- 3.28) - 1; (4)  
+(1) $4 . 8 \ : - \ : ( + 2 . 3 ) ;$ ： (2) $\begin{array} { l } { { ( - 1 . 2 4 ) \mathrm { ~ - ~ } ( + 4 . 7 6 ) \mathrm { { ; } } } } \\ { { { } } } \\ { { 2 \mathrm { ~ - ~ } \left( \mathrm { { - ~ } } 3 \displaystyle \frac { 1 } { 2 } \right) \mathrm { { . } } } } \end{array}$ (3) (- 3.28) - 1; (4)
 
-3. 计算:  
+3. Calculate:
 
-(1) ${ \begin{array} { l } { \left[ \left( - \ 4 \right) \ - \ \left( + \ 7 \right) \right] \ - \ \left( - \ 5 \right) ; } \\ { \ } \\ { ) \ 8 \ - \ \left( 9 \ - \ 1 0 \right) ; } \end{array} }$ (2) $3 - \left[ \left( - 3 \right) - 1 2 \right] ;$ (3) (4) (3 - 5) - (6 - 10) .  
+(1) ${ \begin{array} { l } { \left[ \left( - \ 4 \right) \ - \ \left( + \ 7 \right) \right] \ - \ \left( - \ 5 \right) ; } \\ { \ } \\ { ) \ 8 \ - \ \left( 9 \ - \ 1 0 \right) ; } \end{array} }$ (2) $3 - \left[ \left( - 3 \right) - 1 2 \right] ;$ (3) (4) (3 - 5) - (6 - 10) .
 
-4. 下表是某地连续5 天内每天的最高气温和最低气温记录, 在这 5 天中, 哪天的温差(最高气温与最低气温的差)最大? 哪天的温差最小?  
+4. The table below is a continuous one 5 Highest and lowest temperatures recorded daily within days, Here 5 In heaven, When's the temperature difference?(The difference between the maximum and the lowest temperature)Max? The temperature difference is the least?
 
-<html><body><table><tr><td></td><td>第1天</td><td>第2天</td><td>第3天</td><td>第4天</td><td>第5天</td></tr><tr><td>最高气温/℃</td><td>-1</td><td>5</td><td>6</td><td>8</td><td>11</td></tr><tr><td>最低气温/℃</td><td>- 7</td><td>- 3</td><td>- 4</td><td>- 1</td><td>2</td></tr></table></body></html>  
+<html><body><table><tr><td></td><td>I don't think so 1 days</td><td>I don't think so 2 days</td><td>I don't think so 3 days</td><td>I don't think so 4 days</td><td>I don't think so 5 days</td></tr><tr><td>Maximum temperature/℃</td><td>-1</td><td>5</td><td>6</td><td>8</td><td>11</td></tr><tr><td>Minimum temperature/℃</td><td>- 7</td><td>- 3</td><td>- 4</td><td>- 1</td><td>2</td></tr></table></body></html>
 
-# B 组  
+# Group B
 
-5. 如图为某一矿井的示意图: 以地面为基准面, $A$ 处的高度是 $\mathrm { ~ + ~ } 4 . 2 \ : \mathrm { m }$ ,$B$ 、 $\boldsymbol { c }$ 处的高度分别是 - $1 5 . 6 \mathrm { m }$ 和 $\mathrm { ~ - ~ } 3 0 . 5 \mathrm { ~ m ~ }$ . $A$ 处比 $B$ 处高多少米? 比$\boldsymbol { C }$ 处呢?  
+5. As a map of a mine: Ground-based, $A$ The height of the location is $\mathrm { ~ + ~ } 4 . 2 \ : \mathrm { m }$ ,$B$ 、 $\boldsymbol { c }$ The height of the location is - $1 5 . 6 \mathrm { m }$ and $\mathrm { ~ - ~ } 3 0 . 5 \mathrm { ~ m ~ }$ . $A$ Ratio $B$ How high are you?? That's right$\boldsymbol { C }$ Where is it??
 
-6. 求出下列每对数在数轴上的对应点之间的距离:  
+6. Finds the distance between the points of each logarithm on the number line below:
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/ad0c3f04728a07d22a1d32296e7ca488567783ed6eb50884536638db30099c1e.jpg)  
-(第 5 题)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/ad0c3f04728a07d22a1d32296e7ca488567783ed6eb50884536638db30099c1e.jpg)
+(I don't think so 5 Topic)
 
-(1) 3 与 - 2.2; (2) 4.75 与 2.25;(3) - 4 与 - 4.5; (4) $- 3 \frac { 2 } { 3 }$ $2 { \frac { 1 } { 3 } } .$  
+(1) 3 and - 2.2; (2) 4.75 and 2.25;(3) - 4 and - 4.5; (4) $- 3 \frac { 2 } { 3 }$ $2 { \frac { 1 } { 3 } } .$
 
-你能发现所得的距离与这两个数的差有什么关系吗?  
+Can you see how the distance is related to the difference between these two numbers??
 
-# 1.8 有理数的加减混合运算  
+# 1.8 Mixed Addition and Subtraction of Rational Numbers
 
-# 1. 加减法统一成加法  
+## 1. Rewriting Subtraction as Addition
 
-算式 $( - 8 ) - ( - 1 0 ) + ( - 6 ) - ( + 4 )$ 是有理数的加减混合运算, 可以按照运算顺序, 从左到右逐步计算; 也可以应用有理数的减法法则, 把它改写成$( - ~ 8 ) ~ + ~ ( + ~ 1 0 ) ~ + ~ ( - ~ 6 ) ~ + ~ ( - ~ 4 )$ , 统一为只有加法运算的和式.  
+Alteration $( - 8 ) - ( - 1 0 ) + ( - 6 ) - ( + 4 )$ It's a reasonable combination, It'll work in order, Gradual calculation from left to right; You can also apply the rule of rational subtraction, Change it to$( - ~ 8 ) ~ + ~ ( + ~ 1 0 ) ~ + ~ ( - ~ 6 ) ~ + ~ ( - ~ 4 )$ , Align to adhesive mode only.
 
-在一个和式里, 通常把各个加数的括号和它们前面的加号省略不写. 如上式可写成省略加号的和的形式:  
+It's in a equation, Usually the parenthesis of the additions and the additions in front of them are omitted. It can be written as an elliptic combination:
 
 $$
 \mathrm { ~ - ~ } 8 \mathrm { ~ + ~ } 1 0 \mathrm { ~ - ~ } 6 \mathrm { ~ - ~ } 4 .
-$$  
+$$
 
-这个式子仍可看作和式, 读作“负8、 正10、 负6、 负4 的和”. 从运算意义看, 上式也可读作“负8 加10 减6减 $4 ^ { \prime \prime }$ .  
+This formula can still be seen as peace, Read negative 8、 Positive 10、 Negative 6、 Negative 4 and”. In the sense of operation,, It can also read "negative" 8 Add 10 Less 6 Less $4 ^ { \prime \prime }$ .
 
-例 1　 把 $\left( + \frac { 2 } { 3 } \right) + \left( - \frac { 4 } { 5 } \right) - \left( + \frac { 1 } { 5 } \right) - \left( - \frac { 1 } { 3 } \right) - ( + 1 )$ 写成省略加号的和的形式, 并把它读出来.  
+Example 1　 Put $\left( + \frac { 2 } { 3 } \right) + \left( - \frac { 4 } { 5 } \right) - \left( + \frac { 1 } { 5 } \right) - \left( - \frac { 1 } { 3 } \right) - ( + 1 )$ It's written in the form of an ellipsis, And read it.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
 $$
 { \begin{array} { r l } & { \left( + { \cfrac { 2 } { 3 } } \right) + \left( - { \cfrac { 4 } { 5 } } \right) - \left( + { \cfrac { 1 } { 5 } } \right) - \left( - { \cfrac { 1 } { 3 } } \right) - ( + 1 ) } \\ & { = \left( + { \cfrac { 2 } { 3 } } \right) + \left( - { \cfrac { 4 } { 5 } } \right) + \left( - { \cfrac { 1 } { 5 } } \right) + \left( + { \cfrac { 1 } { 3 } } \right) + ( - 1 ) } \\ & { = { \cfrac { 2 } { 3 } } - { \cfrac { 4 } { 5 } } - { \cfrac { 1 } { 5 } } + { \cfrac { 1 } { 3 } } - 1 . } \end{array} }
-$$  
+$$
 
-和式中第一个加数若是正数, 正号也可以省略不写.  
+If the first plus is positive, You can also omit the original.
 
-读作“ $\frac { 2 } { 3 }$ 负 $\frac { 4 } { 5 }$ $\frac 1 5 , \frac 1 3$ 负 1 的和”, 也可读作“ $\frac { 2 } { 3 }$ 减 $\frac { 4 } { 5 }$ 减 $\frac { 1 } { 5 }$ 加 $\frac 1 3$ 减 $1 ^ { \prime \prime }$ .  
+Read“ $\frac { 2 } { 3 }$ Negative $\frac { 4 } { 5 }$ $\frac 1 5 , \frac 1 3$ Negative 1 and”, Or read“ $\frac { 2 } { 3 }$ Less $\frac { 4 } { 5 }$ Less $\frac { 1 } { 5 }$ Add $\frac 1 3$ Less $1 ^ { \prime \prime }$ .
 
-1. 把下列各式写成省略加号的和的形式, 并说出它们的两种读法:  
+1. The following formulas will be written in an elliptical and combined form:, And say two of them:
 
-(1) $( - ~ 1 2 ) ~ - ~ ( + ~ 8 ) ~ + ~ ( - ~ 6 ) ~ - ~ ( - ~ 5 ) { ; }$ (2) $\left( + 3 . 7 \right) - \left( - 2 . 1 \right) - 1 . 8 + \left( - 2 . 6 \right) .$ .  
+(1) $( - ~ 1 2 ) ~ - ~ ( + ~ 8 ) ~ + ~ ( - ~ 6 ) ~ - ~ ( - ~ 5 ) { ; }$ (2) $\left( + 3 . 7 \right) - \left( - 2 . 1 \right) - 1 . 8 + \left( - 2 . 6 \right) .$ .
 
-2. 按运算顺序直接计算:  
+2. Directly by order of operation:
 
-(1) $( - ~ 1 6 ) ~ + ~ ( + ~ 2 0 ) ~ - ~ ( + ~ 1 0 ) ~ - ~ ( - ~ 1 1 ) { } ;$ (2) $\left( + \frac { 1 } { 2 } \right) - \left( - \frac { 1 } { 3 } \right) + \left( - \frac { 1 } { 4 } \right) - \left( + \frac { 1 } { 6 } \right) .$  
+(1) $( - ~ 1 6 ) ~ + ~ ( + ~ 2 0 ) ~ - ~ ( + ~ 1 0 ) ~ - ~ ( - ~ 1 1 ) { } ;$ (2) $\left( + \frac { 1 } { 2 } \right) - \left( - \frac { 1 } { 3 } \right) + \left( - \frac { 1 } { 4 } \right) - \left( + \frac { 1 } { 6 } \right) .$
 
-# 2. 加法运算律在加减混合运算中的应用  
+## 2. Using Addition Laws in Mixed Operations
 
-因为有理数的加减法可以统一成加法, 所以在进行有理数的加减混合运算时, 可以适当应用加法运算律, 简化计算.  
+Because a rational addition or reduction can be combined, Therefore when you're doing a reasonable combination,, You can apply the algorithm properly, Simplified calculations.
 
-例 2 计算:  
+Example 2 Calculate:
 
-(1) $- ~ 2 4 ~ + ~ 3 . 2 ~ - ~ 1 6 ~ { - 3 . 5 } ~ + ~ 0 . 3 ;$ (2) $0 - 2 1 { \frac { 2 } { 3 } } + \left( + 3 { \frac { 1 } { 4 } } \right) - \left( - { \frac { 2 } { 3 } } \right) - \left( + { \frac { 1 } { 4 } } \right) .$  
+(1) $- ~ 2 4 ~ + ~ 3 . 2 ~ - ~ 1 6 ~ { - 3 . 5 } ~ + ~ 0 . 3 ;$ (2) $0 - 2 1 { \frac { 2 } { 3 } } + \left( + 3 { \frac { 1 } { 4 } } \right) - \left( - { \frac { 2 } { 3 } } \right) - \left( + { \frac { 1 } { 4 } } \right) .$
 
-解　 (1) 因为原式表示 - 24、 3.2、 - 16、 - 3.5、 0.3 的和, 所以可将加数适当交换位置, 并作适当的结合进行计算, 即  
+Solution　 (1) Because it's original - 24、 3.2、 - 16、 - 3.5、 0.3 and, Therefore we can swap places properly, and calculate it in an appropriate combination, That's
 
 $$
 - ~ 2 4 ~ + ~ 3 . 2 ~ - ~ 1 6 ~ { - } ~ 3 . 5 ~ + 0 . 3
 $$$$
 { \begin{array} { r l } & { \quad - \ 2 4 + { \boldsymbol { \mathfrak { s } } } . 2 - 1 6 - { \boldsymbol { \mathfrak { s } } } . 9 + 0 . 5 } \\ & { = ( - \ 2 4 - \ 1 6 ) \ + \ ( 3 . 2 + 0 . 3 ) \ - 3 . 5 } \\ & { = - \ 4 0 \ + \ ( 3 . 5 - 3 . 5 ) } \\ & { = \ - \ 4 0 \ + \ 0 } \\ & { = \ - \ 4 0 . } \end{array} }
-$$  
+$$
 
 $$
 { \begin{array} { r l } & { \quad 0 - 2 ! { \frac { 2 } { 3 } } + \left( + 3 { \frac { 1 } { 4 } } \right) - \left( - { \frac { 2 } { 3 } } \right) - \left( + { \frac { 1 } { 4 } } \right) } \\ & { = 0 - 2 1 { \frac { 2 } { 3 } } + \left( + 3 { \frac { 1 } { 4 } } \right) + \left( + { \frac { 2 } { 3 } } \right) + \left( - { \frac { 1 } { 4 } } \right) } \\ & { = - 2 1 { \frac { 2 } { 3 } } + 3 { \frac { 1 } { 4 } } + { \frac { 2 } { 3 } } - { \frac { 1 } { 4 } } } \\ & { = \left( - 2 1 { \frac { 2 } { 3 } } + { \frac { 2 } { 3 } } \right) + \left( 3 { \frac { 1 } { 4 } } - { \frac { 1 } { 4 } } \right) } \\ & { = - 2 1 + 3 } \\ & { = - 1 8 . } \end{array} }
-$$  
+$$
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/8ef0750086fda3d641e78e3e83743f147f296fbf33dfe25e0d117236bce652aa.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/8ef0750086fda3d641e78e3e83743f147f296fbf33dfe25e0d117236bce652aa.jpg)
 
-1. 下列变形是否正确? 如果不正确, 错在哪里?  
+1. Whether the following transformations are correct? If not correct, What's wrong??
 
-(1) $1 - 4 + 5 - 4 = 1 - 4 + 4 - 5 ;$ ; (2) $1 - 2 + 3 - 4 = 2 - 1 + 4 - 3 ;$ ; (3) $4 . 5 \ : - 1 . 7 \ : - 2 . 5 \ : + 1 . 8 \ : = 4 . 5 \ : - 2 . 5 \ : + 1 . 8 \ : - 1 . 7 \ :$ ： (4) $- { \frac { 1 } { 3 } } + { \frac { 3 } { 4 } } - { \frac { 1 } { 6 } } - { \frac { 1 } { 4 } } = { \frac { 1 } { 4 } } + { \frac { 3 } { 4 } } - { \frac { 1 } { 3 } } - { \frac { 1 } { 6 } } .$  
+(1) $1 - 4 + 5 - 4 = 1 - 4 + 4 - 5 ;$ ; (2) $1 - 2 + 3 - 4 = 2 - 1 + 4 - 3 ;$ ; (3) $4 . 5 \ : - 1 . 7 \ : - 2 . 5 \ : + 1 . 8 \ : = 4 . 5 \ : - 2 . 5 \ : + 1 . 8 \ : - 1 . 7 \ :$ ： (4) $- { \frac { 1 } { 3 } } + { \frac { 3 } { 4 } } - { \frac { 1 } { 6 } } - { \frac { 1 } { 4 } } = { \frac { 1 } { 4 } } + { \frac { 3 } { 4 } } - { \frac { 1 } { 3 } } - { \frac { 1 } { 6 } } .$
 
-2. 计算:  
+2. Calculate:
 
-(1) $\ : 0 \mathrm { ~ - ~ } 1 + 2 - 3 + 4 - 5 ; \phantom { 0 0 0 0 }$   
-(2) $- 4 . 2 \ : + \ : 5 . 7 \ : - \ : 8 . 4 \ : + \ : 1 0 . 2$ ;   
-(3) $) - 3 0 - 1 1 - ( - 1 0 ) + ( - 1 2 ) + 1 8 ;$ ：   
-(4) $3 \frac { 1 } { 2 } - \left( - 2 \frac { 1 } { 4 } \right) + \left( - \frac { 1 } { 3 } \right) - \frac { 1 } { 4 } - \left( + \frac { 1 } { 6 } \right) .$  
+(1) $\ : 0 \mathrm { ~ - ~ } 1 + 2 - 3 + 4 - 5 ; \phantom { 0 0 0 0 }$
+(2) $- 4 . 2 \ : + \ : 5 . 7 \ : - \ : 8 . 4 \ : + \ : 1 0 . 2$ ;
+(3) $) - 3 0 - 1 1 - ( - 1 0 ) + ( - 1 2 ) + 1 8 ;$ ：
+(4) $3 \frac { 1 } { 2 } - \left( - 2 \frac { 1 } { 4 } \right) + \left( - \frac { 1 } { 3 } \right) - \frac { 1 } { 4 } - \left( + \frac { 1 } { 6 } \right) .$
 
-# 七年级上册  
+# Seventh grade
 
-# 《 九章算术》 和 “ 正负术”  
+# 《 The nine chapters of arithmetic and "negative"”
 
-《九章算术》是中国古代数学最重要的经典著作之一. 这部著作的成书年代,根据现在的考证, 最迟在公元 1 世纪, 但其中有些数学内容, 可以追溯到周代(公元前11 世纪至公元前3 世纪). 《九章算术》采用问题集的形式编写, 全书共有246 个问题, 分成方田、 粟米、 衰分、 少广、 商功、 均输、 盈不足、 方程、 勾股九章, 其中所包含的数学成就是十分丰富的.  
+《The nine chapters of arithmetic is one of the most important classics in ancient Chinese mathematics. The age of the book,Based on the current test,, At the latest 1 Century, But some of the math, It goes back to Chou Chou(B.C 11 From the century to the B.C 3 Century). 《9 chapters of arithmetic in the form of a question set, The whole book 246 A question, Splits into square fields, rice, decay, small and wide, business, loss, gain, equation, nine chapters, The math is very rich.
 
-引进和使用负数是《九章算术》的一项突出贡献, 比如《九章算术》中第八章(《方程》篇)的第8 题关于三元一次方程组的建立和求解, 叙述了这样的问题:  
+The introduction and use of negative numbers is a prominent contribution to chapter nine arithmetic, For example, chapter eight of Chapter Nine(《Equation)No. No 8 Question on the creation and resolution of a three-dollar one-time equation group, It's a question:
 
-今有卖牛二、 羊五, 以买十三豕(shǐ, 猪), 有余钱一千. 卖牛三、 豕三, 以买九羊, 钱适足. 卖羊六、 豕八, 以买五牛, 钱不足六百. 问牛、 羊、 豕价各几何?  
+We're selling oxen and sheep, I'll buy 13 bucks(shǐ, Pig), There's a thousand. old oxen and oxen, To buy nine sheep, Money is enough. Sheep Six and Eight, To buy five cows, It's less than 600. Ask the cattle, the sheep, the price?
 
-在解决这个问题的过程中, 把卖牲畜得到的钱算作正, 把买牲畜付出的钱算作负. 在这一篇中, 当用遍乘直除算法消元(即用加减消元法解一次方程组)时,可能出现减数大于被减数的情形, 为此, 就需要引进负数. 《九章算术》在《方程》篇中还提出了如下的 “正负术”:  
+In the process of solving this problem,, Get the money from selling livestock, I'll take the price of buying livestock as a negative. In this article, When using the multiplication of the straight decomposer(An equation group is solved by adding or subtracting the equation)Time,There may be circumstances where the decrease is greater than the decrease, For that reason,, You need to introduce negative numbers. 《Nine Chapters also suggested the following in the equation:”:
 
-同名相除, 异名相益, 正无入负之, 负无入正之.  
+Separate the same name, An alias, It's nothing, Negative.
 
-其异名相除, 同名相益, 正无入正之, 负无入负之.  
+It's a different name, Same name, There's nothing wrong with that, Negative.
 
-这实际上就是正负数和0 的加减运算法则. “同名” “异名” 分别指同号、异号; “相益” “相除” 分别指两数的绝对值相加、 相减.  
+It's actually a positive or negative number 0 Add to minus the algorithm. “Same name. "Aliens."; “Benefit "separate" means the absolute value of two digits plus and minus, respectively.
 
-前四句说的是正数、 负数和0 的减法法则, 翻译成现在的语言就是: 同号两数相减, 将绝对值相减(得到差的绝对值); 异号两数相减, 将绝对值相加(得到差的绝对值); 0 减去正数得到(与它相反的) 负数, 0 减去负数得到(与它相反的)正数.  
+The first four sentences are positive, negative and 0 The law of reduction, It's translated into the current language: Two digits less, Declining Absolute Values(Get the difference in absolute value); It's two numbers less, Add Absolute Values(Get the difference in absolute value); 0 We'll get a positive number(The opposite of it) Negative, 0 Less negative(The opposite of it)Positive.
 
-后四句说的就是正数、 负数和 0 的加法法则. 你能把它们翻译成现在的语言吗?  
+The last four sentences are positive, negative and 0 The Additional Law. Can you translate them into the current language??
 
-不难看出, 这与我们所学的有理数加减法法则是完全一致的  
+It's not hard to see, That's exactly what we're learning to do
 
-《九章算术》以后, 魏晋时期的数学家刘徽(约 225—约 295)对负数的出现作了很自然的解释—— “两算得失相反, 要令正负以名之”, 并主张在筹算中用红筹代表正数, 用黑筹代表负数.  
+《After the nine chapters,, The Mathematician Liu Kwok of Wei(Approximate Valuesly 225—Approximate Valuesly 295)It's a natural explanation for the negative number -- "The opposite is the opposite.", You have to make a name for yourself”, I'm going to use red funding to represent the positive, Use black funding for negative numbers.
 
-在国外, 负数的出现和使用要比我国迟好几百年, 直到 7 世纪时印度数学家才开始使用负数. 而在欧洲, 直到 16 世纪, 韦达(F. Viète, 1540 —1603) 还拒绝使用负数.  
+Abroad, The emergence and use of negative numbers is hundreds of years later than in our country, Until 7 Indian mathematicians only started using negative numbers in the century. And in Europe,, Until 16 Century, Weda(F. Viète, 1540 —1603) Negative number denied.
 
-# 习题1. 8  
+# Exercises 1. 8
 
-# A 组  
+# Group A
 
-1. 计算:  
+1. Calculate:
 
 $$
 \begin{array} { l } { { \displaystyle \left( - 7 \right) - \left( - 1 0 \right) + \left( - 8 \right) - \left( + 2 \right) ; \qquad \left( 2 \right) 1 + \left( - 1 \frac 1 2 \right) - \left( - \frac 1 2 \right) - \left( + \frac 1 4 \right) ; } } \\ { { \displaystyle \left( + \frac 1 2 \right) - \left[ \left( - 2 \right) + \left( + \frac 1 2 \right) \right] } ; } \end{array} \qquad \begin{array} { l } { { \displaystyle \left( + \frac 1 { } \right) \left( - 1 . \frac { 1 } { 2 } \right) - \left[ \left( - \frac 1 2 \right) - \left( + \frac 1 4 \right) + \left( - \frac 1 2 \right) - \left( - \frac 1 2 \right) \right] } } \\ { { \displaystyle \left( 4 \right) \left( - 1 . 2 \right) + \left[ 1 - \left( - 0 . 3 \right) \right] } . } \end{array}
-$$  
+$$
 
-2. 将下列各式写成省略加号的和的形式, 并按要求交换加数的位置:  
+2. The following formulas are written in the form of ellipses and additions:, And exchange extra places as required:
 
-(1) $\left( + ~ 1 6 \right) ~ + ~ \left( - ~ 2 9 \right) ~ - ~ \left( - ~ 7 \right) ~ - ~ \left( + ~ 1 1 \right) ~ + ~ \left( + ~ 9 \right) ;$ (使正负号相同的加数结合在一起)  
-(2) $\left( - 3 . 1 \right) - \left( - 4 . 5 \right) + \left( + 4 . 4 \right) - \left( + 1 . 3 \right) + \left( - 2 . 5 \right) ;$ (使和为整数的加数结合在一起)  
-(3 $\left( + \ 1 \ \frac 1 2 \ \right) - \left( + \ 5 \right) \ + \ \left( - \ \frac 1 3 \ \right) - \left( + \ \frac 1 4 \ \right) + \ \left( - \ 5 \ \frac 2 3 \ \right) ;$ (使分母相同或便于通分的加数结合在一起)  
-(4) $\left( - 2 . 4 \right) \ : - \ : \left( - 4 . 7 \right) \ : - \ : \left( + 0 . 5 \right) \ : + \ : \left( + 3 . 4 \right) \ : + \ : \left( - 3 . 5 \right) .$ (使计算简便)  
+(1) $\left( + ~ 1 6 \right) ~ + ~ \left( - ~ 2 9 \right) ~ - ~ \left( - ~ 7 \right) ~ - ~ \left( + ~ 1 1 \right) ~ + ~ \left( + ~ 9 \right) ;$ (Combining the same plus and minus)
+(2) $\left( - 3 . 1 \right) - \left( - 4 . 5 \right) + \left( + 4 . 4 \right) - \left( + 1 . 3 \right) + \left( - 2 . 5 \right) ;$ (Combining with integers)
+(3 $\left( + \ 1 \ \frac 1 2 \ \right) - \left( + \ 5 \right) \ + \ \left( - \ \frac 1 3 \ \right) - \left( + \ \frac 1 4 \ \right) + \ \left( - \ 5 \ \frac 2 3 \ \right) ;$ (Combining the addition of the same or easy-to-concentrate denominator)
+(4) $\left( - 2 . 4 \right) \ : - \ : \left( - 4 . 7 \right) \ : - \ : \left( + 0 . 5 \right) \ : + \ : \left( + 3 . 4 \right) \ : + \ : \left( - 3 . 5 \right) .$ (Make calculations simple)
 
-3. 计算:  
+3. Calculate:
 
-(1) $- ~ 3 ~ - ~ 4 ~ + ~ 1 9 ~ - ~ 1 1 ~ + ~ 2 ;$ (2) 10 - 24 - 15 + 26 - 42 + 18; (3 $) - 4 . 2 \ : + \ : 5 . 7 \ : - 7 . 6 \ : + 1 0 . 1 \ : - 5 . 5 ;$ (4) $\mathrm { ~ 1 ~ - ~ } \frac { 1 } { 2 } + \frac { 1 } { 3 } ;$  
+(1) $- ~ 3 ~ - ~ 4 ~ + ~ 1 9 ~ - ~ 1 1 ~ + ~ 2 ;$ (2) 10 - 24 - 15 + 26 - 42 + 18; (3 $) - 4 . 2 \ : + \ : 5 . 7 \ : - 7 . 6 \ : + 1 0 . 1 \ : - 5 . 5 ;$ (4) $\mathrm { ~ 1 ~ - ~ } \frac { 1 } { 2 } + \frac { 1 } { 3 } ;$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
 $$
 \begin{array} { l } { { \displaystyle \left( - 5 2 \right) + \left( - 1 9 \right) - \left( + 3 7 \right) - \left( - 2 4 \right) ; } } \\ { { \displaystyle \left( - \frac { 1 } { 2 } \right) - \left( - 3 \frac { 1 } { 4 } \right) + \left( + 2 \frac { 3 } { 4 } \right) - \left( + 5 \frac { 1 } { 2 } \right) . } } \end{array}
-$$  
+$$
 
-# B 组  
+# Group B
 
-4. 计算:  
+4. Calculate:
 
 $$
 \begin{array} { l } { { 1 3 - \left[ 2 6 - \left( - 2 1 \right) + \left( - 1 8 \right) \right] ; } } \\ { { \left[ 1 . 4 - \left( - 3 . 6 + 5 . 2 \right) - 4 . 3 \right] - \left( - 1 . 5 \right) ; } } \\ { { \left[ - 2 \displaystyle \frac { 1 } { 4 } \right| - \left( - \displaystyle \frac { 3 } { 4 } \right) + 1 - \left| 1 - \displaystyle \frac { 1 } { 2 } \right| . } } \end{array}
-$$  
+$$
 
-5. 列式并计算:  
+5. Columns and Count:
 
-(1) 什么数与 $- { \frac { 5 } { 1 2 } }$ 的和等于 - 1?  
-(2) - 1 减去 $- { \frac { 5 } { 6 } }$ 一 $\frac { 1 } { 6 }$ 的和, 所得的差是多少?  
-(3) - 4、 5、 - 7 这三个数的和比这三个数的绝对值的和小多少?(4) 求 1, - 2, 3, - 4, …, 99, - 100 这 100 个整数的和.  
+(1) What numbers and $- { \frac { 5 } { 1 2 } }$ And it's equal to - 1?
+(2) - 1 Less $- { \frac { 5 } { 6 } }$ One $\frac { 1 } { 6 }$ and, What's the difference??
+(3) - 4、 5、 - 7 How much is the sum of these three numbers smaller than their absolute value??(4) Please 1, - 2, 3, - 4, …, 99, - 100 Here 100 Integer sum.
 
-# 1.9 有理数的乘法  
+# 1.9 Multiplication of Rational Numbers
 
-# 1. 有理数的乘法法则  
+# 1. Multiplication of Rational Numbers Rule
 
-问题1　 一只小虫沿一条东西向的路线, 以 $3 \mathrm { m / m i n }$ 的速度向东爬行 $2 \mathrm { m i n }$ ,那么它现在位于原来位置的哪个方向? 相距多少米?  
+question 1　 A bug follows a path to something, Here $3 \mathrm { m / m i n }$ We're climbing east $2 \mathrm { m i n }$ ,Therefore which direction is it in?? How many meters away??
 
-我们知道, 这个问题可以用乘法来解答:  
+We know, This question can be answered by multiplying:
 
 $$
 3 \times 2 = 6 ,
-$$  
+$$
 
-即小虫位于原来位置的东边 $6 \mathrm { m }$ 处 .  
+That's where the bugs are $6 \mathrm { m }$ Location .
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/a5f371402921e867728d5fc2827295250a6a67382f8ca4a8fe2e848ac6c74155.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/a5f371402921e867728d5fc2827295250a6a67382f8ca4a8fe2e848ac6c74155.jpg)
 
-注意: 这里我们规定向东为正, 向西为负.  
+Note: This is where we make the rules east, Negative west.
 
-如果上述问题变为:  
+If the above question becomes:
 
-问题2　 小虫向西以 $3 \mathrm { { m / m i n } }$ 的速度爬行 $2 \mathrm { m i n }$ , 那么结果有何变化?  
+question 2　 Worm to the west $3 \mathrm { { m / m i n } }$ The speed of climbing $2 \mathrm { m i n }$ , Therefore, what's the difference??
 
-这时小虫位于原来位置的西边 $6 \mathrm { m }$ 处. 写成算式是:  
+The bugs are on the west side of the starting position $6 \mathrm { m }$ Location. It's written in the form of:
 
 $$
 ( - 3 ) \times 2 = - 6 .
-$$  
+$$
 
-比较问题1、 问题2 中的两个算式: 左边的乘数有什么不同, 所得的积又有什么改变? 你有什么发现?  
+Comparative issues 1、 question 2 two algorithms: What difference does it make to the left?, What difference does it make?? What have you got??
 
-当我们把 “ $3 \times 2 = 6 ^ { , , }$ 中的一个乘数“3” 换成它的相反数“ - 3” 时, 所得的积是原来的积“6” 的相反数“ - 6”. 一般地, 我们有:  
+♪ When we put “ $3 \times 2 = 6 ^ { , , }$ a multiplier“3” It's the opposite“ - 3” Time, That's what you get“6” The opposite“ - 6”. Summary, We do:
 
-两数相乘, 若把一个乘数换成它的相反数, 则所得的积是原来的积的相反数.  
+Double Multiplication, If you replace a multiplier with its opposite,, That's the opposite of the original.
 
-试一试: $3 \times ( - 2 ) = ?$  
+Try it: $3 \times ( - 2 ) = ?$
 
-与 $3 \times 2 = 6$ 相比较, 这里把一个乘数“2” 换成了它的相反数“ - 2”, 所得的积应是原来的积“6” 的相反数“ - 6”, 即  
+and $3 \times 2 = 6$ Compare, Here's a multiplier“2” It's the opposite“ - 2”, The gain should be the original“6” The opposite“ - 6”, That's
 
 $$
 3 \times ( - 2 ) = - 6 .
-$$  
+$$
 
-再试一试: $( - \ 3 ) \ \times \ ( \ - \ 2 ) = ?$  
+Try again: $( - \ 3 ) \ \times \ ( \ - \ 2 ) = ?$
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/d1b50018a3f77bdf11a49f6010db2dad454a5a5a0aa95ae41d76ba0061e68acb.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/d1b50018a3f77bdf11a49f6010db2dad454a5a5a0aa95ae41d76ba0061e68acb.jpg)
 
-把它与 $( - 3 ) \times 2 = - 6$ 对比, 这里把一个乘数“2”换成了它的相反数“ - 2”, 所得的积应是原来的积“ - 6” 的相反数“6”, 即  
+Put it with $( - 3 ) \times 2 = - 6$ Comparison, Here's a multiplier“2”It's the opposite“ - 2”, The gain should be the original“ - 6” The opposite“6”, That's
 
 $$
 ( - \ 3 ) \ \times \ ( \ - \ 2 ) = 6 .
-$$  
+$$
 
-此外, 两数相乘时, 如果有一个乘数是0, 那么所得的积也是0 . 例如:  
+Besides, Double-digit times, If there's a multiplier 0, And so is the gain 0 . For example::
 
 $$
 ( - 3 ) \times 0 = 0 , 0 \times ( - 2 ) = 0 .
-$$  
+$$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 概括  
+# Summary
 
-综合以上各种情况, 有如下有理数的乘法法则:  
+Combining the above, There are rational multiplication rules:
 
-两数相乘, 同号得正, 异号得负, 并把绝对值相乘;任何数与0 相乘, 都得0 .  
+Double Multiplication, It's got the same number, It's a bad sign, And multiply the absolute value;Any number and 0 Multiplication, All of it 0 .
 
-例如:  
+For example::
 
 $$
 \begin{array} { c } { { \left( - 5 \right) \times \left( - 3 \right) , } } \\ { { \left( - 5 \right) \times \left( - 3 \right) = + \left( \begin{array} { c c } { { } } & { { } } \\ { { } } & { { } } \end{array} \right) , } } \\ { { 5 \times 3 = 1 5 , } } \\ { { \left( - 5 \right) \times \left( - 3 \right) = 1 5 . } } \end{array}
-$$  
+$$
 
-同号两数相乘  
+Multiply the same number
 
-得正  
+Nice
 
-把绝对值相乘  
+Multiplies absolute values
 
-所以  
+Therefore
 
-再如:  
+Like:
 
 $$
 \begin{array} { c } { { ( - 6 ) \times 4 , } } \\ { { \ } } \\ { { ( - 6 ) \times 4 = - \ ( \qquad ) , } } \\ { { \ } } \\ { { 6 \times 4 = 2 4 , } } \\ { { \ } } \\ { { ( - 6 ) \times 4 = - 2 4 . } } \end{array}
-$$  
+$$
 
-异号两数相乘  
+Diagonal Multiplication
 
-得负  
+Negative
 
-把绝对值相乘  
+Multiplies absolute values
 
-所以  
+Therefore
 
-例 1　 计算:  
+Example 1　 Calculate:
 
-(1) $( - \ 5 ) \ \times \ ( \ - \ 6 )$ ; (2) $\left( - \frac { 1 } { 2 } \right) \times \frac { 1 } { 4 } .$  
+(1) $( - \ 5 ) \ \times \ ( \ - \ 6 )$ ; (2) $\left( - \frac { 1 } { 2 } \right) \times \frac { 1 } { 4 } .$
 
-解　 (1) $( - \ 5 ) \ \times \ ( \ - \ 6 ) = 3 0$ .  
+Solution　 (1) $( - \ 5 ) \ \times \ ( \ - \ 6 ) = 3 0$ .
 
 $$
 \left( - { \frac { 1 } { 2 } } \right) \times { \frac { 1 } { 4 } } = - { \frac { 1 } { 8 } } .
-$$  
+$$
 
-1. 确定下列各乘积的正负号:  
+1. Determine the positive and negative numbers of each of the following product:
 
-(1) ${ \mathfrak { H } } \times ( - 3 )$ ; (2) $( - \ 3 ) \ \times \ 3$ ; (3) $( - \ 2 ) \ \times \ ( \ - \ 7 ) ;$ 1 ${ \frac { 1 } { 2 } } \times { \frac { 1 } { 3 } } .$  
+(1) ${ \mathfrak { H } } \times ( - 3 )$ ; (2) $( - \ 3 ) \ \times \ 3$ ; (3) $( - \ 2 ) \ \times \ ( \ - \ 7 ) ;$ 1 ${ \frac { 1 } { 2 } } \times { \frac { 1 } { 3 } } .$
 
-2. 计算:  
+2. Calculate:
 
-(1) $3 \times ( - 4 )$ ; (2) $2 \times ( - 6 )$ ;   
-(3) $( - \ 6 ) \ \times 2 ;$ (4) $6 \times ( - 2 )$ ;   
-(5) $( - \ 6 ) \ \times \ 0 ;$ (6) $0 \times ( - \mathit { \omega } 6 )$ ;   
-(7) $( - \ 4 ) \ \times 0 . 2 5$ ; (8) $( - 0 . 5 ) \times ( - \ : 8 )$ ;   
-(9) ${ \frac { 2 } { 3 } } \times \left( - { \frac { 3 } { 4 } } \right) ;$ (10) $( - 2 ) \times \left( - { \frac { 1 } { 2 } } \right) .$  
+(1) $3 \times ( - 4 )$ ; (2) $2 \times ( - 6 )$ ;
+(3) $( - \ 6 ) \ \times 2 ;$ (4) $6 \times ( - 2 )$ ;
+(5) $( - \ 6 ) \ \times \ 0 ;$ (6) $0 \times ( - \mathit { \omega } 6 )$ ;
+(7) $( - \ 4 ) \ \times 0 . 2 5$ ; (8) $( - 0 . 5 ) \times ( - \ : 8 )$ ;
+(9) ${ \frac { 2 } { 3 } } \times \left( - { \frac { 3 } { 4 } } \right) ;$ (10) $( - 2 ) \times \left( - { \frac { 1 } { 2 } } \right) .$
 
-3. 计算:  
+3. Calculate:
 
-(1) $3 \times ( - 1 ) { \ : } ;$ ; (2) $( - \ 5 ) \ \times \ ( \ - \ 1 ) \ ;$ (3) ${ \frac { 1 } { 4 } } \times ( - \ 1 ) ;$ (4) $0 \times ( - \ 1 )$ ; (5) $( - \mathit { \omega } 6 ) \times 1 ;$ (6) $2 \times 1$ ; (7) $0 \times 1$ ; (8) $1 \times ( - 1 )$ .  
+(1) $3 \times ( - 1 ) { \ : } ;$ ; (2) $( - \ 5 ) \ \times \ ( \ - \ 1 ) \ ;$ (3) ${ \frac { 1 } { 4 } } \times ( - \ 1 ) ;$ (4) $0 \times ( - \ 1 )$ ; (5) $( - \mathit { \omega } 6 ) \times 1 ;$ (6) $2 \times 1$ ; (7) $0 \times 1$ ; (8) $1 \times ( - 1 )$ .
 
-4. 做完第3 题, 你能发现什么规律? 一个数与 - 1 相乘, 积是什么? 一个数与1相乘呢?  
+4. Finish 3 Topic, What pattern do you find?? One number and - 1 Multiplication, What's Jack?? One number and 1 What about the multiplication??
 
-# 2. 有理数乘法的运算律  
+## 2. Laws of Rational Multiplication
 
-在小学里我们知道, 数的乘法满足交换律, 例如  
+In elementary school, we knew, Multiplication of the number meets the barter, For example:
 
 $$
 3 \times 5 = 5 \times 3 ;
-$$  
+$$
 
-还满足结合律, 例如  
+It's also a combination, For example:
 
 $$
 ( 3 \times 5 ) \times 2 = 3 \times ( 5 \times 2 ) .
-$$  
+$$
 
-引进了负数以后, 这些运算律是否还成立呢? 也就是说, 上面两个等式中,将3、 5、 2 换成任意的有理数, 是否仍然成立?  
+When negative numbers were introduced, Do these algorithms still exist?? Which means, in two equations above,Will 3、 5、 2 In exchange for an arbitrary rational number, Is it still there??
 
-# 探索  
+## Explore
 
-(1) 任意选择两个有理数(至少有一个是负数), 分别填入下列□和○内, 并比较两个运算结果:  
+(1) Select two rational numbers at random(At least one is negative), Fill in the following each:□and○Internal, And compare the two results:
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b840264f13d67bd363f0e2a410f32dc9bfe9527c84052d7a4b6e52cce5363bea.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b840264f13d67bd363f0e2a410f32dc9bfe9527c84052d7a4b6e52cce5363bea.jpg)
 
-(2) 任意选择三个有理数(至少有一个是负数), 分别填入下列□、 $\bigcirc$ 和 $\diamondsuit$ 内, 并比较两个运算结果:  
+(2) Select three rational numbers at random(At least one is negative), Fill in the following each:□、 $\bigcirc$ and $\diamondsuit$ Internal, And compare the two results:
 
 $$
 ( \square \times \square ) \times \square \square \times ( \square \times \square )
-$$  
+$$
 
-你能发现什么?  
+What can you find??
 
-# 概括  
+# Summary
 
-有理数的乘法仍满足交换律和结合律.  
-乘法交换律: 两个数相乘, 交换乘数的位置, 积不变.  
+Rational multiplication still meets the rules of exchange and integration.
+Multiplication Exchange: Two numbers multiplied, Position of exchange multipliers, Staple.
 
 $$
 a b = b a .
-$$  
+$$
 
-乘法结合律: 三个数相乘, 先把前两个数相乘, 或者先把后两个数相乘,积不变.  
+Multiplication laws: Three-digit multiplication, Multiply the first two numbers first, Or multiply the last two numbers,Staple.
 
 $$
 { \overset { \cdot } { \left( { \boldsymbol { a } } { \boldsymbol { b } } \right) } } { \boldsymbol { c } } = { \boldsymbol { a } } ( { \boldsymbol { b } } { \boldsymbol { c } } ) . .
-$$  
+$$
 
-根据乘法交换律和乘法结合律, 三个或三个以上的有理数相乘, 可以任意交换乘数的位置, 也可以先把其中的几个数相乘.  
+Multiplication exchange and multiplication, Multiply three or more rational numbers, Any position where a multiplier can be exchanged, You can multiply the numbers first.
 
-计算 $( \mathbf { \partial } - \mathbf { \partial } 2 ) \mathbf { \partial } \times \mathbf { \partial }$ $5 \times ( - 3 )$ , 有哪些不同的算法? 哪种算法比较简便?  
+Calculate $( \mathbf { \partial } - \mathbf { \partial } 2 ) \mathbf { \partial } \times \mathbf { \partial }$ $5 \times ( - 3 )$ , What are the different algorithms?? Which algorithm is easier??
 
-例 2 计算: $( - \ 1 0 ) \ \times \frac { 1 } { 3 } \times 0 . 1 \times 6 .$ .解 $( - \ 1 0 ) \ \times \frac { 1 } { 3 } \times 0 . 1 \times 6$ ${ \begin{array} { l } { \displaystyle = { \left[ \begin{array} { l } { \displaystyle ( - \ 1 0 ) \ \times 0 . 1 } \end{array} \right] } \ \times \left( { \frac { 1 } { 3 } } \times 6 \right) } \\ { \displaystyle = ( - \ 1 ) \ \times 2 } \\ { \displaystyle = - \ 2 . } \end{array} }$  
+Example 2 Calculate: $( - \ 1 0 ) \ \times \frac { 1 } { 3 } \times 0 . 1 \times 6 .$ .Solution $( - \ 1 0 ) \ \times \frac { 1 } { 3 } \times 0 . 1 \times 6$ ${ \begin{array} { l } { \displaystyle = { \left[ \begin{array} { l } { \displaystyle ( - \ 1 0 ) \ \times 0 . 1 } \end{array} \right] } \ \times \left( { \frac { 1 } { 3 } } \times 6 \right) } \\ { \displaystyle = ( - \ 1 ) \ \times 2 } \\ { \displaystyle = - \ 2 . } \end{array} }$
 
-从例 2 的解答过程中, 你能得到什么启发? 试直接写出下列各式的结果:  
+Examples 2 In the process of answering, What did you learn?? Try to write the following results directly::
 
-$( - 1 0 ) \times \left( - \frac { 1 } { 3 } \right) \times 0 . 1 \times 6 = \qquad ;$ $( - 1 0 ) \times \left( - \frac { 1 } { 3 } \right) \times ( - 0 . 1 ) \times 6 = \qquad ;$ $( - 1 0 ) \times \left( - \frac { 1 } { 3 } \right) \times ( - 0 . 1 ) \times ( - 6 ) = \cdot$  
+$( - 1 0 ) \times \left( - \frac { 1 } { 3 } \right) \times 0 . 1 \times 6 = \qquad ;$ $( - 1 0 ) \times \left( - \frac { 1 } { 3 } \right) \times ( - 0 . 1 ) \times 6 = \qquad ;$ $( - 1 0 ) \times \left( - \frac { 1 } { 3 } \right) \times ( - 0 . 1 ) \times ( - 6 ) = \cdot$
 
-观察以上各式, 你能发现几个不等于 0 的有理数相乘时, 积的正负号与各乘数的正负号之间的关系吗?  
+Observations above, You can find a few that don't equal 0 Rational Multiply, The relationship between the positive and negative of Jack and the negative of the multipliers??
 
-一般地, 我们有:  
+Summary, We do:
 
-几个不等于0 的数相乘, 积的正负号由负乘数的个数决定, 当负乘数的个数为奇数时, 积为负; 当负乘数的个数为偶数时, 积为正  
+A few isn't equal 0 Multiplication of numbers, The positive and negative number of the accumulation is determined by the number of negative multipliers, When the negative multiplier is odd, Aggregated negative; When negative multipliers are even, Jock positive
 
-几个不等于0 的数相乘, 首先确定积的正负号, 然后把绝对值相乘.  
+A few isn't equal 0 Multiplication of numbers, First, identify the positive and negative numbers, And multiply the absolute value.
 
-# 试一试  
+# Try it
 
-直接写出下列各式的结果:  
+Write directly the following results::
 
-(1) $( - 5 ) \times \left( - { \frac { 1 } { 2 } } \right) \times 3 \times ( - 2 ) \times 2 =$ (2) $( - 5 ) \times ( - 8 . 1 ) \times 3 . 1 4 \times 0 =$  
+(1) $( - 5 ) \times \left( - { \frac { 1 } { 2 } } \right) \times 3 \times ( - 2 ) \times 2 =$ (2) $( - 5 ) \times ( - 8 . 1 ) \times 3 . 1 4 \times 0 =$
 
-几个数相乘, 有一个乘数为0, 积就为0 .  
+Multiplication of numbers, There's a multiplier for 0, Jock is 0 .
 
-例 3 计算:  
+Example 3 Calculate:
 
 $$
 { \begin{array} { r l } & { \quad 8 + \left( - { \cfrac { 1 } { 2 } } \right) \times ( - 8 ) \times { \cfrac { 3 } { 4 } } ; } \\ & { \quad ( - 3 ) \times { \cfrac { 5 } { 6 } } \times \left( - { \cfrac { 4 } { 5 } } \right) \times \left( - { \cfrac { 1 } { 4 } } \right) ; } \\ & { \quad \left( - { \cfrac { 3 } { 4 } } \right) \times 5 \times 0 \times { \cfrac { 7 } { 8 } } . } \end{array} }
-$$  
+$$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
 $$
 { \begin{array} { r l } { ( \cdot 1 ) } & { 8 + \left\lfloor - { \frac { 1 } { 2 } } \right\rfloor \times ( - 8 ) \times { \frac { 3 } { 4 } } } \\ & { = 8 + { \frac { 1 } { 2 } } \times 8 \times { \frac { 3 } { 4 } } } \\ & { = 8 + 3 = 1 1 . } \\ & { ( - 3 ) \times { \frac { 5 } { 6 } } \times \left\lfloor - { \frac { 4 } { 5 } } \right\rfloor \times \left\lfloor - { \frac { 1 } { 4 } } \right\rfloor } \\ & { = - 3 \times { \frac { 5 } { 6 } } \times { \frac { 4 } { 5 } } \times { \frac { 1 } { 4 } } } \\ & { = - { \frac { 1 } { 2 } } . } \end{array} }
-$$  
+$$
 
 $$
 \left( - { \frac { 3 } { 4 } } \right) \times 5 \times 0 \times { \frac { 7 } { 8 } } = 0 .
-$$  
+$$
 
-# 思考  
+# reflection
 
-三个数相乘, 如果积为负, 其中可能有几个乘数为负数? 四个数相乘, 如果积为正, 其中可能有几个乘数为负数?  
+Three-digit multiplication, If it's negative,, There may be several multipliers that are negative? Four Digit Multiplications, If it's true, There may be several multipliers that are negative?
 
-1. 计算:  
+1. Calculate:
 
-(1) $( - ~ 4 ) ~ \times ~ ( - ~ 7 ) ~ \times ~ ( - ~ 2 5 ) ;$ (2) $\left( - \frac { 3 } { 5 } \right) \times 8 \times \left( - \frac { 4 } { 3 } \right) ;$ (3) $( - 0 . 5 ) \times ( - 1 ) \times \frac { 3 } { 4 } \times ( - 8 ) .$  
+(1) $( - ~ 4 ) ~ \times ~ ( - ~ 7 ) ~ \times ~ ( - ~ 2 5 ) ;$ (2) $\left( - \frac { 3 } { 5 } \right) \times 8 \times \left( - \frac { 4 } { 3 } \right) ;$ (3) $( - 0 . 5 ) \times ( - 1 ) \times \frac { 3 } { 4 } \times ( - 8 ) .$
 
-2. 计算:  
+2. Calculate:
 
-(1) $( - 5 ) - ( - 5 ) \times \frac { 1 } { 5 } \times ( - 4 ) ;$ (2) $( - \ 1 ) \ \times ( - \ 7 ) \ + \ 6 \times ( - \ 1 ) \ \times \frac { 1 } { 2 } ;$ (3) $( - 3 ) \times ( - 7 ) - 3 \times ( - 6 ) ;$ (4) $\begin{array} { r } { 1 - ( - 1 ) \times ( - 1 ) - ( - 1 ) \times 0 \times ( - 1 ) . } \end{array}$ 小学里我们还学过乘法对加法的分配律, 例如  
+(1) $( - 5 ) - ( - 5 ) \times \frac { 1 } { 5 } \times ( - 4 ) ;$ (2) $( - \ 1 ) \ \times ( - \ 7 ) \ + \ 6 \times ( - \ 1 ) \ \times \frac { 1 } { 2 } ;$ (3) $( - 3 ) \times ( - 7 ) - 3 \times ( - 6 ) ;$ (4) $\begin{array} { r } { 1 - ( - 1 ) \times ( - 1 ) - ( - 1 ) \times 0 \times ( - 1 ) . } \end{array}$ We also learned how to multiply in primary school, For example:
 
 $$
 6 \times \left( \frac { 1 } { 2 } + \frac { 1 } { 3 } \right) = 6 \times \frac { 1 } { 2 } + 6 \times \frac { 1 } { 3 } .
-$$  
+$$
 
-引进了负数以后, 分配律是否还成立呢?  
+When negative numbers were introduced, Is the law of distribution still in place??
 
-# 探索  
+## Explore
 
-任意选取三个有理数(至少有一个是负数), 分别填入下列□、 ○和 $\diamondsuit$ 内, 并比较两个运算结果:  
+Select any three rational numbers(At least one is negative), Fill in the following each:□、 ○and $\diamondsuit$ Internal, And compare the two results:
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/760a4f3e6bd61baa381d52c9dea806f56154775bb1ae0e4129983e909bce0c9d.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/760a4f3e6bd61baa381d52c9dea806f56154775bb1ae0e4129983e909bce0c9d.jpg)
 
-你能发现什么?  
+What can you find??
 
-# 概括  
+# Summary
 
-有理数的运算仍满足分配律.  
+Rational calculations still satisfy the distribution laws.
 
-分配律: 一个数与两个数的和相乘, 等于把这个数分别与这两个数相乘, 再把积相加.  
+Distribution Law: The sum of one number and two numbers, It's equal to multiplying this number by two, And then add up.
 
 $$
 a ( b + c ) = a b + a c .
-$$  
+$$
 
-例 4　 计算:  
+Example 4　 Calculate:
 
-(1) $3 0 \times \left( { \frac { 1 } { 2 } } - { \frac { 2 } { 3 } } + { \frac { 2 } { 5 } } \right) ;$ (2) 4.98 × (- 5) .  
+(1) $3 0 \times \left( { \frac { 1 } { 2 } } - { \frac { 2 } { 3 } } + { \frac { 2 } { 5 } } \right) ;$ (2) 4.98 × (- 5) .
 
-解　 (1) $3 0 \times \left( { \frac { 1 } { 2 } } - { \frac { 2 } { 3 } } + { \frac { 2 } { 5 } } \right)$ 1 2 2= 30 × 30 × + 30 ×2 3 5= 15 - 20 + 12= 7.  
+Solution　 (1) $3 0 \times \left( { \frac { 1 } { 2 } } - { \frac { 2 } { 3 } } + { \frac { 2 } { 5 } } \right)$ 1 2 2= 30 × 30 × + 30 ×2 3 5= 15 - 20 + 12= 7.
 
-(2) 4.98 × (- 5) $\begin{array} { l } { = ( 5 - 0 . 0 2 ) \times ( -  5 ) } \\ { = - \ 2 5 + 0 . 1 } \\ { = - \ 2 4 . 9 . } \end{array}$  
+(2) 4.98 × (- 5) $\begin{array} { l } { = ( 5 - 0 . 0 2 ) \times ( -  5 ) } \\ { = - \ 2 5 + 0 . 1 } \\ { = - \ 2 4 . 9 . } \end{array}$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-例 5 计算:  
+Example 5 Calculate:
 
 $$
 \begin{array} { r l } & { \frac { 3 } { 4 } \times \left( 8 - \frac { 4 } { 3 } - \frac { 1 4 } { 1 5 } \right) , } \\ & { \mathrm { s } \times \left( - \frac { 2 } { 5 } \right) - ( - 4 ) \times \left( - \frac { 2 } { 9 } \right) + ( - 8 ) \times \frac { 3 } { 5 } , } \\ & { \mathrm { ( I I ) } \quad \frac { 3 } { 4 } \times \left( 8 - \frac { 4 } { 3 } - \frac { 1 4 } { 1 5 } \right) } \\ & { \mathrm { = } \frac { 3 } { 4 } \times 8 - \frac { 3 } { 4 } \times \frac { 4 } { 3 } - \frac { 3 } { 4 } \times \frac { 1 4 } { 1 5 } } \\ & { \mathrm { = 6 - 1 - \frac { 7 } { 1 0 } } } \\ & { \mathrm { = 4 } \frac { 3 } { 1 0 } } \end{array}
-$$  
+$$
 
 $$
 8 \times \left( - \frac { 2 } { 5 } \right) - ( - 4 ) \times \left( - \frac { 2 } { 9 } \right) + ( - 8 ) \times \frac { 3 } { 5 }
-$$  
+$$
 
 $$
 { \begin{array} { r l } & { \mathbf { \lambda } = \left( - ~ 8 \right) ~ \times { \frac { 2 } { 5 } } + \left( ~ - ~ 8 \right) ~ \times { \frac { 3 } { 5 } } - 4 \times { \frac { 2 } { 9 } } } \\ & { \mathbf { \lambda } = \left( - ~ 8 \right) ~ \times \left( { \begin{array} { l } { 2 } \\ { 5 } \end{array} } + { \begin{array} { l } { 3 } \\ { 5 } \end{array} } \right) - { \frac { 8 } { 9 } } } \\ & { \mathbf { \lambda } = - ~ 8 - { \frac { 8 } { 9 } } } \\ & { \mathbf { \lambda } = - ~ 8 ~ { \frac { 8 } { 9 } } . } \end{array} }
-$$  
+$$
 
-由上面的例子可以看出, 适当运用运算律, 可使运算简便. 有时需要先把算式变形, 再运用分配律, 如例4(2); 有时可以反向运用分配律, 如例5(2).  
+As can be seen from the above example, Appropriate application of algorithms, It'll make it easy. Sometimes you have to transform the algorithm first, Reapply distribution law, Like this 4(2); Sometimes it's possible to reverse the distribution, Like this 5(2).
 
-1. 计算:  
+1. Calculate:
 
-(1) $( - \ 6 ) \ \times \ \left( - \ { \frac { 1 } { 2 } } + { \frac { 1 } { 3 } } \right) ;$ (2) $\left( { \frac { 1 } { 4 } } - { \frac { 1 } { 2 } } + { \frac { 1 } { 6 } } \right) \times 1 2 ;$ (3) $( - \ 1 0 0 2 ) \ \times \ 1 7 .$ .  
+(1) $( - \ 6 ) \ \times \ \left( - \ { \frac { 1 } { 2 } } + { \frac { 1 } { 3 } } \right) ;$ (2) $\left( { \frac { 1 } { 4 } } - { \frac { 1 } { 2 } } + { \frac { 1 } { 6 } } \right) \times 1 2 ;$ (3) $( - \ 1 0 0 2 ) \ \times \ 1 7 .$ .
 
-2. 计算:  
+2. Calculate:
 
 $$
 \begin{array} { l } { \displaystyle { \left( \frac { 7 } { 9 } - \frac { 5 } { 6 } + \frac { 3 } { 4 } \right) \times 3 6 ; } } \\ { \displaystyle { 9 \frac { 5 } { 6 } \times 6 . } } \end{array}
-$$  
+$$
 
-# 读一读  
+# Reading
 
-# 队列操练中的数学趣题  
+# Math fun in queue exercises
 
-在一次队列操练活动中, 某班45 名学生面向老师站成一行横队. 老师每次让其中任意6 名学生向后转(不论原来方向如何), 能否经过若干次后, 全体学生都背向老师站立? 如果能的话, 请你设计一种方案; 如果不能, 请说明理由.  
+In a line exercise, Some class 45 The students stood in a crossline towards the teacher. Every time a teacher lets it go, 6 Students turn around(Whatever it is,), Could it be a couple of times?, All students stand against their teachers? If you can, Please design a plan; If not,, Please explain your reasons.
 
-这个问题似乎与数学无关, 却又难以入手. 注意到学生站立有两个方向, 与具有相反意义的量有关, 向后转又可想象为进行一次运算, 或者说改变一次正负号. 我们能否设法联系有理数的知识进行讨论?  
+It doesn't seem to have anything to do with math, It's hard to get started. I noticed that students stand in two directions, It's about the opposite amount, Turn backwards and imagine an operation, Or a change of sign. Is there any way we can discuss this in the context of rational knowledge??
 
-让我们再发挥一下想象力: 假设每名学生胸前有一块号码布, 上面写 $^ {  } + 1 ^ { \prime \prime }$ , 背后有一块号码布, 上面写“ - 1”, 那么一开始全体学生面向老师, 胸前45 个 $^ + 1$ 的“乘积” 是 $^ + 1$ . 如果最后学生全部背向老师, 那么45 个 - 1 的“乘积” 是 - 1.  
+Let's use our imagination again: Suppose each student has a number sheet on his chest, It says, $^ {  } + 1 ^ { \prime \prime }$ , There's a number sheet behind it, It says,“ - 1”, At first, the students were looking at the teacher, On the chest 45 individual $^ + 1$ is the product $^ + 1$ . If the last student turns back to the teacher,, Well 45 individual - 1 is the product - 1.
 
-再来观察每次6 名学生向后转进行的是什么 “运算” . 我们也设想老师不叫 “向后转”, 而称这6 名学生面向老师的数字都 “乘以 - 1”.  
+Every time 6 What are the students turning back?” . We also think the teacher doesn't say, "Turn backwards."”, It's called this 6 The number of students looking at their teachers is " times." - 1”.
 
-这样问题就解决了: 每次 “运算” 乘以6 个 - 1, 即乘以 $^ + 1$ , 故 45个数的乘积不变(数学上称不变量), 始终是 $^ + 1$ . 所以要乘积变为 - 1 是不可能的.  
+Therefore the problem is solved: Each "calculation" multiplied by 6 individual - 1, times $^ + 1$ , And so 45 Number of multipliers unchanged(Math is not variable), Always $^ + 1$ . Therefore the product becomes - 1 It's impossible.
 
-道难题, 应用有理数的简单运算后被别出心裁地解决了.  
+Problem, The application of a simple operation with a rational number of calculations has been solved with no care.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 习题1. 9  
+# Exercises 1. 9
 
-# A 组  
+# Group A
 
-1. 计算:  
+1. Calculate:
 
-(1) $\mathrm { ( - ~ 6 ) ~ } \times \mathrm { ( - ~ 7 ) } ;$ (2) $( - \ 5 ) \ \times \ 1 2$ ;   
-(3) $0 . 5 \times ( - 0 . 4 )$ ; (4) $- 4 . 5 \times ( - 0 . 3 2 ) .$ .  
+(1) $\mathrm { ( - ~ 6 ) ~ } \times \mathrm { ( - ~ 7 ) } ;$ (2) $( - \ 5 ) \ \times \ 1 2$ ;
+(3) $0 . 5 \times ( - 0 . 4 )$ ; (4) $- 4 . 5 \times ( - 0 . 3 2 ) .$ .
 
-2. 计算:  
+2. Calculate:
 
-(1) $\begin{array} { c } { \displaystyle \frac { 1 } { 2 } \times \left( - \frac { 4 } { 7 } \right) ; } \\ { \displaystyle - \frac { 4 } { 1 5 } \times 5 ; } \end{array}$ (2) $\begin{array} { c } { { \left( - \displaystyle \frac { 5 } { 6 } \right) \times \left( - \displaystyle \frac { 3 } { 1 0 } \right) ; } } \\ { { ( - 0 . 3 ) \times \left( - \displaystyle \frac { 1 0 } { 7 } \right) . } } \end{array}$ (3) (4)  
+(1) $\begin{array} { c } { \displaystyle \frac { 1 } { 2 } \times \left( - \frac { 4 } { 7 } \right) ; } \\ { \displaystyle - \frac { 4 } { 1 5 } \times 5 ; } \end{array}$ (2) $\begin{array} { c } { { \left( - \displaystyle \frac { 5 } { 6 } \right) \times \left( - \displaystyle \frac { 3 } { 1 0 } \right) ; } } \\ { { ( - 0 . 3 ) \times \left( - \displaystyle \frac { 1 0 } { 7 } \right) . } } \end{array}$ (3) (4)
 
-3. 计算:  
+3. Calculate:
 
-(1) $\mathbf { - } \ 2 \times ( \mathbf { - \ 3 } ) \ \times ( \mathbf { - \ 4 } ) \ ;$ (2) $\begin{array} { r l } & { \displaystyle \textrm { \textrm {  { \varepsilon } } } _ { 6 } \times ( - 7 ) \times ( - 5 ) \} , } \\ & { \displaystyle ( - 8 ) \times \frac { 3 } { 1 6 } \times ( - 1 ) \times \frac { 1 } { 2 } ; } \\ & { \displaystyle - 9 \times ( + 1 1 ) - 1 2 \times ( - 8 ) . } \end{array}$   
-(3) $1 0 0 \times \left( - \ 1 \right) \times \left( - \ 0 . 1 \right) ;$ (4)   
-(5) $2 1 \times ( - 7 1 ) \times 0 \times 4 3 ;$ (6)  
+(1) $\mathbf { - } \ 2 \times ( \mathbf { - \ 3 } ) \ \times ( \mathbf { - \ 4 } ) \ ;$ (2) $\begin{array} { r l } & { \displaystyle \textrm { \textrm {  { \varepsilon } } } _ { 6 } \times ( - 7 ) \times ( - 5 ) \} , } \\ & { \displaystyle ( - 8 ) \times \frac { 3 } { 1 6 } \times ( - 1 ) \times \frac { 1 } { 2 } ; } \\ & { \displaystyle - 9 \times ( + 1 1 ) - 1 2 \times ( - 8 ) . } \end{array}$
+(3) $1 0 0 \times \left( - \ 1 \right) \times \left( - \ 0 . 1 \right) ;$ (4)
+(5) $2 1 \times ( - 7 1 ) \times 0 \times 4 3 ;$ (6)
 
-# B 组  
+# Group B
 
-4. 计算:  
+4. Calculate:
 
 $$
 \begin{array} { l } { { \displaystyle ( - \frac { 1 } { 2 0 } ) \times \frac { 5 } { 4 } \times ( - 8 ) } } \\ { { \displaystyle  \frac { 5 } { 6 } \times ( - 2 \frac { 2 } { 5 } ) \times \frac { 3 } { 5 } . } } \end{array}
-$$  
+$$
 
-5. 计算:  
+5. Calculate:
 
 $$
 \begin{array} { l } { \displaystyle \left( \frac { 1 } { 3 } - \frac { 5 } { 7 } - \frac { 2 } { 5 } \right) \times 1 0 5 ; } \\ { \displaystyle - \frac { 3 } { 4 } \times 5 . 5 - 0 . 7 5 \times \left( - \frac { 7 } { 2 } \right) . } \end{array}
-$$  
+$$
 
-# 第 1 章 有理数  
+# Rational Numbers
 
-# 1.10 有理数的除法  
+# 1.10 Division of Rational Numbers
 
-小学里已学过数的除法. 回想一下, 除法的意义是什么? 它与乘法有什么关系?  
+The division of numbers in primary school. Think back, What's the meaning of division?? What does it have to do with multiplication??
 
-试一试: $( - \ 6 ) \ \div \ 2 = ?$  
+Try it: $( - \ 6 ) \ \div \ 2 = ?$
 
-根据除法的意义, 这就是要求一个数 “ ? ”, 使  
+By the meaning of division,, That's what you're asking for “ ? ”, Jean
 
 $$
 ( \begin{array} { c } { { ? } } \end{array} ) \ \times \ 2 = ( \begin{array} { c } { { - \ 6 ) . } } \end{array}
-$$  
+$$
 
-根据有理数的乘法法则, 有  
+According to the rational multiplication rule, Yeah
 
-所以  
+Therefore
 
 $$
 \begin{array} { c } { { ( - 3 ) \ \times \ 2 = - \ 6 , } } \\ { { } } \\ { { ( - \ 6 ) \ \div \ 2 = - \ 3 . } } \end{array}
-$$  
+$$
 
-另外, 我们还知道  
+And, We know
 
 $$
 ( - \ 6 ) \ \times \frac { 1 } { 2 } = - \ 3 .
-$$  
+$$
 
-比较以上两式, 即有  
+Compare the two above, Yeah
 
 $$
 ( - \ 6 ) \ \div \ 2 = ( - \ 6 ) \times \frac { \ 1 } { 2 } .
-$$  
+$$
 
-这表明, 除法可以转化为乘法进行运算.  
+That means, Divisions can be converted to multiplications for operation.
 
-# 做一做  
+# Try It
 
-填空:  
+Fill:
 
-(1) $\begin{array} { r } { 8 \div ( - 2 ) = 8 \times ( \qquad ) ; \qquad ( 2 ) \ 6 \div ( - 3 ) = 6 \times ( \qquad ) ; } \end{array}$ (3) $( - 6 ) \div ( \mathrm { ~  ~ \rho ~ } ) = ( - 6 ) \times \frac 1 3 ; \mathrm { ~  ~ \rho ~ } ( 4 ) \ ( - 6 ) \div ( \mathrm { ~  ~ \rho ~ } ) = ( - 6 ) \times \frac 2 3 .$  
+(1) $\begin{array} { r } { 8 \div ( - 2 ) = 8 \times ( \qquad ) ; \qquad ( 2 ) \ 6 \div ( - 3 ) = 6 \times ( \qquad ) ; } \end{array}$ (3) $( - 6 ) \div ( \mathrm { ~  ~ \rho ~ } ) = ( - 6 ) \times \frac 1 3 ; \mathrm { ~  ~ \rho ~ } ( 4 ) \ ( - 6 ) \div ( \mathrm { ~  ~ \rho ~ } ) = ( - 6 ) \times \frac 2 3 .$
 
-做完上述填空后, 你有什么发现?  
+After this filling-out,, What have you got??
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-小学里我们学过倒数, 对于有理数仍然有:  
-乘积是 1 的两个数互为倒数(reciprocal) .  
-例如, - 2 与 $- \frac { 1 } { 2 }$ 互为倒数, $- { \frac { 2 } { 3 } }$ 与 $- { \frac { 3 } { 2 } }$ 互为倒数.这样, 有理数的除法可以转化为乘法:  
-除以一个数等于乘以这个数的倒数.  
+We've been down in primary school, There's still one for rational numbers:
+The product is 1 The two numbers are back to back(reciprocal) .
+For example:, - 2 and $- \frac { 1 } { 2 }$ Countdown, $- { \frac { 2 } { 3 } }$ and $- { \frac { 3 } { 2 } }$ Countdown.Here, Division of Rational Numbers can be converted to multiplication:
+Divide by one number equals the reciprocal of this number.
 
-# 注意  
+# Note
 
-0 不能作除数.  
+0 Can't divide.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/124631007c393b0fe1ba0d529d2cd2b827dcb003db22daa9233ce90064ef2005.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/124631007c393b0fe1ba0d529d2cd2b827dcb003db22daa9233ce90064ef2005.jpg)
 
-例 1　 计算:  
+Example 1　 Calculate:
 
-(1) $( - 1 8 ) \div 6 ; \qquad ( 2 ) \left( - { \frac { 1 } { 5 } } \right) \div \left( - { \frac { 2 } { 5 } } \right) ;$ $\frac { 6 } { 2 5 } \div \left( - \frac { 4 } { 5 } \right) .$  
+(1) $( - 1 8 ) \div 6 ; \qquad ( 2 ) \left( - { \frac { 1 } { 5 } } \right) \div \left( - { \frac { 2 } { 5 } } \right) ;$ $\frac { 6 } { 2 5 } \div \left( - \frac { 4 } { 5 } \right) .$
 
-解　 (1) $( - \ 1 8 ) \ \div \ 6 = ( - \ 1 8 ) \times \frac { 1 } { 6 } = - \ 3 .$  
+Solution　 (1) $( - \ 1 8 ) \ \div \ 6 = ( - \ 1 8 ) \times \frac { 1 } { 6 } = - \ 3 .$
 
-$\left( - { \frac { 1 } { 5 } } \right) \div \left( - { \frac { 2 } { 5 } } \right) = \left( - { \frac { 1 } { 5 } } \right) \times \left( - { \frac { 5 } { 2 } } \right) = { \frac { 1 } { 2 } } .$ (3) ${ \frac { 6 } { 2 5 } } \div { \left( - { \frac { 4 } { 5 } } \right) } = { \frac { 6 } { 2 5 } } \times { \left( - { \frac { 5 } { 4 } } \right) } = - { \frac { 3 } { 1 0 } } .$  
+$\left( - { \frac { 1 } { 5 } } \right) \div \left( - { \frac { 2 } { 5 } } \right) = \left( - { \frac { 1 } { 5 } } \right) \times \left( - { \frac { 5 } { 2 } } \right) = { \frac { 1 } { 2 } } .$ (3) ${ \frac { 6 } { 2 5 } } \div { \left( - { \frac { 4 } { 5 } } \right) } = { \frac { 6 } { 2 5 } } \times { \left( - { \frac { 5 } { 4 } } \right) } = - { \frac { 3 } { 1 0 } } .$
 
-因为除法可以转化为乘法, 所以与乘法类似, 我们也有如下有理数的除法法则:  
+Because division turns into multiplication, Therefore it's like multiplying, We also have the logical law of division:
 
-两数相除, 同号得正, 异号得负, 并把绝对值相除;  
+Two numbers divided, It's got the same number, It's a bad sign, And separate absolute values;
 
-0 除以任何一个不等于0 的数, 都得0 .  
+0 Not equal to any of them 0 Number, All of it 0 .
 
-知道了有理数的除法法则以后, 我们很容易看出, 有理数都可以表示成两个整数之商. 任何整数都是它除以1 所得的商; 任何正分数(带分数先化成假分数)都是它的分子除以分母所得的商; 任何负分数也可以被看成两个整数( 其中一个是负整数) 的商, 例如, $- 3 { \frac { 1 } { 7 } } = - { \frac { 2 2 } { 7 } } =$ ${ \frac { - 2 2 } { 7 } } = { \frac { 2 2 } { - 7 } }$ 它是 - 22 与 7 或 22 与 - 7 的商.  
+When you know the rational law of division,, It's easy to see, Rational numbers are two integers. Any integer is divided by it 1 Business; Any positive fraction(Start with a fraction into a false fraction)They're all their molecules divided by denominators; Any negative fraction can also be considered two integers( One of them is a negative integer) Business, For example:, $- 3 { \frac { 1 } { 7 } } = - { \frac { 2 2 } { 7 } } =$ ${ \frac { - 2 2 } { 7 } } = { \frac { 2 2 } { - 7 } }$ It is - 22 and 7 or 22 and - 7 Business.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b4f8e7225660c953f149d5d76ebb3b50acc05037c6db6d91e7989a2cb8e8e3d9.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b4f8e7225660c953f149d5d76ebb3b50acc05037c6db6d91e7989a2cb8e8e3d9.jpg)
 
-例 2 化简下列分数:  
+Example 2 Simplify the fractions below:
 
-(1) $\begin{array} { l } { { \mathrm { ~ \frac { ~ - ~ 1 2 ~ } { ~ 3 ~ } ~ } , } } \\ { { \mathrm { ~ \frac { ~ - ~ 2 4 ~ } { ~ - ~ 1 6 ~ } ~ } . } } \end{array}$ (2)  
+(1) $\begin{array} { l } { { \mathrm { ~ \frac { ~ - ~ 1 2 ~ } { ~ 3 ~ } ~ } , } } \\ { { \mathrm { ~ \frac { ~ - ~ 2 4 ~ } { ~ - ~ 1 6 ~ } ~ } . } } \end{array}$ (2)
 
-解 (1) $\frac { - \ 1 2 } { 3 } = \left( - \ 1 2 \right) \ \div \ 3 = - \ \left( 1 2 \div \ 3 \right) = - \ 4 .$  
+Solution (1) $\frac { - \ 1 2 } { 3 } = \left( - \ 1 2 \right) \ \div \ 3 = - \ \left( 1 2 \div \ 3 \right) = - \ 4 .$
 
 $$
 { \frac { - \ 2 4 } { - \ 1 6 } } = { \left( - \ 2 4 \right) } \ \div \ { \left( - \ 1 6 \right) } = 2 4 \div \ 1 6 = 1 \ { \frac { 1 } { 2 } } .
-$$  
+$$
 
-例 3 计算:  
+Example 3 Calculate:
 
 $$
 \begin{array} { l } { \displaystyle \left( - \frac { 3 } { 5 } \right) \div \left( - \frac { 3 } { 2 } \right) ; } \\ { \displaystyle - \frac { 1 } { 2 } \div \frac { 7 } { 8 } \times \left( - \frac { 3 } { 4 } \right) . } \end{array}
-$$  
+$$
 
-解 　 (1) $\left( - { \frac { 3 } { 5 } } \right) \div ( - { \frac { 3 } { 2 } } ) = { \frac { 3 } { 5 } } \div { \frac { 3 } { 2 } } = { \frac { 3 } { 5 } } \times { \frac { 2 } { 3 } } = { \frac { 2 } { 5 } } .$  
+Solution 　 (1) $\left( - { \frac { 3 } { 5 } } \right) \div ( - { \frac { 3 } { 2 } } ) = { \frac { 3 } { 5 } } \div { \frac { 3 } { 2 } } = { \frac { 3 } { 5 } } \times { \frac { 2 } { 3 } } = { \frac { 2 } { 5 } } .$
 
 $$
 - { \frac { 1 } { 2 } } \div { \frac { 7 } { 8 } } \times \left( - { \frac { 3 } { 4 } } \right) = { \frac { 1 } { 2 } } \times { \frac { 8 } { 7 } } \times { \frac { 3 } { 4 } } = { \frac { 3 } { 7 } } .
-$$  
+$$
 
-分数可以理解为两个整数的商,解答 也 可 以 这 样书写:  
+The scores can be understood as two integers,The answer can also be written in this way:
 
-(1) ${ \begin{array} { r l } { { \cfrac { - \ 1 2 } { 3 } } = - { \cfrac { 1 2 } { 3 } } } \\ { = - \ 4 ; } \end{array} }$ (2) ${ \begin{array} { r } { { \cfrac { - 2 4 } { - 1 6 } } = { \cfrac { 2 4 } { 1 6 } } } \\ { = 1 { \cfrac { 1 } { 2 } } . } \end{array} }$  
+(1) ${ \begin{array} { r l } { { \cfrac { - \ 1 2 } { 3 } } = - { \cfrac { 1 2 } { 3 } } } \\ { = - \ 4 ; } \end{array} }$ (2) ${ \begin{array} { r } { { \cfrac { - 2 4 } { - 1 6 } } = { \cfrac { 2 4 } { 1 6 } } } \\ { = 1 { \cfrac { 1 } { 2 } } . } \end{array} }$
 
-先定 正 负 号,再算绝对值.  
+Positive negative number,It's an absolute value.
 
-1. 写出下列各数的倒数:  
+1. Write the reciprocal of the following:
 
-(1) ${ \frac { 5 } { 6 } } ;$ (2) $\mathbf { - { \frac { 3 } { 7 } } ; }$ (3) - 5;   
-(4) 1; (5) - 1; (6) 0.2 .  
+(1) ${ \frac { 5 } { 6 } } ;$ (2) $\mathbf { - { \frac { 3 } { 7 } } ; }$ (3) - 5;
+(4) 1; (5) - 1; (6) 0.2 .
 
-2. 计算:  
+2. Calculate:
 
-(1) $3 6 \div ( - 3 ) ;$ (2) $( - \ 2 ) \ \div \ \frac { 1 } { 2 } ;$ (3) $0 \div ( - 5 )$ ; (4) $8 \div ( - 0 . 2 )$ ; (5) $\left( - { \frac { 7 } { 8 } } \right) \div \left( - { \frac { 3 } { 4 } } \right) ;$ (6) $( - ~ 6 ) ~ \div ~ ( - ~ 4 ) ~ \div ~ ( - ~ \frac { 3 } { 5 } ) .$  
+(1) $3 6 \div ( - 3 ) ;$ (2) $( - \ 2 ) \ \div \ \frac { 1 } { 2 } ;$ (3) $0 \div ( - 5 )$ ; (4) $8 \div ( - 0 . 2 )$ ; (5) $\left( - { \frac { 7 } { 8 } } \right) \div \left( - { \frac { 3 } { 4 } } \right) ;$ (6) $( - ~ 6 ) ~ \div ~ ( - ~ 4 ) ~ \div ~ ( - ~ \frac { 3 } { 5 } ) .$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-3. 下列计算正确吗? 为什么?  
+3. Are the following calculations correct?? Why??
 
 $$
 ( - 3 ) \div { \frac { 1 } { 4 } } \div { \frac { 1 } { 4 } } = ( - 3 ) \div \left( { \frac { 1 } { 4 } } \div { \frac { 1 } { 4 } } \right) = ( - 3 ) \div 1 = - 3 .
-$$  
+$$
 
-# 习题1. 10  
+# Exercises 1. 10
 
-# 组  
+# Group
 
-1. 写出下列各数的倒数:  
+1. Write the reciprocal of the following:
 
-(1) - 15; (2) 0.25; (3) $3 { \frac { 1 } { 3 } } ;$ (4) $- 5 { \frac { 2 } { 5 } } .$  
+(1) - 15; (2) 0.25; (3) $3 { \frac { 1 } { 3 } } ;$ (4) $- 5 { \frac { 2 } { 5 } } .$
 
-2. 计算:  
+2. Calculate:
 
-(1) $( - ~ 4 2 ) \div 1 2 ;$ (2) $\begin{array} { l } { { \displaystyle ( - \ 5 6 ) \ \div \ ( - \ 1 4 ) \ ; } } \\ { { \displaystyle \frac { 3 } { 5 } \ \div \ ( - \ 1 ) \ ; } } \end{array}$ (3) $- \ 1 8 \ \div \ 0 . 6$ ; (4) (5) $\mathrm { ~ - ~ } \frac { 1 } { 4 } \div \frac { 3 } { 2 } ;$ (6) $\left. - 0 . 2 5 \div \left( - \frac { 3 } { 8 } \right) . \right.$  
+(1) $( - ~ 4 2 ) \div 1 2 ;$ (2) $\begin{array} { l } { { \displaystyle ( - \ 5 6 ) \ \div \ ( - \ 1 4 ) \ ; } } \\ { { \displaystyle \frac { 3 } { 5 } \ \div \ ( - \ 1 ) \ ; } } \end{array}$ (3) $- \ 1 8 \ \div \ 0 . 6$ ; (4) (5) $\mathrm { ~ - ~ } \frac { 1 } { 4 } \div \frac { 3 } { 2 } ;$ (6) $\left. - 0 . 2 5 \div \left( - \frac { 3 } { 8 } \right) . \right.$
 
-3. 化简下列分数:  
+3. Simplify the fractions below:
 
-(1) ${ \frac { - 2 1 } { 7 } } ;$ (2) ${ \frac { 2 } { - 1 2 } } ;$ (3) ${ \frac { - 5 4 } { - 8 } } .$  
+(1) ${ \frac { - 2 1 } { 7 } } ;$ (2) ${ \frac { 2 } { - 1 2 } } ;$ (3) ${ \frac { - 5 4 } { - 8 } } .$
 
-# B 组  
+# Group B
 
-4. 计算:  
+4. Calculate:
 
 $$
 \begin{array} { l } { \displaystyle { \left. \begin{array} { l } { \displaystyle \left( - \frac { 3 } { 4 } \right) \times \left( - \frac { 1 } { 2 } \right) \div \left( - 2 \frac { 1 } { 4 } \right) ; } } \\ { \displaystyle } \\ { \displaystyle { \vphantom { \Biggl ( } ) \vphantom { \Biggl ( } ) \begin{array} { l } { \displaystyle \left( - 0 . 2 5 \right) \times \frac { 1 1 } { 2 4 } ; } } \\ { \displaystyle { \vphantom { \Biggl ( } ) \left( - \frac { 2 } { 3 } \right) \div \frac { 1 } { 3 } \div \left( - \frac { 1 } { 2 } \right) . } } \end{array} \right. } } \end{array} \end{array}
-$$  
+$$
 
-# 第 1 章 有理数  
+# Rational Numbers
 
-5. (1) 把图 $\textcircled{1}$ 中第一个圈里的每一个数, 分别乘以 - 2, 将结果写在第二个圈里对应的位置;  
+5. (1) Get the map $\textcircled{1}$ Every number in the first circle, Multiply - 2, Write the results in the second circle;
 
-(2) 把图 $\textcircled{2}$ 中第一个圈里的每一个数, 分别除以 - 2, 将结果写在第二个圈里对应的位置.  
+(2) Get the map $\textcircled{2}$ Every number in the first circle, Division by - 2, Write the results in the second circle.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/293c77eaab9a3966a0e6ee703177c2b00d53c7dae0483d35459ef9686553a488.jpg)  
-(第 5 题)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/293c77eaab9a3966a0e6ee703177c2b00d53c7dae0483d35459ef9686553a488.jpg)
+(I don't think so 5 Topic)
 
-# 1.11 有理数的乘方  
+# 1.11 Powers of Rational Numbers
 
-在小学里, 我们已经学过:  
+In elementary school, We've learned:
 
-${ \boldsymbol { a } } \cdot { \boldsymbol { a } }$ 记作 $a ^ { 2 }$ , 读作 $\mathbf { \Omega } _ { a }$ 的平方(或 $\mathbf { \Omega } _ { a }$ 的 2 次方);$a \cdot a \cdot a$ 记作 $a ^ { 3 }$ , 读作 $\mathbf { \Omega } _ { a }$ 的立方(或 $\mathbf { \Omega } _ { a }$ 的 3 次方) .一般地, $n$ 个相同的乘数 $\mathbf { \Omega } _ { a }$ 相乘:  
+${ \boldsymbol { a } } \cdot { \boldsymbol { a } }$ Recorded $a ^ { 2 }$ , Read $\mathbf { \Omega } _ { a }$ square(or $\mathbf { \Omega } _ { a }$ Yes 2 Minor);$a \cdot a \cdot a$ Recorded $a ^ { 3 }$ , Read $\mathbf { \Omega } _ { a }$ Cubes(or $\mathbf { \Omega } _ { a }$ Yes 3 Minor) .Summary, $n$ Same multiplier $\mathbf { \Omega } _ { a }$ Multiplication:
 
-你能利用正方形的面积和正方体的体 积 来 解 释 平方、 立方的意义吗?  
+Can you use the size of squares and the volume of squares to decipher the meaning of squares and cubes??
 
 $$
 \underbrace { a \cdot a \cdot \cdots \cdot a } _ { n \uparrow } ,
-$$  
+$$
 
-记作 $a ^ { n }$ .  
+Recorded $a ^ { n }$ .
 
-例如  
+For example:
 
 $$
 2 \times 2 \times 2 = 2 ^ { 3 } ,
-$$  
+$$
 
 $$
 ( - 2 ) ( - 2 ) ( - 2 ) ( - 2 ) = ( - 2 ) ^ { 4 } .
-$$  
+$$
 
-这种求几个相同乘数的积的运算, 叫做乘方(involution), 乘方的结果叫做幂(power) . 在 $a ^ { n }$ 中, $\mathbf { \Omega } _ { a }$ 叫做底数(base number), $n$ 叫做指数(exponent), $a ^ { n }$ 读作 $\mathbf { \Omega } _ { a }$ 的 $\mathbf { \Omega } _ { n }$ 次方, 当把 $a ^ { n }$ 看作是 $\mathbf { \Omega } _ { a }$ 的 $n$ 次方的结果时, 也可读作 $\mathbf { \alpha } _ { a }$ 的 $n$ 次幂.  
+It's the sum of the same multipliers, It's called a multiplication(involution), The result of the multiplication is called Zen(power) . Yes $a ^ { n }$ Medium, $\mathbf { \Omega } _ { a }$ It's called the bottom count(base number), $n$ It's called an index(exponent), $a ^ { n }$ Read $\mathbf { \Omega } _ { a }$ Yes $\mathbf { \Omega } _ { n }$ Minor, ♪ As a hand ♪ $a ^ { n }$ Consider it $\mathbf { \Omega } _ { a }$ Yes $n$ At the lower end, Or read $\mathbf { \alpha } _ { a }$ Yes $n$ I don't know.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b407cc29c9e3a0f448773ba95bd469a7e884eb46e077abeb689a8ebd03af0693.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b407cc29c9e3a0f448773ba95bd469a7e884eb46e077abeb689a8ebd03af0693.jpg)
 
-例如, 在 $2 ^ { 3 }$ 中, 底数是 2, 指数是 3 . $2 ^ { 3 }$ 读 作 2 的 3 次 方, 或 2 的 3次幂.  
+For example:, Yes $2 ^ { 3 }$ Medium, At the bottom, 2, The index is 3 . $2 ^ { 3 }$ Publications 2 Yes 3 Introduction, or 2 Yes 3 I don't know.
 
-一个数可以看作这个数本身的1 次方, $\boldsymbol { a } ^ { \scriptscriptstyle 1 }$ 就是 $\mathbf { \Omega } _ { a }$ , 指数1 通常省略不写.  
+A number can be seen as the number itself 1 Minor, $\boldsymbol { a } ^ { \scriptscriptstyle 1 }$ Yeah $\mathbf { \Omega } _ { a }$ , index 1 Usually omitted.
 
-例 1　 计算:  
+Example 1　 Calculate:
 
-(1) (- 2)3; (2) (- 2)4;解　 (1) $( - 2 ) ^ { 3 } = ( - 2 ) ( - 2 ) ( - 2 ) = - 8 .$ (2) $\left( - 2 \right) ^ { 4 } = \left( - 2 \right) \left( - 2 \right) \left( - 2 \right) \left( - 2 \right) = 1 6 .$ .(3) $\begin{array} { c } { { \left( - \ 2 \right) ^ { 5 } = \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) } } \\ { { = - \ 3 2 . } } \end{array}$ 根据有理数的乘法法则, 我们有:正数的任何次幂都是正数;负数的奇次幂是负数, 负数的偶次幂是正数.  
+(1) (- 2)3; (2) (- 2)4;Solution　 (1) $( - 2 ) ^ { 3 } = ( - 2 ) ( - 2 ) ( - 2 ) = - 8 .$ (2) $\left( - 2 \right) ^ { 4 } = \left( - 2 \right) \left( - 2 \right) \left( - 2 \right) \left( - 2 \right) = 1 6 .$ .(3) $\begin{array} { c } { { \left( - \ 2 \right) ^ { 5 } = \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) \left( \displaystyle - \ 2 \right) } } \\ { { = - \ 3 2 . } } \end{array}$ According to the rational multiplication rule, We do:Any time a positive number is a positive number;The odd number of negatives is negative, The even number of negatives is positive.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/0f4747b0ede236e59c5a03b2b30f58a3eb145a82d4e95958835168866d25116c.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/0f4747b0ede236e59c5a03b2b30f58a3eb145a82d4e95958835168866d25116c.jpg)
 
-1. (- 4) 5 读作什么? 其中底数是什么? 指数是什么? ( - 4) 5 是正数还是负数?  
+1. (- 4) 5 Read what?? What's the bottom of it?? What's the index?? ( - 4) 5 Is it positive or negative??
 
-2. 计算:  
+2. Calculate:
 
-(1) $1 0 ^ { 3 }$ ; (2) 105; (3) (- 1)3; (4) (- 1)10; (5) (- 0.1)3; (6) 3 2 (7) $( - 2 ) ^ { 3 } \times ( - 2 ) ^ { 2 } ; \qquad ( 8 ) \left( - \frac { 1 } { 2 } \right) ^ { 3 } \times \left( - \frac { 1 } { 2 } \right) ^ { 5 } .$  
+(1) $1 0 ^ { 3 }$ ; (2) 105; (3) (- 1)3; (4) (- 1)10; (5) (- 0.1)3; (6) 3 2 (7) $( - 2 ) ^ { 3 } \times ( - 2 ) ^ { 2 } ; \qquad ( 8 ) \left( - \frac { 1 } { 2 } \right) ^ { 3 } \times \left( - \frac { 1 } { 2 } \right) ^ { 5 } .$
 
-3. 3 的平方是什么? - 3 的平方是什么? 平方得9 的数有几个? 有没有平方得 - 9的有理数?  
+3. 3 What's the square?? - 3 What's the square?? Square 9 How many are there?? Is it even? - 9 Rational numbers?
 
-利用10 的幂, 有时可以方便地表示遇到的一些较大的数, 如:光的速度大约是 $3 0 0 0 0 0 0 0 0 0 \mathrm { m / s }$ ;截至 2022 年底, 全世界人口数大约是 8 000 000 000 .这样的大数, 读、 写都不方便, 考虑到10 的幂有如下特点:  
+Utilization 10 It's a jar, Sometimes it's easy to express some of the larger numbers encountered, Like:The speed of the light is about $3 0 0 0 0 0 0 0 0 0 \mathrm { m / s }$ ;As at 2022 End of year, The world's population is about 8 000 000 000 .That's a big number, I can't read, write, Considering 10 It's got the following characteristics:
 
 $$
 1 0 ^ { 2 } = 1 0 0 , \quad 1 0 ^ { 3 } = 1 0 0 0 , \quad 1 0 ^ { 4 } = 1 0 0 0 0 , \quad \cdots ,
-$$  
+$$
 
-即一般地, 10 的 $\mathbf { \Omega } _ { n }$ 次幂, 在1 的后面有 $n$ 个 0 . 利用这个事实, 我们可以用 10的幂表示一些绝对值较大的数, 如:  
+In general, 10 Yes $\mathbf { \Omega } _ { n }$ I don't know, Yes 1 There's something in the back $n$ individual 0 . Use the truth, We can use it 10 It's a bit of a big one, Like:
 
 $$
 8 0 0 0 0 0 0 0 0 0 0 0 = 8 \times 1 0 0 0 0 0 0 0 0 0 = 8 \times 1 0 ^ { 9 } ,
-$$  
+$$
 
 $$
 - 7 0 0 0 0 0 0 0 0 0 = - 7 \times 1 0 0 0 0 0 0 0 0 = - 7 \times 1 0 ^ { 8 } .
-$$  
+$$
 
-一个绝对值大于 10 的数可以记成 ${ a \times 1 0 ^ { n } }$ 的形式, 其中 $1 \leqslant \mid a \mid < 1 0$ , $n$ 是正整数. 像这样的记数法叫做科学记数法.  
+An absolute value greater than 10 You can count it ${ a \times 1 0 ^ { n } }$ Form, of which $1 \leqslant \mid a \mid < 1 0$ , $n$ Positive number. It's called science.
 
-例 2 用科学记数法表示下列各数:  
+Example 2 The following numbers are expressed in scientific terms::
 
-(1) 696 000;   
-(2) 1 000 000;   
-(3) -58 000 .   
-解　 (1) $6 9 6 0 0 0 = 6 . 9 6 \times 1 0 ^ { 5 }$ .   
-(2) $1 0 0 0 \ 0 0 0 = 1 \times 1 0 ^ { 6 }$ .   
-(3) $- 5 8 0 0 0 = - 5 . 8 \times 1 0 ^ { 4 } .$ .  
+(1) 696 000;
+(2) 1 000 000;
+(3) -58 000 .
+Solution　 (1) $6 9 6 0 0 0 = 6 . 9 6 \times 1 0 ^ { 5 }$ .
+(2) $1 0 0 0 \ 0 0 0 = 1 \times 1 0 ^ { 6 }$ .
+(3) $- 5 8 0 0 0 = - 5 . 8 \times 1 0 ^ { 4 } .$ .
 
-# 思考  
+# reflection
 
-用科学记数法表示一个数时, 10 的指数与原数的整数位数有什么关系?  
+Scientifically expressed as a number of hours, 10 What does the index have to do with the integer number of the original number??
 
-1. 用科学记数法表示下列各数:  
+1. The following numbers are expressed in scientific terms::
 
-(1) 80 000; (2) 100 000; (3) -12 300 000 .  
+(1) 80 000; (2) 100 000; (3) -12 300 000 .
 
-2. 下列用科学记数法表示的数, 原来各是什么数?  
+2. Numbers expressed in scientific mode, Therefore what are the numbers??
 
-(1) $2 \times 1 0 ^ { 5 }$ ; (2) $5 . 1 8 \times 1 0 ^ { 3 }$ ; (3) $7 . 0 4 \times 1 0 ^ { 6 }$ .  
+(1) $2 \times 1 0 ^ { 5 }$ ; (2) $5 . 1 8 \times 1 0 ^ { 3 }$ ; (3) $7 . 0 4 \times 1 0 ^ { 6 }$ .
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# $2 ^ { 6 4 }$ 有多大  
+# $2 ^ { 6 4 }$ How big?
 
-我们知道, $6 4 ^ { 2 } = 4 0 9 6$ , 它并不是一个很大的数. 我们将底数和指数交换,得到 $2 ^ { 6 4 }$ , 你能想象它有多大吗?  
+We know, $6 4 ^ { 2 } = 4 0 9 6$ , It's not a big number. We'll exchange the bottom and the index,Got it $2 ^ { 6 4 }$ , Can you imagine how big it is??
 
-传说古印度人西塔发明了国际象棋, 国王因此非常高兴, 决定要重赏西塔.西塔说: “陛下, 本人不要您的重赏, 只需您在本人的棋盘上赏一些麦子就行了. 在棋盘的第1 个格子里放1 粒, 在第2 个格子里放 2 粒, 在第 3 个格子里放4 粒, 在第4 个格子里放8 粒, 依此类推, 以后每一个格子里放的麦粒数都是前一个格子里放的麦粒数的2 倍, 直到放满64 个格子就行了.” 区区小数, 几粒麦子, 这有何难: “来人!” 国王令人如数付给西塔. 计数麦粒的工作开始了, 第 1个格子里放1 粒, 第2 个格子里放2 粒, 第3 个格子里放 4 粒……还没有放到第20 个格子, 一袋麦子就空了. 一袋又一袋的麦子被扛到国王面前来. 但是, 麦粒数一格接一格飞快地增长着. 国王很快就看出, 即使拿出全国的粮食, 也兑现不了他对西塔的诺言. 原来, 所需麦粒总数为  
+Legend is the ancient Indian Theta invented chess, The king is very pleased, It was decided to reward Theta.Theta said: “Your Majesty, I don't want your reward, All you need is some wheat on your board. On the board 1 Put it in a box 1 Particle, First 2 Put it in a box 2 Particle, First 3 Put it in a box 4 Particle, First 4 Put it in a box 8 Particle, And so on, The number of grains in each cell is the number of grains in the previous one 2 Double, Until it's full 64 Just a grid.” Area decimal, A few grains of wheat, Why is that so difficult?: “Help!!” The king is a man of honor. The work of counting grains has begun, I don't think so 1 Put it in a box 1 Particle, I don't think so 2 Put it in a box 2 Particle, I don't think so 3 Put it in a box 4 It's not in the first place 20 A grid, One sack of wheat is empty. A bag of wheat is carried to the king. But, The number of grains is growing fast. The king will soon see it, Even if it comes out with the country's food, And he can't keep his promise to Theta. I see, Total grain requirements
 
-$1 + 2 + 2 ^ { 2 } + 2 ^ { 3 } + \cdots + 2 ^ { 6 3 } = 2 ^ { 6 4 } - 1$ (到高中后你自己就能推导出来)$= 1 8 ~ 4 4 6 ~ 7 4 4 ~ 0 7 3 ~ 7 0 9 ~ 5 5 1 ~ 6 1 5 .$  
+$1 + 2 + 2 ^ { 2 } + 2 ^ { 3 } + \cdots + 2 ^ { 6 3 } = 2 ^ { 6 4 } - 1$ (After high school, you can figure it out yourself)$= 1 8 ~ 4 4 6 ~ 7 4 4 ~ 0 7 3 ~ 7 0 9 ~ 5 5 1 ~ 6 1 5 .$
 
-这些麦子究竟有多少? 若以每立方米仓库可存放约 1 500 万粒麦子计算, 这些麦子的体积大约是 12 000 亿立方米. 假如造一个高 4 米、 宽 10 米的仓库存放这些麦子, 那么仓库的长度大约是0.3 亿千米, 大致是地球到太阳的距离的 $\frac { 1 } { 5 }$ (地球到太阳的平均距离约为 1.496 亿千米), 或相当于绕地球赤道转 750 圈的长度(地球赤道的周长约为 40 076 千米), 而要生产这么多麦子, 全世界需要一千多年. 虽然国家十分富有, 但要这么多的麦子, 国王是怎么也拿不出来的.  
+How many grains are there?? If storage is possible per cubic metre 1 500 Count of 10,000 grains of wheat, The size of these wheat is about 12 000 Billion cubic metres. What if we build a tall one? 4 Rice, width 10 Rice's warehouse keeps the wheat, Therefore the length of the warehouse is about 0.3 Billions, About the distance from Earth to the sun $\frac { 1 } { 5 }$ (The average distance from Earth to the Sun is about 1.496 Billions), Or equivalent to orbiting the equator 750 Length of Circles(The length of the equator is about 40 076 Kilometres), And to produce so much wheat, The world needs more than a thousand years. Although the country is very rich, But there's so much wheat, The king can't get it out.
 
-可见, $2 ^ { 6 4 } = 1 8 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 6 1 6$ 是一个很大的数.  
+Visible, $2 ^ { 6 4 } = 1 8 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 6 1 6$ It's a big number.
 
-2018 年, 有人在一个名为 “因特网梅森质数大搜索” 的国际合作项目中发现 $2 ^ { 8 2 5 8 9 9 3 3 } \mathrm { ~ - ~ } 1$ 是一个质数 $. ( \mathbb { 1 } )$ , 它有 24 862 048 位, 而 $2 ^ { 6 4 }$ 才 20 位呢!  
+2018 Year, Someone found it in an international cooperation project called "The Internet's Massey Search" $2 ^ { 8 2 5 8 9 9 3 3 } \mathrm { ~ - ~ } 1$ A prime number $. ( \mathbb { 1 } )$ , It does 24 862 048 bit, And $2 ^ { 6 4 }$ Yeah 20 Where is it?!
 
-# 习题1. 11  
+# Exercises 1. 11
 
-# 组  
+# Group
 
-1. 把下列各式写成乘方的形式:  
+1. Write the following formulas into the form of a multiplier:
 
-(1) $6 \times 6 \times 6$ ;   
-(2) $2 . 1 \times 2 . 1$ ;   
-(3) $( - 3 ) \times ( - 3 ) \times ( - 3 ) \times ( - 3 ) ;$ (4) $\frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } .$  
+(1) $6 \times 6 \times 6$ ;
+(2) $2 . 1 \times 2 . 1$ ;
+(3) $( - 3 ) \times ( - 3 ) \times ( - 3 ) \times ( - 3 ) ;$ (4) $\frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } .$
 
-2. 把下列各式写成乘法的形式:  
+2. Write the following formulas as multiplications:
 
-(1) $3 ^ { 4 }$ ; $( 2 ) 4 ^ { 3 } ;$ (3) (- 1)2; (4) 1.13 .  
+(1) $3 ^ { 4 }$ ; $( 2 ) 4 ^ { 3 } ;$ (3) (- 1)2; (4) 1.13 .
 
-3. 用科学记数法表示下列各数:  
+3. The following numbers are expressed in scientific terms::
 
-(1) 3 210; (2) -50 600; (3) 18 000 000 .  
+(1) 3 210; (2) -50 600; (3) 18 000 000 .
 
-4. 下列用科学记数法表示的数, 原来各是什么数?  
+4. Numbers expressed in scientific mode, Therefore what are the numbers??
 
-(1) $2 \times 1 0 ^ { 6 }$ ; (2) $) 6 . 0 3 \times 1 0 ^ { 5 } ;$ (3) $\phantom { 0 } { - 5 . 0 0 2 } \times 1 0 ^ { 4 } .$  
+(1) $2 \times 1 0 ^ { 6 }$ ; (2) $) 6 . 0 3 \times 1 0 ^ { 5 } ;$ (3) $\phantom { 0 } { - 5 . 0 0 2 } \times 1 0 ^ { 4 } .$
 
-5. 填空:  
+5. Fill:
 
-(1) 地球离太阳约有1 亿5 千万千米, 1 亿5 千万用科学记数法表示为(2) 地球上煤的储量估计为15 万亿吨, 15 万亿用科学记数法表示为  
+(1) Earth is about to reach the sun 1 Billion 5 Thousands of miles, 1 Billion 5 In scientific terms(2) The Earth's coal reserves are estimated 15 trillion tons, 15 trillions of dollars in scientific numeric terms
 
-# B 组  
+# Group B
 
-6. 计算:  
+6. Calculate:
 
-(1) $\left( - \ 1 \ \frac { 1 } { 2 } \right) ^ { 2 } ;$ (2) (- 0.2)3;   
-(3) - (- 3)4; (4) - (- 3)5 .  
+(1) $\left( - \ 1 \ \frac { 1 } { 2 } \right) ^ { 2 } ;$ (2) (- 0.2)3;
+(3) - (- 3)4; (4) - (- 3)5 .
 
-7. 2020 年12 月, 我国科学家成功构建了 76 个光子的量子计算原型机“ 九章” . 当求解5 000 万个样本的高斯玻色取样问题时, “九章” 只需 $2 0 0 \mathrm { s }$ , 而截至2020 年世界最快的超级计算机则需要6 亿年. “九章” 平均每秒可处理多少个样本? (用科学记数法表示)  
+7. 2020 Year 12 Month, Our scientists have succeeded in building it 76 Quantum calculator prototype of a photo " Chapter 9” . When solve 5 000 It's a question of a sample of 10,000 samples, “Chapter 9" Just $2 0 0 \mathrm { s }$ , And as of 2020 The world's fastest supercomputer needs it 6 Billion years. “How many samples can be processed per second?? (In scientific terms)
 
-8. 地球绕太阳每小时转动经过的路程约为 $1 . 1 \times 1 0 ^ { 5 } \ \mathrm { k m }$ , 声音在空气中每小时约传播$1 . 2 \times 1 0 ^ { 3 } ~ \mathrm { k m }$ . 地球绕太阳转动的速度与声音传播的速度哪个快?  
+8. The Earth rotates around the sun about an hour ago $1 . 1 \times 1 0 ^ { 5 } \ \mathrm { k m }$ , The sound spreads around the air every hour$1 . 2 \times 1 0 ^ { 3 } ~ \mathrm { k m }$ . The speed at which the Earth spins around the sun and the speed at which the sound spreads?
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 1.12 有理数的混合运算  
+# 1.12 Mixed Operations on Rational Numbers
 
-下面的算式中有哪几种运算?  
+Which ones are the calculations below??
 
 $$
 3 + 5 0 \div 2 ^ { 2 } \times \left( - \frac { 1 } { 5 } \right) - 1 .
-$$  
+$$
 
-这个算式中, 含有有理数的加、 减、 乘、 除、 乘方等多种运算, 它是有理数的混合运算.  
+In this equation, Multiple calculations with a rational number of additions, subtractions, multipliers, multipliers, etc, It's a rational mix.
 
-有理数的混合运算, 应按以下顺序进行:  
+Mixed Operations on Rational Numbers, The following order shall be followed::
 
-1. 先做乘方, 再做乘除, 最后做加减;2. 同级运算, 按照从左至右的顺序进行;3. 如果有括号, 就先算小括号里的, 再算中括号里的, 然后算大括号里的.  
+1. Multiplier first, Multiplier, Finally, we add and subtract;2. Peer Operations, Follow the order from left to right;3. If there is a brackets, Let's start with the little brackets, And then in the brackets, Then it's in brackets.
 
-加法和减法叫做第一级运算; 乘法和除法叫做第二级运算; 乘方和开方(今后将会学到)叫做第三级运算.  
+Adding and subtracting are called first-level operations; Multiplication and division are called second-tier operations; Multiplication and Open(I'll learn from this)It's called Level 3 Operations.
 
-# 试一试  
+# Try it
 
-指出下列各算式的运算顺序:  
+Indicate the order of the calculations below:
 
-(1) $6 \div ( 3 \times 2 )$ ;   
-(2) $6 \div 3 \times 2$ ;   
-(3) $1 7 - 8 \div ( - 2 ) + 4 \times ( - 3 ) ;$ (4) $3 ^ { 2 } - 5 0 \div 2 ^ { 2 } \times \frac { 1 } { 1 0 } - 1 ;$   
-(5) $- \ : 1 \frac { 2 } { 3 } \times \left( 0 . 5 - \frac { 2 } { 3 } \right) \div \ : 1 \frac { 1 } { 9 } ;$ (6) - 1 - [1 - (1 - 0.5 × 43)] .  
+(1) $6 \div ( 3 \times 2 )$ ;
+(2) $6 \div 3 \times 2$ ;
+(3) $1 7 - 8 \div ( - 2 ) + 4 \times ( - 3 ) ;$ (4) $3 ^ { 2 } - 5 0 \div 2 ^ { 2 } \times \frac { 1 } { 1 0 } - 1 ;$
+(5) $- \ : 1 \frac { 2 } { 3 } \times \left( 0 . 5 - \frac { 2 } { 3 } \right) \div \ : 1 \frac { 1 } { 9 } ;$ (6) - 1 - [1 - (1 - 0.5 × 43)] .
 
-# 思考  
+# reflection
 
-(1) $2 \div \left( { \frac { 1 } { 2 } } - 2 \right)$ 与 $2 : \frac { 1 } { 2 } - 2$ 有什么不同?  
+(1) $2 \div \left( { \frac { 1 } { 2 } } - 2 \right)$ and $2 : \frac { 1 } { 2 } - 2$ What's the difference??
 
-(2) $( - \ 2 ) \ \div \ ( \ 2 \times \ 3 )$ 与 $( - \ 2 ) \div 2 \times 3$ 有什么不同?  
+(2) $( - \ 2 ) \ \div \ ( \ 2 \times \ 3 )$ and $( - \ 2 ) \div 2 \times 3$ What's the difference??
 
-例 1 计算: $\left( \frac { 1 } { 3 } - \frac { 1 } { 2 } \right) \div 1 \frac { 1 } { 4 } \div \frac { 1 } { 1 0 } .$ 解 $\left( { \frac { 1 } { 3 } } - { \frac { 1 } { 2 } } \right) \div 1 { \frac { 1 } { 4 } } \div { \frac { 1 } { 1 0 } }$ $= { \bigg ( } - { \frac { 1 } { 6 } } { \bigg ) } \times { \frac { 4 } { 5 } } \times 1 0 = - { \frac { 4 } { 3 } } .$  
+Example 1 Calculate: $\left( \frac { 1 } { 3 } - \frac { 1 } { 2 } \right) \div 1 \frac { 1 } { 4 } \div \frac { 1 } { 1 0 } .$ Solution $\left( { \frac { 1 } { 3 } } - { \frac { 1 } { 2 } } \right) \div 1 { \frac { 1 } { 4 } } \div { \frac { 1 } { 1 0 } }$ $= { \bigg ( } - { \frac { 1 } { 6 } } { \bigg ) } \times { \frac { 4 } { 5 } } \times 1 0 = - { \frac { 4 } { 3 } } .$
 
-# 注意  
+# Note
 
-进行分数的乘、 除运算时, 一般要把带分数化为假分数, 把除法转化为乘法.  
+Multiply, divide the fraction, Usually it's a false fraction, Convert division into multiplication.
 
-# 试一试  
+# Try it
 
-计算: $2 { \frac { 1 } { 4 } } \times \left( - { \frac { 6 } { 7 } } \right) \div \left( { \frac { 1 } { 2 } } - 2 \right)$ .  
+Calculate: $2 { \frac { 1 } { 4 } } \times \left( - { \frac { 6 } { 7 } } \right) \div \left( { \frac { 1 } { 2 } } - 2 \right)$ .
 
-1. 计算: $2 \times ( - 3 ) ^ { 3 } - 4 \times ( - 3 ) + 1 5$ .  
+1. Calculate: $2 \times ( - 3 ) ^ { 3 } - 4 \times ( - 3 ) + 1 5$ .
 
-2. 计算: $- 1 { \frac { 2 } { 3 } } \times \left( 1 - { \frac { 2 } { 3 } } \right) \div { \frac { 1 } { 9 } }$  
+2. Calculate: $- 1 { \frac { 2 } { 3 } } \times \left( 1 - { \frac { 2 } { 3 } } \right) \div { \frac { 1 } { 9 } }$
 
-3. 计算: $[ 1 2 - 4 \times ( 3 - 1 0 ) ] \div 4$ .  
+3. Calculate: $[ 1 2 - 4 \times ( 3 - 1 0 ) ] \div 4$ .
 
-有理数的混合运算涉及多种运算, 确定合理的运算顺序是正确解题的关键,能用简便方法的尽量用简便方法. 下面再看几个例子.  
+Mixed Operations on Rational Numberss involve multiple operations, Determining a reasonable order of operation is the key to the correct solution,It's easy to do as easy as possible. Here are a few more examples.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-例 2 计算: $3 + 5 0 \div 2 ^ { 2 } \times \left( - \frac { 1 } { 5 } \right) - 1$ 解 $3 + 5 0 \div 2 ^ { 2 } \times \left( - \frac { 1 } { 5 } \right) - 1$ $\begin{array} { r l } & { \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad } \\ & { = 3 + 5 0 + 4 \times \left( - \displaystyle \frac { 1 } { 5 } \right) - 1 } \\ & { \quad \quad = 3 + 5 0 \times \displaystyle \frac { 1 } { 4 } \times \left( - \displaystyle \frac { 1 } { 5 } \right) - 1 } \\ & { \quad = 3 - 5 0 \times \displaystyle \frac { 1 } { 4 } \times \displaystyle \frac { 1 } { 5 } - 1 } \\ & { \quad = 3 - \displaystyle \frac { 5 } { 2 } - 1 } \\ & { \quad \quad = - \displaystyle \frac { 1 } { 2 } . } \end{array}$  
+Example 2 Calculate: $3 + 5 0 \div 2 ^ { 2 } \times \left( - \frac { 1 } { 5 } \right) - 1$ Solution $3 + 5 0 \div 2 ^ { 2 } \times \left( - \frac { 1 } { 5 } \right) - 1$ $\begin{array} { r l } & { \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad } \\ & { = 3 + 5 0 + 4 \times \left( - \displaystyle \frac { 1 } { 5 } \right) - 1 } \\ & { \quad \quad = 3 + 5 0 \times \displaystyle \frac { 1 } { 4 } \times \left( - \displaystyle \frac { 1 } { 5 } \right) - 1 } \\ & { \quad = 3 - 5 0 \times \displaystyle \frac { 1 } { 4 } \times \displaystyle \frac { 1 } { 5 } - 1 } \\ & { \quad = 3 - \displaystyle \frac { 5 } { 2 } - 1 } \\ & { \quad \quad = - \displaystyle \frac { 1 } { 2 } . } \end{array}$
 
-例 3 计算: $\left[ 1 - \left( 1 - 0 . 5 \times { \frac { 1 } { 3 } } \right) \right] \times [ 2 - ( - 3 ) ^ { 2 } ] .$ 解 $\begin{array} { r l } & { \quad [ 1 - ( 1 - 0 . 5 \times \frac { 1 } { 3 } ) _ { - } ^ { \infty } \times [ 2 - ( - 3 ) ^ { 2 } ]  } \\ & { \quad  = [ 1 - ( 1 - \frac { 1 } { 6 } ) ] \times ( 2 - 9 ) } \\ & { \quad = ( 1 - \frac { 5 } { 6 } ) \times ( - 7 ) } \\ & { \quad = \frac { 1 } { 6 } \times ( - 7 ) } \\ & { \quad = - \frac { 7 } { 6 } . } \end{array}$  
+Example 3 Calculate: $\left[ 1 - \left( 1 - 0 . 5 \times { \frac { 1 } { 3 } } \right) \right] \times [ 2 - ( - 3 ) ^ { 2 } ] .$ Solution $\begin{array} { r l } & { \quad [ 1 - ( 1 - 0 . 5 \times \frac { 1 } { 3 } ) _ { - } ^ { \infty } \times [ 2 - ( - 3 ) ^ { 2 } ]  } \\ & { \quad  = [ 1 - ( 1 - \frac { 1 } { 6 } ) ] \times ( 2 - 9 ) } \\ & { \quad = ( 1 - \frac { 5 } { 6 } ) \times ( - 7 ) } \\ & { \quad = \frac { 1 } { 6 } \times ( - 7 ) } \\ & { \quad = - \frac { 7 } { 6 } . } \end{array}$
 
-例 4 计算: $\left( { \frac { 7 } { 4 } } - { \frac { 7 } { 8 } } - { \frac { 7 } { 1 2 } } \right) \div \left( - { \frac { 7 } { 8 } } \right) + \left( - { \frac { 8 } { 3 } } \right) .$ 解 ${ \begin{array} { r c l } { \displaystyle \left( { \frac { 7 } { 4 } } - { \frac { 7 } { 8 } } - { \frac { 7 } { 1 2 } } \right) \div \left( - { \frac { 7 } { 8 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } \\ { = \displaystyle \left( { \frac { 4 2 } { 2 4 } } - { \frac { 2 1 } { 2 4 } } - { \frac { 1 4 } { 2 4 } } \right) \div \left( - { \frac { 7 } { 8 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } \end{array} }$  
+Example 4 Calculate: $\left( { \frac { 7 } { 4 } } - { \frac { 7 } { 8 } } - { \frac { 7 } { 1 2 } } \right) \div \left( - { \frac { 7 } { 8 } } \right) + \left( - { \frac { 8 } { 3 } } \right) .$ Solution ${ \begin{array} { r c l } { \displaystyle \left( { \frac { 7 } { 4 } } - { \frac { 7 } { 8 } } - { \frac { 7 } { 1 2 } } \right) \div \left( - { \frac { 7 } { 8 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } \\ { = \displaystyle \left( { \frac { 4 2 } { 2 4 } } - { \frac { 2 1 } { 2 4 } } - { \frac { 1 4 } { 2 4 } } \right) \div \left( - { \frac { 7 } { 8 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } \end{array} }$
 
 $$
 { \begin{array} { l } { \displaystyle = { \frac { 7 } { 2 4 } } \times \left( - { \frac { 8 } { 7 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } \\ { \displaystyle = - { \frac { 1 } { 3 } } - { \frac { 8 } { 3 } } } \\ { = - 3 . } \end{array} }
-$$  
+$$
 
-也可以这样来算:  
+That's how it works:
 
-比较这两种算法, 哪 一 种 更 简  
+Compare the two algorithms, Which one?
 
 $$
 { \begin{array} { r l r } & { \left( { \frac { 7 } { 4 } } - { \frac { 7 } { 8 } } - { \frac { 7 } { 1 2 } } \right) : \left( - { \frac { 7 } { 8 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } & { \oplus \mathbb { E } } \\ & { = \left( { \frac { 7 } { 4 } } - { \frac { 7 } { 8 } } - { \frac { 7 } { 1 2 } } \right) \times \left( - { \frac { 8 } { 7 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } & \\ & { = { \frac { 7 } { 4 } } \times \left( - { \frac { 8 } { 7 } } \right) + \left( - { \frac { 7 } { 8 } } \right) \times \left( - { \frac { 8 } { 7 } } \right) + \left( - { \frac { 7 } { 1 2 } } \right) \times \left( - { \frac { 8 } { 7 } } \right) + \left( - { \frac { 8 } { 3 } } \right) } & \\ & { = - 2 + 1 + { \frac { 2 } { 3 } } - { \frac { 8 } { 3 } } } & \\ & { = - 3 . } \end{array} }
-$$  
+$$
 
-1. 计算:  
+1. Calculate:
 
-(1) $- 2 + 2 \times ( - 4 ) ^ { 2 } ;$ ; (2) $- 2 ^ { 2 } + ( - 7 ) \div ( - \frac { 7 } { 4 } ) ;$ 3 $\left( - \ 1 \ \frac { 1 } { 4 } \right) \times \frac { 2 } { 5 } \times 8 - 9 \div \left( - \ \frac { 3 } { 2 } \right) ^ { 2 } .$  
+(1) $- 2 + 2 \times ( - 4 ) ^ { 2 } ;$ ; (2) $- 2 ^ { 2 } + ( - 7 ) \div ( - \frac { 7 } { 4 } ) ;$ 3 $\left( - \ 1 \ \frac { 1 } { 4 } \right) \times \frac { 2 } { 5 } \times 8 - 9 \div \left( - \ \frac { 3 } { 2 } \right) ^ { 2 } .$
 
-2. 下列计算是否正确? 若不正确, 试说明错在哪里, 并予以改正:  
+2. The following calculation is correct? If not correct,, Let's see what's wrong, and corrected:
 
-(1) $7 4 - 2 ^ { 2 } \div 7 0 = 7 0 \div 7 0 = 1 ;$   
-(2) $2 \times 3 ^ { 2 } = ( 2 \times 3 ) ^ { 2 } = 6 ^ { 2 } = 3 6 ;$   
-(3) $6 \div ( 2 \times 3 ) = 6 \div 2 \times 3 = 3 \times 3 = 9 ;$   
-(4) ${ \frac { 2 ^ { 2 } } { 3 } } - ( - 2 ) \times \left( { \frac { 1 } { 4 } } - { \frac { 1 } { 2 } } \right) = { \frac { 4 } { 9 } } - \left( { \frac { 1 } { 2 } } - 1 \right) = { \frac { 4 } { 9 } } + { \frac { 1 } { 2 } } = { \frac { 1 7 } { 1 8 } } .$  
+(1) $7 4 - 2 ^ { 2 } \div 7 0 = 7 0 \div 7 0 = 1 ;$
+(2) $2 \times 3 ^ { 2 } = ( 2 \times 3 ) ^ { 2 } = 6 ^ { 2 } = 3 6 ;$
+(3) $6 \div ( 2 \times 3 ) = 6 \div 2 \times 3 = 3 \times 3 = 9 ;$
+(4) ${ \frac { 2 ^ { 2 } } { 3 } } - ( - 2 ) \times \left( { \frac { 1 } { 4 } } - { \frac { 1 } { 2 } } \right) = { \frac { 4 } { 9 } } - \left( { \frac { 1 } { 2 } } - 1 \right) = { \frac { 4 } { 9 } } + { \frac { 1 } { 2 } } = { \frac { 1 7 } { 1 8 } } .$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 习题1. 12  
+# Exercises 1. 12
 
-# 组  
+# Group
 
-1. 计算:  
+1. Calculate:
 
-(1) $\begin{array} { l } { \displaystyle { 1 - \frac { 1 } { 2 } + \frac { 1 } { 4 } - \frac { 1 } { 8 } ; } } \\ { \displaystyle { , - 8 + 4 \div ( - 2 ) } ; } \\ { \displaystyle { ( - 7 ) \times ( - 5 ) - 9 0 \div ( - 1 5 ) } ; } \end{array}$ (2) $\begin{array} { l } { \displaystyle { 1 \frac { 5 } { 6 } - \frac { 1 } { 2 } + \frac { 1 } { 3 } ; } } \\ { \displaystyle { 3 \times ( - 4 ) + ( - 2 8 ) \div 7 ; } } \\ { \displaystyle { 4 2 \times \left( - \frac { 2 } { 3 } \right) + \left( - \frac { 3 } { 4 } \right) \div \left( - \frac { 1 } { 4 } \right) . } } \end{array}$   
-(3) (4)   
-(5) (6)  
+(1) $\begin{array} { l } { \displaystyle { 1 - \frac { 1 } { 2 } + \frac { 1 } { 4 } - \frac { 1 } { 8 } ; } } \\ { \displaystyle { , - 8 + 4 \div ( - 2 ) } ; } \\ { \displaystyle { ( - 7 ) \times ( - 5 ) - 9 0 \div ( - 1 5 ) } ; } \end{array}$ (2) $\begin{array} { l } { \displaystyle { 1 \frac { 5 } { 6 } - \frac { 1 } { 2 } + \frac { 1 } { 3 } ; } } \\ { \displaystyle { 3 \times ( - 4 ) + ( - 2 8 ) \div 7 ; } } \\ { \displaystyle { 4 2 \times \left( - \frac { 2 } { 3 } \right) + \left( - \frac { 3 } { 4 } \right) \div \left( - \frac { 1 } { 4 } \right) . } } \end{array}$
+(3) (4)
+(5) (6)
 
-2. 计算:  
+2. Calculate:
 
 $$
 \begin{array} { l } { \displaystyle { ) \ 4 \mathrm { ~ - ~ } 5 \times \left( - \frac { 1 } { 2 } \right) ^ { 3 } ; } } \\ { \displaystyle { ) \ - \mathrm { ~ 8 ~ - ~ } 3 \times ( - 1 ) ^ { 3 } - ( - 1 ) ^ { 4 } } . } \end{array}
-$$  
+$$
 
-3. 计算:  
+3. Calculate:
 
 $$
 \begin{array} { l } { { \displaystyle \mathrm { ~  ~ \cdot ~ } - 2 ^ { 3 } \dot { \mathrm { ~  ~ \cdot ~ } } \frac { 4 } { 9 } \times \left( - \frac { 2 } { 3 } \right) ^ { 2 } } ; } \\ { { \displaystyle \mathrm { ~  ~ \cdot ~ } - 1 ^ { 4 } - \frac { 1 } { 6 } \times \left[ 2 - ( - 3 ) ^ { 2 } \right] . } } \end{array}
-$$  
+$$
 
-# B 组  
+# Group B
 
-4. 计算:  
+4. Calculate:
 
-(1) $- \frac { 5 } { 2 } + \frac { 2 8 } { 5 } \div ( - 2 ) \times ( - \frac { 5 } { 1 4 } ) ;$ (2) $4 \times ( - 3 ) ^ { 2 } - 5 \times ( - 3 ) + 6 .$  
+(1) $- \frac { 5 } { 2 } + \frac { 2 8 } { 5 } \div ( - 2 ) \times ( - \frac { 5 } { 1 4 } ) ;$ (2) $4 \times ( - 3 ) ^ { 2 } - 5 \times ( - 3 ) + 6 .$
 
-5. 计算:  
+5. Calculate:
 
-(1) $- 2 + \left( 1 - 0 . 2 \div \frac { 3 } { 5 } \right) \times ( - 3 ) ;$ (2) $1 \div ( - 1 ) + 0 \div 4 - ( - 4 ) \times ( - 1 ) .$  
+(1) $- 2 + \left( 1 - 0 . 2 \div \frac { 3 } { 5 } \right) \times ( - 3 ) ;$ (2) $1 \div ( - 1 ) + 0 \div 4 - ( - 4 ) \times ( - 1 ) .$
 
-# 第 1 章 有理数  
+# Rational Numbers
 
-# 1.13 近似数  
+# 1.13 Approximate Values Values Values
 
-# 做一做  
+# Try It
 
-1. 统计班上喜欢看球赛的同学的人数.  
-2. 量一量本册数学教科书的宽度.  
+1. Number of students in the statistical class who like to watch football games.
+2. A measure of the width of the textbook.
 
-如果统计得到班上喜欢看球赛的同学的人数是 35, 则 35 这个数是与实际完全符合的准确数, 一个也不多, 一个也不少. 如果量得教科书的宽度是$1 8 . 6 \mathrm { c m }$ , 由于所用刻度尺的刻度有精确度限制, 而且用眼睛观察度量数据不可能做到精确, 因此与实际宽度常会有一点偏差. 这里的 18.6 是一个与实际宽度非常接近的数, 称为近似数(approximate number) .  
+If the number of students in the class who like to watch the game are counted as 35, then 35 This number is the exact number that actually fits, Not many, One of them. If you measure the width of the textbook,$1 8 . 6 \mathrm { c m }$ , Because of the accuracy limit of the scale used, And it's impossible to measure data with eyes, Therefore there's a slight deviation from the actual width. Here 18.6 It's a number very close to the actual width, It's called approximation(approximate number) .
 
-在实际生活中, 我们常会遇到或用到近似数, 例如,我国的陆地面积约为960 万平方千米, 小明家的写字台的长度为 $1 2 0 \mathrm { c m }$ , 这里的 960、 120 都是近似数.  
+In real life,, We meet or use similar numbers, For example:,Our land area is about 960 All square kilometres, The length of Ming's writing desk is $1 2 0 \mathrm { c m }$ , Here 960、 120 It's all similar.
 
-你还能举出一些日常生活中遇到的近似数吗?  
+Can you give me some of the approximations of everyday life??
 
-使用近似数就有关于近似程度的问题, 也就是关于精确度的问题.  
+The use of approximations is a question of approximation, It's about accuracy.
 
-我们都知道:  
+We both know that:
 
 $$
 \pi = 3 . 1 4 1 5 9 \cdots .
-$$  
+$$
 
-计算中, 我们需对 $\pi$ 取近似数:  
+Calculating, We need to be right $\pi$ Take approximation:
 
-如果结果只取整数, 那么用四舍五入法应为3, 就叫做精确到个位;如果结果取 1 位小数, 那么应为 3.1, 就叫做精确到十分位( 或精确到0.1) ;如果结果取 2 位小数, 那么应为 3.14, 就叫做精确到百分位( 或精确到0.01) ;  
+If result is only integer, Then rounding should read 3, It's called precision;If result takes 1 Digits, Then it's 3.1, It's called precision to ten( Or exactly 0.1) ;If result takes 2 Digits, Then it's 3.14, It's called precision to the point( Or exactly 0.01) ;
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 概括  
+# Summary
 
-一般地, 一个近似数四舍五入到某一位, 就说这个近似数精确到那一位.例如, 小明的身高为 $1 . 7 0 \mathrm { m }$ , 1.70 这个近似数精确到百分位.  
+Summary, An approximate rounded to a bit, Let's just say that this approximate number is accurate to that one.For example:, Ming's height $1 . 7 0 \mathrm { m }$ , 1.70 This approximation is accurate to the point.
 
-例1　 下列用四舍五入法得到的近似数, 分别精确到哪一位?  
+Example 1　 Approximations obtained by rounding, Which one exactly??
 
-(1) 132.4; (2) 0.057 2; (3) $7 . 3 6 \times 1 0 ^ { 4 }$ 解　 (1) 132.4 精确到十分位(即精确到 0.1) .  
+(1) 132.4; (2) 0.057 2; (3) $7 . 3 6 \times 1 0 ^ { 4 }$ Solution　 (1) 132.4 Exact to ten(That's accurate 0.1) .
 
-(2) 0.057 2 精确到万分位(即精确到 0.000 1) .  
+(2) 0.057 2 Accurate to 10,000(That's accurate 0.000 1) .
 
-(3) $7 . 3 6 \times 1 0 ^ { 4 }$ 精确到百位.  
+(3) $7 . 3 6 \times 1 0 ^ { 4 }$ Accurate to 100.
 
-例2　 用四舍五入法, 按括号中的要求, 对下列各数取近似数:  
+Example 2　 Rounded, Requirements in parentheses, Approximate Values to each of the following:
 
-(1) 0.340 82(精确到千分位); (2) 64.8(精确到个位);  
-(3) 1.504 6(精确到 0.01); (4) 130 542(精确到千位) .  
-解 (1) $0 . 3 4 0 8 2 \approx 0 . 3 4 1$ .  
-(2) $6 4 . 8 \approx 6 5$ .近似数 1.50 与  
-(3) $1 . 5 0 4 6 \approx 1 . 5 0$ .1.5 相同吗?  
-(4) $1 3 0 5 4 2 \approx 1 . 3 1 \times 1 0 ^ { 5 }$ .  
+(1) 0.340 82(Accurate to 1,000 points); (2) 64.8(Accurate to position);
+(3) 1.504 6(Exact to 0.01); (4) 130 542(Exact to thousands) .
+Solution (1) $0 . 3 4 0 8 2 \approx 0 . 3 4 1$ .
+(2) $6 4 . 8 \approx 6 5$ .Approximate Values 1.50 and
+(3) $1 . 5 0 4 6 \approx 1 . 5 0$ .1.5 Same??
+(4) $1 3 0 5 4 2 \approx 1 . 3 1 \times 1 0 ^ { 5 }$ .
 
-注意 (1) 例 2 的小题(4)中, 用科学记数法, 把结果写成 $1 . 3 1 \times 1 0 ^ { 5 }$ ,就确切地表示精确到千位. 而如果把结果写成 131 000, 会误认为是精确到个位.  
+Note (1) Example 2 Question(4)Medium, Scientific mode, Write the result $1 . 3 1 \times 1 0 ^ { 5 }$ ,That's exactly what it means. And if the results are written 131 000, It's mistaken for precision.
 
-(2) 有一些量, 我们很难测出它们的准确值, 或者没有必要算得它们的准确值, 这时可以通过粗略的估算得到需要的近似数, 有时近似数也并不是用四舍五入法得到的.  
+(2) Some amount, It's hard for us to measure their exact value, Or there's no need to calculate their exact value, That's when you get a rough estimate of what you need, Sometimes the approximation is not rounded.
 
-例如, 某地遭遇水灾, 约有 10 万人的生活受到影响. 政府拟从外地调运一批粮食救灾, 需估计每天要调运的粮食重量. 如果按一个人平均一天需要约 $0 . 5 \mathrm { k g }$ 粮食计算, 那么可以估计出每天要调运约5 万千克粮食.  
+For example:, There was a flood somewhere, About 10 The lives of thousands are affected. The Government proposes to dispatch a shipment of food relief from the field, We need to estimate the weight of food to be transported daily. If one person needs an average day, $0 . 5 \mathrm { k g }$ Food calculations, Then it's possible to estimate a daily transfer 5 10,000 kg of food.
 
-又如, 某校共有1230 名学生, 想租用 45 座的客车外出秋游. 为估计需租用客车的辆数, 计算得 $1 2 3 0 \div 4 5 = 2 7 . 3 3 \cdots$ , 这里就不能用四舍五入法取近似数, 而是要用 “进一法”, 即应租用28 辆客车. 想想这是为什么?  
+Like, Some school 1230 Students, I want to rent it 45 The bus is out in the autumn. Estimated number of buses rented, Calculated $1 2 3 0 \div 4 5 = 2 7 . 3 3 \cdots$ , There's no way we can get an approximation by rounding, It's about "into one way."”, Should be rented 28 Bus. Think about why?
 
-1. 请你举出几个含有准确数和近似数的实际例子.  
+1. Please give a few practical examples with precise and approximate numbers.
 
-2. 圆周率 $\pi = 3 . 1 4 1 5 9 2 6 5 3 \cdots$ , 如果取近似数3.142, 那么它精确到哪一位? 如果取近似数 3.141 6 呢?  
+2. Circle rate $\pi = 3 . 1 4 1 5 9 2 6 5 3 \cdots$ , If you take the approximation 3.142, Therefore which one is it exactly?? If you take the approximation 3.141 6 And??
 
-3. 下列用四舍五入法得到的近似数, 分别精确到哪一位?  
+3. Approximations obtained by rounding, Which one exactly??
 
-(1) 127.32; (2) 0.040 7;   
-(3) 20.053; (4) 230.0;   
-(5) 4.002; (6) $5 . 0 8 \times 1 0 ^ { 3 }$ .  
+(1) 127.32; (2) 0.040 7;
+(3) 20.053; (4) 230.0;
+(5) 4.002; (6) $5 . 0 8 \times 1 0 ^ { 3 }$ .
 
-4. 用四舍五入法, 按括号中的要求, 对下列各数取近似数:  
+4. Rounded, Requirements in parentheses, Approximate Values to each of the following:
 
-(1) 0.632 8(精确到 0.01); (2) 7.912 2(精确到个位);   
-(3) 130.06(精确到十分位); (4) 46 021(精确到百位) .  
+(1) 0.632 8(Exact to 0.01); (2) 7.912 2(Accurate to position);
+(3) 130.06(Exact to ten); (4) 46 021(Accurate to 100) .
 
-5. 量出本册数学教科书的长度. (精确到 $1 \mathrm { m m }$ )  
+5. Measuring the length of the textbook. (Exact to $1 \mathrm { m m }$ )
 
-# 习题1. 13  
+# Exercises 1. 13
 
-# A 组  
+# Group A
 
-1. 下列各数据中, 哪些数是准确数? 哪些数是近似数?  
+1. Of the following data, Which numbers are accurate?? Which numbers are approximate??
 
-(1) 小琳称得体重为 $3 8 \mathrm { k g }$ ;  
-(2) 现在的气温是 $\mathbf { \nabla } - 2 \mathbf { \overset { \circ } { C } }$ ;  
-(3) $ { 1 \mathrm { m } }$ 等于 $1 0 0 \mathrm { c m }$ ;  
-(4) 某汽车集团去年累计汽车销量为280 万辆.  
+(1) Lin called it weight $3 8 \mathrm { k g }$ ;
+(2) Now the temperature is $\mathbf { \nabla } - 2 \mathbf { \overset { \circ } { C } }$ ;
+(3) $ { 1 \mathrm { m } }$ equals $1 0 0 \mathrm { c m }$ ;
+(4) The cumulative sales of a car group last year is 280 10,000.
 
-2. 下列用四舍五入法得到的近似数, 分别精确到哪一位?(1) 5.67;(2) 0.003 010;(3) $1 . 1 1 \times 1 0 ^ { 6 }$ ;(4) 1.200 .  
+2. Approximations obtained by rounding, Which one exactly??(1) 5.67;(2) 0.003 010;(3) $1 . 1 1 \times 1 0 ^ { 6 }$ ;(4) 1.200 .
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-3. 用四舍五入法, 按括号中的要求, 对下列各数取近似数:  
+3. Rounded, Requirements in parentheses, Approximate Values to each of the following:
 
-(1) 1 102.5 亿(精确到亿位);   
-(2) 0.079 2(精确到 0.001);   
-(3) 0.002 91(精确到万分位);   
-(4) 475 301(精确到万位) .  
+(1) 1 102.5 Billion(Accurate to hundreds of places);
+(2) 0.079 2(Exact to 0.001);
+(3) 0.002 91(Accurate to 10,000);
+(4) 475 301(Accurate to the point) .
 
-# B 组  
+# Group B
 
-4. 一桶玉米的质量大约为 $4 5 . 2 \mathrm { k g }$ . 如图, 晒谷场上有一堆玉米, 大约相当于 12 桶. 这堆玉米的质量大约为多少千克?(精确到 $1 \mathrm { k g }$ )  
+4. A barrel of corn is about to be of a mass $4 5 . 2 \mathrm { k g }$ . As shown in the figure, There's a pile of corn in the tan, About the same 12 barrel. How many kilograms of corn is this??(Exact to $1 \mathrm { k g }$ )
 
-5. 小明和小刚测量同一根铜管的长, 用四舍五入法记录测得的结果, 小明测量结果的记录是 $0 . 8 0 \mathrm { m }$ , 小刚测量结果的记录是 $0 . 8 \mathrm { m }$ . 这两个测量结果是否相同? 为什么?  
+5. Ming and Kong measure the length of the same copper pipe, Results measured by rounding, The results of Myung's measurements are as follows: $0 . 8 0 \mathrm { m }$ , The results of his measurements are as follows: $0 . 8 \mathrm { m }$ . Are these two measurements identical?? Why??
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/6efe286b93ee1734d94d2932f2503517221d6b89612638840253cab3e68027af.jpg)  
-(第 4 题)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/6efe286b93ee1734d94d2932f2503517221d6b89612638840253cab3e68027af.jpg)
+(I don't think so 4 Topic)
 
-# 1.14 用计算器进行计算  
+# 1.14 Calculations with a Calculator
 
-问题　 已知一个圆柱的底面半径为 $2 . 3 2 \mathrm { c m }$ , 高为 $7 . 0 6 \mathrm { c m }$ , 求这个圆柱的体积.  
+question　 The base radius of a cylinder is known to be $2 . 3 2 \mathrm { c m }$ , High $7 . 0 6 \mathrm { c m }$ , Ask for the volume of this cylinder.
 
-我们知道, 圆柱的体积 $\mathbf { \Sigma } = \mathbf { \Sigma }$ 底面积 $\times$ 高. 因此, 计算这个圆柱的体积就要做这样的计算:  
+We know, Volume of cylinders $\mathbf { \Sigma } = \mathbf { \Sigma }$ Bottom Area $\times$ High. And so, That's what we're going to do to calculate the volume of this cylinder:
 
 $$
 \pi \times 2 . 3 2 ^ { 2 } \times 7 . 0 6 .
-$$  
+$$
 
-遇到复杂的计算, 我们可以利用电子计算器(简称计算器)来完成.  
-下面我们尝试利用计算器解题.  
+Complex calculations encountered, We can use the calculator(Abbreviated Calculator)To finish.
+We'll try to solve the problem with the calculator.
 
-例 1 用计算器求 $3 4 5 + 2 1 . 3$ 的值.解 用计算器求 $3 4 5 + 2 1 . 3$ 的值的按键顺序是:  
+Example 1 Use calculator request $3 4 5 + 2 1 . 3$ Value.Solve Calculator Request $3 4 5 + 2 1 . 3$ The order of the key of the value is:
 
 $$
 \textcircled { 3 } \textcircled { 4 } \textcircled { 5 } \textcircled { 4 } \textcircled { 2 } \textcircled { 1 } \textcircled { \cdot } \textcircled { 3 } .
-$$  
+$$
 
-计算器显示运算式子 $3 4 5 + 2 1 . 3$ . 再按 $\textcircled { E X E }$ , 显示结果为 $\frac { 3 6 6 3 } { 1 0 }$ 若需得到小数形式的结果, 可继续按$\textcircled{8}$ (小数) $\textcircled { E X E }$ , 显示 366.3, 即  
+Calculator shows algorithms $3 4 5 + 2 1 . 3$ . Press again $\textcircled { E X E }$ , Show result as $\frac { 3 6 6 3 } { 1 0 }$ If you want results in decimal form, Keep pressing$\textcircled{8}$ (Decimal) $\textcircled { E X E }$ , Show 366.3, That's
 
-<html><body><table><tr><td>345+21.3</td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td>366.3</td></tr></table></body></html>  
+<html><body><table><tr><td>345+21.3</td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td>366.3</td></tr></table></body></html>
 
 $$
 3 4 5 + 2 1 . 3 = { \frac { 3 6 6 3 } { 1 0 } } = 3 6 6 . 3 .
-$$  
+$$
 
-# 注意  
+# Note
 
-(1) 在输入数据后, 也可以直接按 $\textcircled{4} \textcircled { \tt E X E } ( \approx )$ , 得到小数形式的结果.  
+(1) After entering data, You can just press it $\textcircled{4} \textcircled { \tt E X E } ( \approx )$ , Result in decimal form.
 
-(2) $\approx$ 是 $\textcircled { E X E }$ 键的第二功能, 启用第二功能, 需要先按 $\textcircled{4}$ 键.  
+(2) $\approx$ Yes $\textcircled { E X E }$ Second function of the key, Enable second function, You need to press first $\textcircled{4}$ Keys.
 
-# 做一做  
+# Try It
 
-按例 1 的方法, 用计算器求 105.3 - 243 的值.  
+As a rule 1 Methodology, Use calculator request 105.3 - 243 Value.
 
-例 2 用计算器求 $3 1 . 2 \div ( - 0 . 4 )$ 的值.  
+Example 2 Use calculator request $3 1 . 2 \div ( - 0 . 4 )$ Value.
 
-解　 用计算器求 $3 1 . 2 \div ( - 0 . 4 )$ 的值的按键顺序是:  
+Solution　 Use calculator request $3 1 . 2 \div ( - 0 . 4 )$ The order of the key of the value is:
 
 $$
 \textcircled { 3 } \textcircled { 1 } \textcircled { \cdot } \textcircled { 2 } \textcircled { \div } \textcircled { ( } \textcircled { - } \textcircled { 0 } \textcircled { \cdot } \textcircled { 4 } \textcircled { 1 } \textcircled { \times } .
-$$  
+$$
 
-显示结果为 - 78, 所以  
+Show result as - 78, Therefore
 
 $$
 3 1 . 2 \div ( - 0 . 4 ) = - 7 8 .
-$$  
+$$
 
-# 注意  
+# Note
 
-(1) 输入0.4 时, 也可以省去小数点前的0, 按 $\textcircled{4}$ 即可.  
+(1) Input 0.4 Time, You can save it from the decimal 0, Press $\textcircled{4}$ Yeah.
 
-(2) 输入负数, 如输入 - 5 时, 可以按 $\textcircled{5}$ , 也可以按 $\textcircled{5}$ .  
+(2) Enter negative number, If entered - 5 Time, You can press it $\textcircled{5}$ , You can also press $\textcircled{5}$ .
 
-(3)在紧接着 $\textcircled { E X E }$ 键前面的右括号键 $\textcircled{1}$ 可以不按.  
+(3)Right next $\textcircled { E X E }$ Right parenthesis key $\textcircled{1}$ You can't.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 做一做  
+# Try It
 
-按例2 的方法, 用计算器求 $8 . 2 \times ( - 4 . 3 ) \div 2 . 5$ 的值.  
+As a rule 2 Methodology, Use calculator request $8 . 2 \times ( - 4 . 3 ) \div 2 . 5$ Value.
 
-例 3 用计算器求 $6 2 . 2 \ : + \ : 4 \times 7 . 8$ 的值.解 用计算器求 $6 2 . 2 \ : + \ : 4 \ : \times \ : 7 . 8$ 的值的按键顺序是:  
+Example 3 Use calculator request $6 2 . 2 \ : + \ : 4 \times 7 . 8$ Value.Solve Calculator Request $6 2 . 2 \ : + \ : 4 \ : \times \ : 7 . 8$ The order of the key of the value is:
 
-$\textcircled { 6 } \textcircled { 2 } \textcircled { \cdot } \textcircled { 2 } \textcircled { 4 } \textcircled { 4 } \textcircled { \times } \textcircled { 7 } \textcircled { \cdot } \textcircled { 8 } \textcircled { \times } \textcircled { \div } \textcircled { 8 } \textcircled { \times } \textcircled { \times } .$ 显示结果为93.4, 所以  
+$\textcircled { 6 } \textcircled { 2 } \textcircled { \cdot } \textcircled { 2 } \textcircled { 4 } \textcircled { 4 } \textcircled { \times } \textcircled { 7 } \textcircled { \cdot } \textcircled { 8 } \textcircled { \times } \textcircled { \div } \textcircled { 8 } \textcircled { \times } \textcircled { \times } .$ Show result as 93.4, Therefore
 
 $$
 6 2 . 2 \ + \ 4 \times 7 . 8 \ = 9 3 . 4 .
-$$  
+$$
 
-# 做一做  
+# Try It
 
-按例3 的方法, 用计算器求 $( - 2 9 . 4 ) \times 2 \div 4 . 2 \div ( - 7 )$ 的值.  
+As a rule 3 Methodology, Use calculator request $( - 2 9 . 4 ) \times 2 \div 4 . 2 \div ( - 7 )$ Value.
 
-例 4 用计算器求 $2 . 7 ^ { 3 }$ 的值.  
+Example 4 Use calculator request $2 . 7 ^ { 3 }$ Value.
 
-解　 用计算器求 $2 . 7 ^ { 3 }$ 的值, 可以使用乘方的专用键 $\textcircled{1}$ . 按键顺序是:  
+Solution　 Use calculator request $2 . 7 ^ { 3 }$ Value, You can use a special key for the multiplier $\textcircled{1}$ . The key order is:
 
 $$
 \textcircled { 2 } \textcircled { \cdot } \textcircled { 7 } \textcircled { \bullet } \textcircled { 3 } \textcircled { \star \times 5 } .
-$$  
+$$
 
-显示结果为 19.683, 所以  
+Show result as 19.683, Therefore
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/6b09a6de2c95be96e8190e18b4953bb60ab976c9fad3084d188cce99adaf76b5.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/6b09a6de2c95be96e8190e18b4953bb60ab976c9fad3084d188cce99adaf76b5.jpg)
 
 $$
 2 . 7 ^ { 3 } = 1 9 . 6 8 3 .
-$$  
+$$
 
-注意 使用专用键 $\textcircled{5}$ 时, 可以先输入底数, 再按此键, 最后输入指数;也可以先按 $\textcircled{5}$ , 再输入底数, 然后按 $\otimes$ , 之后再输入指数, 最后按$\textcircled { E X E }$ 求解.  
+Note. Use a special key $\textcircled{5}$ Time, You can enter the bottom number first, Press this button again, Final Input Index;You can press first $\textcircled{5}$ , Enter the bottom count again, And then press $\otimes$ , Enter index after, Finally$\textcircled { E X E }$ Solve.
 
-# 做一做  
+# Try It
 
-1. 按例4 的方法, 用计算器求 $6 . 3 ^ { 5 }$ 的值.  
-2. 用计算器求本节开头所提问题中圆柱的体积. (精确到 $1 { \mathrm { c m } } ^ { 3 }$ )  
+1. As a rule 4 Methodology, Use calculator request $6 . 3 ^ { 5 }$ Value.
+2. Volume of the cylinder using the calculator for questions at the beginning of this section. (Exact to $1 { \mathrm { c m } } ^ { 3 }$ )
 
-1. 用计算器计算:  
+1. Calculator:
 
-(1) $2 7 + 3 0 8$ ; (2) $0 . 7 5 + 3 2 . 0 4$ ;   
-(3) 3.65 - 72.7; (4) $- 9 7 . 9 \ + \ 3 4 . 8 \$ ;   
-(5) - 43 - (- 28); (6) $0 . 1 4 7 \times 6 3$ ;   
-(7) $3 6 \times 1 2 5$ ; (8) $8 4 \div ( - 2 4 )$ ;   
-(9) $7 6 \div ( - 0 . 1 9 )$ ; (10) $( - 0 . 1 2 5 ) \times ( - \ 1 8 )$ ;   
-(11) $8 3 + 1 3 9 - 3 2 8 + 5 1 2 ;$ (12) $- 3 . 1 4 \ : + \ : 5 . 7 6 \ : - \ : 7 . 1 9$ ;   
-(13) $2 . 5 \times 7 6 \div ( - 0 . 1 9 ) _ { \vdots }$ ; (14) $- ~ 1 2 5 \times 0 . 4 2 \div ( - ~ 7 )$ .  
+(1) $2 7 + 3 0 8$ ; (2) $0 . 7 5 + 3 2 . 0 4$ ;
+(3) 3.65 - 72.7; (4) $- 9 7 . 9 \ + \ 3 4 . 8 \$ ;
+(5) - 43 - (- 28); (6) $0 . 1 4 7 \times 6 3$ ;
+(7) $3 6 \times 1 2 5$ ; (8) $8 4 \div ( - 2 4 )$ ;
+(9) $7 6 \div ( - 0 . 1 9 )$ ; (10) $( - 0 . 1 2 5 ) \times ( - \ 1 8 )$ ;
+(11) $8 3 + 1 3 9 - 3 2 8 + 5 1 2 ;$ (12) $- 3 . 1 4 \ : + \ : 5 . 7 6 \ : - \ : 7 . 1 9$ ;
+(13) $2 . 5 \times 7 6 \div ( - 0 . 1 9 ) _ { \vdots }$ ; (14) $- ~ 1 2 5 \times 0 . 4 2 \div ( - ~ 7 )$ .
 
-2. 用计算器计算:  
+2. Calculator:
 
-(1) $2 3 \times 1 5 + 4 ;$ (2) $5 0 \div 2 - 2 0 \times 3$ (3) $2 5 \times 3 \times 2 + ( - 1 2 7 ) ;$ (4) $0 . 8 4 \div 4 + 0 . 7 9 \times 2$ ;   
-(5) $- ~ 2 4 \times 2 + 1 5 \div 0 . 7 5 ;$ (6) $1 . 8 ^ { 3 }$ ;   
-(7) $- \ 0 . 1 2 ^ { 4 }$ ; (8) $9 . 3 ^ { 2 }$ ;   
-(9) $5 ^ { 6 }$ ; (10) (- 3)7 .  
+(1) $2 3 \times 1 5 + 4 ;$ (2) $5 0 \div 2 - 2 0 \times 3$ (3) $2 5 \times 3 \times 2 + ( - 1 2 7 ) ;$ (4) $0 . 8 4 \div 4 + 0 . 7 9 \times 2$ ;
+(5) $- ~ 2 4 \times 2 + 1 5 \div 0 . 7 5 ;$ (6) $1 . 8 ^ { 3 }$ ;
+(7) $- \ 0 . 1 2 ^ { 4 }$ ; (8) $9 . 3 ^ { 2 }$ ;
+(9) $5 ^ { 6 }$ ; (10) (- 3)7 .
 
-3. 用计算器计算:  
+3. Calculator:
 
-(1) $2 . 6 \times 3 - ( - 3 ) ^ { 4 } ;$ ; (2) $4 . 5 ^ { 2 } \times 3 - ( - 2 4 ) \div 8 ;$ (3) $4 + 2 ^ { 2 } \times 7 - ( - 3 ) \times 6 .$  
+(1) $2 . 6 \times 3 - ( - 3 ) ^ { 4 } ;$ ; (2) $4 . 5 ^ { 2 } \times 3 - ( - 2 4 ) \div 8 ;$ (3) $4 + 2 ^ { 2 } \times 7 - ( - 3 ) \times 6 .$
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 从结绳计数到计算器  
+# From Knotted Cords to Calculators
 
-伴随着人类的诞生, 数数和计数就同时出现在人类的各项活动中, 成为人类文明史的重要组成部分. 我国古代早有 “结绳计数” 的记载, 即用绳子打结作为计数的手段. 之后, 石块、 算筹等被用于劳动和生活. 随着人们数学知识的增加和技术的发展, 我国在元代发明了算盘及相应的珠算法. 17 世纪, 英国人发明了计算尺. 与此同时, 法国人和德国人发明了手摇计算器, 用于进行数的四则运算.  
+With the birth of man, Counts and counts are in human activity at the same time, To be an important part of the history of human civilization. We have a long history of string count, That's the way to count. After, Stones, calculators, etc. are used in labor and life. As people's knowledge of mathematics grows and technology develops, We invented the Abacus and the corresponding bead algorithm in the era. 17 Century, The English invented the calculator. Meanwhile, The French and Germans invented the handshake calculator, Four calculations used to perform the numbers.
 
-如今, 计算器已经成为人们工作和生活中不可或缺的工具. 一台计算器具有许多功能, 它看起来体积很小, 但作用却极大. 它既可以帮助我们进行各种复杂的数学计算, 解答生活和工作中的各种数学问题, 又可以帮助我们理解数学概念.有的计算器可以编制各种程序, 有的还可以绘制各种图形, 有的甚至可以进行式的运算, 功能可谓越来越强大.  
+Now, Calculator has become an indispensable tool in people's work and life. A calculator has many functions, It looks small, But it worked so hard. It can help us do all sorts of complex mathematical calculations, To solve all the mathematical problems of life and work, It helps us understand math.Some calculators can develop programs, Some can also draw graphics, Some can even do the math, It's getting stronger.
 
-由于计算器的型号各不相同, 因此使用方法也未必一样. 计算器的输入方式大致可分为两类, 一类是按数学的书写形式输入的, 称为 “数学输入”, 另一类$\frac { 2 } { 3 }$ “数学输入”, 是按 $\textcircled{2} \textcircled{3}$ , 屏幕显示 $\frac { 2 } { 3 }$ ; 用 “线性输入”, 同样是按 $\textcircled{2}$ D $\textcircled{3}$ , 但屏幕显示 2 􀎡3 . 计算器的输出, 可以分为 “数学输出” “线性输出” 和 “小数输出”, 例如计算结果为 2 , “数学输出” 显示为 2 $\cdot \frac { 2 } { 3 }$ 3 , “线性输出”显示为 2 􀎡 3, “小数输出” 显示为 0.6666666667 . 不同计算器的显示屏幕的显示行数可能不一样, 有的计算器只能显示两行数据, 有的计算器则能显示多行数据.许多计算器可以按不同需要输入数学式子, 并拥有多行显示的屏幕, 还可以翻阅前面曾经计算过的数学式子, 也可以修改已输入的数学式子.  
+Because the calculator has different models, Therefore it doesn't have to be the same. Calculator input is broadly divided into two categories, The first type is written in mathematical form, Called "Mathematical Input"”, Other type$\frac { 2 } { 3 }$ “Math input”, Yes $\textcircled{2} \textcircled{3}$ , Screen Display $\frac { 2 } { 3 }$ ; Use Linear Input”, It's the same $\textcircled{2}$ D $\textcircled{3}$ , But the screen shows 2 􀎡3 . Calculator Output, It can be divided into Math output, Linear output, and Decimal output”, For example, the result is 2 , “The mathematical output is shown as 2 $\cdot \frac { 2 } { 3 }$ 3 , “Linear Output as 2 􀎡 3, “The decimal output is shown as 0.6666666667 . The number of lines on the display screen of different calculators may be different, Some calculators only show two rows of data, Some calculators show multiline data.Many calculators can enter mathematical formulas according to needs, and has multi-line display screens, You can also look through the mathematical formula that you've calculated, You can also modify entered mathematical formulas.
 
-我们的航船已经浩浩荡荡地驶入了奇妙的数学世界, 千万别忘了带上你的计算器, 一起遨游知识的海洋.  
+Our ship has sailed into a wonderful mathematical world, Don't forget your calculator, ♪ Swim the ocean of knowledge ♪.
 
-# 习题1. 14  
+# Exercises 1. 14
 
-# A 组  
+# Group A
 
-1. 用计算器计算:  
+1. Calculator:
 
-(1) $8 3 + 1 8 9 - 3 2 8 + 5 1 2$ ;   
-(2) $- 4 . 2 1 - ( - 2 2 . 5 ) + ( - 7 . 2 4 ) - 2 9 . 2 ;$ (3) $4 3 \times 9 7 \times 9 8 5$ ;   
-(4) $8 ^ { 4 }$ ;   
-(5) $3 . 2 4 \times 1 0 ^ { 3 } + 1 . 2 \times 1 0 ^ { 5 } ;$ ;   
-(6) $3 . 1 2 \times 1 0 ^ { 6 } \div ( - 2 . 4 \times 1 0 ^ { 2 } ) .$  
+(1) $8 3 + 1 8 9 - 3 2 8 + 5 1 2$ ;
+(2) $- 4 . 2 1 - ( - 2 2 . 5 ) + ( - 7 . 2 4 ) - 2 9 . 2 ;$ (3) $4 3 \times 9 7 \times 9 8 5$ ;
+(4) $8 ^ { 4 }$ ;
+(5) $3 . 2 4 \times 1 0 ^ { 3 } + 1 . 2 \times 1 0 ^ { 5 } ;$ ;
+(6) $3 . 1 2 \times 1 0 ^ { 6 } \div ( - 2 . 4 \times 1 0 ^ { 2 } ) .$
 
-2. 如图, 已知圆环的外圆半径为 $4 6 \mathrm { m m }$ , 内圆半径为 $2 7 \mathrm { m m }$ , 圆环的面积是多少平方毫米? (精确到百位)  
+2. As shown in the figure, The known outer radius of the circle is $4 6 \mathrm { m m }$ , The inner circle is $2 7 \mathrm { m m }$ , What's the area of the circle?? (Accurate to 100)
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/baf8e1adb9941e59d996b919c653ef8f663eed3b4dc92e087fadc2dc5a9ec7f4.jpg)  
-(第 2 题)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/baf8e1adb9941e59d996b919c653ef8f663eed3b4dc92e087fadc2dc5a9ec7f4.jpg)
+(I don't think so 2 Topic)
 
-# B 组  
+# Group B
 
-3. 利用计算器进行如下计算:  
+3. Use the calculator to calculate:
 
-任意写出一个正整数( 例如 3 708), 求出它的各位数字的平方和 $( 9 + 4 9 + 0 + 6 4 =$ 122); 再对这个平方和求出各位数字的平方和 …… 如此继续下去.  
+Write Any Positive Integer( For example: 3 708), Find the squares of its numbers $( 9 + 4 9 + 0 + 6 4 =$ 122); And to this square and to find the squares of your numbers... so continue.
 
-你能发现什么规律?  
+What pattern do you find??
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-# 无限循环小数能化为分数吗  
+# Can infinite circulation decimals become fractions?
 
-我们知道, 分数都是有理数, 而分数可以化为小数. 在将分数转化为小数的过程中, 每进行一次作商运算, 得到的余数肯定比分母小. 因此, 经过不大于分母的作商次数, 要么除尽, 要么循环, 即结果不是有限小数就是无限循环小数. 例如我们常见的 $- { \frac { 1 } { 3 } } = - 0 . 3 3 3 \cdots$ , 通常记作 - 0.3·; 又如 ${ \frac { 2 2 } { 7 } } = 3 . { \dot { 1 } } 4 2 8 5 { \dot { 7 } } .$ .它们都是有理数. 反之, 有限小数都可以写成分数, 那么无限循环小数是否都能化为分数呢? 观察下面将一个无限循环小数化为分数的过程, 并与同学讨论后面的问题.  
+We know, The scores are reasonable, And the fractions can turn into decimals. In converting fractions into decimals, Every time we do business, The balance must be smaller than the denominator. And so, Number of businesses that have not been larger than the denominator, Or we're done, Or cycle, The result is either a limited number or an infinite circulation. Like what we usually do $- { \frac { 1 } { 3 } } = - 0 . 3 3 3 \cdots$ , Usually recorded - 0.3·; Like ${ \frac { 2 2 } { 7 } } = 3 . { \dot { 1 } } 4 2 8 5 { \dot { 7 } } .$ .They're all rational. Opposite Numbers, You can write a number of ingredients for a limited number, Therefore can infinity cycle decimals be fractional?? Observe the process of converting an infinite cycle decimal into fractions below, And discuss the issues behind it with our classmates.
 
-$0 . 4 7 = 0 . 4 7 4 7 4 7 \cdots$ 是一个以47 为循环节的无限循环小数, 将它扩大到 100  
-倍, 把第一个循环节移到小数点之前, 得到 $1 0 0 \times 0 . 4 7 = 4 7 . 4 7 4 7 cdots$ , 发现小数  
-点后依然是循环节为 47 的无限循环小数, 即仍是原数(这是“无限” 的奇妙特  
-征 —— 部分等于全部), 即 $1 0 0 \times 0 . 4 7 = 4 7 \ + \ 0 . 4 7$ . 由此可知, 99 个 0.47 等于  
-47, 所以 $0 . { \dot { 4 } } { \dot { 7 } } = { \frac { 4 7 } { 9 9 } }$ ·  
+$0 . 4 7 = 0 . 4 7 4 7 4 7 \cdots$ It's a 47 Unlimited circulation decimals for cycle festivals, Expand it to 100
+Double, Move the first cycle section to a decimal point, Got it $1 0 0 \times 0 . 4 7 = 4 7 . 4 7 4 7 cdots$ , Decimals found
+It's still circulatory after point 47 Infinite circulation decimals, It's still the original(It's an infinity
+Recruitment - Partially equal to All), That's $1 0 0 \times 0 . 4 7 = 4 7 \ + \ 0 . 4 7$ . And from that, you know,, 99 individual 0.47 equals
+47, Therefore $0 . { \dot { 4 } } { \dot { 7 } } = { \frac { 4 7 } { 9 9 } }$ ·
 
-问题:  
+question:
 
-(1) 这种方法是否适用于其他无限循环小数, 例如 0.74? 又如 0.8 和0.325 呢?(2) 对于不是从小数点后第一位开始循环的循环小数(通常称为混循环小数), 例如0.325, 你能想出办法将它转化为上述情形来解决吗?(3) 交流一下各自得到的结论, 通过不同途径查阅相关知识, 总结无限循环小数化为分数的规律.  
+(1) Whether or not this method applies to other infinite circulation decimals, For example: 0.74? Like 0.8 and 0.325 And??(2) For circular decimals that do not start with the first decimal point(It's usually called a hybrid), For example: 0.325, Can you figure out a way to turn it into a situation like this??(3) Let's share our conclusions, Access to relevant knowledge through different channels, Summarize the pattern of infinite circulation decimals becoming fractions.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/2eb2a69cb125447f998958e58aeb03dfa730ccba8ae60197f92eb7621fab905b.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/2eb2a69cb125447f998958e58aeb03dfa730ccba8ae60197f92eb7621fab905b.jpg)
 
-# 一、 知识结构  
+# I. Knowledge structure
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b276df58c9000f54718d0253f86ecf3a1125bbca546d14c56de28976f71486a7.jpg)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/b276df58c9000f54718d0253f86ecf3a1125bbca546d14c56de28976f71486a7.jpg)
 
-# 二、 要点  
+# II. Points
 
-1. 本章将数集扩充到有理数集, 并将数的大小比较和运算推广到有理数范围, 建立它们新的意义和法则. 这是一个从实际经验到数学抽象的过程. 例如,从零上和零下温度的表示中抽象出负数, 从比较温度的高低中认识有理数的大小比较, 从气温计表示温度的启发中引出数轴的概念, 并概括出有理数的大小比较法则等.  
+1. This chapter expands the set to the reasoned set, And extend the size and operation of numbers to a rational range, Building their new meanings and rules. It's a process from practical experience to mathematical abstraction. For example:,Draws a negative number in the abstract from the representation of upper and lower zero temperatures, Comparing Rational Numbers from higher to lower relative temperatures, The idea of number line is inspired by the idea that temperature gauges indicate temperature, And summarises the rational number of size comparison, etc.
 
-2. 用数轴上的点表示有理数, 有利于直观地理解相反数和绝对值的概念,也可以帮助我们理解有理数的大小比较和运算, 使数和形很好地结合起来.  
+2. Use the point above the axle to indicate rational number, To facilitate an intuitive understanding of the concepts of reverse numbers and absolute values,It can help us understand a rational comparison of sizes and calculations, It's a good combination.
 
-3. 在研究有理数时, 一般要考虑两个方面: 一是数的符号; 二是数的绝对值. 除了考虑符号外, 有理数的运算(或大小比较)往往都归结为绝对值的运算(或大小比较), 注意到绝对值是非负数, 所以也就归结为用我们熟知的非负数来解决. 这样的 “化归” 思想在数学研究中是屡见不鲜的.  
+3. When researching rational numbers, There are two things to consider: A symbol of numbers; Two is absolute. Except for the symbol, Rational calculations(Or size comparison)It's often the same as an absolute operation(Or size comparison), Note that absolute is not negative, Therefore it's down to using the non-negative numbers we know. This is the kind of "register" that's common in math.
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-4. 有理数的本质是可以写成整数之商(之比). 认识到这个本质对理解相关的问题和将来进一步扩充数集都是至关重要的. 例如, 在以后的数学学习中,我们将会看到, 实践中还存在着不能表示成两个整数之商的数, 于是就需要进一步扩充数集.  
+4. The essence of a rational number is that it can be written integers(Ratio). Recognizing that this is essential for understanding the relevant issues and further expanding the collection in the future. For example:, In future math studies,,We'll see, There are still numbers in practice that cannot be expressed as two integers, Therefore there was a need to expand the series.
 
-5. 数集的扩充带来了新的变化. 例如减法, 在引进负数之前, 被减数不能小于减数, 而在有理数集中, 任意两个有理数总能进行减法运算, 而且减法可以转化为加法. 再有, 数集扩充以后, 0 不再表示 “没有”, 它是一个特定的数, 在数轴上0 表示一个重要的点——原点, 它是正数和负数的分界点. 值得关注的是, 新的数集保持了原有数集的一些重要性质, 特别是数的运算律仍然成立. 这一通性在数学的进一步研究中将起着关键作用, 在下一章的学习中马上可以看到.  
+5. The expansion of the series has brought about new changes. For example, subtraction, Before the negative number is introduced, Can't be less than less, It's a set of rational numbers, Any two rational numbers can always be reduced, And the subtraction translates into additions. Again, After expansion of the series, 0 No longer means "No"”, It's a specific number, On the number line 0 Expressing an important point - origin, It's a point of demarcation between positive and negative numbers. Of concern, The new set maintains the important nature of the original set, Especially when the algorithm of numbers is still in place. This generality will play a key role in the further study of mathematics, I'll see it in the next chapter.
 
-6. 本章知识是在小学阶段非负数相应知识基础上的更新和重建, 类比和化归是所用的重要思想方法. 教科书在新知识的探索和归纳中重视训练推理能力,练习和习题中也有这样的安排. 字母表示数的出现既为下一章代数式的学习做准备, 也有利于应用符号体系掌握一般规律, 为进一步提升推理论证能力打基础.  
+6. This chapter of knowledge is updated and rebuilt on the basis of non-negative corresponding knowledge at the primary level, Comparability and subdivision are important thinking methods used. Textbooks value training in reasoning in the exploration and synthesis of new knowledge,There's this arrangement in practice and practice. The appearance of letters is both prepared for algebra learning in the next chapter, It's also useful to use symbols to master normal patterns, To lay the groundwork for further enhancement of reasoning.
 
-# 第 1 章 有理数  
+# Rational Numbers
 
-# A 组  
+# Group A
 
-1. 下列有理数中, 哪些是正数? 哪些是负数?  
+1. Reasonable, Which are positive numbers?? Which are the negative numbers??
 
 $$
 2 . 5 , \quad - 8 , \quad - 0 . 7 , \quad \frac { 3 } { 2 } , \quad - \frac { 1 } { 7 } , \quad 0 . 0 5 , 0
-$$  
+$$
 
-2. 根据下表每行中的已知数, 填写该行中其他的数:  
+2. Based on the known number in each row of the following table, Fill in the rest of the line:
 
-<html><body><table><tr><td>原数</td><td>原数的相反数</td><td>原数的绝对值</td><td>原数的倒数</td></tr><tr><td>12</td><td></td><td></td><td></td></tr><tr><td></td><td>- 7.5</td><td></td><td></td></tr><tr><td></td><td></td><td>0</td><td></td></tr><tr><td></td><td></td><td></td><td>10 7</td></tr></table></body></html>  
+<html><body><table><tr><td>Original</td><td>The opposite of the original</td><td>Absolute value of original number</td><td>Last of original</td></tr><tr><td>12</td><td></td><td></td><td></td></tr><tr><td></td><td>- 7.5</td><td></td><td></td></tr><tr><td></td><td></td><td>0</td><td></td></tr><tr><td></td><td></td><td></td><td>10 7</td></tr></table></body></html>
 
-3. 把表示下列各数的点画在数轴上, 再按从小到大的顺序, 用 “<” 号把这些数连接起来:  
+3. Draws points on the number line indicating the following numbers:, And in the order from childhood to age, Use “<” No. Connect these numbers:
 
 $$
 2 . 5 , \quad - 3 , \quad 5 \frac { 1 } { 2 } , \quad - 2 \frac { 1 } { 2 } , \quad 0 , \quad - 1 . 6 .
-$$  
+$$
 
-4. 按从大到小的顺序, 用 $" > "$ 号把下列各数连接起来:  
+4. In order of size, Use $" > "$ No. Connect the following numbers:
 
 $$
 - 3 . 2 , \frac { 1 } { 2 } , 0 . 6 , - 0 . 6 , 5 , - 3 . 3 .
-$$  
+$$
 
-5. 在数轴上画出所有表示大于 - 5, 并且小于4 的整数的点. 其中最大的一个数是多少?  
+5. Draw all expressions on the array greater than - 5, And less than 4 the point of the integer number. What's the biggest number of them??
 
-6. 比较下列各对数的大小:  
+6. Compare the size of the logarithms below:
 
-(1) $- { \frac { 6 } { 7 } }  - { \frac { 7 } { 6 } } ;$ (2) - 1.17 与 - 1.2; (3) $- 5 \frac { 4 } { 5 }$ 与 0;  
-(4) $\frac { 1 } { 1 0 }$ (5) -0.001 与-0.009 .  
+(1) $- { \frac { 6 } { 7 } }  - { \frac { 7 } { 6 } } ;$ (2) - 1.17 and - 1.2; (3) $- 5 \frac { 4 } { 5 }$ and 0;
+(4) $\frac { 1 } { 1 0 }$ (5) -0.001 and-0.009 .
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-7. 计算:  
+7. Calculate:
 
-(1) $\mathrm { ~ - ~ } 1 0 0 + 1 5 7 ;$ (2) $- ~ 1 8 + \left( - ~ 3 2 \right) ;$ (3) - 9 - 27; (4) $- 2 9 - ( - 1 2 ) ;$ (5) $- \ 8 \times ( - \ 1 5 ) ;$ (6) $( - 4 ) \div ( - \frac { 1 } { 4 } ) ;$ (7) $\mathbf { - } 5 6 \div ( \mathbf { - } 8 ) ;$ (8) $7 2 \div \left( - \frac { 1 } { 3 } \right) ;$ (9) $\left( - 0 . 0 3 \right) \times \left( - \ 1 0 0 \right) ;$ (10) $\left( - \frac { 3 } { 4 } \right) \div \left( - 5 \frac { 5 } { 8 } \right) .$  
+(1) $\mathrm { ~ - ~ } 1 0 0 + 1 5 7 ;$ (2) $- ~ 1 8 + \left( - ~ 3 2 \right) ;$ (3) - 9 - 27; (4) $- 2 9 - ( - 1 2 ) ;$ (5) $- \ 8 \times ( - \ 1 5 ) ;$ (6) $( - 4 ) \div ( - \frac { 1 } { 4 } ) ;$ (7) $\mathbf { - } 5 6 \div ( \mathbf { - } 8 ) ;$ (8) $7 2 \div \left( - \frac { 1 } { 3 } \right) ;$ (9) $\left( - 0 . 0 3 \right) \times \left( - \ 1 0 0 \right) ;$ (10) $\left( - \frac { 3 } { 4 } \right) \div \left( - 5 \frac { 5 } { 8 } \right) .$
 
-8. 计算:  
+8. Calculate:
 
-(1) $8 + \left( - \frac { 1 } { 4 } \right) - 5 - \left( - 0 . 2 5 \right) ;$ (2) $- ~ 8 2 \ : + \ : 7 2 \ : \div \ : 3 6 ;$   
-(3) $( 3 - 4 - 5 ) \div \left( - 1 { \frac { 1 } { 5 } } \right) ;$ (4) $2 { \frac { 1 } { 2 } } \times { \frac { 1 } { 4 } } \div ( - 9 + 1 9 ) ;$   
-(5) $( - \ 1 ) \ \div \ \left( - \ 1 \frac { \ 2 } { 3 } \right) \times \frac { \ 1 } { 3 } ;$ (6) $\left( - { \frac { 1 } { 6 } } + { \frac { 3 } { 4 } } - { \frac { 1 } { 1 2 } } \right) \times \left( - \ 4 8 \right) ;$   
-(7) $2 5 \times { \frac { 3 } { 4 } } - ( - 2 5 ) \times { \frac { 1 } { 2 } } + 2 5 \times \left( - { \frac { 1 } { 4 } } \right) ;$ 1 4   
-(8) (- 81) 16) . 4 9  
+(1) $8 + \left( - \frac { 1 } { 4 } \right) - 5 - \left( - 0 . 2 5 \right) ;$ (2) $- ~ 8 2 \ : + \ : 7 2 \ : \div \ : 3 6 ;$
+(3) $( 3 - 4 - 5 ) \div \left( - 1 { \frac { 1 } { 5 } } \right) ;$ (4) $2 { \frac { 1 } { 2 } } \times { \frac { 1 } { 4 } } \div ( - 9 + 1 9 ) ;$
+(5) $( - \ 1 ) \ \div \ \left( - \ 1 \frac { \ 2 } { 3 } \right) \times \frac { \ 1 } { 3 } ;$ (6) $\left( - { \frac { 1 } { 6 } } + { \frac { 3 } { 4 } } - { \frac { 1 } { 1 2 } } \right) \times \left( - \ 4 8 \right) ;$
+(7) $2 5 \times { \frac { 3 } { 4 } } - ( - 2 5 ) \times { \frac { 1 } { 2 } } + 2 5 \times \left( - { \frac { 1 } { 4 } } \right) ;$ 1 4
+(8) (- 81) 16) . 4 9
 
-9. (1) 平方等于 $\cdot { \frac { 4 } { 9 } }$ 的有理数有哪几个? 有没有平方等于 $- { \frac { 4 } { 9 } }$ 的有理数?  
+9. (1) Square equals $\cdot { \frac { 4 } { 9 } }$ What are the rational numbers?? Is there a square equal to $- { \frac { 4 } { 9 } }$ Rational numbers?
 
-(2) 立方等于27 的有理数有几个? 有没有立方等于 - 27 的有理数?  
+(2) Cubic equals 27 There are a few rational numbers? Is there a cube equal to - 27 Rational numbers?
 
-10. (1) 互为相反数的两个数的和是什么?(2) 如果两个互为相反数的数都不为0, 那么它们的商是多少?  
+10. (1) Two numbers and what is the opposite??(2) If neither of them were in the opposite, 0, Therefore what's their deal??
 
-11. 用四舍五入法, 按括号中的要求, 对下列各数取近似数:  
+11. Rounded, Requirements in parentheses, Approximate Values to each of the following:
 
-(1) 2.768(精确到百分位); (2) 0.009 493(精确到千分位);   
-(3) 8.965(精确到 0.1); (4) 17 289(精确到千位) .  
+(1) 2.768(Precision to Percentage); (2) 0.009 493(Accurate to 1,000 points);
+(3) 8.965(Exact to 0.1); (4) 17 289(Exact to thousands) .
 
-12. 用计算器计算(精确到十分位):(1) $5 6 . 2 + 7 . 4 1 \times ( - 2 . 1 2 ) ;$ (2) 2.914 - 1.68;(3) $( 3 . 9 1 - 1 . 4 5 ) ^ { 2 } \div ( - 5 . 6 2 ) + 4 9 . 3 4 .$  
+12. Calculator(Exact to ten):(1) $5 6 . 2 + 7 . 4 1 \times ( - 2 . 1 2 ) ;$ (2) 2.914 - 1.68;(3) $( 3 . 9 1 - 1 . 4 5 ) ^ { 2 } \div ( - 5 . 6 2 ) + 4 9 . 3 4 .$
 
-# B 组  
+# Group B
 
-13. 根据下列语句列式, 并计算:  
+13. According to the following statement column, And calculate:
 
-(1) - 3 与 0.3 的和乘以 2 的倒数; (2) 45 加上 15 与 - 3 的积;  
-(3) 34 与 6 的商减去 $- \frac { 1 } { 3 } ;$ (4) $- \frac { 1 } { 2 }$ 与 - 5 的差的平方.  
+(1) - 3 and 0.3 , and multiply it 2 Last; (2) 45 Add 15 and - 3 Accumulated;
+(3) 34 and 6 Less $- \frac { 1 } { 3 } ;$ (4) $- \frac { 1 } { 2 }$ and - 5 The difference squared.
 
-14. (1) 0 和1 之间的数的平方比原数大还是小? 立方呢? 倒数呢? 分别举例说明.  
+14. (1) 0 and 1 The squares between are larger or smaller than the originals? Where's the cube?? Countdown? Separate examples.
 
-(2) - 1 和0 之间的数的平方比原数大还是小? 立方呢? 倒数呢? 分别举例说明.  
+(2) - 1 and 0 The squares between are larger or smaller than the originals? Where's the cube?? Countdown? Separate examples.
 
-15. 选择题  
+15. Selection
 
-(1) 下列每对数中, 不相等的一对是( ) .  
+(1) In each logarithm below, Not the same couple( ) .
 
-A. $( - 2 ) ^ { 3 }$ 与 $\mathrm { ~ - ~ } 2 ^ { 3 }$ B. (- 2)2 与 $2 ^ { 2 }$ C. $( - \ 2 ) ^ { 4 }$ 与 $- 2 ^ { 4 }$ D. $\mid \mathrm { ~ - ~ } 2 ^ { 3 }$ | 与 $\mid 2 \mid ^ { 3 }$  
+A. $( - 2 ) ^ { 3 }$ and $\mathrm { ~ - ~ } 2 ^ { 3 }$ B. (- 2)2 and $2 ^ { 2 }$ C. $( - \ 2 ) ^ { 4 }$ and $- 2 ^ { 4 }$ D. $\mid \mathrm { ~ - ~ } 2 ^ { 3 }$ | and $\mid 2 \mid ^ { 3 }$
 
-(2) 计算 $( - ~ 2 ) ^ { 1 0 0 } + ( - ~ 2 ) ^ { 1 0 1 }$ 所得的结果是( )  
+(2) Calculate $( - ~ 2 ) ^ { 1 0 0 } + ( - ~ 2 ) ^ { 1 0 1 }$ The result is( )
 
-A. 2100 B. - 1 C. - 2 D. - 2100  
+A. 2100 B. - 1 C. - 2 D. - 2100
 
-(3) 下面各组大小关系中, 正确的是( ) .  
+(3) The following group size relationships, Right( ) .
 
-A. $0 > | \mathrm { ~ - ~ } 1 0 |$ B $. \left| \begin{array} { l } { { - { \frac { 3 } { 1 0 1 } } } } \end{array} \right| > \left| - { \frac { 4 } { 1 0 2 } } \right|$ $\mathrm { C . ~ \ l ~ - ~ 2 ~ | ~ } + 3 5 . 6 ~ > | ~ - ~ 2 ~ + 3 5 . 6 ~ |$ D. $( - \ 2 ) ^ { 3 } \ > \ ( - \ 2 ) ^ { 2 }$  
+A. $0 > | \mathrm { ~ - ~ } 1 0 |$ B $. \left| \begin{array} { l } { { - { \frac { 3 } { 1 0 1 } } } } \end{array} \right| > \left| - { \frac { 4 } { 1 0 2 } } \right|$ $\mathrm { C . ~ \ l ~ - ~ 2 ~ | ~ } + 3 5 . 6 ~ > | ~ - ~ 2 ~ + 3 5 . 6 ~ |$ D. $( - \ 2 ) ^ { 3 } \ > \ ( - \ 2 ) ^ { 2 }$
 
-16. 计算:  
+16. Calculate:
 
-(1) $2 - 2 \div \frac { 1 } { 3 } \times 3 ;$ (2) $\begin{array} { l } { \displaystyle - \left( \frac 1 2 \right) ^ { 2 } \times 2 ^ { 2 } - \left( - 5 \right) ; } \\ { \displaystyle - 3 - \left( - 1 - 0 . 2 \times \frac 3 5 \right) \times \left( - 2 \right) . } \end{array}$ (3) $- 1 ^ { 3 } - ( 1 + 0 . 5 ) \times \frac { 1 } { 3 } \div ( - 4 ) ;$ (4)  
+(1) $2 - 2 \div \frac { 1 } { 3 } \times 3 ;$ (2) $\begin{array} { l } { \displaystyle - \left( \frac 1 2 \right) ^ { 2 } \times 2 ^ { 2 } - \left( - 5 \right) ; } \\ { \displaystyle - 3 - \left( - 1 - 0 . 2 \times \frac 3 5 \right) \times \left( - 2 \right) . } \end{array}$ (3) $- 1 ^ { 3 } - ( 1 + 0 . 5 ) \times \frac { 1 } { 3 } \div ( - 4 ) ;$ (4)
 
-17. 下列说法是否正确? 为什么?  
+17. Is the following statement correct?? Why??
 
-(1) 两个正数中, 较大数的倒数反而小;  
-(2) 两个有理数中, 较大数的倒数反而小.  
+(1) Two positives, The larger number is small;
+(2) Two rational numbers, The larger number is small.
 
-18. 如图, 数轴上的点 $A , B , O , C , D$ 分别表示 - 5、 - 0、 2.5、 6.  
+18. As shown in the figure, Count points on number line $A , B , O , C , D$ Separately - 5、 - 0、 2.5、 6.
 
 $$
 \frac { 1 } { \cdots - 6 - 5 - 4 - 3 - 2 - 1 0 1 } \underset { 1 2 \cdots 3 + 5 \times 6 } { C } \underset { 6 } { D } \underset { 6 } { \underbrace { D } } \underset { 6 } { \underbrace { \dots - 1 } } { \underbrace { \dots - 1 } }
-$$  
+$$
 
-(第 18 题)  
+(I don't think so 18 Topic)
 
-# 数学 七年级上册  
+# Mathematics, Grade 7
 
-根据题图, 回答下列问题:  
+By Diagram, Answer the following questions:
 
-(1) $\textit { C , B }$ 两点间的距离是多少?(2) $B , D$ 两点间的距离是多少?(3) $A , B$ 两点间的距离是多少?  
+(1) $\textit { C , B }$ What's the distance between two points??(2) $B , D$ What's the distance between two points??(3) $A , B$ What's the distance between two points??
 
-19. 某检修小组乘车沿一条东西向公路检修线路, 约定向东行驶为正. 某天从 $A$ 地出发到收工时, 行驶记录(长度单位: $\mathrm { k m }$ )为:+ $^ { 1 5 , \mathrm { ~ - ~ } 2 , \mathrm { ~ + ~ } 5 , \mathrm { ~ - ~ } 3 , \mathrm { ~ + ~ } 8 , \mathrm { ~ - ~ } 3 , \mathrm { ~ - ~ } 1 , \mathrm { ~ + ~ } 1 1 , \mathrm { ~ + ~ } 4 , \mathrm { ~ - ~ } 5 , \mathrm { ~ - ~ } 2 , \mathrm { ~ + ~ } 7 , \mathrm { ~ - ~ } 3 , \mathrm { ~ + ~ } 5 . }$ 收工时, 检修小组在 $A$ 地的哪一边? 距离 $A$ 地多远?  
+19. One of the inspection teams went to the road along a single block, It was agreed to head east. Someday from $A$ The ground leaves till the end of the day, Traffic records(Length units: $\mathrm { k m }$ )Yes:+ $^ { 1 5 , \mathrm { ~ - ~ } 2 , \mathrm { ~ + ~ } 5 , \mathrm { ~ - ~ } 3 , \mathrm { ~ + ~ } 8 , \mathrm { ~ - ~ } 3 , \mathrm { ~ - ~ } 1 , \mathrm { ~ + ~ } 1 1 , \mathrm { ~ + ~ } 4 , \mathrm { ~ - ~ } 5 , \mathrm { ~ - ~ } 2 , \mathrm { ~ + ~ } 7 , \mathrm { ~ - ~ } 3 , \mathrm { ~ + ~ } 5 . }$ End of working hours, The inspection team is here $A$ Which side of the ground?? Distance $A$ How far??
 
-20. 在 $1 : 5 0 0 0 0 0 0 0$ 的地图上量得两地间的距离是 $1 . 3 \mathrm { c m }$ , 试用科学记数法表示这两地间的实际距离. (实际距离单位: $\mathrm { ~ m ~ }$ )  
+20. Yes $1 : 5 0 0 0 0 0 0 0$ The map shows the distance between the two places $1 . 3 \mathrm { c m }$ , The test scientific count indicates the physical distance between the two places. (Actual distance unit: $\mathrm { ~ m ~ }$ )
 
-21. 求高为 $0 . 8 2 0 \mathrm { m }$ 、 底面半径为 $0 . 4 7 0 \mathrm { m }$ 的圆柱的体积. (精确到 $0 . 0 1 \mathrm { m } ^ { 3 }$ )  
+21. I'm looking for something $0 . 8 2 0 \mathrm { m }$ 、 Bottom Radius is $0 . 4 7 0 \mathrm { m }$ The volume of the cylinder. (Exact to $0 . 0 1 \mathrm { m } ^ { 3 }$ )
 
-22. 加工一根轴, 图纸上注明它的直径是 $\phi 3 0 \ _ { - 0 . 0 2 } ^ { + 0 . 0 3 }$ . 其中, $\phi 3 0$ 表示规定的直径是 $3 0 \mathrm { m m } , \quad + 0 . 0 3$ 表示合格品的直径最长只能比规定的直径长 $0 . 0 3 \mathrm { m m }$ ,$- 0 . 0 2$ 表示合格品的直径最短只能比规定的直径短 $\dot { 0 } . 0 2 \mathrm { m m }$ . 那么合格品的直径最长可为多少? 最短可为多少?  
+22. Processing an number line, It says it's in diameter $\phi 3 0 \ _ { - 0 . 0 2 } ^ { + 0 . 0 3 }$ . of which, $\phi 3 0$ Means the specified diameter is $3 0 \mathrm { m m } , \quad + 0 . 0 3$ The diameter of a qualified product may be as long as the specified diameter $0 . 0 3 \mathrm { m m }$ ,$- 0 . 0 2$ The minimum diameter of a qualified product is only shorter than the specified diameter $\dot { 0 } . 0 2 \mathrm { m m }$ . Therefore what's the diameter of the eligible product?? What's the minimum??
 
-# C 组  
+# C Group
 
-23. 字母 $\mathbf { \Omega } _ { a }$ 取怎样的有理数时, 下列关系式成立?  
+23. Letter $\mathbf { \Omega } _ { a }$ What kind of rational number?, The following relationships are established:?
 
-(1) $\mid a \mid = a ;$ (2) $\mid a \mid > a ;$ (3) $\mid a \mid = - a ;$ (4) $a > - a .$ .  
+(1) $\mid a \mid = a ;$ (2) $\mid a \mid > a ;$ (3) $\mid a \mid = - a ;$ (4) $a > - a .$ .
 
-24. 回答下列问题:  
+24. Answer the following questions:
 
-(1) 由 $\mid m \mid = \mid n \mid$ , 一定能得到 $m = n$ 吗? 请说明理由.  
-(2) 由 $\mid m \mid = \mid n \mid$ , 一定能得到 $m ^ { 2 } = n ^ { 2 }$ 吗? 请说明理由.  
+(1) By $\mid m \mid = \mid n \mid$ , I'll get it $m = n$ I'm sorry? Please explain your reasons.
+(2) By $\mid m \mid = \mid n \mid$ , I'll get it $m ^ { 2 } = n ^ { 2 }$ I'm sorry? Please explain your reasons.
 
-25. 如图, 你能由此得出计算规律吗?  
+25. As shown in the figure, Can you figure that out??
 
 $$
 1 + 3 + 5 + 7 + 9 + 1 1 = ( ) ^ { 2 } .
-$$  
+$$
 
-由此猜测: 从1 开始的 $n$ 个连续奇数之和等于多少?选择 $n$ 的一些值, 用计算器计算, 验证你的猜想.  
+Therefore guess: From 1 Started $n$ How much is the sum of a continuous odd number??Selection $n$ values, Calculator, Check your guess.
 
-![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/9376d4242dc417f3a16b3737bab3b83e00938ddca2d3e48bdf85fe23d078b024.jpg)  
-(第 25 题)  
+![](https://cdn-mineru.openxlab.org.cn/extract/f52bd3cd-6053-49d6-9985-8e8119adc404/9376d4242dc417f3a16b3737bab3b83e00938ddca2d3e48bdf85fe23d078b024.jpg)
+(I don't think so 25 Topic)

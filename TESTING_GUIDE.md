@@ -1,6 +1,20 @@
 # Observer feature testing guide
 
-[中文](./TESTING_GUIDE_ZH.md)
+[Chinese](./TESTING_GUIDE_ZH.md)
+
+New classroom examples, default configuration, and embedding model examples use English. Existing Chinese logs and generated reports remain unchanged, as do the `*_ZH.md` guides and source textbook PDF.
+
+## English data and parser checks
+
+From the repository root, run:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+These checks cover English and legacy grade lookup, student personalization, questionnaire prompts and saved response fields, reverse-scoring instructions, question-bank JSON Lines loading, and observer command JSON. They require Python and NumPy but make no LLM calls or embedding-model downloads. Questionnaire checks substitute a fixed model response, so they do not verify a live provider.
+
+Some original question-bank records contain `�` (U+FFFD) from damaged source text. Unresolved damage remains in the English bank; repair or exclude affected items before evaluating their answers.
 
 ## Prerequisites
 
@@ -11,10 +25,10 @@
 export SCHOOLAGENT_API_KEY="sk-xxxxxxxxxxxxxxxx"
 
 # Optional: local embedding model directory or Hugging Face model id
-export BGE_MODEL="/path/to/bge-small-zh-v1.5"
+export BGE_MODEL="BAAI/bge-small-en-v1.5"
 
 # Optional: larger model for teacher vector DB
-# export BGE_MODEL_L="/path/to/bge-large-zh"
+# export BGE_MODEL_L="BAAI/bge-large-en-v1.5"
 ```
 
 **Windows (PowerShell)**
@@ -200,25 +214,25 @@ Expect: each distinct command handled; remember identical consecutive commands m
 
 ```
 ======================================================================
-📝 [观察者] 收到命令: pause
+📝 [Observer] Received command: pause
 ======================================================================
-⏸️  仿真将在当前轮次结束后暂停...
+⏸️  The simulation will pause after the current round...
 ...
-⏸️  [观察者] 仿真已暂停
+⏸️  [Observer] Simulation Paused
 ======================================================================
-📊 当前仿真状态
+📊 Current Simulation Status
 ...
-💡 提示: 编辑 observer_cmd.json 文件，设置 'command': 'resume' 以继续
+💡 Edit observer_cmd.json and set 'command': 'resume' to continue.
 ```
 
 ### status
 
 ```
 ======================================================================
-📝 [观察者] 收到命令: status
+📝 [Observer] Received command: status
 ======================================================================
 
-📊 当前仿真状态
+📊 Current Simulation Status
 ======================================================================
 ```
 
@@ -226,12 +240,12 @@ Expect: each distinct command handled; remember identical consecutive commands m
 
 ```
 ======================================================================
-📝 [观察者] 收到命令: intervene
+📝 [Observer] Received command: intervene
 ======================================================================
 ...
-[Teacher.handle_observer_intervention] 收到观察者干预
+[Teacher.handle_observer_intervention] Observer intervention received
 ...
-🤖 教师响应: ⚠️  观察者干预接口已调用，但具体功能尚未实现
+🤖 Teacher response: ⚠️ The observer intervention hook ran, but plan changes are not implemented yet.
 ```
 
 ---
